@@ -42,9 +42,12 @@ def main(debug=False):
         logging.basicConfig(level=logging.INFO)
 
     config = load_config()
-    logger.info(f'Running Predictor')
-    teams = config['teams']
+    logger.info('Running Predictor')
+    
+    # Flatten the teams structure
+    teams = [team for group in config['teams'].values() for team in group]
     look_back_months = config['look_back_months']
+    
     logger.debug(f"""
 Configuration is: 
 teams={teams} 

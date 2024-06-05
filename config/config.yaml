@@ -1,26 +1,32 @@
 teams:
-  - Albania
-  - Austria
-  - Belgium
-  - Croatia
-  - Czech Republic
-  - Denmark
-  - England
-  - France
-  - Georgia
-  - Germany
-  - Hungary
-  - Italy
-  - Netherlands
-  - Poland
-  - Portugal
-  - Romania
-  - Scotland
-  - Serbia
-  - Slovakia
-  - Slovenia
-  - Spain
-  - Switzerland
-  - Turkey
-  - Ukraine
+  Group A:
+    - Germany
+    - Scotland
+    - Hungary
+    - Switzerland
+  Group B:
+    - Spain
+    - Croatia
+    - Italy
+    - Albania
+  Group C:
+    - Slovenia
+    - Denmark
+    - Serbia
+    - England
+  Group D:
+    - Poland
+    - Netherlands
+    - Austria
+    - France
+  Group E:
+    - Belgium
+    - Slovakia
+    - Romania
+    - Ukraine
+  Group F:
+    - Turkey
+    - Georgia
+    - Portugal
+    - Czech Republic
 look_back_months: 36
