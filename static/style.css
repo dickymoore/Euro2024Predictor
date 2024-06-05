@@ -7,9 +7,11 @@ body {
 
 .wall-chart {
     width: 100%;
+    max-width: 1800px;
     background-color: #fff;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin: 0 auto;
 }
 
 .wall-chart h1 {
@@ -62,7 +64,6 @@ h2 {
 }
 
 .group h2, .group-results h2 {
-
     background-color: #4CAF50;
     color: white;
     padding: 1px 0;
@@ -118,67 +119,125 @@ tr.unqualified {
 
 .knockout-stage-grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(7, 1fr);
     gap: 20px;
 }
 
-.round-of-16, .quarter-finals, .semi-finals, .final {
+.round-of-16-left, .quarter-finals-left, .semi-finals-left, 
+.round-of-16-right, .quarter-finals-right, .semi-finals-right, .final {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: space-between;
 }
 
 .match {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     width: 100%;
     margin: 5px 0;
+    border: 1px solid #ddd;
 }
+
+
 .match span {
     padding: 5px;
     background-color: #fff;
     border: 1px solid #ddd;
-    width: 22%;
     text-align: center;
-    font-size: 0.8em;
+    font-size: 0.7em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: clip;
+}
+.match span.team {
+    padding: 5px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    text-align: center;
+    font-size: 0.7em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: clip;
 }
 
-.knockout-stage-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: repeat(8, auto);
-    gap: 20px;
+.match span.score {
+    padding: 5px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    width: 10%;  /* Reduced width for scores */
+    text-align: center;
+    font-size: 0.7em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: clip;
 }
 
-.round-of-16 {
+.team {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px;
+    width: 100%;
+}
+
+.score {
+    padding: 5px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    width: 40px;
+    text-align: center;
+    font-size: 0.7em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: clip;
+    margin-left: 2px;
+}
+
+.team-name {
+    padding: 5px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    flex-grow: 1;
+    text-align: left;
+    font-size: 0.7em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: clip;
+}
+
+.round-of-16-left {
     grid-column: 1 / span 1;
     grid-row: 1 / span 8;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 }
 
-.quarter-finals {
+.quarter-finals-left {
     grid-column: 2 / span 1;
     grid-row: 2 / span 6;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 }
 
-.semi-finals {
+.semi-finals-left {
     grid-column: 3 / span 1;
     grid-row: 3 / span 4;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 }
 
 .final {
     grid-column: 4 / span 1;
     grid-row: 4 / span 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
+
+.semi-finals-right {
+    grid-column: 5 / span 1;
+    grid-row: 3 / span 4;
+}
+
+.quarter-finals-right {
+    grid-column: 6 / span 1;
+    grid-row: 2 / span 6;
+}
+
+.round-of-16-right {
+    grid-column: 7 / span 1;
+    grid-row: 1 / span 8;
+}
+
