@@ -241,3 +241,13 @@ tr.unqualified {
     grid-row: 1 / span 8;
 }
 
+.match .team.winner, .match .score.winner {
+    background-color: rgba(144, 238, 144, 0.15);
+    font-weight: bold;
+    color: #006400;
+}
+
+.match .team.loser, .match .score.loser {
+    background-color: rgba(255, 99, 71, 0.15);
+    font-weight: bold;
+}
