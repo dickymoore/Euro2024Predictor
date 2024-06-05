@@ -5,7 +5,8 @@ from collections import defaultdict
 app = Flask(__name__)
 
 def load_data(csv_path):
-    return pd.read_csv(csv_path)
+    return pd.read_csv(csv_path, na_values=[''])
+
 
 def compute_standings(data):
     standings = defaultdict(lambda: defaultdict(lambda: defaultdict(int)))
@@ -75,29 +76,53 @@ def compute_standings(data):
 def parse_score(score):
     score_str = str(score)
     if "pen" in score_str:
-        score_str = score_str.split()[0]
-    return int(score_str)
-
+        print(f"pen: in {score_str}!")
+        main_score = score_str.split(' ')[0]
+        pen_part = score_str.split('(')[-1].strip(') ')
+        print(f"main_score: {main_score}, pen_part: {pen_part}")
+        if '-' in pen_part:
+            team1_pen_score, team2_pen_score = pen_part.split('-')
+            print(f"team1_pen_score: {team1_pen_score}, team2_pen_score: {team2_pen_score}")
+            return int(main_score), team1_pen_score, team2_pen_score
+        else:
+            return int(main_score), None, None
+    return int(score_str), None, None
 
 def organize_matches_by_group(data):
     match_results = defaultdict(list)
     knockout_matches = []
 
     for _, row in data.iterrows():
-        team1_score = parse_score(row['team1_score'])
-        team2_score = parse_score(row['team2_score'])
-        
+        team1_score = int(row['team1_score'])
+        team2_score = int(row['team2_score'])
+        team1_pen_score = int(row['team1_pso_score']) if pd.notna(row['team1_pso_score']) else None
+        team2_pen_score = int(row['team2_pso_score']) if pd.notna(row['team2_pso_score']) else None
+
         match = {
             'team1': row['team1'],
             'team1_score': team1_score,
             'team2': row['team2'],
-            'team2_score': team2_score
+            'team2_score': team2_score,
+            'team1_pen_score': team1_pen_score,
+            'team2_pen_score': team2_pen_score,
+            'stage': row['stage']
         }
 
         if row['stage'] == 'Group Stage':
             match_results[row['group']].append(match)
         else:
-            match['stage'] = row['stage']
+            # Determine winner and loser for knockout matches with penalty shootouts
+            if team1_score == team2_score and team1_pen_score is not None and team2_pen_score is not None:
+                if team1_pen_score > team2_pen_score:
+                    match['team1_class'] = 'winner'
+                    match['team2_class'] = 'loser'
+                else:
+                    match['team1_class'] = 'loser'
+                    match['team2_class'] = 'winner'
+            else:
+                match['team1_class'] = 'winner' if team1_score > team2_score else 'loser'
+                match['team2_class'] = 'winner' if team2_score > team1_score else 'loser'
+            
             knockout_matches.append(match)
 
     return match_results, knockout_matches

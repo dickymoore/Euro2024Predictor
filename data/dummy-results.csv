@@ -1,52 +1,52 @@
-stage,group,team1,team1_score,team2,team2_score
-Group Stage,A,Germany,2,Hungary,1
-Group Stage,A,Switzerland,1,Scotland,1
-Group Stage,A,Hungary,0,Germany,3
-Group Stage,A,Switzerland,2,Hungary,1
-Group Stage,A,Scotland,1,Germany,2
-Group Stage,A,Switzerland,0,Scotland,0
-Group Stage,B,Spain,3,Croatia,1
-Group Stage,B,Italy,2,Albania,0
-Group Stage,B,Spain,2,Italy,2
-Group Stage,B,Croatia,1,Albania,0
-Group Stage,B,Italy,1,Croatia,1
-Group Stage,B,Spain,4,Albania,1
-Group Stage,C,England,2,Denmark,0
-Group Stage,C,Serbia,1,Slovenia,1
-Group Stage,C,England,3,Serbia,1
-Group Stage,C,Denmark,2,Slovenia,0
-Group Stage,C,England,1,Slovenia,1
-Group Stage,C,Denmark,1,Serbia,0
-Group Stage,D,France,2,Netherlands,2
-Group Stage,D,Austria,1,Poland,0
-Group Stage,D,France,3,Austria,1
-Group Stage,D,Netherlands,2,Poland,1
-Group Stage,D,France,2,Poland,0
-Group Stage,D,Netherlands,1,Austria,1
-Group Stage,E,Belgium,2,Slovakia,0
-Group Stage,E,Romania,1,Ukraine,1
-Group Stage,E,Belgium,3,Romania,1
-Group Stage,E,Slovakia,0,Ukraine,2
-Group Stage,E,Belgium,1,Ukraine,0
-Group Stage,E,Slovakia,1,Romania,0
-Group Stage,F,Portugal,2,Czech Republic,1
-Group Stage,F,Turkey,1,Georgia,1
-Group Stage,F,Portugal,3,Turkey,1
-Group Stage,F,Czech Republic,2,Georgia,0
-Group Stage,F,Portugal,1,Georgia,1
-Group Stage,F,Czech Republic,0,Turkey,2
-Round of 16,,Germany,2,Croatia,1
-Round of 16,,Spain,3,Hungary,0
-Round of 16,,England,2,Austria,1
-Round of 16,,France,2,Denmark,0
-Round of 16,,Belgium,2,Turkey,1
-Round of 16,,Portugal,3,Ukraine,1
-Round of 16,,Italy,1,Scotland,0
-Round of 16,,Netherlands,2,Switzerland,1
-Quarter-final,,Germany,1,Spain,1 (4-3 pen)
-Quarter-final,,England,2,France,2 (5-4 pen)
-Quarter-final,,Belgium,2,Portugal,1
-Quarter-final,,Italy,1,Netherlands,2
-Semi-final,,Germany,1,England,2
-Semi-final,,Belgium,2,Netherlands,1
-Final,,England,1,Belgium,2
+stage,group,team1,team1_score,team2,team2_score,team1_pso_score,team2_pso_score
+Group Stage,A,Germany,2,Hungary,1,,
+Group Stage,A,Switzerland,1,Scotland,1,,
+Group Stage,A,Hungary,0,Germany,3,,
+Group Stage,A,Switzerland,2,Hungary,1,,
+Group Stage,A,Scotland,1,Germany,2,,
+Group Stage,A,Switzerland,0,Scotland,0,,
+Group Stage,B,Spain,3,Croatia,1,,
+Group Stage,B,Italy,2,Albania,0,,
+Group Stage,B,Spain,2,Italy,2,,
+Group Stage,B,Croatia,1,Albania,0,,
+Group Stage,B,Italy,1,Croatia,1,,
+Group Stage,B,Spain,4,Albania,1,,
+Group Stage,C,England,2,Denmark,0,,
+Group Stage,C,Serbia,1,Slovenia,1,,
+Group Stage,C,England,3,Serbia,1,,
+Group Stage,C,Denmark,2,Slovenia,0,,
+Group Stage,C,England,1,Slovenia,1,,
+Group Stage,C,Denmark,1,Serbia,0,,
+Group Stage,D,France,2,Netherlands,2,,
+Group Stage,D,Austria,1,Poland,0,,
+Group Stage,D,France,3,Austria,1,,
+Group Stage,D,Netherlands,2,Poland,1,,
+Group Stage,D,France,2,Poland,0,,
+Group Stage,D,Netherlands,1,Austria,1,,
+Group Stage,E,Belgium,2,Slovakia,0,,
+Group Stage,E,Romania,1,Ukraine,1,,
+Group Stage,E,Belgium,3,Romania,1,,
+Group Stage,E,Slovakia,0,Ukraine,2,,
+Group Stage,E,Belgium,1,Ukraine,0,,
+Group Stage,E,Slovakia,1,Romania,0,,
+Group Stage,F,Portugal,2,Czech Republic,1,,
+Group Stage,F,Turkey,1,Georgia,1,,
+Group Stage,F,Portugal,3,Turkey,1,,
+Group Stage,F,Czech Republic,2,Georgia,0,,
+Group Stage,F,Portugal,1,Georgia,1,,
+Group Stage,F,Czech Republic,0,Turkey,2,,
+Round of 16,,Germany,2,Croatia,1,,
+Round of 16,,Spain,3,Hungary,0,,
+Round of 16,,England,2,Austria,1,,
+Round of 16,,France,2,Denmark,0,,
+Round of 16,,Belgium,2,Turkey,1,,
+Round of 16,,Portugal,3,Ukraine,1,,
+Round of 16,,Italy,1,Scotland,0,,
+Round of 16,,Netherlands,2,Switzerland,1,,
+Quarter-final,,Germany,1,Spain,1,4,3
+Quarter-final,,England,2,France,2,5,4
+Quarter-final,,Belgium,2,Portugal,1,,
+Quarter-final,,Italy,1,Netherlands,2,,
+Semi-final,,Germany,1,England,2,,
+Semi-final,,Belgium,2,Netherlands,1,,
+Final,,England,1,Belgium,2,,

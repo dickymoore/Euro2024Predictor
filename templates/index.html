@@ -14,7 +14,7 @@
         <div class="content-wrapper">
             <div class="match-results-left">
                 {% for group, matches in match_results.items() %}
-                    {% if group in ['A', 'B', 'C'] %}
+                    {% if group in ['A', 'C', 'E'] %}
                         <div class="group-results" id="results-{{ group }}">
                             <h2>Group {{ group }} Matches</h2>
                             <table>
@@ -74,7 +74,7 @@
 
             <div class="match-results-right">
                 {% for group, matches in match_results.items() %}
-                    {% if group in ['D', 'E', 'F'] %}
+                    {% if group in ['B', 'D', 'F'] %}
                     <div class="group-results" id="results-{{ group }}">
                             <h2>Group {{ group }} Matches</h2>
                             <table>
@@ -102,12 +102,22 @@
                         {% if match.stage == 'Round of 16' %}
                             <div class="match">
                                 <div class="team">
-                                    <span class="team {% if match.team1_score > match.team2_score %}winner{% elif match.team1_score < match.team2_score %}loser{% endif %}">{{ match.team1 }}</span>
-                                    <span class="score {% if match.team1_score > match.team2_score %}winner{% elif match.team1_score < match.team2_score %}loser{% endif %}">{{ match.team1_score }}</span>
+                                    <span class="team {{ match.team1_class }}">{{ match.team1 }}</span>
+                                    <span class="score {{ match.team1_class }}">
+                                        {{ match.team1_score }}
+                                    </span>
+                                    {% if match.team1_pen_score and match.team2_pen_score %}
+                                        <span class="penalty {{ match.team1_class }}"> ({{ match.team1_pen_score|int }})</span>
+                                    {% endif %}
                                 </div>
                                 <div class="team">
-                                    <span class="team {% if match.team2_score > match.team1_score %}winner{% elif match.team2_score < match.team1_score %}loser{% endif %}">{{ match.team2 }}</span>
-                                    <span class="score {% if match.team2_score > match.team1_score %}winner{% elif match.team2_score < match.team1_score %}loser{% endif %}">{{ match.team2_score }}</span>
+                                    <span class="team {{ match.team2_class }}">{{ match.team2 }}</span>
+                                    <span class="score {{ match.team2_class }}">
+                                        {{ match.team2_score }}
+                                    </span>
+                                    {% if match.team1_pen_score and match.team2_pen_score %}
+                                        <span class="penalty {{ match.team2_class }}"> ({{ match.team2_pen_score|int }})</span>
+                                    {% endif %}
                                 </div>
                             </div>
                         {% endif %}
@@ -119,12 +129,22 @@
                         {% if match.stage == 'Quarter-final' %}
                             <div class="match">
                                 <div class="team">
-                                    <span class="team {% if match.team1_score > match.team2_score %}winner{% elif match.team1_score < match.team2_score %}loser{% endif %}">{{ match.team1 }}</span>
-                                    <span class="score {% if match.team1_score > match.team2_score %}winner{% elif match.team1_score < match.team2_score %}loser{% endif %}">{{ match.team1_score }}</span>
+                                    <span class="team {{ match.team1_class }}">{{ match.team1 }}</span>
+                                    <span class="score {{ match.team1_class }}">
+                                        {{ match.team1_score }}
+                                    </span>
+                                    {% if match.team1_pen_score and match.team2_pen_score %}
+                                        <span class="penalty {{ match.team1_class }}"> ({{ match.team1_pen_score|int }})</span>
+                                    {% endif %}
                                 </div>
                                 <div class="team">
-                                    <span class="team {% if match.team2_score > match.team1_score %}winner{% elif match.team2_score < match.team1_score %}loser{% endif %}">{{ match.team2 }}</span>
-                                    <span class="score {% if match.team2_score > match.team1_score %}winner{% elif match.team2_score < match.team1_score %}loser{% endif %}">{{ match.team2_score }}</span>
+                                    <span class="team {{ match.team2_class }}">{{ match.team2 }}</span>
+                                    <span class="score {{ match.team2_class }}">
+                                        {{ match.team2_score }}
+                                    </span>
+                                    {% if match.team1_pen_score and match.team2_pen_score %}
+                                        <span class="penalty {{ match.team2_class }}"> ({{ match.team2_pen_score|int }})</span>
+                                    {% endif %}
                                 </div>
                             </div>
                         {% endif %}
@@ -136,12 +156,22 @@
                         {% if match.stage == 'Semi-final' %}
                             <div class="match">
                                 <div class="team">
-                                    <span class="team {% if match.team1_score > match.team2_score %}winner{% elif match.team1_score < match.team2_score %}loser{% endif %}">{{ match.team1 }}</span>
-                                    <span class="score {% if match.team1_score > match.team2_score %}winner{% elif match.team1_score < match.team2_score %}loser{% endif %}">{{ match.team1_score }}</span>
+                                    <span class="team {{ match.team1_class }}">{{ match.team1 }}</span>
+                                    <span class="score {{ match.team1_class }}">
+                                        {{ match.team1_score }}
+                                    </span>
+                                    {% if match.team1_pen_score and match.team2_pen_score %}
+                                        <span class="penalty {{ match.team1_class }}"> ({{ match.team1_pen_score|int }})</span>
+                                    {% endif %}
                                 </div>
                                 <div class="team">
-                                    <span class="team {% if match.team2_score > match.team1_score %}winner{% elif match.team2_score < match.team1_score %}loser{% endif %}">{{ match.team2 }}</span>
-                                    <span class="score {% if match.team2_score > match.team1_score %}winner{% elif match.team2_score < match.team1_score %}loser{% endif %}">{{ match.team2_score }}</span>
+                                    <span class="team {{ match.team2_class }}">{{ match.team2 }}</span>
+                                    <span class="score {{ match.team2_class }}">
+                                        {{ match.team2_score }}
+                                    </span>
+                                    {% if match.team1_pen_score and match.team2_pen_score %}
+                                        <span class="penalty {{ match.team2_class }}"> ({{ match.team2_pen_score|int }})</span>
+                                    {% endif %}
                                 </div>
                             </div>
                         {% endif %}
@@ -153,10 +183,20 @@
                         {% if match.stage == 'Final' %}
                             <div class="match">
                                 <div class="team">
-                                    <span class="team {% if match.team1_score > match.team2_score %}winner{% elif match.team1_score < match.team2_score %}loser{% endif %}">{{ match.team1 }}</span>
-                                    <span class="score {% if match.team1_score > match.team2_score %}winner{% elif match.team1_score < match.team2_score %}loser{% endif %}">{{ match.team1_score }}</span>
-                                    <span class="score {% if match.team2_score > match.team1_score %}winner{% elif match.team2_score < match.team1_score %}loser{% endif %}">{{ match.team2_score }}</span>
-                                    <span class="team {% if match.team2_score > match.team1_score %}winner{% elif match.team2_score < match.team1_score %}loser{% endif %}">{{ match.team2 }}</span>
+                                    <span class="team {{ match.team1_class }}">{{ match.team1 }}</span>
+                                    <span class="score {{ match.team1_class }}">
+                                        {{ match.team1_score }}
+                                    </span>
+                                    {% if match.team1_pen_score and match.team2_pen_score %}
+                                        <span class="penalty {{ match.team1_class }}"> ({{ match.team1_pen_score|int }})</span>
+                                    {% endif %}
+                                    <span class="score {{ match.team2_class }}">
+                                        {{ match.team2_score }}
+                                    </span>
+                                    {% if match.team1_pen_score and match.team2_pen_score %}
+                                        <span class="penalty {{ match.team2_class }}"> ({{ match.team2_pen_score|int }})</span>
+                                    {% endif %}
+                                    <span class="team {{ match.team2_class }}">{{ match.team2 }}</span>
                                 </div>
                             </div>
                         {% endif %}
@@ -168,12 +208,22 @@
                         {% if match.stage == 'Semi-final' %}
                             <div class="match">
                                 <div class="team">
-                                    <span class="team {% if match.team1_score > match.team2_score %}winner{% elif match.team1_score < match.team2_score %}loser{% endif %}">{{ match.team1 }}</span>
-                                    <span class="score {% if match.team1_score > match.team2_score %}winner{% elif match.team1_score < match.team2_score %}loser{% endif %}">{{ match.team1_score }}</span>
+                                    <span class="team {{ match.team1_class }}">{{ match.team1 }}</span>
+                                    <span class="score {{ match.team1_class }}">
+                                        {{ match.team1_score }}
+                                    </span>
+                                    {% if match.team1_pen_score and match.team2_pen_score %}
+                                        <span class="penalty {{ match.team1_class }}"> ({{ match.team1_pen_score|int }})</span>
+                                    {% endif %}
                                 </div>
                                 <div class="team">
-                                    <span class="team {% if match.team2_score > match.team1_score %}winner{% elif match.team2_score < match.team1_score %}loser{% endif %}">{{ match.team2 }}</span>
-                                    <span class="score {% if match.team2_score > match.team1_score %}winner{% elif match.team2_score < match.team1_score %}loser{% endif %}">{{ match.team2_score }}</span>
+                                    <span class="team {{ match.team2_class }}">{{ match.team2 }}</span>
+                                    <span class="score {{ match.team2_class }}">
+                                        {{ match.team2_score }}
+                                    </span>
+                                    {% if match.team1_pen_score and match.team2_pen_score %}
+                                        <span class="penalty {{ match.team2_class }}"> ({{ match.team2_pen_score|int }})</span>
+                                    {% endif %}
                                 </div>
                             </div>
                         {% endif %}
@@ -185,12 +235,22 @@
                         {% if match.stage == 'Quarter-final' %}
                             <div class="match">
                                 <div class="team">
-                                    <span class="team {% if match.team1_score > match.team2_score %}winner{% elif match.team1_score < match.team2_score %}loser{% endif %}">{{ match.team1 }}</span>
-                                    <span class="score {% if match.team1_score > match.team2_score %}winner{% elif match.team1_score < match.team2_score %}loser{% endif %}">{{ match.team1_score }}</span>
+                                    <span class="team {{ match.team1_class }}">{{ match.team1 }}</span>
+                                    <span class="score {{ match.team1_class }}">
+                                        {{ match.team1_score }}
+                                    </span>
+                                    {% if match.team1_pen_score and match.team2_pen_score %}
+                                        <span class="penalty {{ match.team1_class }}"> ({{ match.team1_pen_score|int }})</span>
+                                    {% endif %}
                                 </div>
                                 <div class="team">
-                                    <span class="team {% if match.team2_score > match.team1_score %}winner{% elif match.team2_score < match.team1_score %}loser{% endif %}">{{ match.team2 }}</span>
-                                    <span class="score {% if match.team2_score > match.team1_score %}winner{% elif match.team2_score < match.team1_score %}loser{% endif %}">{{ match.team2_score }}</span>
+                                    <span class="team {{ match.team2_class }}">{{ match.team2 }}</span>
+                                    <span class="score {{ match.team2_class }}">
+                                        {{ match.team2_score }}
+                                    </span>
+                                    {% if match.team1_pen_score and match.team2_pen_score %}
+                                        <span class="penalty {{ match.team2_class }}"> ({{ match.team2_pen_score|int }})</span>
+                                    {% endif %}
                                 </div>
                             </div>
                         {% endif %}
@@ -202,12 +262,22 @@
                         {% if match.stage == 'Round of 16' %}
                             <div class="match">
                                 <div class="team">
-                                    <span class="team {% if match.team1_score > match.team2_score %}winner{% elif match.team1_score < match.team2_score %}loser{% endif %}">{{ match.team1 }}</span>
-                                    <span class="score {% if match.team1_score > match.team2_score %}winner{% elif match.team1_score < match.team2_score %}loser{% endif %}">{{ match.team1_score }}</span>
+                                    <span class="team {{ match.team1_class }}">{{ match.team1 }}</span>
+                                    <span class="score {{ match.team1_class }}">
+                                        {{ match.team1_score }}
+                                    </span>
+                                    {% if match.team1_pen_score and match.team2_pen_score %}
+                                        <span class="penalty {{ match.team1_class }}"> ({{ match.team1_pen_score|int }})</span>
+                                    {% endif %}
                                 </div>
                                 <div class="team">
-                                    <span class="team {% if match.team2_score > match.team1_score %}winner{% elif match.team2_score < match.team1_score %}loser{% endif %}">{{ match.team2 }}</span>
-                                    <span class="score {% if match.team2_score > match.team1_score %}winner{% elif match.team2_score < match.team1_score %}loser{% endif %}">{{ match.team2_score }}</span>
+                                    <span class="team {{ match.team2_class }}">{{ match.team2 }}</span>
+                                    <span class="score {{ match.team2_class }}">
+                                        {{ match.team2_score }}
+                                    </span>
+                                    {% if match.team1_pen_score and match.team2_pen_score %}
+                                        <span class="penalty {{ match.team2_class }}"> ({{ match.team2_pen_score|int }})</span>
+                                    {% endif %}
                                 </div>
                             </div>
                         {% endif %}
