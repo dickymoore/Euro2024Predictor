@@ -9,12 +9,10 @@ def sortHomeData(team, data):
     return winCount
             
 def sortAwayData(team, data):
-    # print(team)
     winCount = 0
     data = data[data.away_team == team]
     for row in data.itertuples():
         if row.home_score < row.away_score:
-            # print(row.away_team + " wins")
             winCount += 1
     return winCount
 
