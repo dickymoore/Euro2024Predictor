@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     background-color: #f0f0f0;
     margin: 0;
     padding: 0;
@@ -32,10 +32,9 @@ body {
     align-items: center;
 }
 
-
 .group-standings-center {
     width: 60%;
-    padding: 0 10px;
+    padding: 0 00px;
     box-sizing: border-box;
 }
 
@@ -47,13 +46,15 @@ body {
 
 .group {
     width: 48%;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     text-align: center;
+    border: 1px solid black;
+
 }
 
 .group-results {
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     text-align: center;
 }
 
@@ -61,7 +62,8 @@ body {
     text-align: center;
     background-color: #4CAF50;
     color: white;
-    padding: 10px 0;
+    padding: 1px 0;
+    margin: 0px;
 }
 
 .group table, .group-results table {
@@ -71,7 +73,7 @@ body {
 
 .group table, .group th, .group td, .group-results table, .group-results th, .group-results td {
     border: 1px solid #ddd;
-    padding: 8px;
+    padding: 2px;
     font-size: 0.8em;
 }
 
@@ -80,22 +82,22 @@ body {
 }
 
 .group th, .group-results th {
-    padding-top: 12px;
-    padding-bottom: 12px;
+    padding-top: 2px;
+    padding-bottom: 2px;
     text-align: left;
     background-color: #4CAF50;
     color: white;
 }
 
-.qualified {
+tr.qualified {
     background-color: rgba(144, 238, 144, 0.5); /* Light green with transparency for qualified teams */
 }
 
-.best-third {
+tr.best-third {
     background-color: rgba(255, 255, 0, 0.5); /* Light yellow with transparency for best third-placed teams */
 }
 
-.unqualified {
+tr.unqualified {
     background-color: rgba(255, 99, 71, 0.5); /* Light red with transparency for unqualified teams */
 }
 
