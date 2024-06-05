@@ -1,4 +1,26 @@
 teams:
-  - TeamA
-  - TeamB
-look_back_days: 30
+  - Albania
+  - Austria
+  - Belgium
+  - Croatia
+  - Czechia
+  - Denmark
+  - England
+  - France
+  - Georgia
+  - Germany
+  - Hungary
+  - Italy
+  - Netherlands
+  - Poland
+  - Portugal
+  - Romania
+  - Scotland
+  - Serbia
+  - Slovakia
+  - Slovenia
+  - Spain
+  - Switzerland
+  - Türkiye
+  - Ukraine
+look_back_months: 36
