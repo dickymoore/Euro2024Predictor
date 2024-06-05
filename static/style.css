@@ -1,14 +1,12 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
-    margin: 20px;
+    margin: 0;
     padding: 0;
 }
 
 .wall-chart {
     width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
     background-color: #fff;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -19,43 +17,69 @@ body {
     margin-bottom: 20px;
 }
 
-.groups {
+.content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.match-results-left, .match-results-right {
+    width: 20%;
+    padding: 0 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.group-standings-center {
+    width: 60%;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.group-standings {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .group {
-    width: 45%;
+    width: 48%;
     margin-bottom: 20px;
+    text-align: center;
 }
 
-.group h2 {
+.group-results {
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.group h2, .group-results h2 {
     text-align: center;
     background-color: #4CAF50;
     color: white;
     padding: 10px 0;
 }
 
-.group table {
+.group table, .group-results table {
     width: 100%;
     border-collapse: collapse;
 }
 
-.group table, .group th, .group td {
+.group table, .group th, .group td, .group-results table, .group-results th, .group-results td {
     border: 1px solid #ddd;
     padding: 8px;
+    font-size: 0.8em;
 }
 
-.group tr:nth-child(even) {
-    background-color: #f2f2f2;
+.group tr, .group-results tr {
+    background-color: #fff;
 }
 
-.group tr:hover {
-    background-color: #ddd;
-}
-
-.group th {
+.group th, .group-results th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
@@ -63,11 +87,19 @@ body {
     color: white;
 }
 
-.knockout-stages {
-    margin-top: 40px;
+.qualified {
+    background-color: rgba(144, 238, 144, 0.5); /* Light green with transparency for qualified teams */
 }
 
-.knockout-stages h2 {
-    text-align: center;
-    margin-bottom: 20px;
+.best-third {
+    background-color: rgba(255, 255, 0, 0.5); /* Light yellow with transparency for best third-placed teams */
+}
+
+.unqualified {
+    background-color: rgba(255, 99, 71, 0.5); /* Light red with transparency for unqualified teams */
+}
+
+.divider {
+    width: 2px;
+    background-color: #ddd;
 }

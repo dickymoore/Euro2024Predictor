@@ -9,27 +9,82 @@
     <div class="wall-chart">
         <h1>UEFA Euro 2024 Predictions</h1>
         
-        <div class="groups">
-            {% for group, matches in prediction_data.items() %}
-                <div class="group" id="group-{{ group }}">
-                    <h2>Group {{ group }}</h2>
-                    <table>
-                        {% for match in matches %}
-                            <tr>
-                                <td>{{ match.team1 }}</td>
-                                <td>{{ match.team1_score }}</td>
-                                <td>{{ match.team2 }}</td>
-                                <td>{{ match.team2_score }}</td>
-                            </tr>
-                        {% endfor %}
-                    </table>
+        <div class="content-wrapper">
+            <div class="match-results-left">
+                {% for group, matches in match_results.items() %}
+                    <div class="group-results" id="results-{{ group }}">
+                        <h2>Group {{ group }} Matches</h2>
+                        <table>
+                            {% for match in matches %}
+                                <tr>
+                                    <td>{{ match.team1 }}</td>
+                                    <td>{{ match.team1_score }}</td>
+                                    <td>{{ match.team2 }}</td>
+                                    <td>{{ match.team2_score }}</td>
+                                </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="group-standings-center">
+                <div class="group-standings">
+                    {% for group, group_teams in standings.groupby('group') %}
+                        <div class="group" id="group-{{ group }}">
+                            <h2>Group {{ group }}</h2>
+                            <table>
+                                <tr>
+                                    <th>Team</th>
+                                    <th>GP</th>
+                                    <th>W</th>
+                                    <th>D</th>
+                                    <th>L</th>
+                                    <th>GF</th>
+                                    <th>GA</th>
+                                    <th>GD</th>
+                                    <th>Points</th>
+                                </tr>
+                                {% for _, team in group_teams.iterrows() %}
+                                    <tr class="{{ team.qualified }}">
+                                        <td>{{ team.team }}</td>
+                                        <td>{{ team.gp }}</td>
+                                        <td>{{ team.w }}</td>
+                                        <td>{{ team.d }}</td>
+                                        <td>{{ team.l }}</td>
+                                        <td>{{ team.gf }}</td>
+                                        <td>{{ team.ga }}</td>
+                                        <td>{{ team.gd }}</td>
+                                        <td>{{ team.points }}</td>
+                                    </tr>
+                                {% endfor %}
+                            </table>
+                        </div>
+                    {% endfor %}
                 </div>
-            {% endfor %}
-        </div>
-        
-        <div class="knockout-stages">
-            <h2>Knockout Stages</h2>
-            <!-- Add your knockout stage HTML structure here -->
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="match-results-right">
+                {% for group, matches in match_results.items() %}
+                    <div class="group-results" id="results-{{ group }}">
+                        <h2>Group {{ group }} Matches</h2>
+                        <table>
+                            {% for match in matches %}
+                                <tr>
+                                    <td>{{ match.team1 }}</td>
+                                    <td>{{ match.team1_score }}</td>
+                                    <td>{{ match.team2 }}</td>
+                                    <td>{{ match.team2_score }}</td>
+                                </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                {% endfor %}
+            </div>
         </div>
     </div>
 </body>
