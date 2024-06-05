@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>UEFA Euro 2024 Predictions</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="wall-chart">
@@ -13,19 +12,21 @@
         <div class="content-wrapper">
             <div class="match-results-left">
                 {% for group, matches in match_results.items() %}
-                    <div class="group-results" id="results-{{ group }}">
-                        <h2>Group {{ group }} Matches</h2>
-                        <table>
-                            {% for match in matches %}
-                                <tr>
-                                    <td>{{ match.team1 }}</td>
-                                    <td>{{ match.team1_score }}</td>
-                                    <td>{{ match.team2 }}</td>
-                                    <td>{{ match.team2_score }}</td>
-                                </tr>
-                            {% endfor %}
-                        </table>
-                    </div>
+                    {% if group in ['A', 'B', 'C'] %}
+                        <div class="group-results" id="results-{{ group }}">
+                            <h2>Group {{ group }} Matches</h2>
+                            <table>
+                                {% for match in matches %}
+                                    <tr>
+                                        <td>{{ match.team1 }}</td>
+                                        <td>{{ match.team1_score }}</td>
+                                        <td>{{ match.team2 }}</td>
+                                        <td>{{ match.team2_score }}</td>
+                                    </tr>
+                                {% endfor %}
+                            </table>
+                        </div>
+                    {% endif %}
                 {% endfor %}
             </div>
 
@@ -71,19 +72,21 @@
 
             <div class="match-results-right">
                 {% for group, matches in match_results.items() %}
+                    {% if group in ['D', 'E', 'F'] %}
                     <div class="group-results" id="results-{{ group }}">
-                        <h2>Group {{ group }} Matches</h2>
-                        <table>
-                            {% for match in matches %}
-                                <tr>
-                                    <td>{{ match.team1 }}</td>
-                                    <td>{{ match.team1_score }}</td>
-                                    <td>{{ match.team2 }}</td>
-                                    <td>{{ match.team2_score }}</td>
-                                </tr>
-                            {% endfor %}
-                        </table>
-                    </div>
+                            <h2>Group {{ group }} Matches</h2>
+                            <table>
+                                {% for match in matches %}
+                                    <tr>
+                                        <td>{{ match.team1 }}</td>
+                                        <td>{{ match.team1_score }}</td>
+                                        <td>{{ match.team2 }}</td>
+                                        <td>{{ match.team2_score }}</td>
+                                    </tr>
+                                {% endfor %}
+                            </table>
+                        </div>
+                        {% endif %}
                 {% endfor %}
             </div>
         </div>
