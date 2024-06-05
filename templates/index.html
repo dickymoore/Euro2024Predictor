@@ -92,9 +92,64 @@
                 {% endfor %}
             </div>
         </div>
-    <hr>
-    <h2>KNOCKOUT STAGE</h2>
-    <p>Yeah probably France innit</centre>
+        <hr>
+        <h2>KNOCKOUT STAGE</h2>
+        <div class="knockout-stage">
+            <div class="knockout-stage-grid">
+                <!-- Round of 16 -->
+                <div class="round-of-16">
+                    {% for match in knockout_matches %}
+                        {% if match.stage == 'Round of 16' %}
+                            <div class="match">
+                                <span>{{ match.team1 }}</span>
+                                <span>{{ match.team1_score }}</span>
+                                <span>{{ match.team2 }}</span>
+                                <span>{{ match.team2_score }}</span>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <!-- Quarter-finals -->
+                <div class="quarter-finals">
+                    {% for match in knockout_matches %}
+                        {% if match.stage == 'Quarter-final' %}
+                            <div class="match">
+                                <span>{{ match.team1 }}</span>
+                                <span>{{ match.team1_score }}</span>
+                                <span>{{ match.team2 }}</span>
+                                <span>{{ match.team2_score }}</span>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <!-- Semi-finals -->
+                <div class="semi-finals">
+                    {% for match in knockout_matches %}
+                        {% if match.stage == 'Semi-final' %}
+                            <div class="match">
+                                <span>{{ match.team1 }}</span>
+                                <span>{{ match.team1_score }}</span>
+                                <span>{{ match.team2 }}</span>
+                                <span>{{ match.team2_score }}</span>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <!-- Final -->
+                <div class="final">
+                    {% for match in knockout_matches %}
+                        {% if match.stage == 'Final' %}
+                            <div class="match">
+                                <span>{{ match.team1 }}</span>
+                                <span>{{ match.team1_score }}</span>
+                                <span>{{ match.team2 }}</span>
+                                <span>{{ match.team2_score }}</span>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>

@@ -108,3 +108,38 @@ tr.unqualified {
     width: 2px;
     background-color: #ddd;
 }
+
+.knockout-stage {
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.knockout-stage-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.round-of-16, .quarter-finals, .semi-finals, .final {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.match {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 5px 0;
+}
+
+.match span {
+    padding: 5px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    width: 22%;
+    text-align: center;
+    font-size: 0.8em;
+}
