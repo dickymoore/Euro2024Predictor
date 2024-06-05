@@ -1,9 +1,9 @@
 import pandas as pd
 from datetime import datetime, timedelta
 
-def transform_data(data, teams, look_back_days):
+def transform_data(data, teams, look_back_months):
     current_date = datetime.now()
-    cutoff_date = current_date - timedelta(days=look_back_days)
+    cutoff_date = current_date - timedelta(days=look_back_months)
     
     # Filter by date
     data['date'] = pd.to_datetime(data['date'])
