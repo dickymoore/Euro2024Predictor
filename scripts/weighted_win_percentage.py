@@ -119,7 +119,7 @@ def main():
     awayTeams = dataAll["away_team"].unique().tolist()
     allTeams = list(set(homeTeams + awayTeams))
     
-    euroTeams = ['Albania', 'Austria', 'Belgium', 'Croatia', 'Czech Republic', 'Denmark', 'England', 'France', 'Georgia', 'Germany', 'Hungary', 'Italy', 'Netherlands', 'Poland', 'Portugal', 'Romania', 'Scotland', 'Serbia', 'Slovakia', 'Slovenia', 'Spain', 'Switzerland', 'Turkey', 'Ukraine']
+    euroTeams = ['Albania', 'Austria', 'Belgium', 'Croatia', 'Czechia', 'Denmark', 'England', 'France', 'Georgia', 'Germany', 'Hungary', 'Italy', 'Netherlands', 'Poland', 'Portugal', 'Romania', 'Scotland', 'Serbia', 'Slovakia', 'Slovenia', 'Spain', 'Switzerland', 'Turkey', 'Ukraine']
     euroCountriesGames = pd.read_csv('data/raw/results.csv')
     euroCountriesGames['date'] = pd.to_datetime(euroCountriesGames['date'])
     euroCountriesGames = euroCountriesGames[euroCountriesGames.date > startDate]

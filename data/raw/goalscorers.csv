@@ -13709,8 +13709,8 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 1993-02-28,Niger,Botswana,Botswana,Itumeleng Duiker,37,FALSE,FALSE
 1993-02-28,Niger,Botswana,Niger,Moussa Yahaya,89,FALSE,FALSE
 1993-02-28,Togo,Angola,Angola,Paulo António Alves,83,FALSE,FALSE
-1993-03-24,Cyprus,Czech Republic,Czech Republic,Ľubomír Moravčík,33,FALSE,FALSE
-1993-03-24,Cyprus,Czech Republic,Cyprus,Andreas Sotiriou,47,FALSE,FALSE
+1993-03-24,Cyprus,Czechia,Czechia,Ľubomír Moravčík,33,FALSE,FALSE
+1993-03-24,Cyprus,Czechia,Cyprus,Andreas Sotiriou,47,FALSE,FALSE
 1993-03-24,Italy,Malta,Italy,Dino Baggio,19,FALSE,FALSE
 1993-03-24,Italy,Malta,Italy,Giuseppe Signori,38,FALSE,FALSE
 1993-03-24,Italy,Malta,Italy,Pietro Vierchowod,48,FALSE,FALSE
@@ -13873,8 +13873,8 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 1993-04-26,Vietnam,Qatar,Qatar,Rayed Al-Boloushi,65,FALSE,FALSE
 1993-04-28,Bulgaria,Finland,Bulgaria,Hristo Stoichkov,15,FALSE,TRUE
 1993-04-28,Bulgaria,Finland,Bulgaria,Zlatko Yankov,43,FALSE,FALSE
-1993-04-28,Czech Republic,Wales,Wales,Mark Hughes,31,FALSE,FALSE
-1993-04-28,Czech Republic,Wales,Czech Republic,Radoslav Látal,41,FALSE,FALSE
+1993-04-28,Czechia,Wales,Wales,Mark Hughes,31,FALSE,FALSE
+1993-04-28,Czechia,Wales,Czechia,Radoslav Látal,41,FALSE,FALSE
 1993-04-28,England,Netherlands,England,John Barnes,2,FALSE,FALSE
 1993-04-28,England,Netherlands,England,David Platt,23,FALSE,FALSE
 1993-04-28,England,Netherlands,Netherlands,Dennis Bergkamp,34,FALSE,FALSE
@@ -14126,13 +14126,13 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 1993-05-30,Jordan,Pakistan,Jordan,Mohammad Muharam,89,FALSE,FALSE
 1993-05-30,Jordan,Pakistan,Jordan,Hisham Abdul-Munam,90,FALSE,FALSE
 1993-05-30,New Zealand,Australia,Australia,Graham Arnold,55,FALSE,FALSE
-1993-06-02,Czech Republic,Romania,Czech Republic,Petr Vrabec,13,FALSE,FALSE
-1993-06-02,Czech Republic,Romania,Romania,Florin Răducioiu,26,FALSE,FALSE
-1993-06-02,Czech Republic,Romania,Czech Republic,Radoslav Látal,37,FALSE,FALSE
-1993-06-02,Czech Republic,Romania,Romania,Florin Răducioiu,55,FALSE,FALSE
-1993-06-02,Czech Republic,Romania,Czech Republic,Peter Dubovský,58,FALSE,FALSE
-1993-06-02,Czech Republic,Romania,Czech Republic,Peter Dubovský,84,FALSE,FALSE
-1993-06-02,Czech Republic,Romania,Czech Republic,Peter Dubovský,90,FALSE,FALSE
+1993-06-02,Czechia,Romania,Czechia,Petr Vrabec,13,FALSE,FALSE
+1993-06-02,Czechia,Romania,Romania,Florin Răducioiu,26,FALSE,FALSE
+1993-06-02,Czechia,Romania,Czechia,Radoslav Látal,37,FALSE,FALSE
+1993-06-02,Czechia,Romania,Romania,Florin Răducioiu,55,FALSE,FALSE
+1993-06-02,Czechia,Romania,Czechia,Peter Dubovský,58,FALSE,FALSE
+1993-06-02,Czechia,Romania,Czechia,Peter Dubovský,84,FALSE,FALSE
+1993-06-02,Czechia,Romania,Czechia,Peter Dubovský,90,FALSE,FALSE
 1993-06-02,Denmark,Albania,Denmark,John Jensen,11,FALSE,FALSE
 1993-06-02,Denmark,Albania,Denmark,Frank Pingel,20,FALSE,FALSE
 1993-06-02,Denmark,Albania,Denmark,Peter Møller,28,FALSE,FALSE
@@ -14223,9 +14223,9 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 1993-06-16,Colombia,Mexico,Colombia,Adolfo Valencia,35,FALSE,FALSE
 1993-06-16,Colombia,Mexico,Mexico,Luís Roberto Alves,57,FALSE,FALSE
 1993-06-16,Colombia,Mexico,Colombia,Víctor Aristizábal,87,FALSE,FALSE
-1993-06-16,Faroe Islands,Czech Republic,Czech Republic,Ivan Hašek,3,FALSE,FALSE
-1993-06-16,Faroe Islands,Czech Republic,Czech Republic,Marek Poštulka,38,FALSE,FALSE
-1993-06-16,Faroe Islands,Czech Republic,Czech Republic,Marek Poštulka,44,FALSE,FALSE
+1993-06-16,Faroe Islands,Czechia,Czechia,Ivan Hašek,3,FALSE,FALSE
+1993-06-16,Faroe Islands,Czechia,Czechia,Marek Poštulka,38,FALSE,FALSE
+1993-06-16,Faroe Islands,Czechia,Czechia,Marek Poštulka,44,FALSE,FALSE
 1993-06-16,Iceland,Hungary,Iceland,Eyjólfur Sverrisson,13,FALSE,FALSE
 1993-06-16,Iceland,Hungary,Iceland,Arnór Guðjohnsen,77,FALSE,FALSE
 1993-06-16,Iraq,Yemen,Iraq,Naeem Saddam,46,FALSE,FALSE
@@ -14548,10 +14548,10 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 1993-09-08,Republic of Ireland,Lithuania,Republic of Ireland,Alan Kernaghan,25,FALSE,FALSE
 1993-09-08,Scotland,Switzerland,Scotland,John Collins,50,FALSE,FALSE
 1993-09-08,Scotland,Switzerland,Switzerland,Georges Bregy,70,FALSE,TRUE
-1993-09-08,Wales,Czech Republic,Czech Republic,Pavel Kuka,16,FALSE,FALSE
-1993-09-08,Wales,Czech Republic,Wales,Ryan Giggs,21,FALSE,FALSE
-1993-09-08,Wales,Czech Republic,Wales,Ian Rush,35,FALSE,FALSE
-1993-09-08,Wales,Czech Republic,Czech Republic,Peter Dubovský,67,FALSE,FALSE
+1993-09-08,Wales,Czechia,Czechia,Pavel Kuka,16,FALSE,FALSE
+1993-09-08,Wales,Czechia,Wales,Ryan Giggs,21,FALSE,FALSE
+1993-09-08,Wales,Czechia,Wales,Ian Rush,35,FALSE,FALSE
+1993-09-08,Wales,Czechia,Czechia,Peter Dubovský,67,FALSE,FALSE
 1993-09-12,Uruguay,Bolivia,Uruguay,Enzo Francescoli,3,FALSE,TRUE
 1993-09-12,Uruguay,Bolivia,Bolivia,Luis Ramallo,23,FALSE,FALSE
 1993-09-12,Uruguay,Bolivia,Uruguay,Daniel Fonseca,45,FALSE,FALSE
@@ -14667,9 +14667,9 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 1993-10-25,Iran,North Korea,Iran,Ali Daei,49,FALSE,FALSE
 1993-10-25,Iran,North Korea,Iran,Ali Daei,66,FALSE,FALSE
 1993-10-25,Japan,South Korea,Japan,Kazuyoshi Miura,61,FALSE,FALSE
-1993-10-27,Czech Republic,Cyprus,Czech Republic,Peter Dubovský,11,FALSE,FALSE
-1993-10-27,Czech Republic,Cyprus,Czech Republic,Pavel Hapal,23,FALSE,FALSE
-1993-10-27,Czech Republic,Cyprus,Czech Republic,Tomáš Skuhravý,77,FALSE,FALSE
+1993-10-27,Czechia,Cyprus,Czechia,Peter Dubovský,11,FALSE,FALSE
+1993-10-27,Czechia,Cyprus,Czechia,Pavel Hapal,23,FALSE,FALSE
+1993-10-27,Czechia,Cyprus,Czechia,Tomáš Skuhravý,77,FALSE,FALSE
 1993-10-27,Hungary,Luxembourg,Hungary,Lajos Détári,20,FALSE,FALSE
 1993-10-27,Israel,Austria,Israel,Ronny Rosenthal,3,FALSE,FALSE
 1993-10-27,Israel,Austria,Austria,Hannes Reinmayr,15,FALSE,FALSE
@@ -14935,13 +14935,13 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 1994-09-04,Israel,Poland,Israel,Ronen Harazi,44,FALSE,FALSE
 1994-09-04,Israel,Poland,Israel,Ronen Harazi,59,FALSE,FALSE
 1994-09-04,Israel,Poland,Poland,Roman Kosecki,80,FALSE,FALSE
-1994-09-06,Czech Republic,Malta,Czech Republic,Daniel Šmejkal,5,FALSE,TRUE
-1994-09-06,Czech Republic,Malta,Czech Republic,Luboš Kubík,32,FALSE,FALSE
-1994-09-06,Czech Republic,Malta,Czech Republic,Horst Siegl,34,FALSE,FALSE
-1994-09-06,Czech Republic,Malta,Czech Republic,Horst Siegl,60,FALSE,FALSE
-1994-09-06,Czech Republic,Malta,Malta,Kristian Laferla,63,FALSE,FALSE
-1994-09-06,Czech Republic,Malta,Czech Republic,Horst Siegl,77,FALSE,FALSE
-1994-09-06,Czech Republic,Malta,Czech Republic,Patrik Berger,86,FALSE,FALSE
+1994-09-06,Czechia,Malta,Czechia,Daniel Šmejkal,5,FALSE,TRUE
+1994-09-06,Czechia,Malta,Czechia,Luboš Kubík,32,FALSE,FALSE
+1994-09-06,Czechia,Malta,Czechia,Horst Siegl,34,FALSE,FALSE
+1994-09-06,Czechia,Malta,Czechia,Horst Siegl,60,FALSE,FALSE
+1994-09-06,Czechia,Malta,Malta,Kristian Laferla,63,FALSE,FALSE
+1994-09-06,Czechia,Malta,Czechia,Horst Siegl,77,FALSE,FALSE
+1994-09-06,Czechia,Malta,Czechia,Patrik Berger,86,FALSE,FALSE
 1994-09-07,Belgium,Armenia,Belgium,Yervand Krbachyan,3,TRUE,FALSE
 1994-09-07,Belgium,Armenia,Belgium,Marc Degryse,73,FALSE,FALSE
 1994-09-07,Cyprus,Spain,Spain,Francisco Higuera,18,FALSE,FALSE
@@ -15195,12 +15195,12 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 1995-03-29,Bulgaria,Wales,Wales,Dean Saunders,83,FALSE,FALSE
 1995-03-29,Cyprus,Denmark,Denmark,Michael Schjønberg,2,FALSE,FALSE
 1995-03-29,Cyprus,Denmark,Cyprus,Marios Agathokleous,45,FALSE,FALSE
-1995-03-29,Czech Republic,Belarus,Czech Republic,Miroslav Kadlec,5,FALSE,FALSE
-1995-03-29,Czech Republic,Belarus,Czech Republic,Patrik Berger,17,FALSE,FALSE
-1995-03-29,Czech Republic,Belarus,Belarus,Syarhey Herasimets,45,FALSE,TRUE
-1995-03-29,Czech Republic,Belarus,Czech Republic,Patrik Berger,62,FALSE,FALSE
-1995-03-29,Czech Republic,Belarus,Czech Republic,Pavel Kuka,68,FALSE,FALSE
-1995-03-29,Czech Republic,Belarus,Belarus,Ihar Hurynovich,88,FALSE,FALSE
+1995-03-29,Czechia,Belarus,Czechia,Miroslav Kadlec,5,FALSE,FALSE
+1995-03-29,Czechia,Belarus,Czechia,Patrik Berger,17,FALSE,FALSE
+1995-03-29,Czechia,Belarus,Belarus,Syarhey Herasimets,45,FALSE,TRUE
+1995-03-29,Czechia,Belarus,Czechia,Patrik Berger,62,FALSE,FALSE
+1995-03-29,Czechia,Belarus,Czechia,Pavel Kuka,68,FALSE,FALSE
+1995-03-29,Czechia,Belarus,Belarus,Ihar Hurynovich,88,FALSE,FALSE
 1995-03-29,Georgia,Germany,Germany,Jürgen Klinsmann,24,FALSE,FALSE
 1995-03-29,Georgia,Germany,Germany,Jürgen Klinsmann,45,FALSE,FALSE
 1995-03-29,Hungary,Switzerland,Hungary,József Kiprich,50,FALSE,FALSE
@@ -15262,10 +15262,10 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 1995-04-26,Belgium,Cyprus,Belgium,Gunther Schepens,47,FALSE,FALSE
 1995-04-26,Croatia,Slovenia,Croatia,Robert Prosinečki,17,FALSE,FALSE
 1995-04-26,Croatia,Slovenia,Croatia,Davor Šuker,90,FALSE,FALSE
-1995-04-26,Czech Republic,Netherlands,Netherlands,Wim Jonk,7,FALSE,FALSE
-1995-04-26,Czech Republic,Netherlands,Czech Republic,Tomáš Skuhravý,49,FALSE,FALSE
-1995-04-26,Czech Republic,Netherlands,Czech Republic,Václav Němeček,57,FALSE,FALSE
-1995-04-26,Czech Republic,Netherlands,Czech Republic,Patrik Berger,62,FALSE,FALSE
+1995-04-26,Czechia,Netherlands,Netherlands,Wim Jonk,7,FALSE,FALSE
+1995-04-26,Czechia,Netherlands,Czechia,Tomáš Skuhravý,49,FALSE,FALSE
+1995-04-26,Czechia,Netherlands,Czechia,Václav Němeček,57,FALSE,FALSE
+1995-04-26,Czechia,Netherlands,Czechia,Patrik Berger,62,FALSE,FALSE
 1995-04-26,Denmark,North Macedonia,Denmark,Peter Nielsen,70,FALSE,FALSE
 1995-04-26,Estonia,Ukraine,Ukraine,Tymerlan Huseynov,17,FALSE,FALSE
 1995-04-26,Faroe Islands,Finland,Finland,Ari Hjelm,55,FALSE,FALSE
@@ -15343,7 +15343,7 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 1995-06-07,Lithuania,Slovenia,Lithuania,Ramūnas Stonkus,47,FALSE,FALSE
 1995-06-07,Lithuania,Slovenia,Lithuania,Arūnas Šuika,72,FALSE,FALSE
 1995-06-07,Lithuania,Slovenia,Slovenia,Primož Gliha,82,FALSE,FALSE
-1995-06-07,Luxembourg,Czech Republic,Luxembourg,Guy Hellers,89,FALSE,FALSE
+1995-06-07,Luxembourg,Czechia,Luxembourg,Guy Hellers,89,FALSE,FALSE
 1995-06-07,Moldova,Albania,Albania,Sokol Kushta,8,FALSE,FALSE
 1995-06-07,Moldova,Albania,Moldova,Alexandru Curtianu,10,FALSE,FALSE
 1995-06-07,Moldova,Albania,Moldova,Serghei Cleșcenco,15,FALSE,FALSE
@@ -15486,8 +15486,8 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 1995-08-16,Latvia,Austria,Austria,Toni Polster,68,FALSE,FALSE
 1995-08-16,Latvia,Austria,Austria,Dieter Ramusch,78,FALSE,FALSE
 1995-08-16,Latvia,Austria,Latvia,Armands Zeiberliņš,88,FALSE,FALSE
-1995-08-16,Norway,Czech Republic,Norway,Henning Berg,27,FALSE,FALSE
-1995-08-16,Norway,Czech Republic,Czech Republic,Jan Suchopárek,85,FALSE,FALSE
+1995-08-16,Norway,Czechia,Norway,Henning Berg,27,FALSE,FALSE
+1995-08-16,Norway,Czechia,Czechia,Jan Suchopárek,85,FALSE,FALSE
 1995-08-16,Scotland,Greece,Scotland,Ally McCoist,72,FALSE,FALSE
 1995-09-03,Croatia,Estonia,Croatia,Mladen Mladenović,7,FALSE,FALSE
 1995-09-03,Croatia,Estonia,Estonia,Martin Reim,17,FALSE,FALSE
@@ -15509,8 +15509,8 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 1995-09-06,Belgium,Denmark,Denmark,Mikkel Beck,21,FALSE,FALSE
 1995-09-06,Belgium,Denmark,Belgium,Georges Grün,26,FALSE,FALSE
 1995-09-06,Belgium,Denmark,Denmark,Kim Vilfort,85,FALSE,FALSE
-1995-09-06,Czech Republic,Norway,Czech Republic,Tomáš Skuhravý,6,FALSE,TRUE
-1995-09-06,Czech Republic,Norway,Czech Republic,Radek Drulák,87,FALSE,FALSE
+1995-09-06,Czechia,Norway,Czechia,Tomáš Skuhravý,6,FALSE,TRUE
+1995-09-06,Czechia,Norway,Czechia,Radek Drulák,87,FALSE,FALSE
 1995-09-06,Faroe Islands,Russia,Russia,Aleksandr Mostovoi,9,FALSE,TRUE
 1995-09-06,Faroe Islands,Russia,Faroe Islands,Henning Jarnskor,12,FALSE,FALSE
 1995-09-06,Faroe Islands,Russia,Faroe Islands,Todi Jónsson,53,FALSE,FALSE
@@ -15561,8 +15561,8 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 1995-09-06,Wales,Moldova,Wales,Gary Speed,55,FALSE,FALSE
 1995-10-07,Armenia,Belgium,Belgium,Luc Nilis,28,FALSE,FALSE
 1995-10-07,Armenia,Belgium,Belgium,Luc Nilis,39,FALSE,FALSE
-1995-10-07,Belarus,Czech Republic,Czech Republic,Martin Frýdek,25,FALSE,FALSE
-1995-10-07,Belarus,Czech Republic,Czech Republic,Patrik Berger,84,FALSE,FALSE
+1995-10-07,Belarus,Czechia,Czechia,Martin Frýdek,25,FALSE,FALSE
+1995-10-07,Belarus,Czechia,Czechia,Patrik Berger,84,FALSE,FALSE
 1995-10-07,Bulgaria,Albania,Bulgaria,Yordan Letchkov,15,FALSE,FALSE
 1995-10-07,Bulgaria,Albania,Bulgaria,Emil Kostadinov,80,FALSE,FALSE
 1995-10-07,Bulgaria,Albania,Bulgaria,Emil Kostadinov,82,FALSE,FALSE
@@ -15643,9 +15643,9 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 1995-11-15,Australia,New Zealand,Australia,Joe Spiteri,51,FALSE,FALSE
 1995-11-15,Cyprus,Belgium,Cyprus,Marios Agathokleous,18,FALSE,FALSE
 1995-11-15,Cyprus,Belgium,Belgium,Gilles De Bilde,66,FALSE,FALSE
-1995-11-15,Czech Republic,Luxembourg,Czech Republic,Radek Drulák,37,FALSE,FALSE
-1995-11-15,Czech Republic,Luxembourg,Czech Republic,Radek Drulák,46,FALSE,FALSE
-1995-11-15,Czech Republic,Luxembourg,Czech Republic,Patrik Berger,57,FALSE,FALSE
+1995-11-15,Czechia,Luxembourg,Czechia,Radek Drulák,37,FALSE,FALSE
+1995-11-15,Czechia,Luxembourg,Czechia,Radek Drulák,46,FALSE,FALSE
+1995-11-15,Czechia,Luxembourg,Czechia,Patrik Berger,57,FALSE,FALSE
 1995-11-15,Denmark,Armenia,Denmark,Michael Schjønberg,19,FALSE,FALSE
 1995-11-15,Denmark,Armenia,Denmark,Mikkel Beck,33,FALSE,FALSE
 1995-11-15,Denmark,Armenia,Armenia,Artur Petrosyan,46,FALSE,FALSE
@@ -16000,8 +16000,8 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 1996-06-08,England,Switzerland,Switzerland,Kubilay Türkyilmaz,83,FALSE,TRUE
 1996-06-09,Denmark,Portugal,Denmark,Brian Laudrup,22,FALSE,FALSE
 1996-06-09,Denmark,Portugal,Portugal,Ricardo Sá Pinto,53,FALSE,FALSE
-1996-06-09,Germany,Czech Republic,Germany,Christian Ziege,26,FALSE,FALSE
-1996-06-09,Germany,Czech Republic,Germany,Andreas Möller,32,FALSE,FALSE
+1996-06-09,Germany,Czechia,Germany,Christian Ziege,26,FALSE,FALSE
+1996-06-09,Germany,Czechia,Germany,Andreas Möller,32,FALSE,FALSE
 1996-06-09,Panama,Belize,Panama,Julio Dely Valdés,14,FALSE,FALSE
 1996-06-09,Panama,Belize,Panama,Julio Dely Valdés,46,FALSE,FALSE
 1996-06-09,Panama,Belize,Belize,Denmark Casey,60,FALSE,FALSE
@@ -16018,9 +16018,9 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 1996-06-13,Switzerland,Netherlands,Netherlands,Jordi Cruyff,66,FALSE,FALSE
 1996-06-13,Switzerland,Netherlands,Netherlands,Dennis Bergkamp,79,FALSE,FALSE
 1996-06-14,Algeria,Kenya,Algeria,Abdelhafid Tasfaout,81,FALSE,FALSE
-1996-06-14,Czech Republic,Italy,Czech Republic,Pavel Nedvěd,5,FALSE,FALSE
-1996-06-14,Czech Republic,Italy,Italy,Enrico Chiesa,18,FALSE,FALSE
-1996-06-14,Czech Republic,Italy,Czech Republic,Radek Bejbl,35,FALSE,FALSE
+1996-06-14,Czechia,Italy,Czechia,Pavel Nedvěd,5,FALSE,FALSE
+1996-06-14,Czechia,Italy,Italy,Enrico Chiesa,18,FALSE,FALSE
+1996-06-14,Czechia,Italy,Czechia,Radek Bejbl,35,FALSE,FALSE
 1996-06-14,Portugal,Turkey,Portugal,Fernando Couto,66,FALSE,FALSE
 1996-06-15,Dominican Republic,Trinidad and Tobago,Trinidad and Tobago,Russell Latapy,37,FALSE,FALSE
 1996-06-15,Dominican Republic,Trinidad and Tobago,Trinidad and Tobago,Pedro Aquino,39,FALSE,FALSE
@@ -16089,12 +16089,12 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 1996-06-19,Croatia,Portugal,Portugal,Luís Figo,4,FALSE,FALSE
 1996-06-19,Croatia,Portugal,Portugal,João Vieira Pinto,33,FALSE,FALSE
 1996-06-19,Croatia,Portugal,Portugal,Domingos Paciência,82,FALSE,FALSE
-1996-06-19,Russia,Czech Republic,Czech Republic,Jan Suchopárek,5,FALSE,FALSE
-1996-06-19,Russia,Czech Republic,Czech Republic,Pavel Kuka,19,FALSE,FALSE
-1996-06-19,Russia,Czech Republic,Russia,Aleksandr Mostovoi,49,FALSE,FALSE
-1996-06-19,Russia,Czech Republic,Russia,Omari Tetradze,54,FALSE,FALSE
-1996-06-19,Russia,Czech Republic,Russia,Vladimir Beschastnykh,85,FALSE,FALSE
-1996-06-19,Russia,Czech Republic,Czech Republic,Vladimír Šmicer,88,FALSE,FALSE
+1996-06-19,Russia,Czechia,Czechia,Jan Suchopárek,5,FALSE,FALSE
+1996-06-19,Russia,Czechia,Czechia,Pavel Kuka,19,FALSE,FALSE
+1996-06-19,Russia,Czechia,Russia,Aleksandr Mostovoi,49,FALSE,FALSE
+1996-06-19,Russia,Czechia,Russia,Omari Tetradze,54,FALSE,FALSE
+1996-06-19,Russia,Czechia,Russia,Vladimir Beschastnykh,85,FALSE,FALSE
+1996-06-19,Russia,Czechia,Czechia,Vladimír Šmicer,88,FALSE,FALSE
 1996-06-19,Turkey,Denmark,Denmark,Brian Laudrup,50,FALSE,FALSE
 1996-06-19,Turkey,Denmark,Denmark,Allan Nielsen,69,FALSE,FALSE
 1996-06-19,Turkey,Denmark,Denmark,Brian Laudrup,84,FALSE,FALSE
@@ -16106,7 +16106,7 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 1996-06-23,Cuba,Haiti,Cuba,Lázaro Darcourt,71,FALSE,FALSE
 1996-06-23,Cuba,Haiti,Cuba,Lester Moré,81,FALSE,FALSE
 1996-06-23,Cuba,Haiti,Haiti,Rosemond Pierre,84,FALSE,FALSE
-1996-06-23,Czech Republic,Portugal,Czech Republic,Karel Poborský,53,FALSE,FALSE
+1996-06-23,Czechia,Portugal,Czechia,Karel Poborský,53,FALSE,FALSE
 1996-06-23,Germany,Croatia,Germany,Jürgen Klinsmann,20,FALSE,TRUE
 1996-06-23,Germany,Croatia,Croatia,Davor Šuker,51,FALSE,FALSE
 1996-06-23,Germany,Croatia,Germany,Matthias Sammer,59,FALSE,FALSE
@@ -16128,9 +16128,9 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 1996-06-23,Trinidad and Tobago,Dominican Republic,Trinidad and Tobago,Russell Latapy,89,FALSE,FALSE
 1996-06-26,England,Germany,England,Alan Shearer,3,FALSE,FALSE
 1996-06-26,England,Germany,Germany,Stefan Kuntz,16,FALSE,FALSE
-1996-06-30,Czech Republic,Germany,Czech Republic,Patrik Berger,59,FALSE,TRUE
-1996-06-30,Czech Republic,Germany,Germany,Oliver Bierhoff,73,FALSE,FALSE
-1996-06-30,Czech Republic,Germany,Germany,Oliver Bierhoff,95,FALSE,FALSE
+1996-06-30,Czechia,Germany,Czechia,Patrik Berger,59,FALSE,TRUE
+1996-06-30,Czechia,Germany,Germany,Oliver Bierhoff,73,FALSE,FALSE
+1996-06-30,Czechia,Germany,Germany,Oliver Bierhoff,95,FALSE,FALSE
 1996-06-30,Haiti,Cuba,Haiti,Isaac Chauvet,21,FALSE,FALSE
 1996-06-30,Haiti,Cuba,Cuba,Armando Cruz,79,FALSE,TRUE
 1996-06-30,Jamaica,Barbados,Jamaica,Theodore Whitmore,23,FALSE,FALSE
@@ -16234,12 +16234,12 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 1996-09-15,Saint Vincent and the Grenadines,Mexico,Mexico,Damián Ariel Álvarez,89,FALSE,FALSE
 1996-09-16,Papua New Guinea,Solomon Islands,Papua New Guinea,Richard Daniel,15,FALSE,FALSE
 1996-09-16,Papua New Guinea,Solomon Islands,Solomon Islands,Eddie Rukumana,71,FALSE,FALSE
-1996-09-18,Czech Republic,Malta,Czech Republic,Patrik Berger,11,FALSE,FALSE
-1996-09-18,Czech Republic,Malta,Czech Republic,Pavel Nedvěd,29,FALSE,FALSE
-1996-09-18,Czech Republic,Malta,Czech Republic,Patrik Berger,63,FALSE,TRUE
-1996-09-18,Czech Republic,Malta,Czech Republic,Luboš Kubík,77,FALSE,FALSE
-1996-09-18,Czech Republic,Malta,Czech Republic,Vladimír Šmicer,83,FALSE,FALSE
-1996-09-18,Czech Republic,Malta,Czech Republic,Martin Frýdek,86,FALSE,FALSE
+1996-09-18,Czechia,Malta,Czechia,Patrik Berger,11,FALSE,FALSE
+1996-09-18,Czechia,Malta,Czechia,Pavel Nedvěd,29,FALSE,FALSE
+1996-09-18,Czechia,Malta,Czechia,Patrik Berger,63,FALSE,TRUE
+1996-09-18,Czechia,Malta,Czechia,Luboš Kubík,77,FALSE,FALSE
+1996-09-18,Czechia,Malta,Czechia,Vladimír Šmicer,83,FALSE,FALSE
+1996-09-18,Czechia,Malta,Czechia,Martin Frýdek,86,FALSE,FALSE
 1996-09-18,Solomon Islands,Vanuatu,Solomon Islands,Noel Berry,16,FALSE,FALSE
 1996-09-18,Solomon Islands,Vanuatu,Vanuatu,Iau Tuan Naukoot,37,FALSE,FALSE
 1996-09-20,Papua New Guinea,Vanuatu,Vanuatu,Reginal Garo,27,FALSE,FALSE
@@ -16508,7 +16508,7 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 1996-11-10,Poland,Moldova,Poland,Krzysztof Warzycha,77,FALSE,TRUE
 1996-11-10,Poland,Moldova,Moldova,Serghei Cleșcenco,83,FALSE,TRUE
 1996-11-10,Scotland,Sweden,Scotland,John McGinlay,7,FALSE,FALSE
-1996-11-10,Serbia,Czech Republic,Serbia,Predrag Mijatović,18,FALSE,FALSE
+1996-11-10,Serbia,Czechia,Serbia,Predrag Mijatović,18,FALSE,FALSE
 1996-11-10,Slovenia,Bosnia and Herzegovina,Bosnia and Herzegovina,Elvir Bolić,5,FALSE,FALSE
 1996-11-10,Slovenia,Bosnia and Herzegovina,Bosnia and Herzegovina,Meho Kodro,33,FALSE,FALSE
 1996-11-10,Slovenia,Bosnia and Herzegovina,Slovenia,Zlatko Zahovič,41,FALSE,TRUE
@@ -16869,9 +16869,9 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 1997-04-02,Croatia,Slovenia,Croatia,Zvonimir Boban,60,FALSE,FALSE
 1997-04-02,Croatia,Slovenia,Slovenia,Primož Gliha,65,FALSE,FALSE
 1997-04-02,Croatia,Slovenia,Slovenia,Primož Gliha,66,FALSE,FALSE
-1997-04-02,Czech Republic,Serbia,Serbia,Predrag Mijatović,28,FALSE,FALSE
-1997-04-02,Czech Republic,Serbia,Czech Republic,Radek Bejbl,75,FALSE,FALSE
-1997-04-02,Czech Republic,Serbia,Serbia,Savo Milošević,90,FALSE,FALSE
+1997-04-02,Czechia,Serbia,Serbia,Predrag Mijatović,28,FALSE,FALSE
+1997-04-02,Czechia,Serbia,Czechia,Radek Bejbl,75,FALSE,FALSE
+1997-04-02,Czechia,Serbia,Serbia,Savo Milošević,90,FALSE,FALSE
 1997-04-02,Lithuania,Romania,Romania,Viorel Moldovan,73,FALSE,FALSE
 1997-04-02,North Macedonia,Republic of Ireland,Republic of Ireland,Alan McLoughlin,8,FALSE,FALSE
 1997-04-02,North Macedonia,Republic of Ireland,North Macedonia,Mitko Stojkovski,28,FALSE,FALSE
@@ -17237,7 +17237,7 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 1997-06-08,South Africa,Zambia,South Africa,Helman Mkhalele,8,FALSE,FALSE
 1997-06-08,South Africa,Zambia,South Africa,Phil Masinga,17,FALSE,FALSE
 1997-06-08,South Africa,Zambia,South Africa,Mark Williams,54,FALSE,FALSE
-1997-06-08,Spain,Czech Republic,Spain,Fernando Hierro,41,FALSE,TRUE
+1997-06-08,Spain,Czechia,Spain,Fernando Hierro,41,FALSE,TRUE
 1997-06-08,Togo,Zimbabwe,Togo,Bachirou Salou,8,FALSE,FALSE
 1997-06-08,Togo,Zimbabwe,Togo,Bachirou Salou,21,FALSE,FALSE
 1997-06-08,Togo,Zimbabwe,Zimbabwe,Vitalis Takawira,65,FALSE,TRUE
@@ -17550,8 +17550,8 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 1997-08-20,Colombia,Bolivia,Colombia,Antony de Ávila,1,FALSE,FALSE
 1997-08-20,Colombia,Bolivia,Colombia,Carlos Valderrama,30,FALSE,TRUE
 1997-08-20,Colombia,Bolivia,Colombia,Faustino Asprilla,76,FALSE,FALSE
-1997-08-20,Czech Republic,Faroe Islands,Czech Republic,Pavel Kuka,15,FALSE,FALSE
-1997-08-20,Czech Republic,Faroe Islands,Czech Republic,Luboš Kozel,26,FALSE,FALSE
+1997-08-20,Czechia,Faroe Islands,Czechia,Pavel Kuka,15,FALSE,FALSE
+1997-08-20,Czechia,Faroe Islands,Czechia,Luboš Kozel,26,FALSE,FALSE
 1997-08-20,Ecuador,Paraguay,Paraguay,Richard Báez,5,FALSE,FALSE
 1997-08-20,Ecuador,Paraguay,Ecuador,Álex Aguinaga,53,FALSE,FALSE
 1997-08-20,Ecuador,Paraguay,Ecuador,Ariel Graziani,72,FALSE,FALSE
@@ -17597,9 +17597,9 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 1997-08-20,Venezuela,Peru,Peru,Manuel Marengo,14,FALSE,FALSE
 1997-08-20,Venezuela,Peru,Peru,Julio César de Andrade Moura,54,FALSE,FALSE
 1997-08-20,Venezuela,Peru,Peru,Flavio Maestri,81,FALSE,FALSE
-1997-08-24,Slovakia,Czech Republic,Czech Republic,Vladimír Šmicer,15,FALSE,FALSE
-1997-08-24,Slovakia,Czech Republic,Slovakia,Tibor Jančula,45,FALSE,FALSE
-1997-08-24,Slovakia,Czech Republic,Slovakia,Jozef Majoroš,55,FALSE,FALSE
+1997-08-24,Slovakia,Czechia,Czechia,Vladimír Šmicer,15,FALSE,FALSE
+1997-08-24,Slovakia,Czechia,Slovakia,Tibor Jančula,45,FALSE,FALSE
+1997-08-24,Slovakia,Czechia,Slovakia,Jozef Majoroš,55,FALSE,FALSE
 1997-08-24,Uzbekistan,Yemen,Uzbekistan,Igor Shkvyrin,8,FALSE,FALSE
 1997-08-24,Uzbekistan,Yemen,Yemen,Mohammed Zughair,30,FALSE,FALSE
 1997-08-24,Uzbekistan,Yemen,Uzbekistan,Oleg Shatskikh,55,FALSE,FALSE
@@ -17616,8 +17616,8 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 1997-09-06,Croatia,Bosnia and Herzegovina,Croatia,Silvio Marić,39,FALSE,FALSE
 1997-09-06,Croatia,Bosnia and Herzegovina,Bosnia and Herzegovina,Hasan Salihamidžić,55,FALSE,FALSE
 1997-09-06,Croatia,Bosnia and Herzegovina,Croatia,Zvonimir Boban,79,FALSE,FALSE
-1997-09-06,Faroe Islands,Czech Republic,Czech Republic,Vladimír Šmicer,16,FALSE,FALSE
-1997-09-06,Faroe Islands,Czech Republic,Czech Republic,Pavel Kuka,33,FALSE,FALSE
+1997-09-06,Faroe Islands,Czechia,Czechia,Vladimír Šmicer,16,FALSE,FALSE
+1997-09-06,Faroe Islands,Czechia,Czechia,Pavel Kuka,33,FALSE,FALSE
 1997-09-06,Germany,Portugal,Portugal,Pedro Barbosa,70,FALSE,FALSE
 1997-09-06,Germany,Portugal,Germany,Ulf Kirsten,80,FALSE,FALSE
 1997-09-06,Iceland,Republic of Ireland,Republic of Ireland,David Connolly,13,FALSE,FALSE
@@ -17749,7 +17749,7 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 1997-09-19,Qatar,Kuwait,Kuwait,Bashar Abdulaziz,88,FALSE,FALSE
 1997-09-20,Kazakhstan,Uzbekistan,Kazakhstan,Ruslan Baltiyev,84,FALSE,FALSE
 1997-09-20,Kazakhstan,Uzbekistan,Uzbekistan,Oleg Shatskikh,85,FALSE,FALSE
-1997-09-24,Malta,Czech Republic,Czech Republic,Radek Bejbl,32,FALSE,FALSE
+1997-09-24,Malta,Czechia,Czechia,Radek Bejbl,32,FALSE,FALSE
 1997-09-24,Moldova,Georgia,Georgia,Temur Ketsbaia,10,FALSE,FALSE
 1997-09-24,Slovakia,Spain,Spain,Kiko,47,FALSE,FALSE
 1997-09-24,Slovakia,Spain,Slovakia,Jozef Majoroš,75,FALSE,FALSE
@@ -17801,9 +17801,9 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 1997-10-11,Belgium,Wales,Wales,Ryan Giggs,66,FALSE,FALSE
 1997-10-11,Cyprus,Luxembourg,Cyprus,Nikodimos Papavasiliou,79,FALSE,FALSE
 1997-10-11,Cyprus,Luxembourg,Cyprus,Milenko Špoljarić,85,FALSE,FALSE
-1997-10-11,Czech Republic,Slovakia,Czech Republic,Vladimír Šmicer,54,FALSE,FALSE
-1997-10-11,Czech Republic,Slovakia,Czech Republic,Horst Siegl,70,FALSE,FALSE
-1997-10-11,Czech Republic,Slovakia,Czech Republic,Jiří Novotný,73,FALSE,FALSE
+1997-10-11,Czechia,Slovakia,Czechia,Vladimír Šmicer,54,FALSE,FALSE
+1997-10-11,Czechia,Slovakia,Czechia,Horst Siegl,70,FALSE,FALSE
+1997-10-11,Czechia,Slovakia,Czechia,Jiří Novotný,73,FALSE,FALSE
 1997-10-11,Finland,Hungary,Finland,Antti Sumiala,63,FALSE,FALSE
 1997-10-11,Finland,Hungary,Hungary,Teuvo Moilanen,90,TRUE,FALSE
 1997-10-11,Georgia,Poland,Georgia,Archil Arveladze,55,FALSE,FALSE
@@ -17996,10 +17996,10 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 1997-12-12,Saudi Arabia,Brazil,Brazil,César Sampaio,65,FALSE,FALSE
 1997-12-12,Saudi Arabia,Brazil,Brazil,Romário,73,FALSE,FALSE
 1997-12-12,Saudi Arabia,Brazil,Brazil,Romário,80,FALSE,FALSE
-1997-12-13,South Africa,Czech Republic,Czech Republic,Vladimír Šmicer,19,FALSE,FALSE
-1997-12-13,South Africa,Czech Republic,South Africa,Brendan Augustine,39,FALSE,FALSE
-1997-12-13,South Africa,Czech Republic,Czech Republic,Vladimír Šmicer,40,FALSE,FALSE
-1997-12-13,South Africa,Czech Republic,South Africa,Helman Mkhalele,86,FALSE,FALSE
+1997-12-13,South Africa,Czechia,Czechia,Vladimír Šmicer,19,FALSE,FALSE
+1997-12-13,South Africa,Czechia,South Africa,Brendan Augustine,39,FALSE,FALSE
+1997-12-13,South Africa,Czechia,Czechia,Vladimír Šmicer,40,FALSE,FALSE
+1997-12-13,South Africa,Czechia,South Africa,Helman Mkhalele,86,FALSE,FALSE
 1997-12-13,United Arab Emirates,Uruguay,Uruguay,Nicolás Olivera,45,FALSE,FALSE
 1997-12-13,United Arab Emirates,Uruguay,Uruguay,Antonio Pacheco D'Agosti,90,FALSE,FALSE
 1997-12-14,Saudi Arabia,Mexico,Mexico,Francisco Palencia,20,FALSE,FALSE
@@ -18007,9 +18007,9 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 1997-12-14,Saudi Arabia,Mexico,Mexico,Cuauhtémoc Blanco,68,FALSE,FALSE
 1997-12-14,Saudi Arabia,Mexico,Mexico,Braulio Luna,75,FALSE,FALSE
 1997-12-14,Saudi Arabia,Mexico,Mexico,Cuauhtémoc Blanco,76,FALSE,FALSE
-1997-12-15,Czech Republic,Uruguay,Uruguay,Nicolás Olivera,26,FALSE,FALSE
-1997-12-15,Czech Republic,Uruguay,Uruguay,Marcelo Zalayeta,88,FALSE,FALSE
-1997-12-15,Czech Republic,Uruguay,Czech Republic,Horst Siegl,89,FALSE,FALSE
+1997-12-15,Czechia,Uruguay,Uruguay,Nicolás Olivera,26,FALSE,FALSE
+1997-12-15,Czechia,Uruguay,Uruguay,Marcelo Zalayeta,88,FALSE,FALSE
+1997-12-15,Czechia,Uruguay,Czechia,Horst Siegl,89,FALSE,FALSE
 1997-12-15,United Arab Emirates,South Africa,United Arab Emirates,Hassan Mubarak,5,FALSE,FALSE
 1997-12-16,Brazil,Mexico,Brazil,Romário,41,FALSE,TRUE
 1997-12-16,Brazil,Mexico,Mexico,Cuauhtémoc Blanco,51,FALSE,FALSE
@@ -18017,13 +18017,13 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 1997-12-16,Brazil,Mexico,Brazil,Júnior Baiano,66,FALSE,FALSE
 1997-12-16,Brazil,Mexico,Mexico,Ramón Ramírez,90,FALSE,FALSE
 1997-12-16,Saudi Arabia,Australia,Saudi Arabia,Mohammed Al-Khilaiwi,40,FALSE,FALSE
-1997-12-17,United Arab Emirates,Czech Republic,Czech Republic,Mohamed Obaid Al-Zahiri,11,TRUE,FALSE
-1997-12-17,United Arab Emirates,Czech Republic,Czech Republic,Pavel Nedvěd,22,FALSE,FALSE
-1997-12-17,United Arab Emirates,Czech Republic,Czech Republic,Pavel Nedvěd,31,FALSE,FALSE
-1997-12-17,United Arab Emirates,Czech Republic,Czech Republic,Vladimír Šmicer,42,FALSE,FALSE
-1997-12-17,United Arab Emirates,Czech Republic,Czech Republic,Vladimír Šmicer,68,FALSE,FALSE
-1997-12-17,United Arab Emirates,Czech Republic,Czech Republic,Vladimír Šmicer,71,FALSE,FALSE
-1997-12-17,United Arab Emirates,Czech Republic,United Arab Emirates,Adnan Al Talyani,78,FALSE,FALSE
+1997-12-17,United Arab Emirates,Czechia,Czechia,Mohamed Obaid Al-Zahiri,11,TRUE,FALSE
+1997-12-17,United Arab Emirates,Czechia,Czechia,Pavel Nedvěd,22,FALSE,FALSE
+1997-12-17,United Arab Emirates,Czechia,Czechia,Pavel Nedvěd,31,FALSE,FALSE
+1997-12-17,United Arab Emirates,Czechia,Czechia,Vladimír Šmicer,42,FALSE,FALSE
+1997-12-17,United Arab Emirates,Czechia,Czechia,Vladimír Šmicer,68,FALSE,FALSE
+1997-12-17,United Arab Emirates,Czechia,Czechia,Vladimír Šmicer,71,FALSE,FALSE
+1997-12-17,United Arab Emirates,Czechia,United Arab Emirates,Adnan Al Talyani,78,FALSE,FALSE
 1997-12-17,Uruguay,South Africa,South Africa,Lucas Radebe,11,FALSE,FALSE
 1997-12-17,Uruguay,South Africa,Uruguay,Darío Silva,12,FALSE,FALSE
 1997-12-17,Uruguay,South Africa,Uruguay,Álvaro Recoba,42,FALSE,FALSE
@@ -18031,8 +18031,8 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 1997-12-17,Uruguay,South Africa,South Africa,Helman Mkhalele,69,FALSE,FALSE
 1997-12-17,Uruguay,South Africa,South Africa,Pollen Ndlanya,77,FALSE,FALSE
 1997-12-17,Uruguay,South Africa,Uruguay,Christian Callejas,90,FALSE,FALSE
-1997-12-19,Brazil,Czech Republic,Brazil,Romário,54,FALSE,FALSE
-1997-12-19,Brazil,Czech Republic,Brazil,Ronaldo,83,FALSE,FALSE
+1997-12-19,Brazil,Czechia,Brazil,Romário,54,FALSE,FALSE
+1997-12-19,Brazil,Czechia,Brazil,Ronaldo,83,FALSE,FALSE
 1997-12-19,Uruguay,Australia,Australia,Harry Kewell,92,FALSE,FALSE
 1997-12-21,Brazil,Australia,Brazil,Ronaldo,15,FALSE,FALSE
 1997-12-21,Brazil,Australia,Brazil,Ronaldo,27,FALSE,FALSE
@@ -18040,7 +18040,7 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 1997-12-21,Brazil,Australia,Brazil,Romário,53,FALSE,FALSE
 1997-12-21,Brazil,Australia,Brazil,Ronaldo,59,FALSE,FALSE
 1997-12-21,Brazil,Australia,Brazil,Romário,75,FALSE,TRUE
-1997-12-21,Czech Republic,Uruguay,Czech Republic,Edvard Lasota,63,FALSE,FALSE
+1997-12-21,Czechia,Uruguay,Czechia,Edvard Lasota,63,FALSE,FALSE
 1998-02-01,Honduras,Trinidad and Tobago,Trinidad and Tobago,Jerren Nixon,35,FALSE,FALSE
 1998-02-01,Honduras,Trinidad and Tobago,Trinidad and Tobago,Stern John,39,FALSE,FALSE
 1998-02-01,Honduras,Trinidad and Tobago,Honduras,Carlos Pavón,66,FALSE,FALSE
@@ -18409,7 +18409,7 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 1998-09-06,Bulgaria,Poland,Poland,Sylwester Czereszewski,19,FALSE,FALSE
 1998-09-06,Bulgaria,Poland,Poland,Sylwester Czereszewski,44,FALSE,FALSE
 1998-09-06,Bulgaria,Poland,Poland,Tomasz Iwan,48,FALSE,FALSE
-1998-09-06,Faroe Islands,Czech Republic,Czech Republic,Vladimír Šmicer,87,FALSE,FALSE
+1998-09-06,Faroe Islands,Czechia,Czechia,Vladimír Šmicer,87,FALSE,FALSE
 1998-09-06,Greece,Slovenia,Slovenia,Zlatko Zahovič,18,FALSE,FALSE
 1998-09-06,Greece,Slovenia,Greece,Nikos Machlas,55,FALSE,TRUE
 1998-09-06,Greece,Slovenia,Greece,Kostas Frantzeskos,58,FALSE,FALSE
@@ -18484,10 +18484,10 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 1998-10-10,Azerbaijan,Hungary,Hungary,Béla Illés,85,FALSE,TRUE
 1998-10-10,Azerbaijan,Hungary,Hungary,István Pisont,88,FALSE,FALSE
 1998-10-10,Azerbaijan,Hungary,Hungary,Miklós Fehér,90,FALSE,FALSE
-1998-10-10,Bosnia and Herzegovina,Czech Republic,Czech Republic,Miroslav Baranek,12,FALSE,FALSE
-1998-10-10,Bosnia and Herzegovina,Czech Republic,Czech Republic,Vladimír Šmicer,58,FALSE,FALSE
-1998-10-10,Bosnia and Herzegovina,Czech Republic,Bosnia and Herzegovina,Marko Topić,87,FALSE,FALSE
-1998-10-10,Bosnia and Herzegovina,Czech Republic,Czech Republic,Pavel Kuka,90,FALSE,FALSE
+1998-10-10,Bosnia and Herzegovina,Czechia,Czechia,Miroslav Baranek,12,FALSE,FALSE
+1998-10-10,Bosnia and Herzegovina,Czechia,Czechia,Vladimír Šmicer,58,FALSE,FALSE
+1998-10-10,Bosnia and Herzegovina,Czechia,Bosnia and Herzegovina,Marko Topić,87,FALSE,FALSE
+1998-10-10,Bosnia and Herzegovina,Czechia,Czechia,Pavel Kuka,90,FALSE,FALSE
 1998-10-10,Cyprus,Austria,Austria,Harald Cerny,55,FALSE,FALSE
 1998-10-10,Cyprus,Austria,Austria,Harald Cerny,61,FALSE,FALSE
 1998-10-10,Cyprus,Austria,Austria,Hannes Reinmayr,74,FALSE,FALSE
@@ -18536,11 +18536,11 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 1998-10-14,Croatia,North Macedonia,Croatia,Zvonimir Boban,45,FALSE,FALSE
 1998-10-14,Croatia,North Macedonia,North Macedonia,Dževdet Šainovski,55,FALSE,FALSE
 1998-10-14,Croatia,North Macedonia,Croatia,Zvonimir Boban,70,FALSE,FALSE
-1998-10-14,Czech Republic,Estonia,Czech Republic,Pavel Nedvěd,8,FALSE,FALSE
-1998-10-14,Czech Republic,Estonia,Czech Republic,Patrik Berger,20,FALSE,FALSE
-1998-10-14,Czech Republic,Estonia,Czech Republic,Patrik Berger,38,FALSE,FALSE
-1998-10-14,Czech Republic,Estonia,Czech Republic,Janek Meet,45,TRUE,FALSE
-1998-10-14,Czech Republic,Estonia,Estonia,Argo Arbeiter,90,FALSE,FALSE
+1998-10-14,Czechia,Estonia,Czechia,Pavel Nedvěd,8,FALSE,FALSE
+1998-10-14,Czechia,Estonia,Czechia,Patrik Berger,20,FALSE,FALSE
+1998-10-14,Czechia,Estonia,Czechia,Patrik Berger,38,FALSE,FALSE
+1998-10-14,Czechia,Estonia,Czechia,Janek Meet,45,TRUE,FALSE
+1998-10-14,Czechia,Estonia,Estonia,Argo Arbeiter,90,FALSE,FALSE
 1998-10-14,France,Andorra,France,Vincent Candela,54,FALSE,FALSE
 1998-10-14,France,Andorra,France,Youri Djorkaeff,59,FALSE,FALSE
 1998-10-14,Greece,Georgia,Greece,Nikos Machlas,12,FALSE,FALSE
@@ -18631,8 +18631,8 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 1999-03-27,Armenia,Russia,Russia,Valery Karpin,63,FALSE,TRUE
 1999-03-27,Armenia,Russia,Russia,Vladimir Beschastnykh,89,FALSE,FALSE
 1999-03-27,Belarus,Switzerland,Switzerland,Sébastien Fournier,72,FALSE,FALSE
-1999-03-27,Czech Republic,Lithuania,Czech Republic,Michal Horňák,10,FALSE,FALSE
-1999-03-27,Czech Republic,Lithuania,Czech Republic,Patrik Berger,74,FALSE,TRUE
+1999-03-27,Czechia,Lithuania,Czechia,Michal Horňák,10,FALSE,FALSE
+1999-03-27,Czechia,Lithuania,Czechia,Patrik Berger,74,FALSE,TRUE
 1999-03-27,Denmark,Italy,Italy,Filippo Inzaghi,1,FALSE,FALSE
 1999-03-27,Denmark,Italy,Denmark,Ebbe Sand,58,FALSE,FALSE
 1999-03-27,Denmark,Italy,Italy,Antonio Conte,70,FALSE,FALSE
@@ -18699,9 +18699,9 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 1999-03-31,San Marino,Spain,Spain,Raúl,59,FALSE,FALSE
 1999-03-31,San Marino,Spain,Spain,Raúl,66,FALSE,FALSE
 1999-03-31,San Marino,Spain,Spain,Joseba Etxeberria,72,FALSE,FALSE
-1999-03-31,Scotland,Czech Republic,Czech Republic,Matt Elliott,27,TRUE,FALSE
-1999-03-31,Scotland,Czech Republic,Czech Republic,Vladimír Šmicer,35,FALSE,FALSE
-1999-03-31,Scotland,Czech Republic,Scotland,Eoin Jess,68,FALSE,FALSE
+1999-03-31,Scotland,Czechia,Czechia,Matt Elliott,27,TRUE,FALSE
+1999-03-31,Scotland,Czechia,Czechia,Vladimír Šmicer,35,FALSE,FALSE
+1999-03-31,Scotland,Czechia,Scotland,Eoin Jess,68,FALSE,FALSE
 1999-03-31,Switzerland,Wales,Switzerland,Stéphane Chapuisat,4,FALSE,FALSE
 1999-03-31,Switzerland,Wales,Switzerland,Stéphane Chapuisat,70,FALSE,FALSE
 1999-03-31,Ukraine,Iceland,Ukraine,Vladyslav Vashchuk,59,FALSE,FALSE
@@ -18738,8 +18738,8 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 1999-06-05,Bosnia and Herzegovina,Lithuania,Bosnia and Herzegovina,Meho Kodro,26,FALSE,FALSE
 1999-06-05,Bosnia and Herzegovina,Lithuania,Bosnia and Herzegovina,Elvir Bolić,90,FALSE,FALSE
 1999-06-05,Denmark,Belarus,Denmark,Jan Heintze,23,FALSE,FALSE
-1999-06-05,Estonia,Czech Republic,Czech Republic,Patrik Berger,45,FALSE,FALSE
-1999-06-05,Estonia,Czech Republic,Czech Republic,Jan Koller,86,FALSE,FALSE
+1999-06-05,Estonia,Czechia,Czechia,Patrik Berger,45,FALSE,FALSE
+1999-06-05,Estonia,Czechia,Czechia,Jan Koller,86,FALSE,FALSE
 1999-06-05,Faroe Islands,Scotland,Scotland,Allan Johnston,38,FALSE,FALSE
 1999-06-05,Faroe Islands,Scotland,Faroe Islands,Hans Fróði Hansen,86,FALSE,FALSE
 1999-06-05,Finland,Turkey,Finland,Hannu Tihinen,10,FALSE,FALSE
@@ -18797,11 +18797,11 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 1999-06-09,Andorra,France,France,Frank Leboeuf,86,FALSE,TRUE
 1999-06-09,Bulgaria,England,England,Alan Shearer,15,FALSE,FALSE
 1999-06-09,Bulgaria,England,Bulgaria,Georgi Markov,18,FALSE,FALSE
-1999-06-09,Czech Republic,Scotland,Scotland,Paul Ritchie,30,FALSE,FALSE
-1999-06-09,Czech Republic,Scotland,Scotland,Allan Johnston,62,FALSE,FALSE
-1999-06-09,Czech Republic,Scotland,Czech Republic,Tomáš Řepka,65,FALSE,FALSE
-1999-06-09,Czech Republic,Scotland,Czech Republic,Pavel Kuka,75,FALSE,FALSE
-1999-06-09,Czech Republic,Scotland,Czech Republic,Jan Koller,87,FALSE,FALSE
+1999-06-09,Czechia,Scotland,Scotland,Paul Ritchie,30,FALSE,FALSE
+1999-06-09,Czechia,Scotland,Scotland,Allan Johnston,62,FALSE,FALSE
+1999-06-09,Czechia,Scotland,Czechia,Tomáš Řepka,65,FALSE,FALSE
+1999-06-09,Czechia,Scotland,Czechia,Pavel Kuka,75,FALSE,FALSE
+1999-06-09,Czechia,Scotland,Czechia,Jan Koller,87,FALSE,FALSE
 1999-06-09,Estonia,Lithuania,Estonia,Andres Oper,8,FALSE,FALSE
 1999-06-09,Estonia,Lithuania,Lithuania,Tomas Ramelis,52,FALSE,FALSE
 1999-06-09,Estonia,Lithuania,Lithuania,Darius Maciulevičius,56,FALSE,FALSE
@@ -19007,10 +19007,10 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 1999-09-04,Iceland,Andorra,Iceland,Þórður Guðjónsson,29,FALSE,FALSE
 1999-09-04,Iceland,Andorra,Iceland,Hermann Hreiðarsson,32,FALSE,FALSE
 1999-09-04,Iceland,Andorra,Iceland,Eiður Guðjohnsen,90,FALSE,FALSE
-1999-09-04,Lithuania,Czech Republic,Czech Republic,Pavel Nedvěd,60,FALSE,FALSE
-1999-09-04,Lithuania,Czech Republic,Czech Republic,Pavel Nedvěd,63,FALSE,FALSE
-1999-09-04,Lithuania,Czech Republic,Czech Republic,Jan Koller,69,FALSE,FALSE
-1999-09-04,Lithuania,Czech Republic,Czech Republic,Jan Koller,90,FALSE,FALSE
+1999-09-04,Lithuania,Czechia,Czechia,Pavel Nedvěd,60,FALSE,FALSE
+1999-09-04,Lithuania,Czechia,Czechia,Pavel Nedvěd,63,FALSE,FALSE
+1999-09-04,Lithuania,Czechia,Czechia,Jan Koller,69,FALSE,FALSE
+1999-09-04,Lithuania,Czechia,Czechia,Jan Koller,90,FALSE,FALSE
 1999-09-04,Northern Ireland,Turkey,Turkey,Arif Erdem,45,FALSE,FALSE
 1999-09-04,Northern Ireland,Turkey,Turkey,Arif Erdem,46,FALSE,FALSE
 1999-09-04,Northern Ireland,Turkey,Turkey,Arif Erdem,48,FALSE,FALSE
@@ -19044,9 +19044,9 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 1999-09-08,Armenia,France,France,Zinedine Zidane,67,FALSE,FALSE
 1999-09-08,Armenia,France,France,Lilian Laslandes,74,FALSE,FALSE
 1999-09-08,Armenia,France,Armenia,Armen Shahgeldyan,90,FALSE,TRUE
-1999-09-08,Czech Republic,Bosnia and Herzegovina,Czech Republic,Jan Koller,26,FALSE,FALSE
-1999-09-08,Czech Republic,Bosnia and Herzegovina,Czech Republic,Patrik Berger,59,FALSE,TRUE
-1999-09-08,Czech Republic,Bosnia and Herzegovina,Czech Republic,Karel Poborský,67,FALSE,FALSE
+1999-09-08,Czechia,Bosnia and Herzegovina,Czechia,Jan Koller,26,FALSE,FALSE
+1999-09-08,Czechia,Bosnia and Herzegovina,Czechia,Patrik Berger,59,FALSE,TRUE
+1999-09-08,Czechia,Bosnia and Herzegovina,Czechia,Karel Poborský,67,FALSE,FALSE
 1999-09-08,Faroe Islands,Lithuania,Lithuania,Tomas Ramelis,55,FALSE,FALSE
 1999-09-08,Georgia,Latvia,Georgia,Shota Arveladze,30,FALSE,FALSE
 1999-09-08,Georgia,Latvia,Georgia,Mikheil Kavelashvili,52,FALSE,FALSE
@@ -19126,8 +19126,8 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 1999-10-09,Croatia,Serbia,Serbia,Predrag Mijatović,26,FALSE,FALSE
 1999-10-09,Croatia,Serbia,Serbia,Dejan Stanković,31,FALSE,FALSE
 1999-10-09,Croatia,Serbia,Croatia,Mario Stanić,47,FALSE,FALSE
-1999-10-09,Czech Republic,Faroe Islands,Czech Republic,Jan Koller,11,FALSE,FALSE
-1999-10-09,Czech Republic,Faroe Islands,Czech Republic,Pavel Verbíř,84,FALSE,FALSE
+1999-10-09,Czechia,Faroe Islands,Czechia,Jan Koller,11,FALSE,FALSE
+1999-10-09,Czechia,Faroe Islands,Czechia,Pavel Verbíř,84,FALSE,FALSE
 1999-10-09,Estonia,Bosnia and Herzegovina,Estonia,Andres Oper,4,FALSE,FALSE
 1999-10-09,Estonia,Bosnia and Herzegovina,Bosnia and Herzegovina,Elvir Baljić,42,FALSE,FALSE
 1999-10-09,Estonia,Bosnia and Herzegovina,Bosnia and Herzegovina,Elvir Baljić,57,FALSE,FALSE
@@ -19670,7 +19670,7 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2000-06-11,France,Denmark,France,Laurent Blanc,16,FALSE,FALSE
 2000-06-11,France,Denmark,France,Thierry Henry,64,FALSE,FALSE
 2000-06-11,France,Denmark,France,Sylvain Wiltord,90,FALSE,FALSE
-2000-06-11,Netherlands,Czech Republic,Netherlands,Frank de Boer,89,FALSE,TRUE
+2000-06-11,Netherlands,Czechia,Netherlands,Frank de Boer,89,FALSE,TRUE
 2000-06-11,Turkey,Italy,Italy,Antonio Conte,52,FALSE,FALSE
 2000-06-11,Turkey,Italy,Turkey,Okan Buruk,62,FALSE,FALSE
 2000-06-11,Turkey,Italy,Italy,Filippo Inzaghi,70,FALSE,TRUE
@@ -19692,9 +19692,9 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2000-06-14,Belgium,Italy,Italy,Stefano Fiore,66,FALSE,FALSE
 2000-06-16,Algeria,Senegal,Senegal,Pape Seydou Diop,16,FALSE,FALSE
 2000-06-16,Algeria,Senegal,Algeria,Rafik Saïfi,27,FALSE,FALSE
-2000-06-16,Czech Republic,France,France,Thierry Henry,7,FALSE,FALSE
-2000-06-16,Czech Republic,France,Czech Republic,Karel Poborský,35,FALSE,TRUE
-2000-06-16,Czech Republic,France,France,Youri Djorkaeff,60,FALSE,FALSE
+2000-06-16,Czechia,France,France,Thierry Henry,7,FALSE,FALSE
+2000-06-16,Czechia,France,Czechia,Karel Poborský,35,FALSE,TRUE
+2000-06-16,Czechia,France,France,Youri Djorkaeff,60,FALSE,FALSE
 2000-06-16,Netherlands,Denmark,Netherlands,Patrick Kluivert,57,FALSE,FALSE
 2000-06-16,Netherlands,Denmark,Netherlands,Ronald de Boer,66,FALSE,FALSE
 2000-06-16,Netherlands,Denmark,Netherlands,Boudewijn Zenden,77,FALSE,FALSE
@@ -19768,8 +19768,8 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2000-06-20,Portugal,Germany,Portugal,Sérgio Conceição,35,FALSE,FALSE
 2000-06-20,Portugal,Germany,Portugal,Sérgio Conceição,54,FALSE,FALSE
 2000-06-20,Portugal,Germany,Portugal,Sérgio Conceição,71,FALSE,FALSE
-2000-06-21,Denmark,Czech Republic,Czech Republic,Vladimír Šmicer,64,FALSE,FALSE
-2000-06-21,Denmark,Czech Republic,Czech Republic,Vladimír Šmicer,67,FALSE,FALSE
+2000-06-21,Denmark,Czechia,Czechia,Vladimír Šmicer,64,FALSE,FALSE
+2000-06-21,Denmark,Czechia,Czechia,Vladimír Šmicer,67,FALSE,FALSE
 2000-06-21,Netherlands,France,France,Christophe Dugarry,8,FALSE,FALSE
 2000-06-21,Netherlands,France,Netherlands,Patrick Kluivert,14,FALSE,FALSE
 2000-06-21,Netherlands,France,France,David Trezeguet,31,FALSE,FALSE
@@ -19969,7 +19969,7 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2000-09-02,Bosnia and Herzegovina,Spain,Spain,Gerard López,39,FALSE,FALSE
 2000-09-02,Bosnia and Herzegovina,Spain,Bosnia and Herzegovina,Elvir Baljić,41,FALSE,FALSE
 2000-09-02,Bosnia and Herzegovina,Spain,Spain,Joseba Etxeberria,72,FALSE,FALSE
-2000-09-02,Bulgaria,Czech Republic,Czech Republic,Karel Poborský,73,FALSE,TRUE
+2000-09-02,Bulgaria,Czechia,Czechia,Karel Poborský,73,FALSE,TRUE
 2000-09-02,Chile,Colombia,Colombia,Jairo Castillo,66,FALSE,FALSE
 2000-09-02,Finland,Albania,Finland,Jari Litmanen,45,FALSE,FALSE
 2000-09-02,Finland,Albania,Albania,Edvin Murati,64,FALSE,FALSE
@@ -20069,10 +20069,10 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2000-10-07,Cyprus,Netherlands,Netherlands,Clarence Seedorf,78,FALSE,FALSE
 2000-10-07,Cyprus,Netherlands,Netherlands,Marc Overmars,82,FALSE,FALSE
 2000-10-07,Cyprus,Netherlands,Netherlands,Patrick Kluivert,90,FALSE,FALSE
-2000-10-07,Czech Republic,Iceland,Czech Republic,Jan Koller,17,FALSE,FALSE
-2000-10-07,Czech Republic,Iceland,Czech Republic,Jan Koller,40,FALSE,FALSE
-2000-10-07,Czech Republic,Iceland,Czech Republic,Pavel Nedvěd,44,FALSE,FALSE
-2000-10-07,Czech Republic,Iceland,Czech Republic,Pavel Nedvěd,90,FALSE,FALSE
+2000-10-07,Czechia,Iceland,Czechia,Jan Koller,17,FALSE,FALSE
+2000-10-07,Czechia,Iceland,Czechia,Jan Koller,40,FALSE,FALSE
+2000-10-07,Czechia,Iceland,Czechia,Pavel Nedvěd,44,FALSE,FALSE
+2000-10-07,Czechia,Iceland,Czechia,Pavel Nedvěd,90,FALSE,FALSE
 2000-10-07,England,Germany,Germany,Dietmar Hamann,14,FALSE,FALSE
 2000-10-07,Greece,Finland,Greece,Nikos Liberopoulos,59,FALSE,FALSE
 2000-10-07,Italy,Romania,Italy,Filippo Inzaghi,13,FALSE,FALSE
@@ -20553,7 +20553,7 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2001-03-24,Malta,Denmark,Denmark,Ebbe Sand,63,FALSE,FALSE
 2001-03-24,Malta,Denmark,Denmark,Claus Jensen,76,FALSE,FALSE
 2001-03-24,Malta,Denmark,Denmark,Ebbe Sand,79,FALSE,FALSE
-2001-03-24,Northern Ireland,Czech Republic,Czech Republic,Pavel Nedvěd,12,FALSE,FALSE
+2001-03-24,Northern Ireland,Czechia,Czechia,Pavel Nedvěd,12,FALSE,FALSE
 2001-03-24,Norway,Poland,Poland,Emmanuel Olisadebe,23,FALSE,FALSE
 2001-03-24,Norway,Poland,Poland,Emmanuel Olisadebe,30,FALSE,FALSE
 2001-03-24,Norway,Poland,Norway,John Carew,59,FALSE,FALSE
@@ -21240,9 +21240,9 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2001-06-02,Croatia,San Marino,Croatia,Boško Balaban,29,FALSE,FALSE
 2001-06-02,Croatia,San Marino,Croatia,Davor Šuker,54,FALSE,TRUE
 2001-06-02,Croatia,San Marino,Croatia,Davor Vugrinec,89,FALSE,FALSE
-2001-06-02,Denmark,Czech Republic,Denmark,Ebbe Sand,6,FALSE,FALSE
-2001-06-02,Denmark,Czech Republic,Czech Republic,Roman Týce,40,FALSE,FALSE
-2001-06-02,Denmark,Czech Republic,Denmark,Jon Dahl Tomasson,82,FALSE,FALSE
+2001-06-02,Denmark,Czechia,Denmark,Ebbe Sand,6,FALSE,FALSE
+2001-06-02,Denmark,Czechia,Czechia,Roman Týce,40,FALSE,FALSE
+2001-06-02,Denmark,Czechia,Denmark,Jon Dahl Tomasson,82,FALSE,FALSE
 2001-06-02,Estonia,Netherlands,Estonia,Andres Oper,65,FALSE,FALSE
 2001-06-02,Estonia,Netherlands,Netherlands,Raio Piiroja,68,TRUE,FALSE
 2001-06-02,Estonia,Netherlands,Estonia,Indrek Zelinski,76,FALSE,FALSE
@@ -21343,10 +21343,10 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2001-06-06,Cook Islands,Vanuatu,Vanuatu,Richard Iwai,66,FALSE,FALSE
 2001-06-06,Cook Islands,Vanuatu,Vanuatu,Pita David Maki,74,FALSE,FALSE
 2001-06-06,Cook Islands,Vanuatu,Vanuatu,Waren Waiwai,82,FALSE,FALSE
-2001-06-06,Czech Republic,Northern Ireland,Czech Republic,Pavel Kuka,40,FALSE,FALSE
-2001-06-06,Czech Republic,Northern Ireland,Northern Ireland,Philip Mulryne,45,FALSE,FALSE
-2001-06-06,Czech Republic,Northern Ireland,Czech Republic,Pavel Kuka,88,FALSE,FALSE
-2001-06-06,Czech Republic,Northern Ireland,Czech Republic,Milan Baroš,90,FALSE,FALSE
+2001-06-06,Czechia,Northern Ireland,Czechia,Pavel Kuka,40,FALSE,FALSE
+2001-06-06,Czechia,Northern Ireland,Northern Ireland,Philip Mulryne,45,FALSE,FALSE
+2001-06-06,Czechia,Northern Ireland,Czechia,Pavel Kuka,88,FALSE,FALSE
+2001-06-06,Czechia,Northern Ireland,Czechia,Milan Baroš,90,FALSE,FALSE
 2001-06-06,Denmark,Malta,Malta,George Mallia,8,FALSE,FALSE
 2001-06-06,Denmark,Malta,Denmark,Ebbe Sand,43,FALSE,FALSE
 2001-06-06,Denmark,Malta,Denmark,Ebbe Sand,83,FALSE,FALSE
@@ -21709,10 +21709,10 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2001-09-01,Germany,England,England,Michael Owen,48,FALSE,FALSE
 2001-09-01,Germany,England,England,Michael Owen,65,FALSE,FALSE
 2001-09-01,Germany,England,England,Emile Heskey,73,FALSE,FALSE
-2001-09-01,Iceland,Czech Republic,Iceland,Eyjólfur Sverrisson,45,FALSE,FALSE
-2001-09-01,Iceland,Czech Republic,Iceland,Andri Sigthórsson,66,FALSE,FALSE
-2001-09-01,Iceland,Czech Republic,Iceland,Eyjólfur Sverrisson,77,FALSE,FALSE
-2001-09-01,Iceland,Czech Republic,Czech Republic,Marek Jankulovski,88,FALSE,FALSE
+2001-09-01,Iceland,Czechia,Iceland,Eyjólfur Sverrisson,45,FALSE,FALSE
+2001-09-01,Iceland,Czechia,Iceland,Andri Sigthórsson,66,FALSE,FALSE
+2001-09-01,Iceland,Czechia,Iceland,Eyjólfur Sverrisson,77,FALSE,FALSE
+2001-09-01,Iceland,Czechia,Czechia,Marek Jankulovski,88,FALSE,FALSE
 2001-09-01,Malta,Bulgaria,Bulgaria,Dimitar Berbatov,74,FALSE,FALSE
 2001-09-01,Malta,Bulgaria,Bulgaria,Dimitar Berbatov,80,FALSE,FALSE
 2001-09-01,Moldova,Azerbaijan,Moldova,Serghei Cleșcenco,19,FALSE,FALSE
@@ -21771,11 +21771,11 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2001-09-05,Cyprus,Portugal,Portugal,Nuno Gomes,48,FALSE,FALSE
 2001-09-05,Cyprus,Portugal,Portugal,Pauleta,64,FALSE,FALSE
 2001-09-05,Cyprus,Portugal,Portugal,Sérgio Conceição,71,FALSE,FALSE
-2001-09-05,Czech Republic,Malta,Czech Republic,Marek Jankulovski,20,FALSE,FALSE
-2001-09-05,Czech Republic,Malta,Malta,David Carabott,22,FALSE,TRUE
-2001-09-05,Czech Republic,Malta,Czech Republic,Vratislav Lokvenc,37,FALSE,FALSE
-2001-09-05,Czech Republic,Malta,Malta,Gilbert Agius,55,FALSE,FALSE
-2001-09-05,Czech Republic,Malta,Czech Republic,Milan Baroš,68,FALSE,FALSE
+2001-09-05,Czechia,Malta,Czechia,Marek Jankulovski,20,FALSE,FALSE
+2001-09-05,Czechia,Malta,Malta,David Carabott,22,FALSE,TRUE
+2001-09-05,Czechia,Malta,Czechia,Vratislav Lokvenc,37,FALSE,FALSE
+2001-09-05,Czechia,Malta,Malta,Gilbert Agius,55,FALSE,FALSE
+2001-09-05,Czechia,Malta,Czechia,Milan Baroš,68,FALSE,FALSE
 2001-09-05,England,Albania,England,Michael Owen,43,FALSE,FALSE
 2001-09-05,England,Albania,England,Robbie Fowler,88,FALSE,FALSE
 2001-09-05,Faroe Islands,Russia,Russia,Vladimir Beschastnykh,19,FALSE,FALSE
@@ -21896,12 +21896,12 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2001-10-06,Bolivia,Ecuador,Ecuador,Ángel Fernández,89,FALSE,FALSE
 2001-10-06,Bolivia,Ecuador,Ecuador,Luis Gómez,90,FALSE,FALSE
 2001-10-06,Croatia,Belgium,Croatia,Alen Bokšić,75,FALSE,FALSE
-2001-10-06,Czech Republic,Bulgaria,Czech Republic,Tomáš Rosický,5,FALSE,FALSE
-2001-10-06,Czech Republic,Bulgaria,Czech Republic,Pavel Nedvěd,16,FALSE,FALSE
-2001-10-06,Czech Republic,Bulgaria,Czech Republic,Milan Baroš,27,FALSE,FALSE
-2001-10-06,Czech Republic,Bulgaria,Czech Republic,Vratislav Lokvenc,66,FALSE,FALSE
-2001-10-06,Czech Republic,Bulgaria,Czech Republic,Tomáš Rosický,69,FALSE,FALSE
-2001-10-06,Czech Republic,Bulgaria,Czech Republic,Pavel Nedvěd,76,FALSE,FALSE
+2001-10-06,Czechia,Bulgaria,Czechia,Tomáš Rosický,5,FALSE,FALSE
+2001-10-06,Czechia,Bulgaria,Czechia,Pavel Nedvěd,16,FALSE,FALSE
+2001-10-06,Czechia,Bulgaria,Czechia,Milan Baroš,27,FALSE,FALSE
+2001-10-06,Czechia,Bulgaria,Czechia,Vratislav Lokvenc,66,FALSE,FALSE
+2001-10-06,Czechia,Bulgaria,Czechia,Tomáš Rosický,69,FALSE,FALSE
+2001-10-06,Czechia,Bulgaria,Czechia,Pavel Nedvěd,76,FALSE,FALSE
 2001-10-06,Denmark,Iceland,Denmark,Dennis Rommedahl,12,FALSE,FALSE
 2001-10-06,Denmark,Iceland,Denmark,Ebbe Sand,14,FALSE,FALSE
 2001-10-06,Denmark,Iceland,Denmark,Thomas Gravesen,31,FALSE,FALSE
@@ -22033,7 +22033,7 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2001-11-08,Venezuela,Paraguay,Paraguay,Francisco Arce,28,FALSE,TRUE
 2001-11-08,Venezuela,Paraguay,Venezuela,Héctor González,40,FALSE,FALSE
 2001-11-10,Austria,Turkey,Turkey,Okan Buruk,60,FALSE,FALSE
-2001-11-10,Belgium,Czech Republic,Belgium,Gert Verheyen,28,FALSE,FALSE
+2001-11-10,Belgium,Czechia,Belgium,Gert Verheyen,28,FALSE,FALSE
 2001-11-10,Republic of Ireland,Iran,Republic of Ireland,Ian Harte,44,FALSE,TRUE
 2001-11-10,Republic of Ireland,Iran,Republic of Ireland,Robbie Keane,50,FALSE,FALSE
 2001-11-10,Slovenia,Romania,Romania,Marius Niculae,26,FALSE,FALSE
@@ -22048,7 +22048,7 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2001-11-14,Brazil,Venezuela,Brazil,Luizão,12,FALSE,FALSE
 2001-11-14,Brazil,Venezuela,Brazil,Luizão,19,FALSE,FALSE
 2001-11-14,Brazil,Venezuela,Brazil,Rivaldo,34,FALSE,FALSE
-2001-11-14,Czech Republic,Belgium,Belgium,Marc Wilmots,85,FALSE,TRUE
+2001-11-14,Czechia,Belgium,Belgium,Marc Wilmots,85,FALSE,TRUE
 2001-11-14,Germany,Ukraine,Germany,Michael Ballack,4,FALSE,FALSE
 2001-11-14,Germany,Ukraine,Germany,Oliver Neuville,11,FALSE,FALSE
 2001-11-14,Germany,Ukraine,Germany,Marko Rehmer,15,FALSE,FALSE
@@ -22465,8 +22465,8 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2002-10-12,Lithuania,Faroe Islands,Lithuania,Robertas Poškus,37,FALSE,FALSE
 2002-10-12,Malta,Israel,Israel,Pini Balili,56,FALSE,FALSE
 2002-10-12,Malta,Israel,Israel,Haim Revivo,76,FALSE,FALSE
-2002-10-12,Moldova,Czech Republic,Czech Republic,Marek Jankulovski,69,FALSE,TRUE
-2002-10-12,Moldova,Czech Republic,Czech Republic,Tomáš Rosický,79,FALSE,FALSE
+2002-10-12,Moldova,Czechia,Czechia,Marek Jankulovski,69,FALSE,TRUE
+2002-10-12,Moldova,Czechia,Czechia,Tomáš Rosický,79,FALSE,FALSE
 2002-10-12,North Macedonia,Turkey,North Macedonia,Vlatko Grozdanoski,2,FALSE,FALSE
 2002-10-12,North Macedonia,Turkey,Turkey,Okan Buruk,29,FALSE,FALSE
 2002-10-12,North Macedonia,Turkey,Turkey,Nihat Kahveci,53,FALSE,FALSE
@@ -22488,8 +22488,8 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2002-10-16,Bulgaria,Andorra,Bulgaria,Georgi Chilikov,37,FALSE,FALSE
 2002-10-16,Bulgaria,Andorra,Bulgaria,Krasimir Balakov,58,FALSE,FALSE
 2002-10-16,Bulgaria,Andorra,Andorra,Antoni Lima Solá,80,FALSE,FALSE
-2002-10-16,Czech Republic,Belarus,Czech Republic,Karel Poborský,6,FALSE,FALSE
-2002-10-16,Czech Republic,Belarus,Czech Republic,Milan Baroš,23,FALSE,FALSE
+2002-10-16,Czechia,Belarus,Czechia,Karel Poborský,6,FALSE,FALSE
+2002-10-16,Czechia,Belarus,Czechia,Milan Baroš,23,FALSE,FALSE
 2002-10-16,England,North Macedonia,North Macedonia,Artim Šakiri,10,FALSE,FALSE
 2002-10-16,England,North Macedonia,England,David Beckham,12,FALSE,FALSE
 2002-10-16,England,North Macedonia,North Macedonia,Vančo Trajanov,24,FALSE,FALSE
@@ -22578,8 +22578,8 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2003-03-29,Italy,Finland,Italy,Christian Vieri,23,FALSE,FALSE
 2003-03-29,Liechtenstein,England,England,Michael Owen,28,FALSE,FALSE
 2003-03-29,Liechtenstein,England,England,David Beckham,53,FALSE,FALSE
-2003-03-29,Netherlands,Czech Republic,Netherlands,Ruud van Nistelrooy,45,FALSE,FALSE
-2003-03-29,Netherlands,Czech Republic,Czech Republic,Jan Koller,68,FALSE,FALSE
+2003-03-29,Netherlands,Czechia,Netherlands,Ruud van Nistelrooy,45,FALSE,FALSE
+2003-03-29,Netherlands,Czechia,Czechia,Jan Koller,68,FALSE,FALSE
 2003-03-29,North Macedonia,Slovakia,Slovakia,Martin Petráš,28,FALSE,FALSE
 2003-03-29,North Macedonia,Slovakia,Slovakia,Ľubomír Reiter,90,FALSE,FALSE
 2003-03-29,Romania,Denmark,Romania,Adrian Mutu,5,FALSE,FALSE
@@ -22602,10 +22602,10 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2003-03-29,Wales,Azerbaijan,Wales,Ryan Giggs,52,FALSE,FALSE
 2003-04-02,Croatia,Andorra,Croatia,Milan Rapaić,10,FALSE,TRUE
 2003-04-02,Croatia,Andorra,Croatia,Milan Rapaić,43,FALSE,FALSE
-2003-04-02,Czech Republic,Austria,Czech Republic,Pavel Nedvěd,18,FALSE,FALSE
-2003-04-02,Czech Republic,Austria,Czech Republic,Jan Koller,32,FALSE,FALSE
-2003-04-02,Czech Republic,Austria,Czech Republic,Marek Jankulovski,56,FALSE,TRUE
-2003-04-02,Czech Republic,Austria,Czech Republic,Jan Koller,62,FALSE,FALSE
+2003-04-02,Czechia,Austria,Czechia,Pavel Nedvěd,18,FALSE,FALSE
+2003-04-02,Czechia,Austria,Czechia,Jan Koller,32,FALSE,FALSE
+2003-04-02,Czechia,Austria,Czechia,Marek Jankulovski,56,FALSE,TRUE
+2003-04-02,Czechia,Austria,Czechia,Jan Koller,62,FALSE,FALSE
 2003-04-02,Denmark,Bosnia and Herzegovina,Bosnia and Herzegovina,Sergej Barbarez,23,FALSE,FALSE
 2003-04-02,Denmark,Bosnia and Herzegovina,Bosnia and Herzegovina,Elvir Baljić,29,FALSE,FALSE
 2003-04-02,England,Turkey,England,Darius Vassell,75,FALSE,FALSE
@@ -22717,11 +22717,11 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2003-06-11,Belgium,Andorra,Belgium,Bart Goor,21,FALSE,FALSE
 2003-06-11,Belgium,Andorra,Belgium,Wesley Sonck,45,FALSE,FALSE
 2003-06-11,Belgium,Andorra,Belgium,Bart Goor,69,FALSE,FALSE
-2003-06-11,Czech Republic,Moldova,Czech Republic,Vladimír Šmicer,41,FALSE,FALSE
-2003-06-11,Czech Republic,Moldova,Czech Republic,Jan Koller,73,FALSE,TRUE
-2003-06-11,Czech Republic,Moldova,Czech Republic,Jiří Štajner,82,FALSE,FALSE
-2003-06-11,Czech Republic,Moldova,Czech Republic,Vratislav Lokvenc,88,FALSE,FALSE
-2003-06-11,Czech Republic,Moldova,Czech Republic,Vratislav Lokvenc,90,FALSE,FALSE
+2003-06-11,Czechia,Moldova,Czechia,Vladimír Šmicer,41,FALSE,FALSE
+2003-06-11,Czechia,Moldova,Czechia,Jan Koller,73,FALSE,TRUE
+2003-06-11,Czechia,Moldova,Czechia,Jiří Štajner,82,FALSE,FALSE
+2003-06-11,Czechia,Moldova,Czechia,Vratislav Lokvenc,88,FALSE,FALSE
+2003-06-11,Czechia,Moldova,Czechia,Vratislav Lokvenc,90,FALSE,FALSE
 2003-06-11,England,Slovakia,Slovakia,Vladimír Janočko,31,FALSE,FALSE
 2003-06-11,England,Slovakia,England,Michael Owen,61,FALSE,TRUE
 2003-06-11,England,Slovakia,England,Michael Owen,72,FALSE,FALSE
@@ -22869,10 +22869,10 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2003-09-06,Azerbaijan,Finland,Finland,Teemu Tainio,52,FALSE,FALSE
 2003-09-06,Azerbaijan,Finland,Finland,Mika Nurmela,74,FALSE,FALSE
 2003-09-06,Azerbaijan,Finland,Azerbaijan,Farrukh Ismayilov,88,FALSE,FALSE
-2003-09-06,Belarus,Czech Republic,Belarus,Vital Bulyga,14,FALSE,FALSE
-2003-09-06,Belarus,Czech Republic,Czech Republic,Pavel Nedvěd,37,FALSE,FALSE
-2003-09-06,Belarus,Czech Republic,Czech Republic,Milan Baroš,54,FALSE,FALSE
-2003-09-06,Belarus,Czech Republic,Czech Republic,Vladimír Šmicer,85,FALSE,FALSE
+2003-09-06,Belarus,Czechia,Belarus,Vital Bulyga,14,FALSE,FALSE
+2003-09-06,Belarus,Czechia,Czechia,Pavel Nedvěd,37,FALSE,FALSE
+2003-09-06,Belarus,Czechia,Czechia,Milan Baroš,54,FALSE,FALSE
+2003-09-06,Belarus,Czechia,Czechia,Vladimír Šmicer,85,FALSE,FALSE
 2003-09-06,Bosnia and Herzegovina,Norway,Bosnia and Herzegovina,Zlatan Bajramović,87,FALSE,FALSE
 2003-09-06,Bulgaria,Estonia,Bulgaria,Martin Petrov,16,FALSE,FALSE
 2003-09-06,Bulgaria,Estonia,Bulgaria,Dimitar Berbatov,66,FALSE,FALSE
@@ -22955,10 +22955,10 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2003-09-10,Bolivia,Colombia,Bolivia,Joaquín Botero,49,FALSE,FALSE
 2003-09-10,Bolivia,Colombia,Bolivia,Joaquín Botero,59,FALSE,FALSE
 2003-09-10,Brazil,Ecuador,Brazil,Ronaldinho,13,FALSE,FALSE
-2003-09-10,Czech Republic,Netherlands,Czech Republic,Jan Koller,14,FALSE,TRUE
-2003-09-10,Czech Republic,Netherlands,Czech Republic,Karel Poborský,37,FALSE,FALSE
-2003-09-10,Czech Republic,Netherlands,Netherlands,Rafael van der Vaart,60,FALSE,FALSE
-2003-09-10,Czech Republic,Netherlands,Czech Republic,Milan Baroš,90,FALSE,FALSE
+2003-09-10,Czechia,Netherlands,Czechia,Jan Koller,14,FALSE,TRUE
+2003-09-10,Czechia,Netherlands,Czechia,Karel Poborský,37,FALSE,FALSE
+2003-09-10,Czechia,Netherlands,Netherlands,Rafael van der Vaart,60,FALSE,FALSE
+2003-09-10,Czechia,Netherlands,Czechia,Milan Baroš,90,FALSE,FALSE
 2003-09-10,Denmark,Romania,Denmark,Jon Dahl Tomasson,35,FALSE,TRUE
 2003-09-10,Denmark,Romania,Romania,Adrian Mutu,62,FALSE,FALSE
 2003-09-10,Denmark,Romania,Romania,Daniel Pancu,72,FALSE,FALSE
@@ -23015,11 +23015,11 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2003-10-11,Armenia,Spain,Spain,Raúl,76,FALSE,FALSE
 2003-10-11,Armenia,Spain,Spain,José Antonio Reyes,87,FALSE,FALSE
 2003-10-11,Armenia,Spain,Spain,José Antonio Reyes,90,FALSE,FALSE
-2003-10-11,Austria,Czech Republic,Czech Republic,Marek Jankulovski,26,FALSE,FALSE
-2003-10-11,Austria,Czech Republic,Austria,Mario Haas,49,FALSE,FALSE
-2003-10-11,Austria,Czech Republic,Austria,Andreas Ivanschitz,77,FALSE,FALSE
-2003-10-11,Austria,Czech Republic,Czech Republic,Štěpán Vachoušek,78,FALSE,FALSE
-2003-10-11,Austria,Czech Republic,Czech Republic,Jan Koller,90,FALSE,FALSE
+2003-10-11,Austria,Czechia,Czechia,Marek Jankulovski,26,FALSE,FALSE
+2003-10-11,Austria,Czechia,Austria,Mario Haas,49,FALSE,FALSE
+2003-10-11,Austria,Czechia,Austria,Andreas Ivanschitz,77,FALSE,FALSE
+2003-10-11,Austria,Czechia,Czechia,Štěpán Vachoušek,78,FALSE,FALSE
+2003-10-11,Austria,Czechia,Czechia,Jan Koller,90,FALSE,FALSE
 2003-10-11,Belgium,Estonia,Belgium,Raio Piiroja,41,TRUE,FALSE
 2003-10-11,Belgium,Estonia,Belgium,Thomas Buffel,60,FALSE,FALSE
 2003-10-11,Bosnia and Herzegovina,Denmark,Denmark,Martin Jørgensen,12,FALSE,FALSE
@@ -23847,9 +23847,9 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2004-06-14,Sweden,Bulgaria,Sweden,Henrik Larsson,58,FALSE,FALSE
 2004-06-14,Sweden,Bulgaria,Sweden,Zlatan Ibrahimović,78,FALSE,TRUE
 2004-06-14,Sweden,Bulgaria,Sweden,Marcus Allbäck,90,FALSE,FALSE
-2004-06-15,Czech Republic,Latvia,Latvia,Māris Verpakovskis,45,FALSE,FALSE
-2004-06-15,Czech Republic,Latvia,Czech Republic,Milan Baroš,73,FALSE,FALSE
-2004-06-15,Czech Republic,Latvia,Czech Republic,Marek Heinz,85,FALSE,FALSE
+2004-06-15,Czechia,Latvia,Latvia,Māris Verpakovskis,45,FALSE,FALSE
+2004-06-15,Czechia,Latvia,Czechia,Milan Baroš,73,FALSE,FALSE
+2004-06-15,Czechia,Latvia,Czechia,Marek Heinz,85,FALSE,FALSE
 2004-06-15,Germany,Netherlands,Germany,Torsten Frings,30,FALSE,FALSE
 2004-06-15,Germany,Netherlands,Netherlands,Ruud van Nistelrooy,81,FALSE,FALSE
 2004-06-16,Canada,Belize,Canada,Tomasz Radzinski,45,FALSE,FALSE
@@ -23890,11 +23890,11 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2004-06-19,Honduras,Curaçao,Honduras,Carlos Pavón,70,FALSE,FALSE
 2004-06-19,Mali,Zambia,Zambia,Harry Milanzi,25,FALSE,FALSE
 2004-06-19,Mali,Zambia,Mali,Frédéric Kanouté,80,FALSE,FALSE
-2004-06-19,Netherlands,Czech Republic,Netherlands,Wilfred Bouma,4,FALSE,FALSE
-2004-06-19,Netherlands,Czech Republic,Netherlands,Ruud van Nistelrooy,19,FALSE,FALSE
-2004-06-19,Netherlands,Czech Republic,Czech Republic,Jan Koller,23,FALSE,FALSE
-2004-06-19,Netherlands,Czech Republic,Czech Republic,Milan Baroš,71,FALSE,FALSE
-2004-06-19,Netherlands,Czech Republic,Czech Republic,Vladimír Šmicer,88,FALSE,FALSE
+2004-06-19,Netherlands,Czechia,Netherlands,Wilfred Bouma,4,FALSE,FALSE
+2004-06-19,Netherlands,Czechia,Netherlands,Ruud van Nistelrooy,19,FALSE,FALSE
+2004-06-19,Netherlands,Czechia,Czechia,Jan Koller,23,FALSE,FALSE
+2004-06-19,Netherlands,Czechia,Czechia,Milan Baroš,71,FALSE,FALSE
+2004-06-19,Netherlands,Czechia,Czechia,Vladimír Šmicer,88,FALSE,FALSE
 2004-06-19,Rwanda,Gabon,Rwanda,Abedi Saïd,4,FALSE,FALSE
 2004-06-19,Rwanda,Gabon,Gabon,Théodore Nzue Nguema,20,FALSE,FALSE
 2004-06-19,Rwanda,Gabon,Rwanda,Jimmy Mulisa,27,FALSE,FALSE
@@ -23981,9 +23981,9 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2004-06-22,Italy,Bulgaria,Bulgaria,Martin Petrov,45,FALSE,TRUE
 2004-06-22,Italy,Bulgaria,Italy,Simone Perrotta,48,FALSE,FALSE
 2004-06-22,Italy,Bulgaria,Italy,Antonio Cassano,90,FALSE,FALSE
-2004-06-23,Germany,Czech Republic,Germany,Michael Ballack,21,FALSE,FALSE
-2004-06-23,Germany,Czech Republic,Czech Republic,Marek Heinz,30,FALSE,FALSE
-2004-06-23,Germany,Czech Republic,Czech Republic,Milan Baroš,77,FALSE,FALSE
+2004-06-23,Germany,Czechia,Germany,Michael Ballack,21,FALSE,FALSE
+2004-06-23,Germany,Czechia,Czechia,Marek Heinz,30,FALSE,FALSE
+2004-06-23,Germany,Czechia,Czechia,Milan Baroš,77,FALSE,FALSE
 2004-06-23,Netherlands,Latvia,Netherlands,Ruud van Nistelrooy,27,FALSE,TRUE
 2004-06-23,Netherlands,Latvia,Netherlands,Ruud van Nistelrooy,35,FALSE,FALSE
 2004-06-23,Netherlands,Latvia,Netherlands,Roy Makaay,84,FALSE,FALSE
@@ -23992,9 +23992,9 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2004-06-24,Portugal,England,Portugal,Rui Costa,110,FALSE,FALSE
 2004-06-24,Portugal,England,England,Frank Lampard,115,FALSE,FALSE
 2004-06-25,France,Greece,Greece,Angelos Charisteas,65,FALSE,FALSE
-2004-06-27,Czech Republic,Denmark,Czech Republic,Jan Koller,49,FALSE,FALSE
-2004-06-27,Czech Republic,Denmark,Czech Republic,Milan Baroš,63,FALSE,FALSE
-2004-06-27,Czech Republic,Denmark,Czech Republic,Milan Baroš,65,FALSE,FALSE
+2004-06-27,Czechia,Denmark,Czechia,Jan Koller,49,FALSE,FALSE
+2004-06-27,Czechia,Denmark,Czechia,Milan Baroš,63,FALSE,FALSE
+2004-06-27,Czechia,Denmark,Czechia,Milan Baroš,65,FALSE,FALSE
 2004-06-27,Mexico,Dominica,Mexico,Adolfo Bautista,2,FALSE,FALSE
 2004-06-27,Mexico,Dominica,Mexico,Jaime Lozano,17,FALSE,FALSE
 2004-06-27,Mexico,Dominica,Mexico,Jared Borgetti,33,FALSE,FALSE
@@ -24006,7 +24006,7 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2004-06-30,Portugal,Netherlands,Portugal,Cristiano Ronaldo,26,FALSE,FALSE
 2004-06-30,Portugal,Netherlands,Portugal,Maniche,58,FALSE,FALSE
 2004-06-30,Portugal,Netherlands,Netherlands,Jorge Andrade,63,TRUE,FALSE
-2004-07-01,Greece,Czech Republic,Greece,Traianos Dellas,105,FALSE,FALSE
+2004-07-01,Greece,Czechia,Greece,Traianos Dellas,105,FALSE,FALSE
 2004-07-03,Botswana,Morocco,Morocco,Youssef Mokhtari,30,FALSE,FALSE
 2004-07-03,Cape Verde,DR Congo,DR Congo,Dioko Kaluyituka,1,FALSE,FALSE
 2004-07-03,Cape Verde,DR Congo,Cape Verde,Jimmy Modeste,26,FALSE,FALSE
@@ -24443,8 +24443,8 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2004-09-08,Maldives,Lebanon,Maldives,Ibrahim Fazeel,79,FALSE,FALSE
 2004-09-08,Maldives,Lebanon,Maldives,Ali Umar,88,FALSE,FALSE
 2004-09-08,Moldova,Italy,Italy,Alessandro Del Piero,32,FALSE,FALSE
-2004-09-08,Netherlands,Czech Republic,Netherlands,Pierre van Hooijdonk,34,FALSE,FALSE
-2004-09-08,Netherlands,Czech Republic,Netherlands,Pierre van Hooijdonk,84,FALSE,FALSE
+2004-09-08,Netherlands,Czechia,Netherlands,Pierre van Hooijdonk,34,FALSE,FALSE
+2004-09-08,Netherlands,Czechia,Netherlands,Pierre van Hooijdonk,84,FALSE,FALSE
 2004-09-08,North Korea,Thailand,North Korea,An Yong-hak,49,FALSE,FALSE
 2004-09-08,North Korea,Thailand,North Korea,Hong Yong-jo,55,FALSE,FALSE
 2004-09-08,North Korea,Thailand,North Korea,Ri Hyok-chol,60,FALSE,FALSE
@@ -24549,7 +24549,7 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2004-10-09,Cyprus,Faroe Islands,Faroe Islands,Claus Bech Jørgensen,21,FALSE,FALSE
 2004-10-09,Cyprus,Faroe Islands,Faroe Islands,Rógvi Jacobsen,43,FALSE,FALSE
 2004-10-09,Cyprus,Faroe Islands,Cyprus,Ioannis Okkas,81,FALSE,FALSE
-2004-10-09,Czech Republic,Romania,Czech Republic,Jan Koller,36,FALSE,FALSE
+2004-10-09,Czechia,Romania,Czechia,Jan Koller,36,FALSE,FALSE
 2004-10-09,El Salvador,United States,United States,Brian McBride,29,FALSE,FALSE
 2004-10-09,El Salvador,United States,United States,Eddie Johnson,75,FALSE,FALSE
 2004-10-09,England,Wales,England,Frank Lampard,4,FALSE,FALSE
@@ -24657,9 +24657,9 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2004-10-12,Indonesia,Saudi Arabia,Indonesia,Ilham Jaya Kesuma,50,FALSE,FALSE
 2004-10-12,Indonesia,Saudi Arabia,Saudi Arabia,Yasser Al-Qahtani,80,FALSE,FALSE
 2004-10-13,Andorra,North Macedonia,Andorra,Marc Bernaus,60,FALSE,FALSE
-2004-10-13,Armenia,Czech Republic,Czech Republic,Jan Koller,3,FALSE,FALSE
-2004-10-13,Armenia,Czech Republic,Czech Republic,Tomáš Rosický,30,FALSE,FALSE
-2004-10-13,Armenia,Czech Republic,Czech Republic,Jan Koller,75,FALSE,FALSE
+2004-10-13,Armenia,Czechia,Czechia,Jan Koller,3,FALSE,FALSE
+2004-10-13,Armenia,Czechia,Czechia,Tomáš Rosický,30,FALSE,FALSE
+2004-10-13,Armenia,Czechia,Czechia,Jan Koller,75,FALSE,FALSE
 2004-10-13,Azerbaijan,England,England,Michael Owen,22,FALSE,FALSE
 2004-10-13,Bulgaria,Malta,Malta,Michael Mifsud,11,FALSE,FALSE
 2004-10-13,Bulgaria,Malta,Bulgaria,Dimitar Berbatov,43,FALSE,FALSE
@@ -24877,8 +24877,8 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2004-11-17,Mexico,Saint Kitts and Nevis,Mexico,Francisco Fonseca,56,FALSE,FALSE
 2004-11-17,Mexico,Saint Kitts and Nevis,Mexico,Sergio Santana,67,FALSE,FALSE
 2004-11-17,Mexico,Saint Kitts and Nevis,Mexico,Luis Ernesto Pérez,78,FALSE,FALSE
-2004-11-17,North Macedonia,Czech Republic,Czech Republic,Vratislav Lokvenc,88,FALSE,FALSE
-2004-11-17,North Macedonia,Czech Republic,Czech Republic,Jan Koller,90,FALSE,FALSE
+2004-11-17,North Macedonia,Czechia,Czechia,Vratislav Lokvenc,88,FALSE,FALSE
+2004-11-17,North Macedonia,Czechia,Czechia,Jan Koller,90,FALSE,FALSE
 2004-11-17,Panama,El Salvador,Panama,Roberto Brown,4,FALSE,FALSE
 2004-11-17,Panama,El Salvador,Panama,Felipe Baloy,7,FALSE,FALSE
 2004-11-17,Panama,El Salvador,Panama,José Luis Garcés,21,FALSE,FALSE
@@ -24983,13 +24983,13 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2005-03-26,Croatia,Iceland,Croatia,Josip Šimunić,70,FALSE,FALSE
 2005-03-26,Croatia,Iceland,Croatia,Niko Kovač,75,FALSE,FALSE
 2005-03-26,Croatia,Iceland,Croatia,Dado Pršo,90,FALSE,FALSE
-2005-03-26,Czech Republic,Finland,Czech Republic,Milan Baroš,7,FALSE,FALSE
-2005-03-26,Czech Republic,Finland,Czech Republic,Tomáš Rosický,34,FALSE,FALSE
-2005-03-26,Czech Republic,Finland,Finland,Jari Litmanen,46,FALSE,FALSE
-2005-03-26,Czech Republic,Finland,Czech Republic,Jan Polák,58,FALSE,FALSE
-2005-03-26,Czech Republic,Finland,Finland,Aki Riihilahti,73,FALSE,FALSE
-2005-03-26,Czech Republic,Finland,Finland,Jonatan Johansson,79,FALSE,FALSE
-2005-03-26,Czech Republic,Finland,Czech Republic,Vratislav Lokvenc,87,FALSE,FALSE
+2005-03-26,Czechia,Finland,Czechia,Milan Baroš,7,FALSE,FALSE
+2005-03-26,Czechia,Finland,Czechia,Tomáš Rosický,34,FALSE,FALSE
+2005-03-26,Czechia,Finland,Finland,Jari Litmanen,46,FALSE,FALSE
+2005-03-26,Czechia,Finland,Czechia,Jan Polák,58,FALSE,FALSE
+2005-03-26,Czechia,Finland,Finland,Aki Riihilahti,73,FALSE,FALSE
+2005-03-26,Czechia,Finland,Finland,Jonatan Johansson,79,FALSE,FALSE
+2005-03-26,Czechia,Finland,Czechia,Vratislav Lokvenc,87,FALSE,FALSE
 2005-03-26,Denmark,Kazakhstan,Denmark,Peter Møller,10,FALSE,FALSE
 2005-03-26,Denmark,Kazakhstan,Denmark,Christian Poulsen,33,FALSE,FALSE
 2005-03-26,Denmark,Kazakhstan,Denmark,Peter Møller,48,FALSE,FALSE
@@ -25088,10 +25088,10 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2005-03-29,Bolivia,Venezuela,Bolivia,José Alfredo Castillo,25,FALSE,FALSE
 2005-03-29,Bolivia,Venezuela,Venezuela,Giancarlo Maldonado,71,FALSE,FALSE
 2005-03-29,Bolivia,Venezuela,Bolivia,Joselito Vaca,84,FALSE,FALSE
-2005-03-30,Andorra,Czech Republic,Czech Republic,Marek Jankulovski,31,FALSE,TRUE
-2005-03-30,Andorra,Czech Republic,Czech Republic,Milan Baroš,40,FALSE,FALSE
-2005-03-30,Andorra,Czech Republic,Czech Republic,Vratislav Lokvenc,53,FALSE,FALSE
-2005-03-30,Andorra,Czech Republic,Czech Republic,Tomáš Rosický,90,FALSE,TRUE
+2005-03-30,Andorra,Czechia,Czechia,Marek Jankulovski,31,FALSE,TRUE
+2005-03-30,Andorra,Czechia,Czechia,Milan Baroš,40,FALSE,FALSE
+2005-03-30,Andorra,Czechia,Czechia,Vratislav Lokvenc,53,FALSE,FALSE
+2005-03-30,Andorra,Czechia,Czechia,Tomáš Rosický,90,FALSE,TRUE
 2005-03-30,Argentina,Colombia,Argentina,Hernán Crespo,65,FALSE,FALSE
 2005-03-30,Austria,Wales,Austria,René Aufhauser,87,FALSE,FALSE
 2005-03-30,Bosnia and Herzegovina,Lithuania,Bosnia and Herzegovina,Elvir Bolić,21,FALSE,FALSE
@@ -25201,15 +25201,15 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2005-06-04,Colombia,Peru,Colombia,Juan Pablo Ángel,58,FALSE,FALSE
 2005-06-04,Colombia,Peru,Colombia,John Restrepo,75,FALSE,FALSE
 2005-06-04,Colombia,Peru,Colombia,Edixon Perea Valencia,78,FALSE,FALSE
-2005-06-04,Czech Republic,Andorra,Czech Republic,Vratislav Lokvenc,12,FALSE,FALSE
-2005-06-04,Czech Republic,Andorra,Czech Republic,Jan Koller,30,FALSE,FALSE
-2005-06-04,Czech Republic,Andorra,Andorra,Gabriel Riera,36,FALSE,FALSE
-2005-06-04,Czech Republic,Andorra,Czech Republic,Vladimír Šmicer,37,FALSE,FALSE
-2005-06-04,Czech Republic,Andorra,Czech Republic,Tomáš Galásek,52,FALSE,FALSE
-2005-06-04,Czech Republic,Andorra,Czech Republic,Milan Baroš,79,FALSE,FALSE
-2005-06-04,Czech Republic,Andorra,Czech Republic,Tomáš Rosický,84,FALSE,FALSE
-2005-06-04,Czech Republic,Andorra,Czech Republic,Jan Polák,86,FALSE,FALSE
-2005-06-04,Czech Republic,Andorra,Czech Republic,Vratislav Lokvenc,90,FALSE,FALSE
+2005-06-04,Czechia,Andorra,Czechia,Vratislav Lokvenc,12,FALSE,FALSE
+2005-06-04,Czechia,Andorra,Czechia,Jan Koller,30,FALSE,FALSE
+2005-06-04,Czechia,Andorra,Andorra,Gabriel Riera,36,FALSE,FALSE
+2005-06-04,Czechia,Andorra,Czechia,Vladimír Šmicer,37,FALSE,FALSE
+2005-06-04,Czechia,Andorra,Czechia,Tomáš Galásek,52,FALSE,FALSE
+2005-06-04,Czechia,Andorra,Czechia,Milan Baroš,79,FALSE,FALSE
+2005-06-04,Czechia,Andorra,Czechia,Tomáš Rosický,84,FALSE,FALSE
+2005-06-04,Czechia,Andorra,Czechia,Jan Polák,86,FALSE,FALSE
+2005-06-04,Czechia,Andorra,Czechia,Vratislav Lokvenc,90,FALSE,FALSE
 2005-06-04,Ecuador,Argentina,Ecuador,Christian Lara,53,FALSE,FALSE
 2005-06-04,Ecuador,Argentina,Ecuador,Agustín Delgado,89,FALSE,FALSE
 2005-06-04,Estonia,Liechtenstein,Estonia,Andrei Stepanov,27,FALSE,FALSE
@@ -25313,13 +25313,13 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2005-06-08,Costa Rica,Guatemala,Guatemala,Edwin Villatoro,74,FALSE,FALSE
 2005-06-08,Costa Rica,Guatemala,Guatemala,Mario Rafael Rodríguez,77,FALSE,FALSE
 2005-06-08,Costa Rica,Guatemala,Costa Rica,Paulo Wanchope,90,FALSE,FALSE
-2005-06-08,Czech Republic,North Macedonia,North Macedonia,Goran Pandev,13,FALSE,FALSE
-2005-06-08,Czech Republic,North Macedonia,Czech Republic,Jan Koller,41,FALSE,FALSE
-2005-06-08,Czech Republic,North Macedonia,Czech Republic,Jan Koller,45,FALSE,FALSE
-2005-06-08,Czech Republic,North Macedonia,Czech Republic,Jan Koller,48,FALSE,FALSE
-2005-06-08,Czech Republic,North Macedonia,Czech Republic,Jan Koller,52,FALSE,FALSE
-2005-06-08,Czech Republic,North Macedonia,Czech Republic,Tomáš Rosický,73,FALSE,FALSE
-2005-06-08,Czech Republic,North Macedonia,Czech Republic,Milan Baroš,87,FALSE,FALSE
+2005-06-08,Czechia,North Macedonia,North Macedonia,Goran Pandev,13,FALSE,FALSE
+2005-06-08,Czechia,North Macedonia,Czechia,Jan Koller,41,FALSE,FALSE
+2005-06-08,Czechia,North Macedonia,Czechia,Jan Koller,45,FALSE,FALSE
+2005-06-08,Czechia,North Macedonia,Czechia,Jan Koller,48,FALSE,FALSE
+2005-06-08,Czechia,North Macedonia,Czechia,Jan Koller,52,FALSE,FALSE
+2005-06-08,Czechia,North Macedonia,Czechia,Tomáš Rosický,73,FALSE,FALSE
+2005-06-08,Czechia,North Macedonia,Czechia,Milan Baroš,87,FALSE,FALSE
 2005-06-08,Denmark,Albania,Denmark,Søren Larsen,5,FALSE,FALSE
 2005-06-08,Denmark,Albania,Denmark,Søren Larsen,47,FALSE,FALSE
 2005-06-08,Denmark,Albania,Denmark,Martin Jørgensen,55,FALSE,FALSE
@@ -25629,8 +25629,8 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2005-09-03,Portugal,Luxembourg,Portugal,Pauleta,57,FALSE,FALSE
 2005-09-03,Portugal,Luxembourg,Portugal,Simão Sabrosa,80,FALSE,FALSE
 2005-09-03,Portugal,Luxembourg,Portugal,Simão Sabrosa,85,FALSE,FALSE
-2005-09-03,Romania,Czech Republic,Romania,Adrian Mutu,28,FALSE,FALSE
-2005-09-03,Romania,Czech Republic,Romania,Adrian Mutu,56,FALSE,FALSE
+2005-09-03,Romania,Czechia,Romania,Adrian Mutu,28,FALSE,FALSE
+2005-09-03,Romania,Czechia,Romania,Adrian Mutu,56,FALSE,FALSE
 2005-09-03,Russia,Liechtenstein,Russia,Aleksandr Kerzhakov,27,FALSE,FALSE
 2005-09-03,Russia,Liechtenstein,Russia,Aleksandr Kerzhakov,66,FALSE,FALSE
 2005-09-03,Scotland,Italy,Scotland,Kenny Miller,13,FALSE,FALSE
@@ -25738,11 +25738,11 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2005-09-07,Cyprus,Switzerland,Cyprus,Efstathios Aloneftis,35,FALSE,FALSE
 2005-09-07,Cyprus,Switzerland,Switzerland,Philippe Senderos,71,FALSE,FALSE
 2005-09-07,Cyprus,Switzerland,Switzerland,Daniel Gygax,84,FALSE,FALSE
-2005-09-07,Czech Republic,Armenia,Czech Republic,Marek Heinz,47,FALSE,FALSE
-2005-09-07,Czech Republic,Armenia,Czech Republic,Jan Polák,52,FALSE,FALSE
-2005-09-07,Czech Republic,Armenia,Czech Republic,Milan Baroš,58,FALSE,FALSE
-2005-09-07,Czech Republic,Armenia,Czech Republic,Jan Polák,76,FALSE,FALSE
-2005-09-07,Czech Republic,Armenia,Armenia,Ara Hakobyan,85,FALSE,FALSE
+2005-09-07,Czechia,Armenia,Czechia,Marek Heinz,47,FALSE,FALSE
+2005-09-07,Czechia,Armenia,Czechia,Jan Polák,52,FALSE,FALSE
+2005-09-07,Czechia,Armenia,Czechia,Milan Baroš,58,FALSE,FALSE
+2005-09-07,Czechia,Armenia,Czechia,Jan Polák,76,FALSE,FALSE
+2005-09-07,Czechia,Armenia,Armenia,Ara Hakobyan,85,FALSE,FALSE
 2005-09-07,Denmark,Georgia,Denmark,Claus Jensen,10,FALSE,FALSE
 2005-09-07,Denmark,Georgia,Denmark,Christian Poulsen,30,FALSE,FALSE
 2005-09-07,Denmark,Georgia,Georgia,Giorgi Demetradze,37,FALSE,FALSE
@@ -25824,8 +25824,8 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2005-10-08,Costa Rica,United States,Costa Rica,Carlos Hernández,88,FALSE,FALSE
 2005-10-08,Croatia,Sweden,Croatia,Darijo Srna,55,FALSE,FALSE
 2005-10-08,Cyprus,Republic of Ireland,Republic of Ireland,Stephen Elliott,6,FALSE,FALSE
-2005-10-08,Czech Republic,Netherlands,Netherlands,Rafael van der Vaart,31,FALSE,FALSE
-2005-10-08,Czech Republic,Netherlands,Netherlands,Barry Opdam,38,FALSE,FALSE
+2005-10-08,Czechia,Netherlands,Netherlands,Rafael van der Vaart,31,FALSE,FALSE
+2005-10-08,Czechia,Netherlands,Netherlands,Barry Opdam,38,FALSE,FALSE
 2005-10-08,Denmark,Greece,Denmark,Michael Gravgaard,40,FALSE,FALSE
 2005-10-08,England,Austria,England,Frank Lampard,24,FALSE,TRUE
 2005-10-08,Finland,Romania,Romania,Adrian Mutu,41,FALSE,TRUE
@@ -25916,9 +25916,9 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2005-10-12,England,Poland,England,Michael Owen,44,FALSE,FALSE
 2005-10-12,England,Poland,Poland,Tomasz Frankowski,45,FALSE,FALSE
 2005-10-12,England,Poland,England,Frank Lampard,81,FALSE,FALSE
-2005-10-12,Finland,Czech Republic,Czech Republic,Tomas Jun,6,FALSE,FALSE
-2005-10-12,Finland,Czech Republic,Czech Republic,Tomáš Rosický,51,FALSE,FALSE
-2005-10-12,Finland,Czech Republic,Czech Republic,Marek Heinz,58,FALSE,FALSE
+2005-10-12,Finland,Czechia,Czechia,Tomas Jun,6,FALSE,FALSE
+2005-10-12,Finland,Czechia,Czechia,Tomáš Rosický,51,FALSE,FALSE
+2005-10-12,Finland,Czechia,Czechia,Marek Heinz,58,FALSE,FALSE
 2005-10-12,France,Cyprus,France,Zinedine Zidane,29,FALSE,FALSE
 2005-10-12,France,Cyprus,France,Sylvain Wiltord,32,FALSE,FALSE
 2005-10-12,France,Cyprus,France,Vikash Dhorasoo,44,FALSE,FALSE
@@ -25971,7 +25971,7 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2005-10-12,Uruguay,Argentina,Uruguay,Álvaro Recoba,46,FALSE,FALSE
 2005-10-12,Wales,Azerbaijan,Wales,Ryan Giggs,3,FALSE,FALSE
 2005-10-12,Wales,Azerbaijan,Wales,Ryan Giggs,51,FALSE,FALSE
-2005-11-12,Norway,Czech Republic,Czech Republic,Vladimír Šmicer,31,FALSE,FALSE
+2005-11-12,Norway,Czechia,Czechia,Vladimír Šmicer,31,FALSE,FALSE
 2005-11-12,Spain,Slovakia,Spain,Luis García,10,FALSE,FALSE
 2005-11-12,Spain,Slovakia,Spain,Luis García,18,FALSE,FALSE
 2005-11-12,Spain,Slovakia,Slovakia,Szilárd Németh,49,FALSE,FALSE
@@ -25985,7 +25985,7 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2005-11-12,Uruguay,Australia,Uruguay,Darío Rodríguez,37,FALSE,FALSE
 2005-11-16,Australia,Uruguay,Australia,Mark Bresciano,35,FALSE,FALSE
 2005-11-16,Bahrain,Trinidad and Tobago,Trinidad and Tobago,Dennis Lawrence,49,FALSE,FALSE
-2005-11-16,Czech Republic,Norway,Czech Republic,Tomáš Rosický,35,FALSE,FALSE
+2005-11-16,Czechia,Norway,Czechia,Tomáš Rosický,35,FALSE,FALSE
 2005-11-16,Slovakia,Spain,Slovakia,Filip Hološko,50,FALSE,FALSE
 2005-11-16,Slovakia,Spain,Spain,David Villa,71,FALSE,FALSE
 2005-11-16,Turkey,Switzerland,Switzerland,Alexander Frei,2,FALSE,TRUE
@@ -26091,9 +26091,9 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2006-06-12,Australia,Japan,Australia,John Aloisi,90,FALSE,FALSE
 2006-06-12,Italy,Ghana,Italy,Andrea Pirlo,40,FALSE,FALSE
 2006-06-12,Italy,Ghana,Italy,Vincenzo Iaquinta,83,FALSE,FALSE
-2006-06-12,United States,Czech Republic,Czech Republic,Jan Koller,5,FALSE,FALSE
-2006-06-12,United States,Czech Republic,Czech Republic,Tomáš Rosický,36,FALSE,FALSE
-2006-06-12,United States,Czech Republic,Czech Republic,Tomáš Rosický,76,FALSE,FALSE
+2006-06-12,United States,Czechia,Czechia,Jan Koller,5,FALSE,FALSE
+2006-06-12,United States,Czechia,Czechia,Tomáš Rosický,36,FALSE,FALSE
+2006-06-12,United States,Czechia,Czechia,Tomáš Rosický,76,FALSE,FALSE
 2006-06-13,Brazil,Croatia,Brazil,Kaká,44,FALSE,FALSE
 2006-06-13,South Korea,Togo,Togo,Mohamed Kader,31,FALSE,FALSE
 2006-06-13,South Korea,Togo,South Korea,Lee Chun-soo,54,FALSE,FALSE
@@ -26122,8 +26122,8 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2006-06-16,Netherlands,Ivory Coast,Netherlands,Robin van Persie,23,FALSE,FALSE
 2006-06-16,Netherlands,Ivory Coast,Netherlands,Ruud van Nistelrooy,27,FALSE,FALSE
 2006-06-16,Netherlands,Ivory Coast,Ivory Coast,Bakari Koné,38,FALSE,FALSE
-2006-06-17,Czech Republic,Ghana,Ghana,Asamoah Gyan,2,FALSE,FALSE
-2006-06-17,Czech Republic,Ghana,Ghana,Sulley Muntari,82,FALSE,FALSE
+2006-06-17,Czechia,Ghana,Ghana,Asamoah Gyan,2,FALSE,FALSE
+2006-06-17,Czechia,Ghana,Ghana,Sulley Muntari,82,FALSE,FALSE
 2006-06-17,Italy,United States,Italy,Alberto Gilardino,22,FALSE,FALSE
 2006-06-17,Italy,United States,United States,Cristian Zaccardo,27,TRUE,FALSE
 2006-06-17,Portugal,Iran,Portugal,Deco,63,FALSE,FALSE
@@ -26168,8 +26168,8 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2006-06-22,Croatia,Australia,Australia,Craig Moore,38,FALSE,TRUE
 2006-06-22,Croatia,Australia,Croatia,Niko Kovač,56,FALSE,FALSE
 2006-06-22,Croatia,Australia,Australia,Harry Kewell,79,FALSE,FALSE
-2006-06-22,Czech Republic,Italy,Italy,Marco Materazzi,26,FALSE,FALSE
-2006-06-22,Czech Republic,Italy,Italy,Filippo Inzaghi,87,FALSE,FALSE
+2006-06-22,Czechia,Italy,Italy,Marco Materazzi,26,FALSE,FALSE
+2006-06-22,Czechia,Italy,Italy,Filippo Inzaghi,87,FALSE,FALSE
 2006-06-22,Ghana,United States,Ghana,Haminu Draman,22,FALSE,FALSE
 2006-06-22,Ghana,United States,United States,Clint Dempsey,43,FALSE,FALSE
 2006-06-22,Ghana,United States,Ghana,Stephen Appiah,45,FALSE,TRUE
@@ -26225,9 +26225,9 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2006-09-02,Belarus,Albania,Albania,Ervin Skela,7,FALSE,TRUE
 2006-09-02,Belarus,Albania,Belarus,Maksim Romaschenko,24,FALSE,FALSE
 2006-09-02,Belarus,Albania,Albania,Besnik Hasi,86,FALSE,FALSE
-2006-09-02,Czech Republic,Wales,Czech Republic,David Lafata,76,FALSE,FALSE
-2006-09-02,Czech Republic,Wales,Wales,Martin Jiránek,85,TRUE,FALSE
-2006-09-02,Czech Republic,Wales,Czech Republic,David Lafata,89,FALSE,FALSE
+2006-09-02,Czechia,Wales,Czechia,David Lafata,76,FALSE,FALSE
+2006-09-02,Czechia,Wales,Wales,Martin Jiránek,85,TRUE,FALSE
+2006-09-02,Czechia,Wales,Czechia,David Lafata,89,FALSE,FALSE
 2006-09-02,England,Andorra,England,Peter Crouch,5,FALSE,FALSE
 2006-09-02,England,Andorra,England,Steven Gerrard,13,FALSE,FALSE
 2006-09-02,England,Andorra,England,Jermain Defoe,38,FALSE,FALSE
@@ -26338,9 +26338,9 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2006-09-06,San Marino,Germany,Germany,Lukas Podolski,73,FALSE,FALSE
 2006-09-06,San Marino,Germany,Germany,Manuel Friedrich,87,FALSE,FALSE
 2006-09-06,San Marino,Germany,Germany,Bernd Schneider,90,FALSE,TRUE
-2006-09-06,Slovakia,Czech Republic,Czech Republic,Libor Sionko,10,FALSE,FALSE
-2006-09-06,Slovakia,Czech Republic,Czech Republic,Libor Sionko,21,FALSE,FALSE
-2006-09-06,Slovakia,Czech Republic,Czech Republic,Jan Koller,57,FALSE,FALSE
+2006-09-06,Slovakia,Czechia,Czechia,Libor Sionko,10,FALSE,FALSE
+2006-09-06,Slovakia,Czechia,Czechia,Libor Sionko,21,FALSE,FALSE
+2006-09-06,Slovakia,Czechia,Czechia,Jan Koller,57,FALSE,FALSE
 2006-09-06,Sweden,Liechtenstein,Sweden,Marcus Allbäck,2,FALSE,FALSE
 2006-09-06,Sweden,Liechtenstein,Liechtenstein,Mario Frick,27,FALSE,FALSE
 2006-09-06,Sweden,Liechtenstein,Sweden,Marcus Allbäck,69,FALSE,FALSE
@@ -26368,13 +26368,13 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2006-10-07,Cyprus,Republic of Ireland,Cyprus,Michalis Konstantinou,50,FALSE,TRUE
 2006-10-07,Cyprus,Republic of Ireland,Cyprus,Constantinos Charalambides,60,FALSE,FALSE
 2006-10-07,Cyprus,Republic of Ireland,Cyprus,Constantinos Charalambides,75,FALSE,FALSE
-2006-10-07,Czech Republic,San Marino,Czech Republic,Marek Kulič,15,FALSE,FALSE
-2006-10-07,Czech Republic,San Marino,Czech Republic,Jan Polák,22,FALSE,FALSE
-2006-10-07,Czech Republic,San Marino,Czech Republic,Milan Baroš,32,FALSE,FALSE
-2006-10-07,Czech Republic,San Marino,Czech Republic,Jan Koller,42,FALSE,FALSE
-2006-10-07,Czech Republic,San Marino,Czech Republic,David Jarolím,49,FALSE,FALSE
-2006-10-07,Czech Republic,San Marino,Czech Republic,Jan Koller,52,FALSE,FALSE
-2006-10-07,Czech Republic,San Marino,Czech Republic,Milan Baroš,68,FALSE,FALSE
+2006-10-07,Czechia,San Marino,Czechia,Marek Kulič,15,FALSE,FALSE
+2006-10-07,Czechia,San Marino,Czechia,Jan Polák,22,FALSE,FALSE
+2006-10-07,Czechia,San Marino,Czechia,Milan Baroš,32,FALSE,FALSE
+2006-10-07,Czechia,San Marino,Czechia,Jan Koller,42,FALSE,FALSE
+2006-10-07,Czechia,San Marino,Czechia,David Jarolím,49,FALSE,FALSE
+2006-10-07,Czechia,San Marino,Czechia,Jan Koller,52,FALSE,FALSE
+2006-10-07,Czechia,San Marino,Czechia,Milan Baroš,68,FALSE,FALSE
 2006-10-07,Faroe Islands,Lithuania,Lithuania,Andrius Skerla,89,FALSE,FALSE
 2006-10-07,Greece,Norway,Greece,Kostas Katsouranis,33,FALSE,FALSE
 2006-10-07,Hungary,Turkey,Turkey,Tuncay,41,FALSE,FALSE
@@ -26457,8 +26457,8 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2006-10-11,Poland,Portugal,Poland,Euzebiusz Smolarek,9,FALSE,FALSE
 2006-10-11,Poland,Portugal,Poland,Euzebiusz Smolarek,18,FALSE,FALSE
 2006-10-11,Poland,Portugal,Portugal,Nuno Gomes,90,FALSE,FALSE
-2006-10-11,Republic of Ireland,Czech Republic,Republic of Ireland,Kevin Kilbane,62,FALSE,FALSE
-2006-10-11,Republic of Ireland,Czech Republic,Czech Republic,Jan Koller,64,FALSE,FALSE
+2006-10-11,Republic of Ireland,Czechia,Republic of Ireland,Kevin Kilbane,62,FALSE,FALSE
+2006-10-11,Republic of Ireland,Czechia,Czechia,Jan Koller,64,FALSE,FALSE
 2006-10-11,Russia,Estonia,Russia,Pavel Pogrebnyak,78,FALSE,FALSE
 2006-10-11,Russia,Estonia,Russia,Dmitri Sychev,90,FALSE,FALSE
 2006-10-11,Serbia,Armenia,Serbia,Dejan Stanković,54,FALSE,TRUE
@@ -26511,9 +26511,9 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2007-03-24,Cyprus,Slovakia,Slovakia,Róbert Vittek,54,FALSE,FALSE
 2007-03-24,Cyprus,Slovakia,Slovakia,Martin Škrtel,67,FALSE,FALSE
 2007-03-24,Cyprus,Slovakia,Slovakia,Martin Jakubko,77,FALSE,FALSE
-2007-03-24,Czech Republic,Germany,Germany,Kevin Kurányi,42,FALSE,FALSE
-2007-03-24,Czech Republic,Germany,Germany,Kevin Kurányi,62,FALSE,FALSE
-2007-03-24,Czech Republic,Germany,Czech Republic,Milan Baroš,77,FALSE,FALSE
+2007-03-24,Czechia,Germany,Germany,Kevin Kurányi,42,FALSE,FALSE
+2007-03-24,Czechia,Germany,Germany,Kevin Kurányi,62,FALSE,FALSE
+2007-03-24,Czechia,Germany,Czechia,Milan Baroš,77,FALSE,FALSE
 2007-03-24,Estonia,Russia,Russia,Vladimir Bystrov,66,FALSE,FALSE
 2007-03-24,Estonia,Russia,Russia,Aleksandr Kerzhakov,78,FALSE,FALSE
 2007-03-24,Faroe Islands,Ukraine,Ukraine,Volodymyr Yezerskiy,20,FALSE,FALSE
@@ -26560,7 +26560,7 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2007-03-28,Andorra,England,England,Steven Gerrard,76,FALSE,FALSE
 2007-03-28,Andorra,England,England,David Nugent,90,FALSE,FALSE
 2007-03-28,Azerbaijan,Finland,Azerbaijan,Emin Imamaliev,83,FALSE,FALSE
-2007-03-28,Czech Republic,Cyprus,Czech Republic,Radoslav Kováč,22,FALSE,FALSE
+2007-03-28,Czechia,Cyprus,Czechia,Radoslav Kováč,22,FALSE,FALSE
 2007-03-28,Georgia,Faroe Islands,Georgia,David Siradze,25,FALSE,FALSE
 2007-03-28,Georgia,Faroe Islands,Georgia,Aleksandr Iashvili,46,FALSE,FALSE
 2007-03-28,Georgia,Faroe Islands,Faroe Islands,Rógvi Jacobsen,57,FALSE,FALSE
@@ -26976,9 +26976,9 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2007-09-08,Russia,North Macedonia,Russia,Vasili Berezutski,8,FALSE,FALSE
 2007-09-08,Russia,North Macedonia,Russia,Andrey Arshavin,84,FALSE,FALSE
 2007-09-08,Russia,North Macedonia,Russia,Aleksandr Kerzhakov,88,FALSE,FALSE
-2007-09-08,San Marino,Czech Republic,Czech Republic,Tomáš Rosický,33,FALSE,FALSE
-2007-09-08,San Marino,Czech Republic,Czech Republic,Marek Jankulovski,75,FALSE,FALSE
-2007-09-08,San Marino,Czech Republic,Czech Republic,Jan Koller,90,FALSE,FALSE
+2007-09-08,San Marino,Czechia,Czechia,Tomáš Rosický,33,FALSE,FALSE
+2007-09-08,San Marino,Czechia,Czechia,Marek Jankulovski,75,FALSE,FALSE
+2007-09-08,San Marino,Czechia,Czechia,Jan Koller,90,FALSE,FALSE
 2007-09-08,Scotland,Lithuania,Scotland,Kris Boyd,31,FALSE,FALSE
 2007-09-08,Scotland,Lithuania,Lithuania,Tomas Danilevičius,61,FALSE,TRUE
 2007-09-08,Scotland,Lithuania,Scotland,Stephen McManus,77,FALSE,FALSE
@@ -27003,7 +27003,7 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2007-09-12,Cyprus,San Marino,Cyprus,Constantinos Makrides,15,FALSE,FALSE
 2007-09-12,Cyprus,San Marino,Cyprus,Efstathios Aloneftis,41,FALSE,FALSE
 2007-09-12,Cyprus,San Marino,Cyprus,Efstathios Aloneftis,90,FALSE,FALSE
-2007-09-12,Czech Republic,Republic of Ireland,Czech Republic,Marek Jankulovski,15,FALSE,FALSE
+2007-09-12,Czechia,Republic of Ireland,Czechia,Marek Jankulovski,15,FALSE,FALSE
 2007-09-12,Denmark,Liechtenstein,Denmark,Morten Nordstrand,3,FALSE,FALSE
 2007-09-12,Denmark,Liechtenstein,Denmark,Martin Laursen,12,FALSE,FALSE
 2007-09-12,Denmark,Liechtenstein,Denmark,Jon Dahl Tomasson,18,FALSE,FALSE
@@ -27197,9 +27197,9 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2007-10-17,France,Lithuania,France,Thierry Henry,81,FALSE,FALSE
 2007-10-17,Georgia,Scotland,Georgia,Levan Mchedlidze,16,FALSE,FALSE
 2007-10-17,Georgia,Scotland,Georgia,David Siradze,64,FALSE,FALSE
-2007-10-17,Germany,Czech Republic,Czech Republic,Libor Sionko,2,FALSE,FALSE
-2007-10-17,Germany,Czech Republic,Czech Republic,Marek Matějovský,23,FALSE,FALSE
-2007-10-17,Germany,Czech Republic,Czech Republic,Jaroslav Plašil,63,FALSE,FALSE
+2007-10-17,Germany,Czechia,Czechia,Libor Sionko,2,FALSE,FALSE
+2007-10-17,Germany,Czechia,Czechia,Marek Matějovský,23,FALSE,FALSE
+2007-10-17,Germany,Czechia,Czechia,Jaroslav Plašil,63,FALSE,FALSE
 2007-10-17,Kazakhstan,Portugal,Portugal,Ariza Makukula,84,FALSE,FALSE
 2007-10-17,Kazakhstan,Portugal,Kazakhstan,Dmitry Byakov,90,FALSE,FALSE
 2007-10-17,Kazakhstan,Portugal,Portugal,Cristiano Ronaldo,90,FALSE,FALSE
@@ -27349,10 +27349,10 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2007-11-17,Comoros,Madagascar,Madagascar,Lalaïna Nomenjanahary,52,FALSE,FALSE
 2007-11-17,Comoros,Madagascar,Madagascar,Rija Rakotomandimby,62,FALSE,FALSE
 2007-11-17,Comoros,Madagascar,Madagascar,Hubert Robson,74,FALSE,FALSE
-2007-11-17,Czech Republic,Slovakia,Czech Republic,Zdeněk Grygera,13,FALSE,FALSE
-2007-11-17,Czech Republic,Slovakia,Czech Republic,Marek Kulič,76,FALSE,FALSE
-2007-11-17,Czech Republic,Slovakia,Slovakia,Michal Kadlec,79,TRUE,FALSE
-2007-11-17,Czech Republic,Slovakia,Czech Republic,Tomáš Rosický,83,FALSE,FALSE
+2007-11-17,Czechia,Slovakia,Czechia,Zdeněk Grygera,13,FALSE,FALSE
+2007-11-17,Czechia,Slovakia,Czechia,Marek Kulič,76,FALSE,FALSE
+2007-11-17,Czechia,Slovakia,Slovakia,Michal Kadlec,79,TRUE,FALSE
+2007-11-17,Czechia,Slovakia,Czechia,Tomáš Rosický,83,FALSE,FALSE
 2007-11-17,Fiji,New Caledonia,Fiji,Valerio Nawatu,2,FALSE,FALSE
 2007-11-17,Fiji,New Caledonia,Fiji,Osea Vakatalesau,27,FALSE,FALSE
 2007-11-17,Fiji,New Caledonia,New Caledonia,Ramon Gjamaci,66,FALSE,FALSE
@@ -27457,8 +27457,8 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2007-11-21,Chile,Paraguay,Paraguay,Salvador Cabañas,24,FALSE,FALSE
 2007-11-21,Chile,Paraguay,Paraguay,Paulo da Silva,45,FALSE,FALSE
 2007-11-21,Chile,Paraguay,Paraguay,Paulo da Silva,56,FALSE,FALSE
-2007-11-21,Cyprus,Czech Republic,Czech Republic,Daniel Pudil,11,FALSE,FALSE
-2007-11-21,Cyprus,Czech Republic,Czech Republic,Jan Koller,74,FALSE,FALSE
+2007-11-21,Cyprus,Czechia,Czechia,Daniel Pudil,11,FALSE,FALSE
+2007-11-21,Cyprus,Czechia,Czechia,Jan Koller,74,FALSE,FALSE
 2007-11-21,Denmark,Iceland,Denmark,Nicklas Bendtner,34,FALSE,FALSE
 2007-11-21,Denmark,Iceland,Denmark,Jon Dahl Tomasson,44,FALSE,FALSE
 2007-11-21,Denmark,Iceland,Denmark,Thomas Kahlenberg,59,FALSE,FALSE
@@ -27858,7 +27858,7 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2008-06-07,South Africa,Equatorial Guinea,South Africa,Thembinkosi Fanteni,62,FALSE,FALSE
 2008-06-07,South Africa,Equatorial Guinea,Equatorial Guinea,Juvenal Edjogo-Owono,78,FALSE,TRUE
 2008-06-07,South Africa,Equatorial Guinea,South Africa,Kagiso Dikgacoi,90,FALSE,FALSE
-2008-06-07,Switzerland,Czech Republic,Czech Republic,Václav Svěrkoš,71,FALSE,FALSE
+2008-06-07,Switzerland,Czechia,Czechia,Václav Svěrkoš,71,FALSE,FALSE
 2008-06-07,United Arab Emirates,Iran,Iran,Ferydoon Zandi,8,FALSE,FALSE
 2008-06-08,Austria,Croatia,Croatia,Luka Modrić,4,FALSE,TRUE
 2008-06-08,Benin,Uganda,Uganda,Eugene Ssepuuya,8,FALSE,FALSE
@@ -27905,10 +27905,10 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2008-06-10,Spain,Russia,Spain,David Villa,75,FALSE,FALSE
 2008-06-10,Spain,Russia,Russia,Roman Pavlyuchenko,86,FALSE,FALSE
 2008-06-10,Spain,Russia,Spain,Cesc Fàbregas,90,FALSE,FALSE
-2008-06-11,Czech Republic,Portugal,Portugal,Deco,8,FALSE,FALSE
-2008-06-11,Czech Republic,Portugal,Czech Republic,Libor Sionko,17,FALSE,FALSE
-2008-06-11,Czech Republic,Portugal,Portugal,Cristiano Ronaldo,63,FALSE,FALSE
-2008-06-11,Czech Republic,Portugal,Portugal,Ricardo Quaresma,90,FALSE,FALSE
+2008-06-11,Czechia,Portugal,Portugal,Deco,8,FALSE,FALSE
+2008-06-11,Czechia,Portugal,Czechia,Libor Sionko,17,FALSE,FALSE
+2008-06-11,Czechia,Portugal,Portugal,Cristiano Ronaldo,63,FALSE,FALSE
+2008-06-11,Czechia,Portugal,Portugal,Ricardo Quaresma,90,FALSE,FALSE
 2008-06-11,Switzerland,Turkey,Switzerland,Hakan Yakin,32,FALSE,FALSE
 2008-06-11,Switzerland,Turkey,Turkey,Semih Şentürk,57,FALSE,FALSE
 2008-06-11,Switzerland,Turkey,Turkey,Arda Turan,90,FALSE,FALSE
@@ -28052,11 +28052,11 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2008-06-15,Trinidad and Tobago,Bermuda,Bermuda,John Barry Nusum,8,FALSE,FALSE
 2008-06-15,Trinidad and Tobago,Bermuda,Trinidad and Tobago,Stern John,22,FALSE,FALSE
 2008-06-15,Trinidad and Tobago,Bermuda,Bermuda,John Barry Nusum,40,FALSE,FALSE
-2008-06-15,Turkey,Czech Republic,Czech Republic,Jan Koller,34,FALSE,FALSE
-2008-06-15,Turkey,Czech Republic,Czech Republic,Jaroslav Plašil,62,FALSE,FALSE
-2008-06-15,Turkey,Czech Republic,Turkey,Arda Turan,75,FALSE,FALSE
-2008-06-15,Turkey,Czech Republic,Turkey,Nihat Kahveci,87,FALSE,FALSE
-2008-06-15,Turkey,Czech Republic,Turkey,Nihat Kahveci,89,FALSE,FALSE
+2008-06-15,Turkey,Czechia,Czechia,Jan Koller,34,FALSE,FALSE
+2008-06-15,Turkey,Czechia,Czechia,Jaroslav Plašil,62,FALSE,FALSE
+2008-06-15,Turkey,Czechia,Turkey,Arda Turan,75,FALSE,FALSE
+2008-06-15,Turkey,Czechia,Turkey,Nihat Kahveci,87,FALSE,FALSE
+2008-06-15,Turkey,Czechia,Turkey,Nihat Kahveci,89,FALSE,FALSE
 2008-06-15,United States,Barbados,United States,Clint Dempsey,1,FALSE,FALSE
 2008-06-15,United States,Barbados,United States,Michael Bradley,12,FALSE,FALSE
 2008-06-15,United States,Barbados,United States,Brian Ching,20,FALSE,FALSE
@@ -28625,9 +28625,9 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2008-10-11,Nigeria,Sierra Leone,Nigeria,Victor Obinna,35,FALSE,FALSE
 2008-10-11,Nigeria,Sierra Leone,Nigeria,Peter Odemwingie,45,FALSE,FALSE
 2008-10-11,Nigeria,Sierra Leone,Nigeria,Chidi Odiah,51,FALSE,FALSE
-2008-10-11,Poland,Czech Republic,Poland,Paweł Brożek,27,FALSE,FALSE
-2008-10-11,Poland,Czech Republic,Poland,Jakub Błaszczykowski,53,FALSE,FALSE
-2008-10-11,Poland,Czech Republic,Czech Republic,Martin Fenin,87,FALSE,FALSE
+2008-10-11,Poland,Czechia,Poland,Paweł Brożek,27,FALSE,FALSE
+2008-10-11,Poland,Czechia,Poland,Jakub Błaszczykowski,53,FALSE,FALSE
+2008-10-11,Poland,Czechia,Czechia,Martin Fenin,87,FALSE,FALSE
 2008-10-11,Romania,France,Romania,Florentin Petre,6,FALSE,FALSE
 2008-10-11,Romania,France,Romania,Dorin Goian,17,FALSE,FALSE
 2008-10-11,Romania,France,France,Franck Ribéry,36,FALSE,FALSE
@@ -28743,7 +28743,7 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2008-10-15,Cuba,Guatemala,Cuba,Jaime Colomé,45,FALSE,TRUE
 2008-10-15,Cuba,Guatemala,Guatemala,Marco Pappa,80,FALSE,FALSE
 2008-10-15,Cuba,Guatemala,Cuba,Allianni Urgelles,90,FALSE,FALSE
-2008-10-15,Czech Republic,Slovenia,Czech Republic,Libor Sionko,63,FALSE,FALSE
+2008-10-15,Czechia,Slovenia,Czechia,Libor Sionko,63,FALSE,FALSE
 2008-10-15,El Salvador,Suriname,El Salvador,Rodolfo Zelaya,8,FALSE,FALSE
 2008-10-15,El Salvador,Suriname,El Salvador,Eliseo Quintanilla,27,FALSE,FALSE
 2008-10-15,El Salvador,Suriname,El Salvador,Derrik Garden,81,TRUE,FALSE
@@ -28804,9 +28804,9 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2008-11-19,Qatar,Japan,Japan,Tatsuya Tanaka,19,FALSE,FALSE
 2008-11-19,Qatar,Japan,Japan,Keiji Tamada,47,FALSE,FALSE
 2008-11-19,Qatar,Japan,Japan,Marcus Tulio Tanaka,68,FALSE,FALSE
-2008-11-19,San Marino,Czech Republic,Czech Republic,Radoslav Kováč,47,FALSE,FALSE
-2008-11-19,San Marino,Czech Republic,Czech Republic,Zdeněk Pospěch,53,FALSE,FALSE
-2008-11-19,San Marino,Czech Republic,Czech Republic,Tomáš Necid,66,FALSE,FALSE
+2008-11-19,San Marino,Czechia,Czechia,Radoslav Kováč,47,FALSE,FALSE
+2008-11-19,San Marino,Czechia,Czechia,Zdeněk Pospěch,53,FALSE,FALSE
+2008-11-19,San Marino,Czechia,Czechia,Tomáš Necid,66,FALSE,FALSE
 2008-11-19,Saudi Arabia,South Korea,South Korea,Lee Keun-ho,76,FALSE,FALSE
 2008-11-19,Saudi Arabia,South Korea,South Korea,Park Chu-young,90,FALSE,FALSE
 2008-11-19,Suriname,Haiti,Haiti,Leonel Saint-Preux,28,FALSE,FALSE
@@ -28969,9 +28969,9 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2009-04-01,Bulgaria,Cyprus,Bulgaria,Ivelin Popov,8,FALSE,FALSE
 2009-04-01,Bulgaria,Cyprus,Bulgaria,Dimitar Makriev,90,FALSE,FALSE
 2009-04-01,Costa Rica,El Salvador,Costa Rica,Walter Centeno,69,FALSE,FALSE
-2009-04-01,Czech Republic,Slovakia,Slovakia,Stanislav Šesták,22,FALSE,FALSE
-2009-04-01,Czech Republic,Slovakia,Czech Republic,Marek Jankulovski,30,FALSE,FALSE
-2009-04-01,Czech Republic,Slovakia,Slovakia,Erik Jendrišek,82,FALSE,FALSE
+2009-04-01,Czechia,Slovakia,Slovakia,Stanislav Šesták,22,FALSE,FALSE
+2009-04-01,Czechia,Slovakia,Czechia,Marek Jankulovski,30,FALSE,FALSE
+2009-04-01,Czechia,Slovakia,Slovakia,Erik Jendrišek,82,FALSE,FALSE
 2009-04-01,Denmark,Albania,Denmark,Leon Andreasen,31,FALSE,FALSE
 2009-04-01,Denmark,Albania,Denmark,Søren Larsen,37,FALSE,FALSE
 2009-04-01,Denmark,Albania,Denmark,Christian Poulsen,80,FALSE,FALSE
@@ -29401,10 +29401,10 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2009-09-05,Rwanda,Egypt,Egypt,Ahmed Hassan,67,FALSE,FALSE
 2009-09-05,Scotland,North Macedonia,Scotland,Scott Brown,56,FALSE,FALSE
 2009-09-05,Scotland,North Macedonia,Scotland,James McFadden,80,FALSE,FALSE
-2009-09-05,Slovakia,Czech Republic,Slovakia,Stanislav Šesták,59,FALSE,FALSE
-2009-09-05,Slovakia,Czech Republic,Czech Republic,Daniel Pudil,68,FALSE,FALSE
-2009-09-05,Slovakia,Czech Republic,Slovakia,Marek Hamšík,73,FALSE,TRUE
-2009-09-05,Slovakia,Czech Republic,Czech Republic,Milan Baroš,83,FALSE,FALSE
+2009-09-05,Slovakia,Czechia,Slovakia,Stanislav Šesták,59,FALSE,FALSE
+2009-09-05,Slovakia,Czechia,Czechia,Daniel Pudil,68,FALSE,FALSE
+2009-09-05,Slovakia,Czechia,Slovakia,Marek Hamšík,73,FALSE,TRUE
+2009-09-05,Slovakia,Czechia,Czechia,Milan Baroš,83,FALSE,FALSE
 2009-09-05,Spain,Belgium,Spain,David Silva,41,FALSE,FALSE
 2009-09-05,Spain,Belgium,Spain,David Villa,49,FALSE,FALSE
 2009-09-05,Spain,Belgium,Spain,Gerard Piqué,50,FALSE,FALSE
@@ -29462,13 +29462,13 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2009-09-09,Cameroon,Gabon,Cameroon,Jean Makoun,25,FALSE,FALSE
 2009-09-09,Cameroon,Gabon,Cameroon,Samuel Eto'o,64,FALSE,FALSE
 2009-09-09,Cameroon,Gabon,Gabon,Daniel Cousin,90,FALSE,FALSE
-2009-09-09,Czech Republic,San Marino,Czech Republic,Milan Baroš,28,FALSE,FALSE
-2009-09-09,Czech Republic,San Marino,Czech Republic,Milan Baroš,44,FALSE,FALSE
-2009-09-09,Czech Republic,San Marino,Czech Republic,Milan Baroš,45,FALSE,TRUE
-2009-09-09,Czech Republic,San Marino,Czech Republic,Václav Svěrkoš,47,FALSE,FALSE
-2009-09-09,Czech Republic,San Marino,Czech Republic,Milan Baroš,66,FALSE,FALSE
-2009-09-09,Czech Republic,San Marino,Czech Republic,Tomáš Necid,86,FALSE,FALSE
-2009-09-09,Czech Republic,San Marino,Czech Republic,Václav Svěrkoš,90,FALSE,FALSE
+2009-09-09,Czechia,San Marino,Czechia,Milan Baroš,28,FALSE,FALSE
+2009-09-09,Czechia,San Marino,Czechia,Milan Baroš,44,FALSE,FALSE
+2009-09-09,Czechia,San Marino,Czechia,Milan Baroš,45,FALSE,TRUE
+2009-09-09,Czechia,San Marino,Czechia,Václav Svěrkoš,47,FALSE,FALSE
+2009-09-09,Czechia,San Marino,Czechia,Milan Baroš,66,FALSE,FALSE
+2009-09-09,Czechia,San Marino,Czechia,Tomáš Necid,86,FALSE,FALSE
+2009-09-09,Czechia,San Marino,Czechia,Václav Svěrkoš,90,FALSE,FALSE
 2009-09-09,El Salvador,Costa Rica,El Salvador,Rudis Corrales,90,FALSE,FALSE
 2009-09-09,England,Croatia,England,Frank Lampard,7,FALSE,TRUE
 2009-09-09,England,Croatia,England,Steven Gerrard,18,FALSE,FALSE
@@ -29572,8 +29572,8 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2009-10-10,Cyprus,Bulgaria,Bulgaria,Dimitar Berbatov,44,FALSE,FALSE
 2009-10-10,Cyprus,Bulgaria,Cyprus,Michalis Konstantinou,58,FALSE,FALSE
 2009-10-10,Cyprus,Bulgaria,Cyprus,Efstathios Aloneftis,78,FALSE,FALSE
-2009-10-10,Czech Republic,Poland,Czech Republic,Tomáš Necid,51,FALSE,FALSE
-2009-10-10,Czech Republic,Poland,Czech Republic,Jaroslav Plašil,72,FALSE,FALSE
+2009-10-10,Czechia,Poland,Czechia,Tomáš Necid,51,FALSE,FALSE
+2009-10-10,Czechia,Poland,Czechia,Jaroslav Plašil,72,FALSE,FALSE
 2009-10-10,Denmark,Sweden,Denmark,Jakob Poulsen,78,FALSE,FALSE
 2009-10-10,Ecuador,Uruguay,Ecuador,Antonio Valencia,68,FALSE,FALSE
 2009-10-10,Ecuador,Uruguay,Uruguay,Luis Suárez,69,FALSE,FALSE
@@ -30069,7 +30069,7 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2010-09-07,Bosnia and Herzegovina,France,France,Karim Benzema,72,FALSE,FALSE
 2010-09-07,Bosnia and Herzegovina,France,France,Florent Malouda,78,FALSE,FALSE
 2010-09-07,Bulgaria,Montenegro,Montenegro,Elsad Zverotić,35,FALSE,FALSE
-2010-09-07,Czech Republic,Lithuania,Lithuania,Darvydas Šernas,25,FALSE,FALSE
+2010-09-07,Czechia,Lithuania,Lithuania,Darvydas Šernas,25,FALSE,FALSE
 2010-09-07,Denmark,Iceland,Denmark,Thomas Kahlenberg,90,FALSE,FALSE
 2010-09-07,Germany,Azerbaijan,Germany,Heiko Westermann,28,FALSE,FALSE
 2010-09-07,Germany,Azerbaijan,Germany,Lukas Podolski,45,FALSE,FALSE
@@ -30135,7 +30135,7 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2010-10-08,Cyprus,Norway,Norway,John Arne Riise,2,FALSE,FALSE
 2010-10-08,Cyprus,Norway,Norway,John Carew,42,FALSE,FALSE
 2010-10-08,Cyprus,Norway,Cyprus,Ioannis Okkas,58,FALSE,FALSE
-2010-10-08,Czech Republic,Scotland,Czech Republic,Roman Hubník,69,FALSE,FALSE
+2010-10-08,Czechia,Scotland,Czechia,Roman Hubník,69,FALSE,FALSE
 2010-10-08,Georgia,Malta,Georgia,David Siradze,90,FALSE,FALSE
 2010-10-08,Germany,Turkey,Germany,Miroslav Klose,42,FALSE,FALSE
 2010-10-08,Germany,Turkey,Germany,Mesut Özil,79,FALSE,FALSE
@@ -30219,8 +30219,8 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2010-10-12,Kazakhstan,Germany,Germany,Lukas Podolski,85,FALSE,FALSE
 2010-10-12,Latvia,Georgia,Georgia,David Siradze,74,FALSE,FALSE
 2010-10-12,Latvia,Georgia,Latvia,Aleksandrs Cauņa,90,FALSE,FALSE
-2010-10-12,Liechtenstein,Czech Republic,Czech Republic,Tomáš Necid,12,FALSE,FALSE
-2010-10-12,Liechtenstein,Czech Republic,Czech Republic,Václav Kadlec,29,FALSE,FALSE
+2010-10-12,Liechtenstein,Czechia,Czechia,Tomáš Necid,12,FALSE,FALSE
+2010-10-12,Liechtenstein,Czechia,Czechia,Václav Kadlec,29,FALSE,FALSE
 2010-10-12,Netherlands,Sweden,Netherlands,Klaas-Jan Huntelaar,4,FALSE,FALSE
 2010-10-12,Netherlands,Sweden,Netherlands,Ibrahim Afellay,37,FALSE,FALSE
 2010-10-12,Netherlands,Sweden,Netherlands,Klaas-Jan Huntelaar,55,FALSE,FALSE
@@ -30354,9 +30354,9 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2011-03-25,Serbia,Northern Ireland,Serbia,Marko Pantelić,65,FALSE,FALSE
 2011-03-25,Serbia,Northern Ireland,Serbia,Zoran Tošić,74,FALSE,FALSE
 2011-03-25,Slovenia,Italy,Italy,Thiago Motta,73,FALSE,FALSE
-2011-03-25,Spain,Czech Republic,Czech Republic,Jaroslav Plašil,29,FALSE,FALSE
-2011-03-25,Spain,Czech Republic,Spain,David Villa,69,FALSE,FALSE
-2011-03-25,Spain,Czech Republic,Spain,David Villa,73,FALSE,TRUE
+2011-03-25,Spain,Czechia,Czechia,Jaroslav Plašil,29,FALSE,FALSE
+2011-03-25,Spain,Czechia,Spain,David Villa,69,FALSE,FALSE
+2011-03-25,Spain,Czechia,Spain,David Villa,73,FALSE,TRUE
 2011-03-26,Albania,Belarus,Albania,Hamdi Salihi,62,FALSE,FALSE
 2011-03-26,Andorra,Slovakia,Slovakia,Filip Šebo,21,FALSE,FALSE
 2011-03-26,Bosnia and Herzegovina,Romania,Romania,Ciprian Marica,29,FALSE,FALSE
@@ -30383,8 +30383,8 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2011-03-29,Belgium,Azerbaijan,Belgium,Timmy Simons,32,FALSE,TRUE
 2011-03-29,Belgium,Azerbaijan,Belgium,Nacer Chadli,45,FALSE,FALSE
 2011-03-29,Belgium,Azerbaijan,Belgium,Jelle Vossen,74,FALSE,FALSE
-2011-03-29,Czech Republic,Liechtenstein,Czech Republic,Milan Baroš,3,FALSE,FALSE
-2011-03-29,Czech Republic,Liechtenstein,Czech Republic,Michal Kadlec,70,FALSE,FALSE
+2011-03-29,Czechia,Liechtenstein,Czechia,Milan Baroš,3,FALSE,FALSE
+2011-03-29,Czechia,Liechtenstein,Czechia,Michal Kadlec,70,FALSE,FALSE
 2011-03-29,Estonia,Serbia,Serbia,Marko Pantelić,38,FALSE,FALSE
 2011-03-29,Estonia,Serbia,Estonia,Konstantin Vassiljev,84,FALSE,FALSE
 2011-03-29,Israel,Georgia,Israel,Tal Ben Haim,59,FALSE,FALSE
@@ -30948,10 +30948,10 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2011-09-02,Wales,Montenegro,Wales,Steve Morison,28,FALSE,FALSE
 2011-09-02,Wales,Montenegro,Wales,Aaron Ramsey,50,FALSE,FALSE
 2011-09-02,Wales,Montenegro,Montenegro,Stevan Jovetić,71,FALSE,FALSE
-2011-09-03,Scotland,Czech Republic,Scotland,Kenny Miller,44,FALSE,FALSE
-2011-09-03,Scotland,Czech Republic,Czech Republic,Jaroslav Plašil,78,FALSE,FALSE
-2011-09-03,Scotland,Czech Republic,Scotland,Darren Fletcher,82,FALSE,FALSE
-2011-09-03,Scotland,Czech Republic,Czech Republic,Michal Kadlec,90,FALSE,TRUE
+2011-09-03,Scotland,Czechia,Scotland,Kenny Miller,44,FALSE,FALSE
+2011-09-03,Scotland,Czechia,Czechia,Jaroslav Plašil,78,FALSE,FALSE
+2011-09-03,Scotland,Czechia,Scotland,Darren Fletcher,82,FALSE,FALSE
+2011-09-03,Scotland,Czechia,Czechia,Michal Kadlec,90,FALSE,TRUE
 2011-09-06,Azerbaijan,Kazakhstan,Kazakhstan,Sergei Ostapenko,20,FALSE,FALSE
 2011-09-06,Azerbaijan,Kazakhstan,Azerbaijan,Rauf Aliyev,53,FALSE,FALSE
 2011-09-06,Azerbaijan,Kazakhstan,Azerbaijan,Mahir Shukurov,62,FALSE,TRUE
@@ -31122,8 +31122,8 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2011-10-07,Cyprus,Denmark,Denmark,Michael Krohn-Dehli,20,FALSE,FALSE
 2011-10-07,Cyprus,Denmark,Denmark,Dennis Rommedahl,22,FALSE,FALSE
 2011-10-07,Cyprus,Denmark,Cyprus,Andreas Avraam,45,FALSE,FALSE
-2011-10-07,Czech Republic,Spain,Spain,Juan Mata,6,FALSE,FALSE
-2011-10-07,Czech Republic,Spain,Spain,Xabi Alonso,23,FALSE,FALSE
+2011-10-07,Czechia,Spain,Spain,Juan Mata,6,FALSE,FALSE
+2011-10-07,Czechia,Spain,Spain,Xabi Alonso,23,FALSE,FALSE
 2011-10-07,Dominica,Panama,Panama,Amir Waithe,26,FALSE,FALSE
 2011-10-07,Dominica,Panama,Panama,Luis Tejada,34,FALSE,FALSE
 2011-10-07,Dominica,Panama,Panama,Blas Pérez,57,FALSE,FALSE
@@ -31281,11 +31281,11 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2011-10-11,Lebanon,Kuwait,Kuwait,Musaed Neda,51,FALSE,FALSE
 2011-10-11,Lebanon,Kuwait,Lebanon,Hassan Maatouk,86,FALSE,TRUE
 2011-10-11,Lebanon,Kuwait,Kuwait,Mahmoud Baquir Younes,89,TRUE,FALSE
-2011-10-11,Lithuania,Czech Republic,Czech Republic,Michal Kadlec,2,FALSE,TRUE
-2011-10-11,Lithuania,Czech Republic,Czech Republic,Jan Rezek,16,FALSE,FALSE
-2011-10-11,Lithuania,Czech Republic,Czech Republic,Jan Rezek,45,FALSE,FALSE
-2011-10-11,Lithuania,Czech Republic,Lithuania,Darvydas Šernas,68,FALSE,TRUE
-2011-10-11,Lithuania,Czech Republic,Czech Republic,Michal Kadlec,85,FALSE,TRUE
+2011-10-11,Lithuania,Czechia,Czechia,Michal Kadlec,2,FALSE,TRUE
+2011-10-11,Lithuania,Czechia,Czechia,Jan Rezek,16,FALSE,FALSE
+2011-10-11,Lithuania,Czechia,Czechia,Jan Rezek,45,FALSE,FALSE
+2011-10-11,Lithuania,Czechia,Lithuania,Darvydas Šernas,68,FALSE,TRUE
+2011-10-11,Lithuania,Czechia,Czechia,Michal Kadlec,85,FALSE,TRUE
 2011-10-11,Malta,Israel,Israel,Lior Refaelov,11,FALSE,FALSE
 2011-10-11,Malta,Israel,Israel,Rami Gershon,90,FALSE,FALSE
 2011-10-11,Moldova,San Marino,Moldova,Denis Zmeu,30,FALSE,FALSE
@@ -31364,8 +31364,8 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2011-11-11,Colombia,Venezuela,Colombia,Fredy Guarín,11,FALSE,FALSE
 2011-11-11,Colombia,Venezuela,Venezuela,Frank Feltscher,78,FALSE,FALSE
 2011-11-11,Comoros,Mozambique,Mozambique,Almiro Lobo,54,FALSE,TRUE
-2011-11-11,Czech Republic,Montenegro,Czech Republic,Václav Pilař,63,FALSE,FALSE
-2011-11-11,Czech Republic,Montenegro,Czech Republic,Tomáš Sivok,90,FALSE,FALSE
+2011-11-11,Czechia,Montenegro,Czechia,Václav Pilař,63,FALSE,FALSE
+2011-11-11,Czechia,Montenegro,Czechia,Tomáš Sivok,90,FALSE,FALSE
 2011-11-11,Djibouti,Namibia,Namibia,Rudolf Bester,13,FALSE,FALSE
 2011-11-11,Djibouti,Namibia,Namibia,Lazarus Kaimbi,50,FALSE,FALSE
 2011-11-11,Djibouti,Namibia,Namibia,Rudolf Bester,52,FALSE,FALSE
@@ -31516,7 +31516,7 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2011-11-15,Madagascar,Equatorial Guinea,Equatorial Guinea,Viera Ellong,24,FALSE,FALSE
 2011-11-15,Madagascar,Equatorial Guinea,Madagascar,Yvan Rajoarimanana,54,FALSE,FALSE
 2011-11-15,Madagascar,Equatorial Guinea,Madagascar,Falimery Ramanamahefa,90,FALSE,FALSE
-2011-11-15,Montenegro,Czech Republic,Czech Republic,Petr Jiráček,81,FALSE,FALSE
+2011-11-15,Montenegro,Czechia,Czechia,Petr Jiráček,81,FALSE,FALSE
 2011-11-15,Mozambique,Comoros,Mozambique,Domingues,26,FALSE,FALSE
 2011-11-15,Mozambique,Comoros,Mozambique,Jerry Sitoe,45,FALSE,FALSE
 2011-11-15,Mozambique,Comoros,Mozambique,Francisco Massinga,59,FALSE,FALSE
@@ -31852,11 +31852,11 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2012-06-08,Qatar,South Korea,South Korea,Kwak Tae-hwi,55,FALSE,FALSE
 2012-06-08,Qatar,South Korea,South Korea,Kim Shin-wook,64,FALSE,FALSE
 2012-06-08,Qatar,South Korea,South Korea,Lee Keun-ho,80,FALSE,FALSE
-2012-06-08,Russia,Czech Republic,Russia,Alan Dzagoev,15,FALSE,FALSE
-2012-06-08,Russia,Czech Republic,Russia,Roman Shirokov,24,FALSE,FALSE
-2012-06-08,Russia,Czech Republic,Czech Republic,Václav Pilař,52,FALSE,FALSE
-2012-06-08,Russia,Czech Republic,Russia,Alan Dzagoev,79,FALSE,FALSE
-2012-06-08,Russia,Czech Republic,Russia,Roman Pavlyuchenko,82,FALSE,FALSE
+2012-06-08,Russia,Czechia,Russia,Alan Dzagoev,15,FALSE,FALSE
+2012-06-08,Russia,Czechia,Russia,Roman Shirokov,24,FALSE,FALSE
+2012-06-08,Russia,Czechia,Czechia,Václav Pilař,52,FALSE,FALSE
+2012-06-08,Russia,Czechia,Russia,Alan Dzagoev,79,FALSE,FALSE
+2012-06-08,Russia,Czechia,Russia,Roman Pavlyuchenko,82,FALSE,FALSE
 2012-06-08,Solomon Islands,Tahiti,Tahiti,Jonathan Tehau,15,FALSE,FALSE
 2012-06-08,United States,Antigua and Barbuda,United States,Carlos Bocanegra,8,FALSE,FALSE
 2012-06-08,United States,Antigua and Barbuda,United States,Clint Dempsey,44,FALSE,TRUE
@@ -31942,9 +31942,9 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2012-06-12,El Salvador,Mexico,Mexico,Jesús Zavala,60,FALSE,FALSE
 2012-06-12,El Salvador,Mexico,El Salvador,Alfredo Pacheco,64,FALSE,FALSE
 2012-06-12,El Salvador,Mexico,Mexico,Héctor Moreno,82,FALSE,FALSE
-2012-06-12,Greece,Czech Republic,Czech Republic,Petr Jiráček,3,FALSE,FALSE
-2012-06-12,Greece,Czech Republic,Czech Republic,Václav Pilař,6,FALSE,FALSE
-2012-06-12,Greece,Czech Republic,Greece,Theofanis Gekas,53,FALSE,FALSE
+2012-06-12,Greece,Czechia,Czechia,Petr Jiráček,3,FALSE,FALSE
+2012-06-12,Greece,Czechia,Czechia,Václav Pilař,6,FALSE,FALSE
+2012-06-12,Greece,Czechia,Greece,Theofanis Gekas,53,FALSE,FALSE
 2012-06-12,Guatemala,United States,United States,Clint Dempsey,40,FALSE,FALSE
 2012-06-12,Guatemala,United States,Guatemala,Marco Pappa,83,FALSE,FALSE
 2012-06-12,Guyana,Costa Rica,Costa Rica,Álvaro Saborío,20,FALSE,FALSE
@@ -31981,7 +31981,7 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2012-06-15,Ukraine,France,France,Jérémy Ménez,53,FALSE,FALSE
 2012-06-15,Ukraine,France,France,Yohan Cabaye,56,FALSE,FALSE
 2012-06-16,Greece,Russia,Greece,Giorgos Karagounis,45,FALSE,FALSE
-2012-06-16,Poland,Czech Republic,Czech Republic,Petr Jiráček,72,FALSE,FALSE
+2012-06-16,Poland,Czechia,Czechia,Petr Jiráček,72,FALSE,FALSE
 2012-06-17,Denmark,Germany,Germany,Lukas Podolski,19,FALSE,FALSE
 2012-06-17,Denmark,Germany,Denmark,Michael Krohn-Dehli,24,FALSE,FALSE
 2012-06-17,Denmark,Germany,Germany,Lars Bender,80,FALSE,FALSE
@@ -31994,7 +31994,7 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2012-06-19,Sweden,France,Sweden,Zlatan Ibrahimović,54,FALSE,FALSE
 2012-06-19,Sweden,France,Sweden,Seb Larsson,90,FALSE,FALSE
 2012-06-19,Ukraine,England,England,Wayne Rooney,48,FALSE,FALSE
-2012-06-21,Czech Republic,Portugal,Portugal,Cristiano Ronaldo,79,FALSE,FALSE
+2012-06-21,Czechia,Portugal,Portugal,Cristiano Ronaldo,79,FALSE,FALSE
 2012-06-22,Germany,Greece,Germany,Philipp Lahm,39,FALSE,FALSE
 2012-06-22,Germany,Greece,Greece,Georgios Samaras,55,FALSE,FALSE
 2012-06-22,Germany,Greece,Germany,Sami Khedira,61,FALSE,FALSE
@@ -32243,10 +32243,10 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2012-10-12,Canada,Cuba,Canada,David Edgar,78,FALSE,FALSE
 2012-10-12,Colombia,Paraguay,Colombia,Radamel Falcao,52,FALSE,FALSE
 2012-10-12,Colombia,Paraguay,Colombia,Radamel Falcao,89,FALSE,FALSE
-2012-10-12,Czech Republic,Malta,Czech Republic,Theodor Gebre Selassie,34,FALSE,FALSE
-2012-10-12,Czech Republic,Malta,Malta,Roderick Briffa,38,FALSE,FALSE
-2012-10-12,Czech Republic,Malta,Czech Republic,Tomáš Pekhart,52,FALSE,FALSE
-2012-10-12,Czech Republic,Malta,Czech Republic,Jan Rezek,67,FALSE,FALSE
+2012-10-12,Czechia,Malta,Czechia,Theodor Gebre Selassie,34,FALSE,FALSE
+2012-10-12,Czechia,Malta,Malta,Roderick Briffa,38,FALSE,FALSE
+2012-10-12,Czechia,Malta,Czechia,Tomáš Pekhart,52,FALSE,FALSE
+2012-10-12,Czechia,Malta,Czechia,Jan Rezek,67,FALSE,FALSE
 2012-10-12,Ecuador,Chile,Chile,Juan Carlos Paredes,25,TRUE,FALSE
 2012-10-12,Ecuador,Chile,Ecuador,Felipe Caicedo,33,FALSE,FALSE
 2012-10-12,Ecuador,Chile,Ecuador,Felipe Caicedo,56,FALSE,TRUE
@@ -32553,9 +32553,9 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2013-03-22,Colombia,Bolivia,Colombia,Pablo Armero,90,FALSE,FALSE
 2013-03-22,Croatia,Serbia,Croatia,Mario Mandžukić,23,FALSE,FALSE
 2013-03-22,Croatia,Serbia,Croatia,Ivica Olić,37,FALSE,FALSE
-2013-03-22,Czech Republic,Denmark,Denmark,Andreas Cornelius,57,FALSE,FALSE
-2013-03-22,Czech Republic,Denmark,Denmark,Simon Kjær,67,FALSE,FALSE
-2013-03-22,Czech Republic,Denmark,Denmark,Niki Zimling,83,FALSE,FALSE
+2013-03-22,Czechia,Denmark,Denmark,Andreas Cornelius,57,FALSE,FALSE
+2013-03-22,Czechia,Denmark,Denmark,Simon Kjær,67,FALSE,FALSE
+2013-03-22,Czechia,Denmark,Denmark,Niki Zimling,83,FALSE,FALSE
 2013-03-22,France,Georgia,France,Olivier Giroud,45,FALSE,FALSE
 2013-03-22,France,Georgia,France,Mathieu Valbuena,47,FALSE,FALSE
 2013-03-22,France,Georgia,France,Franck Ribéry,61,FALSE,FALSE
@@ -32660,9 +32660,9 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2013-03-26,Algeria,Benin,Benin,Rudy Gestede,26,FALSE,FALSE
 2013-03-26,Algeria,Benin,Algeria,Saphir Sliti Taïder,59,FALSE,FALSE
 2013-03-26,Algeria,Benin,Algeria,Islam Slimani,90,FALSE,FALSE
-2013-03-26,Armenia,Czech Republic,Czech Republic,Matěj Vydra,47,FALSE,FALSE
-2013-03-26,Armenia,Czech Republic,Czech Republic,Matěj Vydra,81,FALSE,FALSE
-2013-03-26,Armenia,Czech Republic,Czech Republic,Daniel Kolář,90,FALSE,FALSE
+2013-03-26,Armenia,Czechia,Czechia,Matěj Vydra,47,FALSE,FALSE
+2013-03-26,Armenia,Czechia,Czechia,Matěj Vydra,81,FALSE,FALSE
+2013-03-26,Armenia,Czechia,Czechia,Daniel Kolář,90,FALSE,FALSE
 2013-03-26,Australia,Oman,Oman,Abdul Aziz Al-Muqbali,7,FALSE,FALSE
 2013-03-26,Australia,Oman,Oman,Mile Jedinak,49,TRUE,FALSE
 2013-03-26,Australia,Oman,Australia,Tim Cahill,52,FALSE,FALSE
@@ -33073,9 +33073,9 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2013-09-06,Costa Rica,United States,Costa Rica,Celso Borges,9,FALSE,FALSE
 2013-09-06,Costa Rica,United States,United States,Clint Dempsey,43,FALSE,TRUE
 2013-09-06,Costa Rica,United States,Costa Rica,Joel Campbell,75,FALSE,FALSE
-2013-09-06,Czech Republic,Armenia,Armenia,Karlen Mkrtchyan,30,FALSE,FALSE
-2013-09-06,Czech Republic,Armenia,Czech Republic,Tomáš Rosický,70,FALSE,FALSE
-2013-09-06,Czech Republic,Armenia,Armenia,Gevorg Ghazaryan,90,FALSE,FALSE
+2013-09-06,Czechia,Armenia,Armenia,Karlen Mkrtchyan,30,FALSE,FALSE
+2013-09-06,Czechia,Armenia,Czechia,Tomáš Rosický,70,FALSE,FALSE
+2013-09-06,Czechia,Armenia,Armenia,Gevorg Ghazaryan,90,FALSE,FALSE
 2013-09-06,England,Moldova,England,Steven Gerrard,12,FALSE,FALSE
 2013-09-06,England,Moldova,England,Rickie Lambert,26,FALSE,FALSE
 2013-09-06,England,Moldova,England,Danny Welbeck,45,FALSE,FALSE
@@ -33250,9 +33250,9 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2013-09-10,Iceland,Albania,Albania,Valdet Rama,9,FALSE,FALSE
 2013-09-10,Iceland,Albania,Iceland,Birkir Bjarnason,13,FALSE,FALSE
 2013-09-10,Iceland,Albania,Iceland,Kolbeinn Sigþórsson,47,FALSE,FALSE
-2013-09-10,Italy,Czech Republic,Czech Republic,Libor Kozák,19,FALSE,FALSE
-2013-09-10,Italy,Czech Republic,Italy,Giorgio Chiellini,51,FALSE,FALSE
-2013-09-10,Italy,Czech Republic,Italy,Mario Balotelli,54,FALSE,TRUE
+2013-09-10,Italy,Czechia,Czechia,Libor Kozák,19,FALSE,FALSE
+2013-09-10,Italy,Czechia,Italy,Giorgio Chiellini,51,FALSE,FALSE
+2013-09-10,Italy,Czechia,Italy,Mario Balotelli,54,FALSE,TRUE
 2013-09-10,Jamaica,Costa Rica,Costa Rica,Randall Brenes,74,FALSE,FALSE
 2013-09-10,Jamaica,Costa Rica,Jamaica,Jermaine Anderson,90,FALSE,FALSE
 2013-09-10,Kazakhstan,Sweden,Sweden,Zlatan Ibrahimović,1,FALSE,FALSE
@@ -33364,11 +33364,11 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2013-10-11,Luxembourg,Russia,Russia,Viktor Fayzulin,39,FALSE,FALSE
 2013-10-11,Luxembourg,Russia,Russia,Denis Glushakov,45,FALSE,FALSE
 2013-10-11,Luxembourg,Russia,Russia,Aleksandr Kerzhakov,73,FALSE,FALSE
-2013-10-11,Malta,Czech Republic,Czech Republic,Tomáš Hübschman,3,FALSE,FALSE
-2013-10-11,Malta,Czech Republic,Czech Republic,David Lafata,33,FALSE,FALSE
-2013-10-11,Malta,Czech Republic,Malta,Michael Mifsud,47,FALSE,FALSE
-2013-10-11,Malta,Czech Republic,Czech Republic,Václav Kadlec,51,FALSE,FALSE
-2013-10-11,Malta,Czech Republic,Czech Republic,Tomáš Pekhart,90,FALSE,FALSE
+2013-10-11,Malta,Czechia,Czechia,Tomáš Hübschman,3,FALSE,FALSE
+2013-10-11,Malta,Czechia,Czechia,David Lafata,33,FALSE,FALSE
+2013-10-11,Malta,Czechia,Malta,Michael Mifsud,47,FALSE,FALSE
+2013-10-11,Malta,Czechia,Czechia,Václav Kadlec,51,FALSE,FALSE
+2013-10-11,Malta,Czechia,Czechia,Tomáš Pekhart,90,FALSE,FALSE
 2013-10-11,Mexico,Panama,Mexico,Oribe Peralta,39,FALSE,FALSE
 2013-10-11,Mexico,Panama,Panama,Luis Tejada,81,FALSE,FALSE
 2013-10-11,Mexico,Panama,Mexico,Raúl Jiménez,85,FALSE,FALSE
@@ -33417,7 +33417,7 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2013-10-15,Azerbaijan,Russia,Azerbaijan,Vagif Javadov,90,FALSE,FALSE
 2013-10-15,Belgium,Wales,Belgium,Kevin De Bruyne,64,FALSE,FALSE
 2013-10-15,Belgium,Wales,Wales,Aaron Ramsey,88,FALSE,FALSE
-2013-10-15,Bulgaria,Czech Republic,Czech Republic,Bořek Dočkal,51,FALSE,FALSE
+2013-10-15,Bulgaria,Czechia,Czechia,Bořek Dočkal,51,FALSE,FALSE
 2013-10-15,Chile,Ecuador,Chile,Alexis Sánchez,35,FALSE,FALSE
 2013-10-15,Chile,Ecuador,Chile,Gary Medel,38,FALSE,FALSE
 2013-10-15,Chile,Ecuador,Ecuador,Felipe Caicedo,66,FALSE,FALSE
@@ -33808,9 +33808,9 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2014-09-09,Bosnia and Herzegovina,Cyprus,Cyprus,Demetris Christofi,73,FALSE,FALSE
 2014-09-09,Croatia,Malta,Croatia,Luka Modrić,46,FALSE,FALSE
 2014-09-09,Croatia,Malta,Croatia,Andrej Kramarić,81,FALSE,FALSE
-2014-09-09,Czech Republic,Netherlands,Czech Republic,Bořek Dočkal,22,FALSE,FALSE
-2014-09-09,Czech Republic,Netherlands,Netherlands,Stefan de Vrij,55,FALSE,FALSE
-2014-09-09,Czech Republic,Netherlands,Czech Republic,Václav Pilař,90,FALSE,FALSE
+2014-09-09,Czechia,Netherlands,Czechia,Bořek Dočkal,22,FALSE,FALSE
+2014-09-09,Czechia,Netherlands,Netherlands,Stefan de Vrij,55,FALSE,FALSE
+2014-09-09,Czechia,Netherlands,Czechia,Václav Pilař,90,FALSE,FALSE
 2014-09-09,Iceland,Turkey,Iceland,Jón Daði Böðvarsson,19,FALSE,FALSE
 2014-09-09,Iceland,Turkey,Iceland,Gylfi Sigurðsson,76,FALSE,FALSE
 2014-09-09,Iceland,Turkey,Iceland,Kolbeinn Sigþórsson,77,FALSE,FALSE
@@ -33861,9 +33861,9 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2014-10-10,Netherlands,Kazakhstan,Netherlands,Klaas-Jan Huntelaar,62,FALSE,FALSE
 2014-10-10,Netherlands,Kazakhstan,Netherlands,Ibrahim Afellay,82,FALSE,FALSE
 2014-10-10,Netherlands,Kazakhstan,Netherlands,Robin van Persie,89,FALSE,TRUE
-2014-10-10,Turkey,Czech Republic,Turkey,Umut Bulut,8,FALSE,FALSE
-2014-10-10,Turkey,Czech Republic,Czech Republic,Tomáš Sivok,15,FALSE,FALSE
-2014-10-10,Turkey,Czech Republic,Czech Republic,Bořek Dočkal,58,FALSE,FALSE
+2014-10-10,Turkey,Czechia,Turkey,Umut Bulut,8,FALSE,FALSE
+2014-10-10,Turkey,Czechia,Czechia,Tomáš Sivok,15,FALSE,FALSE
+2014-10-10,Turkey,Czechia,Czechia,Bořek Dočkal,58,FALSE,FALSE
 2014-10-11,Albania,Denmark,Albania,Ermir Lenjani,38,FALSE,FALSE
 2014-10-11,Albania,Denmark,Denmark,Lasse Vibe,81,FALSE,FALSE
 2014-10-11,Armenia,Serbia,Armenia,Robert Arzumanyan,73,FALSE,FALSE
@@ -33916,12 +33916,12 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2014-10-13,Croatia,Azerbaijan,Croatia,Rashad Sadygov,61,TRUE,FALSE
 2014-10-13,Iceland,Netherlands,Iceland,Gylfi Sigurðsson,10,FALSE,TRUE
 2014-10-13,Iceland,Netherlands,Iceland,Gylfi Sigurðsson,42,FALSE,FALSE
-2014-10-13,Kazakhstan,Czech Republic,Czech Republic,Bořek Dočkal,13,FALSE,FALSE
-2014-10-13,Kazakhstan,Czech Republic,Czech Republic,David Lafata,44,FALSE,FALSE
-2014-10-13,Kazakhstan,Czech Republic,Czech Republic,Ladislav Krejčí,56,FALSE,FALSE
-2014-10-13,Kazakhstan,Czech Republic,Kazakhstan,Yuriy Logvinenko,84,FALSE,FALSE
-2014-10-13,Kazakhstan,Czech Republic,Czech Republic,Tomáš Necid,88,FALSE,FALSE
-2014-10-13,Kazakhstan,Czech Republic,Kazakhstan,Yuriy Logvinenko,90,FALSE,FALSE
+2014-10-13,Kazakhstan,Czechia,Czechia,Bořek Dočkal,13,FALSE,FALSE
+2014-10-13,Kazakhstan,Czechia,Czechia,David Lafata,44,FALSE,FALSE
+2014-10-13,Kazakhstan,Czechia,Czechia,Ladislav Krejčí,56,FALSE,FALSE
+2014-10-13,Kazakhstan,Czechia,Kazakhstan,Yuriy Logvinenko,84,FALSE,FALSE
+2014-10-13,Kazakhstan,Czechia,Czechia,Tomáš Necid,88,FALSE,FALSE
+2014-10-13,Kazakhstan,Czechia,Kazakhstan,Yuriy Logvinenko,90,FALSE,FALSE
 2014-10-13,Latvia,Turkey,Turkey,Bilal Kısa,47,FALSE,FALSE
 2014-10-13,Latvia,Turkey,Latvia,Valērijs Šabala,54,FALSE,TRUE
 2014-10-13,Malta,Italy,Italy,Graziano Pellè,24,FALSE,FALSE
@@ -33996,9 +33996,9 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2014-11-16,Cyprus,Andorra,Cyprus,Georgios Efrem,42,FALSE,FALSE
 2014-11-16,Cyprus,Andorra,Cyprus,Georgios Efrem,60,FALSE,FALSE
 2014-11-16,Cyprus,Andorra,Cyprus,Demetris Christofi,87,FALSE,TRUE
-2014-11-16,Czech Republic,Iceland,Iceland,Ragnar Sigurðsson,9,FALSE,FALSE
-2014-11-16,Czech Republic,Iceland,Czech Republic,Pavel Kadeřábek,45,FALSE,FALSE
-2014-11-16,Czech Republic,Iceland,Czech Republic,Jón Daði Böðvarsson,61,TRUE,FALSE
+2014-11-16,Czechia,Iceland,Iceland,Ragnar Sigurðsson,9,FALSE,FALSE
+2014-11-16,Czechia,Iceland,Czechia,Pavel Kadeřábek,45,FALSE,FALSE
+2014-11-16,Czechia,Iceland,Czechia,Jón Daði Böðvarsson,61,TRUE,FALSE
 2014-11-16,Israel,Bosnia and Herzegovina,Israel,Gil Vermouth,36,FALSE,FALSE
 2014-11-16,Israel,Bosnia and Herzegovina,Israel,Omer Damari,45,FALSE,FALSE
 2014-11-16,Israel,Bosnia and Herzegovina,Israel,Eran Zahavi,70,FALSE,FALSE
@@ -34271,8 +34271,8 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2015-03-28,Croatia,Norway,Norway,Alexander Tettey,80,FALSE,FALSE
 2015-03-28,Croatia,Norway,Croatia,Gordon Schildenfeld,87,FALSE,FALSE
 2015-03-28,Croatia,Norway,Croatia,Danijel Pranjić,90,FALSE,FALSE
-2015-03-28,Czech Republic,Latvia,Latvia,Aleksejs Višņakovs,30,FALSE,FALSE
-2015-03-28,Czech Republic,Latvia,Czech Republic,Václav Pilař,90,FALSE,FALSE
+2015-03-28,Czechia,Latvia,Latvia,Aleksejs Višņakovs,30,FALSE,FALSE
+2015-03-28,Czechia,Latvia,Czechia,Václav Pilař,90,FALSE,FALSE
 2015-03-28,Israel,Wales,Wales,Aaron Ramsey,45,FALSE,FALSE
 2015-03-28,Israel,Wales,Wales,Gareth Bale,50,FALSE,FALSE
 2015-03-28,Israel,Wales,Wales,Gareth Bale,77,FALSE,FALSE
@@ -34391,9 +34391,9 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2015-06-12,Bosnia and Herzegovina,Israel,Bosnia and Herzegovina,Edin Višća,75,FALSE,FALSE
 2015-06-12,Croatia,Italy,Croatia,Mario Mandžukić,11,FALSE,FALSE
 2015-06-12,Croatia,Italy,Italy,Antonio Candreva,36,FALSE,TRUE
-2015-06-12,Iceland,Czech Republic,Czech Republic,Bořek Dočkal,55,FALSE,FALSE
-2015-06-12,Iceland,Czech Republic,Iceland,Aron Gunnarsson,60,FALSE,FALSE
-2015-06-12,Iceland,Czech Republic,Iceland,Kolbeinn Sigþórsson,76,FALSE,FALSE
+2015-06-12,Iceland,Czechia,Czechia,Bořek Dočkal,55,FALSE,FALSE
+2015-06-12,Iceland,Czechia,Iceland,Aron Gunnarsson,60,FALSE,FALSE
+2015-06-12,Iceland,Czechia,Iceland,Kolbeinn Sigþórsson,76,FALSE,FALSE
 2015-06-12,Kazakhstan,Turkey,Turkey,Arda Turan,83,FALSE,FALSE
 2015-06-12,Latvia,Netherlands,Netherlands,Georginio Wijnaldum,67,FALSE,FALSE
 2015-06-12,Latvia,Netherlands,Netherlands,Luciano Narsingh,71,FALSE,FALSE
@@ -34664,9 +34664,9 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2015-09-03,Belgium,Bosnia and Herzegovina,Belgium,Eden Hazard,78,FALSE,TRUE
 2015-09-03,Bulgaria,Norway,Norway,Vegard Forren,57,FALSE,FALSE
 2015-09-03,Cyprus,Wales,Wales,Gareth Bale,82,FALSE,FALSE
-2015-09-03,Czech Republic,Kazakhstan,Kazakhstan,Yuriy Logvinenko,21,FALSE,FALSE
-2015-09-03,Czech Republic,Kazakhstan,Czech Republic,Milan Škoda,74,FALSE,FALSE
-2015-09-03,Czech Republic,Kazakhstan,Czech Republic,Milan Škoda,86,FALSE,FALSE
+2015-09-03,Czechia,Kazakhstan,Kazakhstan,Yuriy Logvinenko,21,FALSE,FALSE
+2015-09-03,Czechia,Kazakhstan,Czechia,Milan Škoda,74,FALSE,FALSE
+2015-09-03,Czechia,Kazakhstan,Czechia,Milan Škoda,86,FALSE,FALSE
 2015-09-03,Iran,Guam,Iran,Ashkan Dejagah,10,FALSE,TRUE
 2015-09-03,Iran,Guam,Iran,Mehdi Taremi,31,FALSE,FALSE
 2015-09-03,Iran,Guam,Iran,Sardar Azmoun,34,FALSE,FALSE
@@ -34810,9 +34810,9 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2015-09-06,Bosnia and Herzegovina,Andorra,Bosnia and Herzegovina,Senad Lulić,45,FALSE,FALSE
 2015-09-06,Cyprus,Belgium,Belgium,Eden Hazard,86,FALSE,FALSE
 2015-09-06,Italy,Bulgaria,Italy,Daniele De Rossi,6,FALSE,TRUE
-2015-09-06,Latvia,Czech Republic,Czech Republic,David Limberský,13,FALSE,FALSE
-2015-09-06,Latvia,Czech Republic,Czech Republic,Vladimír Darida,25,FALSE,FALSE
-2015-09-06,Latvia,Czech Republic,Latvia,Artūrs Zjuzins,73,FALSE,FALSE
+2015-09-06,Latvia,Czechia,Czechia,David Limberský,13,FALSE,FALSE
+2015-09-06,Latvia,Czechia,Czechia,Vladimír Darida,25,FALSE,FALSE
+2015-09-06,Latvia,Czechia,Latvia,Artūrs Zjuzins,73,FALSE,FALSE
 2015-09-06,Malta,Azerbaijan,Azerbaijan,Rahid Amirguliyev,36,FALSE,FALSE
 2015-09-06,Malta,Azerbaijan,Malta,Michael Mifsud,55,FALSE,FALSE
 2015-09-06,Malta,Azerbaijan,Malta,Alfred Effiong,71,FALSE,FALSE
@@ -35062,8 +35062,8 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2015-10-10,Croatia,Bulgaria,Croatia,Ivan Perišić,2,FALSE,FALSE
 2015-10-10,Croatia,Bulgaria,Croatia,Ivan Rakitić,42,FALSE,FALSE
 2015-10-10,Croatia,Bulgaria,Croatia,Nikola Kalinić,81,FALSE,FALSE
-2015-10-10,Czech Republic,Turkey,Turkey,Selçuk İnan,62,FALSE,TRUE
-2015-10-10,Czech Republic,Turkey,Turkey,Hakan Çalhanoğlu,79,FALSE,FALSE
+2015-10-10,Czechia,Turkey,Turkey,Selçuk İnan,62,FALSE,TRUE
+2015-10-10,Czechia,Turkey,Turkey,Hakan Çalhanoğlu,79,FALSE,FALSE
 2015-10-10,Eritrea,Botswana,Botswana,Galabgwe Moyana,22,FALSE,FALSE
 2015-10-10,Eritrea,Botswana,Botswana,Joel Mogorosi,64,FALSE,FALSE
 2015-10-10,Iceland,Latvia,Iceland,Kolbeinn Sigþórsson,5,FALSE,FALSE
@@ -35192,11 +35192,11 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2015-10-13,Namibia,Gambia,Gambia,Pa Dibba,9,FALSE,FALSE
 2015-10-13,Namibia,Gambia,Namibia,Willy Stephanus,42,FALSE,FALSE
 2015-10-13,Namibia,Gambia,Namibia,Hendrik Somaeb,64,FALSE,FALSE
-2015-10-13,Netherlands,Czech Republic,Czech Republic,Pavel Kadeřábek,24,FALSE,FALSE
-2015-10-13,Netherlands,Czech Republic,Czech Republic,Josef Šural,35,FALSE,FALSE
-2015-10-13,Netherlands,Czech Republic,Czech Republic,Robin van Persie,66,TRUE,FALSE
-2015-10-13,Netherlands,Czech Republic,Netherlands,Klaas-Jan Huntelaar,70,FALSE,FALSE
-2015-10-13,Netherlands,Czech Republic,Netherlands,Robin van Persie,83,FALSE,FALSE
+2015-10-13,Netherlands,Czechia,Czechia,Pavel Kadeřábek,24,FALSE,FALSE
+2015-10-13,Netherlands,Czechia,Czechia,Josef Šural,35,FALSE,FALSE
+2015-10-13,Netherlands,Czechia,Czechia,Robin van Persie,66,TRUE,FALSE
+2015-10-13,Netherlands,Czechia,Netherlands,Klaas-Jan Huntelaar,70,FALSE,FALSE
+2015-10-13,Netherlands,Czechia,Netherlands,Robin van Persie,83,FALSE,FALSE
 2015-10-13,Niger,Somalia,Niger,Mahamane Cissé,13,FALSE,FALSE
 2015-10-13,Niger,Somalia,Niger,Moussa Maâzou,18,FALSE,FALSE
 2015-10-13,Niger,Somalia,Niger,Moussa Maâzou,32,FALSE,FALSE
@@ -35823,7 +35823,7 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2016-06-13,Mexico,Venezuela,Mexico,Jesús Manuel Corona,80,FALSE,FALSE
 2016-06-13,Republic of Ireland,Sweden,Republic of Ireland,Wes Hoolahan,48,FALSE,FALSE
 2016-06-13,Republic of Ireland,Sweden,Sweden,Ciaran Clark,71,TRUE,FALSE
-2016-06-13,Spain,Czech Republic,Spain,Gerard Piqué,87,FALSE,FALSE
+2016-06-13,Spain,Czechia,Spain,Gerard Piqué,87,FALSE,FALSE
 2016-06-13,Uruguay,Jamaica,Uruguay,Abel Hernández,21,FALSE,FALSE
 2016-06-13,Uruguay,Jamaica,Uruguay,Je-Vaughn Watson,66,TRUE,FALSE
 2016-06-13,Uruguay,Jamaica,Uruguay,Mathías Corujo,88,FALSE,FALSE
@@ -35855,10 +35855,10 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2016-06-16,United States,Ecuador,United States,Clint Dempsey,22,FALSE,FALSE
 2016-06-16,United States,Ecuador,United States,Gyasi Zardes,65,FALSE,FALSE
 2016-06-16,United States,Ecuador,Ecuador,Michael Arroyo,74,FALSE,FALSE
-2016-06-17,Czech Republic,Croatia,Croatia,Ivan Perišić,37,FALSE,FALSE
-2016-06-17,Czech Republic,Croatia,Croatia,Ivan Rakitić,59,FALSE,FALSE
-2016-06-17,Czech Republic,Croatia,Czech Republic,Milan Škoda,76,FALSE,FALSE
-2016-06-17,Czech Republic,Croatia,Czech Republic,Tomáš Necid,89,FALSE,TRUE
+2016-06-17,Czechia,Croatia,Croatia,Ivan Perišić,37,FALSE,FALSE
+2016-06-17,Czechia,Croatia,Croatia,Ivan Rakitić,59,FALSE,FALSE
+2016-06-17,Czechia,Croatia,Czechia,Milan Škoda,76,FALSE,FALSE
+2016-06-17,Czechia,Croatia,Czechia,Tomáš Necid,89,FALSE,TRUE
 2016-06-17,Italy,Sweden,Italy,Éder,88,FALSE,FALSE
 2016-06-17,Spain,Turkey,Spain,Álvaro Morata,34,FALSE,FALSE
 2016-06-17,Spain,Turkey,Spain,Nolito,37,FALSE,FALSE
@@ -35887,8 +35887,8 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2016-06-21,Croatia,Spain,Spain,Álvaro Morata,7,FALSE,FALSE
 2016-06-21,Croatia,Spain,Croatia,Nikola Kalinić,45,FALSE,FALSE
 2016-06-21,Croatia,Spain,Croatia,Ivan Perišić,87,FALSE,FALSE
-2016-06-21,Czech Republic,Turkey,Turkey,Burak Yılmaz,10,FALSE,FALSE
-2016-06-21,Czech Republic,Turkey,Turkey,Ozan Tufan,65,FALSE,FALSE
+2016-06-21,Czechia,Turkey,Turkey,Burak Yılmaz,10,FALSE,FALSE
+2016-06-21,Czechia,Turkey,Turkey,Ozan Tufan,65,FALSE,FALSE
 2016-06-21,Northern Ireland,Germany,Germany,Mario Gómez,30,FALSE,FALSE
 2016-06-21,Ukraine,Poland,Poland,Jakub Błaszczykowski,54,FALSE,FALSE
 2016-06-21,United States,Argentina,Argentina,Ezequiel Lavezzi,3,FALSE,FALSE
@@ -36229,9 +36229,9 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2016-10-08,DR Congo,Libya,DR Congo,Firmin Ndombe Mubele,68,FALSE,FALSE
 2016-10-08,England,Malta,England,Daniel Sturridge,29,FALSE,FALSE
 2016-10-08,England,Malta,England,Dele Alli,38,FALSE,FALSE
-2016-10-08,Germany,Czech Republic,Germany,Thomas Müller,13,FALSE,FALSE
-2016-10-08,Germany,Czech Republic,Germany,Toni Kroos,49,FALSE,FALSE
-2016-10-08,Germany,Czech Republic,Germany,Thomas Müller,65,FALSE,FALSE
+2016-10-08,Germany,Czechia,Germany,Thomas Müller,13,FALSE,FALSE
+2016-10-08,Germany,Czechia,Germany,Toni Kroos,49,FALSE,FALSE
+2016-10-08,Germany,Czechia,Germany,Thomas Müller,65,FALSE,FALSE
 2016-10-08,Ivory Coast,Mali,Mali,Sambou Yatabaré,18,FALSE,FALSE
 2016-10-08,Ivory Coast,Mali,Ivory Coast,Jonathan Kodjia,26,FALSE,FALSE
 2016-10-08,Ivory Coast,Mali,Ivory Coast,Salif Coulibaly,31,TRUE,FALSE
@@ -36383,9 +36383,9 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2016-11-11,Armenia,Montenegro,Armenia,Artak Grigoryan,50,FALSE,FALSE
 2016-11-11,Armenia,Montenegro,Armenia,Varazdat Haroyan,74,FALSE,FALSE
 2016-11-11,Armenia,Montenegro,Armenia,Gevorg Ghazaryan,90,FALSE,FALSE
-2016-11-11,Czech Republic,Norway,Czech Republic,Michael Krmenčík,11,FALSE,FALSE
-2016-11-11,Czech Republic,Norway,Czech Republic,Jaromír Zmrhal,47,FALSE,FALSE
-2016-11-11,Czech Republic,Norway,Norway,Joshua King,87,FALSE,FALSE
+2016-11-11,Czechia,Norway,Czechia,Michael Krmenčík,11,FALSE,FALSE
+2016-11-11,Czechia,Norway,Czechia,Jaromír Zmrhal,47,FALSE,FALSE
+2016-11-11,Czechia,Norway,Norway,Joshua King,87,FALSE,FALSE
 2016-11-11,Denmark,Kazakhstan,Denmark,Andreas Cornelius,15,FALSE,FALSE
 2016-11-11,Denmark,Kazakhstan,Kazakhstan,Gafurzhan Suyumbayev,17,FALSE,FALSE
 2016-11-11,Denmark,Kazakhstan,Denmark,Christian Eriksen,36,FALSE,TRUE
@@ -36692,12 +36692,12 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2017-03-26,Montenegro,Poland,Poland,Łukasz Piszczek,82,FALSE,FALSE
 2017-03-26,Northern Ireland,Norway,Northern Ireland,Jamie Ward,2,FALSE,FALSE
 2017-03-26,Northern Ireland,Norway,Northern Ireland,Conor Washington,33,FALSE,FALSE
-2017-03-26,San Marino,Czech Republic,Czech Republic,Antonín Barák,17,FALSE,FALSE
-2017-03-26,San Marino,Czech Republic,Czech Republic,Vladimír Darida,19,FALSE,FALSE
-2017-03-26,San Marino,Czech Republic,Czech Republic,Antonín Barák,24,FALSE,FALSE
-2017-03-26,San Marino,Czech Republic,Czech Republic,Theodor Gebre Selassie,26,FALSE,FALSE
-2017-03-26,San Marino,Czech Republic,Czech Republic,Michael Krmenčík,43,FALSE,FALSE
-2017-03-26,San Marino,Czech Republic,Czech Republic,Vladimír Darida,77,FALSE,TRUE
+2017-03-26,San Marino,Czechia,Czechia,Antonín Barák,17,FALSE,FALSE
+2017-03-26,San Marino,Czechia,Czechia,Vladimír Darida,19,FALSE,FALSE
+2017-03-26,San Marino,Czechia,Czechia,Antonín Barák,24,FALSE,FALSE
+2017-03-26,San Marino,Czechia,Czechia,Theodor Gebre Selassie,26,FALSE,FALSE
+2017-03-26,San Marino,Czechia,Czechia,Michael Krmenčík,43,FALSE,FALSE
+2017-03-26,San Marino,Czechia,Czechia,Vladimír Darida,77,FALSE,TRUE
 2017-03-26,Scotland,Slovenia,Scotland,Chris Martin,88,FALSE,FALSE
 2017-03-28,Australia,United Arab Emirates,Australia,Jackson Irvine,7,FALSE,FALSE
 2017-03-28,Australia,United Arab Emirates,Australia,Mathew Leckie,78,FALSE,FALSE
@@ -36794,8 +36794,8 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2017-06-10,Montenegro,Armenia,Montenegro,Stevan Jovetić,54,FALSE,FALSE
 2017-06-10,Montenegro,Armenia,Montenegro,Stevan Jovetić,82,FALSE,FALSE
 2017-06-10,Montenegro,Armenia,Armenia,Ruslan Koryan,89,FALSE,FALSE
-2017-06-10,Norway,Czech Republic,Czech Republic,Theodor Gebre Selassie,36,FALSE,FALSE
-2017-06-10,Norway,Czech Republic,Norway,Alexander Søderlund,55,FALSE,TRUE
+2017-06-10,Norway,Czechia,Czechia,Theodor Gebre Selassie,36,FALSE,FALSE
+2017-06-10,Norway,Czechia,Norway,Alexander Søderlund,55,FALSE,TRUE
 2017-06-10,Poland,Romania,Poland,Robert Lewandowski,29,FALSE,TRUE
 2017-06-10,Poland,Romania,Poland,Robert Lewandowski,57,FALSE,FALSE
 2017-06-10,Poland,Romania,Poland,Robert Lewandowski,62,FALSE,TRUE
@@ -37029,9 +37029,9 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2017-09-01,Cape Verde,South Africa,South Africa,Tokelo Rantie,14,FALSE,FALSE
 2017-09-01,Cape Verde,South Africa,Cape Verde,Nuno Miguel Monteiro Rocha,33,FALSE,FALSE
 2017-09-01,Cape Verde,South Africa,Cape Verde,Nuno Miguel Monteiro Rocha,38,FALSE,TRUE
-2017-09-01,Czech Republic,Germany,Germany,Timo Werner,4,FALSE,FALSE
-2017-09-01,Czech Republic,Germany,Czech Republic,Vladimír Darida,78,FALSE,FALSE
-2017-09-01,Czech Republic,Germany,Germany,Mats Hummels,88,FALSE,FALSE
+2017-09-01,Czechia,Germany,Germany,Timo Werner,4,FALSE,FALSE
+2017-09-01,Czechia,Germany,Czechia,Vladimír Darida,78,FALSE,FALSE
+2017-09-01,Czechia,Germany,Germany,Mats Hummels,88,FALSE,FALSE
 2017-09-01,Denmark,Poland,Denmark,Thomas Delaney,15,FALSE,FALSE
 2017-09-01,Denmark,Poland,Denmark,Andreas Cornelius,42,FALSE,FALSE
 2017-09-01,Denmark,Poland,Denmark,Nicolai Jørgensen,59,FALSE,FALSE
@@ -37149,8 +37149,8 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2017-09-04,Germany,Norway,Germany,Mario Gómez,79,FALSE,FALSE
 2017-09-04,Libya,Guinea,Libya,Hamdou Elhouni,36,FALSE,FALSE
 2017-09-04,Montenegro,Romania,Montenegro,Stevan Jovetić,75,FALSE,FALSE
-2017-09-04,Northern Ireland,Czech Republic,Northern Ireland,Jonny Evans,28,FALSE,FALSE
-2017-09-04,Northern Ireland,Czech Republic,Northern Ireland,Chris Brunt,41,FALSE,FALSE
+2017-09-04,Northern Ireland,Czechia,Northern Ireland,Jonny Evans,28,FALSE,FALSE
+2017-09-04,Northern Ireland,Czechia,Northern Ireland,Chris Brunt,41,FALSE,FALSE
 2017-09-04,Poland,Kazakhstan,Poland,Arkadiusz Milik,11,FALSE,FALSE
 2017-09-04,Poland,Kazakhstan,Poland,Kamil Glik,74,FALSE,FALSE
 2017-09-04,Poland,Kazakhstan,Poland,Robert Lewandowski,86,FALSE,TRUE
@@ -37243,9 +37243,9 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2017-10-05,Armenia,Poland,Poland,Jakub Błaszczykowski,58,FALSE,FALSE
 2017-10-05,Armenia,Poland,Poland,Robert Lewandowski,64,FALSE,FALSE
 2017-10-05,Armenia,Poland,Poland,Rafał Wolski,89,FALSE,FALSE
-2017-10-05,Azerbaijan,Czech Republic,Czech Republic,Jan Kopic,35,FALSE,FALSE
-2017-10-05,Azerbaijan,Czech Republic,Azerbaijan,Afran Ismayilov,55,FALSE,TRUE
-2017-10-05,Azerbaijan,Czech Republic,Czech Republic,Antonín Barák,66,FALSE,FALSE
+2017-10-05,Azerbaijan,Czechia,Czechia,Jan Kopic,35,FALSE,FALSE
+2017-10-05,Azerbaijan,Czechia,Azerbaijan,Afran Ismayilov,55,FALSE,TRUE
+2017-10-05,Azerbaijan,Czechia,Czechia,Antonín Barák,66,FALSE,FALSE
 2017-10-05,Chile,Ecuador,Chile,Eduardo Vargas,22,FALSE,FALSE
 2017-10-05,Chile,Ecuador,Ecuador,Romario Ibarra,82,FALSE,FALSE
 2017-10-05,Chile,Ecuador,Chile,Alexis Sánchez,85,FALSE,FALSE
@@ -37364,11 +37364,11 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2017-10-07,Switzerland,Hungary,Hungary,Richárd Guzmics,59,FALSE,FALSE
 2017-10-07,Switzerland,Hungary,Switzerland,Stephan Lichtsteiner,83,FALSE,FALSE
 2017-10-07,Switzerland,Hungary,Hungary,Roland Ugrai,89,FALSE,FALSE
-2017-10-08,Czech Republic,San Marino,Czech Republic,Michael Krmenčík,8,FALSE,FALSE
-2017-10-08,Czech Republic,San Marino,Czech Republic,Michael Krmenčík,23,FALSE,FALSE
-2017-10-08,Czech Republic,San Marino,Czech Republic,Jan Kopic,27,FALSE,FALSE
-2017-10-08,Czech Republic,San Marino,Czech Republic,Filip Novák,71,FALSE,FALSE
-2017-10-08,Czech Republic,San Marino,Czech Republic,Václav Kadlec,83,FALSE,FALSE
+2017-10-08,Czechia,San Marino,Czechia,Michael Krmenčík,8,FALSE,FALSE
+2017-10-08,Czechia,San Marino,Czechia,Michael Krmenčík,23,FALSE,FALSE
+2017-10-08,Czechia,San Marino,Czechia,Jan Kopic,27,FALSE,FALSE
+2017-10-08,Czechia,San Marino,Czechia,Filip Novák,71,FALSE,FALSE
+2017-10-08,Czechia,San Marino,Czechia,Václav Kadlec,83,FALSE,FALSE
 2017-10-08,Denmark,Romania,Denmark,Christian Eriksen,59,FALSE,TRUE
 2017-10-08,Denmark,Romania,Romania,Ciprian Deac,88,FALSE,FALSE
 2017-10-08,Egypt,Congo,Egypt,Mohamed Salah,62,FALSE,FALSE
@@ -37688,9 +37688,9 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2018-09-06,Armenia,Liechtenstein,Armenia,Marcos Pizzelli,30,FALSE,FALSE
 2018-09-06,Armenia,Liechtenstein,Liechtenstein,Sandro Wolfinger,33,FALSE,FALSE
 2018-09-06,Armenia,Liechtenstein,Armenia,Tigran Barseghyan,76,FALSE,FALSE
-2018-09-06,Czech Republic,Ukraine,Czech Republic,Patrik Schick,4,FALSE,FALSE
-2018-09-06,Czech Republic,Ukraine,Ukraine,Yevhen Konoplyanka,45,FALSE,FALSE
-2018-09-06,Czech Republic,Ukraine,Ukraine,Oleksandr Zinchenko,90,FALSE,FALSE
+2018-09-06,Czechia,Ukraine,Czechia,Patrik Schick,4,FALSE,FALSE
+2018-09-06,Czechia,Ukraine,Ukraine,Yevhen Konoplyanka,45,FALSE,FALSE
+2018-09-06,Czechia,Ukraine,Ukraine,Oleksandr Zinchenko,90,FALSE,FALSE
 2018-09-06,Gibraltar,North Macedonia,North Macedonia,Ivan Trichkovski,19,FALSE,FALSE
 2018-09-06,Gibraltar,North Macedonia,North Macedonia,Ezgjan Alioski,35,FALSE,FALSE
 2018-09-06,Kazakhstan,Georgia,Georgia,Giorgi Chakvetadze,69,FALSE,FALSE
@@ -37838,9 +37838,9 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2018-10-13,North Macedonia,Liechtenstein,Liechtenstein,Seyhan Yildiz,37,FALSE,FALSE
 2018-10-13,North Macedonia,Liechtenstein,North Macedonia,Ezgjan Alioski,67,FALSE,FALSE
 2018-10-13,Norway,Slovenia,Norway,Ole Selnæs,45,FALSE,FALSE
-2018-10-13,Slovakia,Czech Republic,Czech Republic,Michael Krmenčík,52,FALSE,FALSE
-2018-10-13,Slovakia,Czech Republic,Slovakia,Marek Hamšík,62,FALSE,FALSE
-2018-10-13,Slovakia,Czech Republic,Czech Republic,Patrik Schick,76,FALSE,FALSE
+2018-10-13,Slovakia,Czechia,Czechia,Michael Krmenčík,52,FALSE,FALSE
+2018-10-13,Slovakia,Czechia,Slovakia,Marek Hamšík,62,FALSE,FALSE
+2018-10-13,Slovakia,Czechia,Czechia,Patrik Schick,76,FALSE,FALSE
 2018-10-14,Azerbaijan,Malta,Malta,Rowen Muscat,37,FALSE,FALSE
 2018-10-14,Azerbaijan,Malta,Azerbaijan,Araz Abdullayev,53,FALSE,FALSE
 2018-10-14,Faroe Islands,Kosovo,Kosovo,Milot Rashica,9,FALSE,FALSE
@@ -37897,7 +37897,7 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2018-10-16,Republic of Ireland,Wales,Wales,Harry Wilson,58,FALSE,FALSE
 2018-10-16,Slovenia,Cyprus,Cyprus,Fotis Papoulis,37,FALSE,FALSE
 2018-10-16,Slovenia,Cyprus,Slovenia,Nejc Skubic,83,FALSE,FALSE
-2018-10-16,Ukraine,Czech Republic,Ukraine,Ruslan Malinovskyi,43,FALSE,FALSE
+2018-10-16,Ukraine,Czechia,Ukraine,Ruslan Malinovskyi,43,FALSE,FALSE
 2018-11-15,Andorra,Georgia,Georgia,Giorgi Chakvetadze,9,FALSE,FALSE
 2018-11-15,Andorra,Georgia,Andorra,Cristian Martínez,63,FALSE,FALSE
 2018-11-15,Belgium,Iceland,Belgium,Michy Batshuayi,65,FALSE,FALSE
@@ -37981,7 +37981,7 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2018-11-19,Bulgaria,Slovenia,Slovenia,Miha Zajc,75,FALSE,FALSE
 2018-11-19,Cyprus,Norway,Norway,Ola Kamara,36,FALSE,FALSE
 2018-11-19,Cyprus,Norway,Norway,Ola Kamara,48,FALSE,FALSE
-2018-11-19,Czech Republic,Slovakia,Czech Republic,Patrik Schick,32,FALSE,FALSE
+2018-11-19,Czechia,Slovakia,Czechia,Patrik Schick,32,FALSE,FALSE
 2018-11-19,Georgia,Kazakhstan,Georgia,Giorgi Merebashvili,59,FALSE,FALSE
 2018-11-19,Georgia,Kazakhstan,Georgia,Giorgi Chakvetadze,84,FALSE,FALSE
 2018-11-19,Georgia,Kazakhstan,Kazakhstan,Oralkhan Omirtayev,90,FALSE,FALSE
@@ -38184,11 +38184,11 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2019-03-22,Andorra,Iceland,Iceland,Viðar Örn Kjartansson,80,FALSE,FALSE
 2019-03-22,Bulgaria,Montenegro,Montenegro,Stefan Mugoša,50,FALSE,FALSE
 2019-03-22,Bulgaria,Montenegro,Bulgaria,Todor Nedelev,82,FALSE,TRUE
-2019-03-22,England,Czech Republic,England,Raheem Sterling,24,FALSE,FALSE
-2019-03-22,England,Czech Republic,England,Harry Kane,45,FALSE,TRUE
-2019-03-22,England,Czech Republic,England,Raheem Sterling,62,FALSE,FALSE
-2019-03-22,England,Czech Republic,England,Raheem Sterling,68,FALSE,FALSE
-2019-03-22,England,Czech Republic,England,Tomáš Kalas,84,TRUE,FALSE
+2019-03-22,England,Czechia,England,Raheem Sterling,24,FALSE,FALSE
+2019-03-22,England,Czechia,England,Harry Kane,45,FALSE,TRUE
+2019-03-22,England,Czechia,England,Raheem Sterling,62,FALSE,FALSE
+2019-03-22,England,Czechia,England,Raheem Sterling,68,FALSE,FALSE
+2019-03-22,England,Czechia,England,Tomáš Kalas,84,TRUE,FALSE
 2019-03-22,Luxembourg,Lithuania,Lithuania,Fedor Černych,14,FALSE,FALSE
 2019-03-22,Luxembourg,Lithuania,Luxembourg,Leandro Barreiro,45,FALSE,FALSE
 2019-03-22,Luxembourg,Lithuania,Luxembourg,Gerson Rodrigues,55,FALSE,FALSE
@@ -38326,9 +38326,9 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2019-06-06,Mongolia,Brunei,Mongolia,Norjmoogiin Tsedenbal,9,FALSE,FALSE
 2019-06-06,Mongolia,Brunei,Mongolia,Nyam-Osor Naranbold,69,FALSE,FALSE
 2019-06-07,Austria,Slovenia,Austria,Guido Burgstaller,74,FALSE,FALSE
-2019-06-07,Czech Republic,Bulgaria,Bulgaria,Ismail Isa,3,FALSE,FALSE
-2019-06-07,Czech Republic,Bulgaria,Czech Republic,Patrik Schick,19,FALSE,FALSE
-2019-06-07,Czech Republic,Bulgaria,Czech Republic,Patrik Schick,50,FALSE,FALSE
+2019-06-07,Czechia,Bulgaria,Bulgaria,Ismail Isa,3,FALSE,FALSE
+2019-06-07,Czechia,Bulgaria,Czechia,Patrik Schick,19,FALSE,FALSE
+2019-06-07,Czechia,Bulgaria,Czechia,Patrik Schick,50,FALSE,FALSE
 2019-06-07,Denmark,Republic of Ireland,Denmark,Pierre-Emile Højbjerg,76,FALSE,FALSE
 2019-06-07,Denmark,Republic of Ireland,Republic of Ireland,Shane Duffy,85,FALSE,FALSE
 2019-06-07,Faroe Islands,Spain,Spain,Sergio Ramos,6,FALSE,FALSE
@@ -38413,9 +38413,9 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2019-06-10,Bulgaria,Kosovo,Bulgaria,Kristian Dimitrov,55,FALSE,FALSE
 2019-06-10,Bulgaria,Kosovo,Kosovo,Vedat Muriqi,64,FALSE,FALSE
 2019-06-10,Bulgaria,Kosovo,Kosovo,Elbasan Rashani,90,FALSE,FALSE
-2019-06-10,Czech Republic,Montenegro,Czech Republic,Jakub Jankto,18,FALSE,FALSE
-2019-06-10,Czech Republic,Montenegro,Czech Republic,Boris Kopitović,49,TRUE,FALSE
-2019-06-10,Czech Republic,Montenegro,Czech Republic,Patrik Schick,82,FALSE,TRUE
+2019-06-10,Czechia,Montenegro,Czechia,Jakub Jankto,18,FALSE,FALSE
+2019-06-10,Czechia,Montenegro,Czechia,Boris Kopitović,49,TRUE,FALSE
+2019-06-10,Czechia,Montenegro,Czechia,Patrik Schick,82,FALSE,TRUE
 2019-06-10,Denmark,Georgia,Denmark,Kasper Dolberg,13,FALSE,FALSE
 2019-06-10,Denmark,Georgia,Georgia,Saba Lobzhanidze,25,FALSE,FALSE
 2019-06-10,Denmark,Georgia,Denmark,Christian Eriksen,30,FALSE,TRUE
@@ -38920,9 +38920,9 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2019-09-07,Iceland,Moldova,Iceland,Kolbeinn Sigþórsson,31,FALSE,FALSE
 2019-09-07,Iceland,Moldova,Iceland,Birkir Bjarnason,55,FALSE,FALSE
 2019-09-07,Iceland,Moldova,Iceland,Jón Daði Böðvarsson,77,FALSE,FALSE
-2019-09-07,Kosovo,Czech Republic,Czech Republic,Patrik Schick,16,FALSE,FALSE
-2019-09-07,Kosovo,Czech Republic,Kosovo,Vedat Muriqi,20,FALSE,FALSE
-2019-09-07,Kosovo,Czech Republic,Kosovo,Mërgim Vojvoda,67,FALSE,FALSE
+2019-09-07,Kosovo,Czechia,Czechia,Patrik Schick,16,FALSE,FALSE
+2019-09-07,Kosovo,Czechia,Kosovo,Vedat Muriqi,20,FALSE,FALSE
+2019-09-07,Kosovo,Czechia,Kosovo,Mërgim Vojvoda,67,FALSE,FALSE
 2019-09-07,Lithuania,Ukraine,Ukraine,Oleksandr Zinchenko,7,FALSE,FALSE
 2019-09-07,Lithuania,Ukraine,Ukraine,Marlos,27,FALSE,FALSE
 2019-09-07,Lithuania,Ukraine,Ukraine,Ruslan Malinovskyi,62,FALSE,FALSE
@@ -39050,9 +39050,9 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2019-09-10,Moldova,Turkey,Turkey,Cenk Tosun,79,FALSE,FALSE
 2019-09-10,Moldova,Turkey,Turkey,Yusuf Yazıcı,88,FALSE,FALSE
 2019-09-10,Mongolia,Tajikistan,Tajikistan,Davron Ergashev,81,FALSE,FALSE
-2019-09-10,Montenegro,Czech Republic,Czech Republic,Tomáš Souček,54,FALSE,FALSE
-2019-09-10,Montenegro,Czech Republic,Czech Republic,Lukáš Masopust,58,FALSE,FALSE
-2019-09-10,Montenegro,Czech Republic,Czech Republic,Vladimír Darida,90,FALSE,TRUE
+2019-09-10,Montenegro,Czechia,Czechia,Tomáš Souček,54,FALSE,FALSE
+2019-09-10,Montenegro,Czechia,Czechia,Lukáš Masopust,58,FALSE,FALSE
+2019-09-10,Montenegro,Czechia,Czechia,Vladimír Darida,90,FALSE,TRUE
 2019-09-10,Mozambique,Mauritius,Mozambique,Clésio,6,FALSE,FALSE
 2019-09-10,Mozambique,Mauritius,Mozambique,Geny Catamo,77,FALSE,TRUE
 2019-09-10,Myanmar,Japan,Japan,Shoya Nakajima,16,FALSE,FALSE
@@ -39194,9 +39194,9 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2019-10-10,Uzbekistan,Yemen,Uzbekistan,Igor Sergeev,90,FALSE,FALSE
 2019-10-10,Vietnam,Malaysia,Vietnam,Nguyễn Quang Hải,40,FALSE,FALSE
 2019-10-11,Andorra,Moldova,Andorra,Marc Vales,63,FALSE,FALSE
-2019-10-11,Czech Republic,England,England,Harry Kane,5,FALSE,TRUE
-2019-10-11,Czech Republic,England,Czech Republic,Jakub Brabec,9,FALSE,FALSE
-2019-10-11,Czech Republic,England,Czech Republic,Zdeněk Ondrášek,85,FALSE,FALSE
+2019-10-11,Czechia,England,England,Harry Kane,5,FALSE,TRUE
+2019-10-11,Czechia,England,Czechia,Jakub Brabec,9,FALSE,FALSE
+2019-10-11,Czechia,England,Czechia,Zdeněk Ondrášek,85,FALSE,FALSE
 2019-10-11,Iceland,France,France,Olivier Giroud,66,FALSE,TRUE
 2019-10-11,Portugal,Luxembourg,Portugal,Bernardo Silva,16,FALSE,FALSE
 2019-10-11,Portugal,Luxembourg,Portugal,Cristiano Ronaldo,65,FALSE,FALSE
@@ -39348,9 +39348,9 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2019-11-14,Albania,Andorra,Andorra,Cristian Martínez,18,FALSE,FALSE
 2019-11-14,Albania,Andorra,Andorra,Cristian Martínez,48,FALSE,FALSE
 2019-11-14,Albania,Andorra,Albania,Rey Manaj,55,FALSE,FALSE
-2019-11-14,Czech Republic,Kosovo,Kosovo,Atdhe Nuhiu,50,FALSE,FALSE
-2019-11-14,Czech Republic,Kosovo,Czech Republic,Alex Král,71,FALSE,FALSE
-2019-11-14,Czech Republic,Kosovo,Czech Republic,Ondřej Čelůstka,79,FALSE,FALSE
+2019-11-14,Czechia,Kosovo,Kosovo,Atdhe Nuhiu,50,FALSE,FALSE
+2019-11-14,Czechia,Kosovo,Czechia,Alex Král,71,FALSE,FALSE
+2019-11-14,Czechia,Kosovo,Czechia,Ondřej Čelůstka,79,FALSE,FALSE
 2019-11-14,England,Montenegro,England,Alex Oxlade-Chamberlain,11,FALSE,FALSE
 2019-11-14,England,Montenegro,England,Harry Kane,19,FALSE,FALSE
 2019-11-14,England,Montenegro,England,Harry Kane,24,FALSE,FALSE
@@ -39479,7 +39479,7 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2019-11-17,Albania,France,France,Antoine Griezmann,30,FALSE,FALSE
 2019-11-17,Andorra,Turkey,Turkey,Enes Ünal,17,FALSE,FALSE
 2019-11-17,Andorra,Turkey,Turkey,Enes Ünal,21,FALSE,TRUE
-2019-11-17,Bulgaria,Czech Republic,Bulgaria,Vasil Bozhikov,56,FALSE,FALSE
+2019-11-17,Bulgaria,Czechia,Bulgaria,Vasil Bozhikov,56,FALSE,FALSE
 2019-11-17,Kosovo,England,England,Harry Winks,32,FALSE,FALSE
 2019-11-17,Kosovo,England,England,Harry Kane,79,FALSE,FALSE
 2019-11-17,Kosovo,England,England,Marcus Rashford,83,FALSE,FALSE
@@ -39629,10 +39629,10 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2020-09-04,Romania,Northern Ireland,Northern Ireland,Gavin Whyte,86,FALSE,FALSE
 2020-09-04,Scotland,Israel,Scotland,Ryan Christie,45,FALSE,TRUE
 2020-09-04,Scotland,Israel,Israel,Eran Zahavi,73,FALSE,FALSE
-2020-09-04,Slovakia,Czech Republic,Czech Republic,Vladimír Coufal,48,FALSE,FALSE
-2020-09-04,Slovakia,Czech Republic,Czech Republic,Bořek Dočkal,53,FALSE,TRUE
-2020-09-04,Slovakia,Czech Republic,Czech Republic,Michael Krmenčík,86,FALSE,FALSE
-2020-09-04,Slovakia,Czech Republic,Slovakia,Ivan Schranz,88,FALSE,FALSE
+2020-09-04,Slovakia,Czechia,Czechia,Vladimír Coufal,48,FALSE,FALSE
+2020-09-04,Slovakia,Czechia,Czechia,Bořek Dočkal,53,FALSE,TRUE
+2020-09-04,Slovakia,Czechia,Czechia,Michael Krmenčík,86,FALSE,FALSE
+2020-09-04,Slovakia,Czechia,Slovakia,Ivan Schranz,88,FALSE,FALSE
 2020-09-05,Azerbaijan,Luxembourg,Azerbaijan,Ramil Sheydayev,43,FALSE,FALSE
 2020-09-05,Azerbaijan,Luxembourg,Luxembourg,Anton Kryvotsyuk,48,TRUE,FALSE
 2020-09-05,Azerbaijan,Luxembourg,Luxembourg,Gerson Rodrigues,72,FALSE,TRUE
@@ -39681,9 +39681,9 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2020-09-07,Bosnia and Herzegovina,Poland,Bosnia and Herzegovina,Haris Hajradinović,24,FALSE,TRUE
 2020-09-07,Bosnia and Herzegovina,Poland,Poland,Kamil Glik,45,FALSE,FALSE
 2020-09-07,Bosnia and Herzegovina,Poland,Poland,Kamil Grosicki,67,FALSE,FALSE
-2020-09-07,Czech Republic,Scotland,Czech Republic,Jakub Pešek,12,FALSE,FALSE
-2020-09-07,Czech Republic,Scotland,Scotland,Lyndon Dykes,27,FALSE,FALSE
-2020-09-07,Czech Republic,Scotland,Scotland,Ryan Christie,52,FALSE,TRUE
+2020-09-07,Czechia,Scotland,Czechia,Jakub Pešek,12,FALSE,FALSE
+2020-09-07,Czechia,Scotland,Scotland,Lyndon Dykes,27,FALSE,FALSE
+2020-09-07,Czechia,Scotland,Scotland,Ryan Christie,52,FALSE,TRUE
 2020-09-07,Israel,Slovakia,Slovakia,Michal Ďuriš,14,FALSE,FALSE
 2020-09-07,Israel,Slovakia,Israel,Ilay Elmkies,90,FALSE,FALSE
 2020-09-07,Kazakhstan,Belarus,Belarus,Maksim Bordachyov,53,FALSE,FALSE
@@ -39784,9 +39784,9 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2020-10-11,Iceland,Denmark,Denmark,Rúnar Már Sigurjónsson,45,TRUE,FALSE
 2020-10-11,Iceland,Denmark,Denmark,Christian Eriksen,46,FALSE,FALSE
 2020-10-11,Iceland,Denmark,Denmark,Robert Skov,61,FALSE,FALSE
-2020-10-11,Israel,Czech Republic,Czech Republic,Joel Abu Hanna,14,TRUE,FALSE
-2020-10-11,Israel,Czech Republic,Czech Republic,Matěj Vydra,48,FALSE,FALSE
-2020-10-11,Israel,Czech Republic,Israel,Eran Zahavi,56,FALSE,FALSE
+2020-10-11,Israel,Czechia,Czechia,Joel Abu Hanna,14,TRUE,FALSE
+2020-10-11,Israel,Czechia,Czechia,Matěj Vydra,48,FALSE,FALSE
+2020-10-11,Israel,Czechia,Israel,Eran Zahavi,56,FALSE,FALSE
 2020-10-11,Kosovo,Slovenia,Slovenia,Haris Vučkić,22,FALSE,FALSE
 2020-10-11,Lithuania,Belarus,Lithuania,Arvydas Novikovas,7,FALSE,FALSE
 2020-10-11,Lithuania,Belarus,Belarus,Vitaly Lisakovich,59,FALSE,TRUE
@@ -39863,7 +39863,7 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2020-10-14,Portugal,Sweden,Portugal,Diogo Jota,44,FALSE,FALSE
 2020-10-14,Portugal,Sweden,Portugal,Diogo Jota,72,FALSE,FALSE
 2020-10-14,Romania,Austria,Austria,Alessandro Schöpf,76,FALSE,FALSE
-2020-10-14,Scotland,Czech Republic,Scotland,Ryan Fraser,6,FALSE,FALSE
+2020-10-14,Scotland,Czechia,Scotland,Ryan Fraser,6,FALSE,FALSE
 2020-10-14,Slovakia,Israel,Slovakia,Marek Hamšík,16,FALSE,FALSE
 2020-10-14,Slovakia,Israel,Slovakia,Róbert Mak,38,FALSE,FALSE
 2020-10-14,Slovakia,Israel,Israel,Eran Zahavi,68,FALSE,FALSE
@@ -39928,7 +39928,7 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2020-11-15,Bulgaria,Finland,Finland,Teemu Pukki,7,FALSE,FALSE
 2020-11-15,Bulgaria,Finland,Finland,Robin Lod,45,FALSE,FALSE
 2020-11-15,Bulgaria,Finland,Bulgaria,Dimitar Iliev,68,FALSE,TRUE
-2020-11-15,Czech Republic,Israel,Czech Republic,Vladimír Darida,7,FALSE,FALSE
+2020-11-15,Czechia,Israel,Czechia,Vladimír Darida,7,FALSE,FALSE
 2020-11-15,Denmark,Iceland,Denmark,Christian Eriksen,12,FALSE,TRUE
 2020-11-15,Denmark,Iceland,Iceland,Viðar Örn Kjartansson,85,FALSE,FALSE
 2020-11-15,Denmark,Iceland,Denmark,Christian Eriksen,90,FALSE,TRUE
@@ -40022,8 +40022,8 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2020-11-18,Belgium,Denmark,Belgium,Kevin De Bruyne,87,FALSE,FALSE
 2020-11-18,Bosnia and Herzegovina,Italy,Italy,Andrea Belotti,22,FALSE,FALSE
 2020-11-18,Bosnia and Herzegovina,Italy,Italy,Domenico Berardi,68,FALSE,FALSE
-2020-11-18,Czech Republic,Slovakia,Czech Republic,Tomáš Souček,17,FALSE,FALSE
-2020-11-18,Czech Republic,Slovakia,Czech Republic,Zdeněk Ondrášek,55,FALSE,FALSE
+2020-11-18,Czechia,Slovakia,Czechia,Tomáš Souček,17,FALSE,FALSE
+2020-11-18,Czechia,Slovakia,Czechia,Zdeněk Ondrášek,55,FALSE,FALSE
 2020-11-18,England,Iceland,England,Declan Rice,20,FALSE,FALSE
 2020-11-18,England,Iceland,England,Mason Mount,24,FALSE,FALSE
 2020-11-18,England,Iceland,England,Phil Foden,80,FALSE,FALSE
@@ -40063,14 +40063,14 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2021-03-24,Belgium,Wales,Belgium,Thorgan Hazard,28,FALSE,FALSE
 2021-03-24,Belgium,Wales,Belgium,Romelu Lukaku,73,FALSE,TRUE
 2021-03-24,Dominican Republic,Dominica,Dominican Republic,Fran Núñez,52,FALSE,FALSE
-2021-03-24,Estonia,Czech Republic,Estonia,Rauno Sappinen,12,FALSE,FALSE
-2021-03-24,Estonia,Czech Republic,Czech Republic,Patrik Schick,18,FALSE,FALSE
-2021-03-24,Estonia,Czech Republic,Czech Republic,Antonín Barák,27,FALSE,FALSE
-2021-03-24,Estonia,Czech Republic,Czech Republic,Tomáš Souček,32,FALSE,FALSE
-2021-03-24,Estonia,Czech Republic,Czech Republic,Tomáš Souček,43,FALSE,FALSE
-2021-03-24,Estonia,Czech Republic,Czech Republic,Tomáš Souček,48,FALSE,FALSE
-2021-03-24,Estonia,Czech Republic,Czech Republic,Jakub Jankto,56,FALSE,FALSE
-2021-03-24,Estonia,Czech Republic,Estonia,Henri Anier,86,FALSE,FALSE
+2021-03-24,Estonia,Czechia,Estonia,Rauno Sappinen,12,FALSE,FALSE
+2021-03-24,Estonia,Czechia,Czechia,Patrik Schick,18,FALSE,FALSE
+2021-03-24,Estonia,Czechia,Czechia,Antonín Barák,27,FALSE,FALSE
+2021-03-24,Estonia,Czechia,Czechia,Tomáš Souček,32,FALSE,FALSE
+2021-03-24,Estonia,Czechia,Czechia,Tomáš Souček,43,FALSE,FALSE
+2021-03-24,Estonia,Czechia,Czechia,Tomáš Souček,48,FALSE,FALSE
+2021-03-24,Estonia,Czechia,Czechia,Jakub Jankto,56,FALSE,FALSE
+2021-03-24,Estonia,Czechia,Estonia,Henri Anier,86,FALSE,FALSE
 2021-03-24,Finland,Bosnia and Herzegovina,Bosnia and Herzegovina,Miralem Pjanić,55,FALSE,FALSE
 2021-03-24,Finland,Bosnia and Herzegovina,Finland,Teemu Pukki,58,FALSE,FALSE
 2021-03-24,Finland,Bosnia and Herzegovina,Finland,Teemu Pukki,77,FALSE,FALSE
@@ -40191,8 +40191,8 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2021-03-27,British Virgin Islands,Guatemala,Guatemala,Moisés Hernández,44,FALSE,FALSE
 2021-03-27,British Virgin Islands,Guatemala,Guatemala,Robin Betancourth,81,FALSE,FALSE
 2021-03-27,Croatia,Cyprus,Croatia,Mario Pašalić,40,FALSE,FALSE
-2021-03-27,Czech Republic,Belgium,Czech Republic,Lukáš Provod,50,FALSE,FALSE
-2021-03-27,Czech Republic,Belgium,Belgium,Romelu Lukaku,60,FALSE,FALSE
+2021-03-27,Czechia,Belgium,Czechia,Lukáš Provod,50,FALSE,FALSE
+2021-03-27,Czechia,Belgium,Belgium,Romelu Lukaku,60,FALSE,FALSE
 2021-03-27,Montenegro,Gibraltar,Montenegro,Fatos Bećiraj,25,FALSE,FALSE
 2021-03-27,Montenegro,Gibraltar,Gibraltar,Reece Styche,30,FALSE,TRUE
 2021-03-27,Montenegro,Gibraltar,Montenegro,Marko Simić,43,FALSE,FALSE
@@ -40363,7 +40363,7 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2021-03-30,Turkey,Latvia,Turkey,Burak Yılmaz,52,FALSE,TRUE
 2021-03-30,Turkey,Latvia,Latvia,Roberts Uldriķis,58,FALSE,FALSE
 2021-03-30,Turkey,Latvia,Latvia,Dāvis Ikaunieks,79,FALSE,FALSE
-2021-03-30,Wales,Czech Republic,Wales,Daniel James,82,FALSE,FALSE
+2021-03-30,Wales,Czechia,Wales,Daniel James,82,FALSE,FALSE
 2021-03-31,Andorra,Hungary,Hungary,Attila Fiola,45,FALSE,FALSE
 2021-03-31,Andorra,Hungary,Hungary,Dániel Gazdag,51,FALSE,FALSE
 2021-03-31,Andorra,Hungary,Hungary,László Kleinheisler,58,FALSE,FALSE
@@ -40766,8 +40766,8 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2021-06-14,Poland,Slovakia,Slovakia,Wojciech Szczęsny,18,TRUE,FALSE
 2021-06-14,Poland,Slovakia,Poland,Karol Linetty,46,FALSE,FALSE
 2021-06-14,Poland,Slovakia,Slovakia,Milan Škriniar,69,FALSE,FALSE
-2021-06-14,Scotland,Czech Republic,Czech Republic,Patrik Schick,42,FALSE,FALSE
-2021-06-14,Scotland,Czech Republic,Czech Republic,Patrik Schick,52,FALSE,FALSE
+2021-06-14,Scotland,Czechia,Czechia,Patrik Schick,42,FALSE,FALSE
+2021-06-14,Scotland,Czechia,Czechia,Patrik Schick,52,FALSE,FALSE
 2021-06-15,Australia,Jordan,Australia,Harry Souttar,77,FALSE,FALSE
 2021-06-15,Bahrain,Hong Kong,Bahrain,Sayed Dhiya Saeed,49,FALSE,FALSE
 2021-06-15,Bahrain,Hong Kong,Bahrain,Hashim Sayed Isa,54,FALSE,TRUE
@@ -40839,8 +40839,8 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2021-06-17,Ukraine,North Macedonia,North Macedonia,Ezgjan Alioski,57,FALSE,FALSE
 2021-06-18,Argentina,Uruguay,Argentina,Guido Rodríguez,13,FALSE,FALSE
 2021-06-18,Chile,Bolivia,Chile,Ben Brereton Díaz,10,FALSE,FALSE
-2021-06-18,Croatia,Czech Republic,Czech Republic,Patrik Schick,37,FALSE,TRUE
-2021-06-18,Croatia,Czech Republic,Croatia,Ivan Perišić,47,FALSE,FALSE
+2021-06-18,Croatia,Czechia,Czechia,Patrik Schick,37,FALSE,TRUE
+2021-06-18,Croatia,Czechia,Croatia,Ivan Perišić,47,FALSE,FALSE
 2021-06-18,Sweden,Slovakia,Sweden,Emil Forsberg,77,FALSE,TRUE
 2021-06-19,Germany,Portugal,Portugal,Cristiano Ronaldo,15,FALSE,FALSE
 2021-06-19,Germany,Portugal,Germany,Rúben Dias,35,TRUE,FALSE
@@ -40878,7 +40878,7 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2021-06-21,Ukraine,Austria,Austria,Christoph Baumgartner,21,FALSE,FALSE
 2021-06-21,Uruguay,Chile,Chile,Eduardo Vargas,26,FALSE,FALSE
 2021-06-21,Uruguay,Chile,Uruguay,Luis Suárez,66,FALSE,FALSE
-2021-06-22,England,Czech Republic,England,Raheem Sterling,12,FALSE,FALSE
+2021-06-22,England,Czechia,England,Raheem Sterling,12,FALSE,FALSE
 2021-06-22,Scotland,Croatia,Croatia,Nikola Vlašić,17,FALSE,FALSE
 2021-06-22,Scotland,Croatia,Scotland,Callum McGregor,42,FALSE,FALSE
 2021-06-22,Scotland,Croatia,Croatia,Luka Modrić,62,FALSE,FALSE
@@ -40922,8 +40922,8 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2021-06-27,Belgium,Portugal,Belgium,Thorgan Hazard,42,FALSE,FALSE
 2021-06-27,Brazil,Ecuador,Brazil,Éder Militão,37,FALSE,FALSE
 2021-06-27,Brazil,Ecuador,Ecuador,Ángel Mena,53,FALSE,FALSE
-2021-06-27,Netherlands,Czech Republic,Czech Republic,Tomáš Holeš,68,FALSE,FALSE
-2021-06-27,Netherlands,Czech Republic,Czech Republic,Patrik Schick,80,FALSE,FALSE
+2021-06-27,Netherlands,Czechia,Czechia,Tomáš Holeš,68,FALSE,FALSE
+2021-06-27,Netherlands,Czechia,Czechia,Patrik Schick,80,FALSE,FALSE
 2021-06-27,Venezuela,Peru,Peru,André Carrillo,48,FALSE,FALSE
 2021-06-28,Argentina,Bolivia,Argentina,Papu Gómez,6,FALSE,FALSE
 2021-06-28,Argentina,Bolivia,Argentina,Lionel Messi,33,FALSE,TRUE
@@ -40965,9 +40965,9 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2021-07-03,Argentina,Ecuador,Argentina,Rodrigo De Paul,40,FALSE,FALSE
 2021-07-03,Argentina,Ecuador,Argentina,Lautaro Martínez,84,FALSE,FALSE
 2021-07-03,Argentina,Ecuador,Argentina,Lionel Messi,90,FALSE,FALSE
-2021-07-03,Czech Republic,Denmark,Denmark,Thomas Delaney,5,FALSE,FALSE
-2021-07-03,Czech Republic,Denmark,Denmark,Kasper Dolberg,42,FALSE,FALSE
-2021-07-03,Czech Republic,Denmark,Czech Republic,Patrik Schick,49,FALSE,FALSE
+2021-07-03,Czechia,Denmark,Denmark,Thomas Delaney,5,FALSE,FALSE
+2021-07-03,Czechia,Denmark,Denmark,Kasper Dolberg,42,FALSE,FALSE
+2021-07-03,Czechia,Denmark,Czechia,Patrik Schick,49,FALSE,FALSE
 2021-07-03,Ukraine,England,England,Harry Kane,4,FALSE,FALSE
 2021-07-03,Ukraine,England,England,Harry Maguire,46,FALSE,FALSE
 2021-07-03,Ukraine,England,England,Harry Kane,50,FALSE,FALSE
@@ -41141,7 +41141,7 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2021-09-02,Canada,Honduras,Honduras,Alexander López,40,FALSE,TRUE
 2021-09-02,Canada,Honduras,Canada,Cyle Larin,66,FALSE,TRUE
 2021-09-02,Chile,Brazil,Brazil,Éverton Ribeiro,64,FALSE,FALSE
-2021-09-02,Czech Republic,Belarus,Czech Republic,Antonín Barák,34,FALSE,FALSE
+2021-09-02,Czechia,Belarus,Czechia,Antonín Barák,34,FALSE,FALSE
 2021-09-02,DR Congo,Tanzania,DR Congo,Dieumerci Mbokani,23,FALSE,FALSE
 2021-09-02,DR Congo,Tanzania,Tanzania,Simon Msuva,36,FALSE,FALSE
 2021-09-02,Ecuador,Paraguay,Ecuador,Félix Torres,88,FALSE,FALSE
@@ -41248,9 +41248,9 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2021-09-05,Belarus,Wales,Belarus,Pavel Sedko,31,FALSE,FALSE
 2021-09-05,Belarus,Wales,Wales,Gareth Bale,69,FALSE,TRUE
 2021-09-05,Belarus,Wales,Wales,Gareth Bale,90,FALSE,FALSE
-2021-09-05,Belgium,Czech Republic,Belgium,Romelu Lukaku,8,FALSE,FALSE
-2021-09-05,Belgium,Czech Republic,Belgium,Eden Hazard,41,FALSE,FALSE
-2021-09-05,Belgium,Czech Republic,Belgium,Alexis Saelemaekers,65,FALSE,FALSE
+2021-09-05,Belgium,Czechia,Belgium,Romelu Lukaku,8,FALSE,FALSE
+2021-09-05,Belgium,Czechia,Belgium,Eden Hazard,41,FALSE,FALSE
+2021-09-05,Belgium,Czechia,Belgium,Alexis Saelemaekers,65,FALSE,FALSE
 2021-09-05,Bulgaria,Lithuania,Bulgaria,Ivaylo Chochev,82,FALSE,FALSE
 2021-09-05,Costa Rica,Mexico,Mexico,Orbelín Pineda,45,FALSE,TRUE
 2021-09-05,England,Andorra,England,Jesse Lingard,18,FALSE,FALSE
@@ -41529,10 +41529,10 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2021-10-08,Cyprus,Croatia,Croatia,Ivan Perišić,45,FALSE,FALSE
 2021-10-08,Cyprus,Croatia,Croatia,Joško Gvardiol,80,FALSE,FALSE
 2021-10-08,Cyprus,Croatia,Croatia,Marko Livaja,90,FALSE,FALSE
-2021-10-08,Czech Republic,Wales,Wales,Aaron Ramsey,36,FALSE,FALSE
-2021-10-08,Czech Republic,Wales,Czech Republic,Jakub Pešek,38,FALSE,FALSE
-2021-10-08,Czech Republic,Wales,Czech Republic,Danny Ward,49,TRUE,FALSE
-2021-10-08,Czech Republic,Wales,Wales,Daniel James,69,FALSE,FALSE
+2021-10-08,Czechia,Wales,Wales,Aaron Ramsey,36,FALSE,FALSE
+2021-10-08,Czechia,Wales,Czechia,Jakub Pešek,38,FALSE,FALSE
+2021-10-08,Czechia,Wales,Czechia,Danny Ward,49,TRUE,FALSE
+2021-10-08,Czechia,Wales,Wales,Daniel James,69,FALSE,FALSE
 2021-10-08,Djibouti,Burkina Faso,Burkina Faso,Abdoul Tapsoba,45,FALSE,FALSE
 2021-10-08,Djibouti,Burkina Faso,Burkina Faso,Abdoul Tapsoba,48,FALSE,FALSE
 2021-10-08,Djibouti,Burkina Faso,Burkina Faso,Issa Kaboré,51,FALSE,FALSE
@@ -41664,8 +41664,8 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2021-10-10,Venezuela,Ecuador,Venezuela,Eduard Bello,64,FALSE,FALSE
 2021-10-10,Zambia,Equatorial Guinea,Zambia,Fashion Sakala,65,FALSE,FALSE
 2021-10-10,Zambia,Equatorial Guinea,Equatorial Guinea,Federico Bikoro,82,FALSE,FALSE
-2021-10-11,Belarus,Czech Republic,Czech Republic,Patrik Schick,22,FALSE,FALSE
-2021-10-11,Belarus,Czech Republic,Czech Republic,Adam Hložek,65,FALSE,FALSE
+2021-10-11,Belarus,Czechia,Czechia,Patrik Schick,22,FALSE,FALSE
+2021-10-11,Belarus,Czechia,Czechia,Adam Hložek,65,FALSE,FALSE
 2021-10-11,Burkina Faso,Djibouti,Burkina Faso,Issoufou Dayo,30,FALSE,FALSE
 2021-10-11,Burkina Faso,Djibouti,Burkina Faso,Abdoul Tapsoba,63,FALSE,FALSE
 2021-10-11,Croatia,Slovakia,Slovakia,Ivan Schranz,20,FALSE,FALSE
@@ -42088,8 +42088,8 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2021-11-16,Costa Rica,Honduras,Costa Rica,Óscar Duarte,20,FALSE,FALSE
 2021-11-16,Costa Rica,Honduras,Honduras,Romell Quioto,35,FALSE,FALSE
 2021-11-16,Costa Rica,Honduras,Costa Rica,Gerson Torres,90,FALSE,FALSE
-2021-11-16,Czech Republic,Estonia,Czech Republic,Jakub Brabec,59,FALSE,FALSE
-2021-11-16,Czech Republic,Estonia,Czech Republic,Jan Sýkora,85,FALSE,FALSE
+2021-11-16,Czechia,Estonia,Czechia,Jakub Brabec,59,FALSE,FALSE
+2021-11-16,Czechia,Estonia,Czechia,Jan Sýkora,85,FALSE,FALSE
 2021-11-16,Egypt,Gabon,Egypt,Mohamed Magdy,4,FALSE,TRUE
 2021-11-16,Egypt,Gabon,Gabon,Jim Allevinah,54,FALSE,FALSE
 2021-11-16,Egypt,Gabon,Egypt,Johann Obiang,75,TRUE,FALSE
@@ -42379,7 +42379,7 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2022-03-24,Solomon Islands,Tahiti,Solomon Islands,Raphael Lea'i,90,FALSE,FALSE
 2022-03-24,South Korea,Iran,South Korea,Son Heung-min,45,FALSE,FALSE
 2022-03-24,South Korea,Iran,South Korea,Kim Young-gwon,62,FALSE,FALSE
-2022-03-24,Sweden,Czech Republic,Sweden,Robin Quaison,110,FALSE,FALSE
+2022-03-24,Sweden,Czechia,Sweden,Robin Quaison,110,FALSE,FALSE
 2022-03-24,Uruguay,Peru,Uruguay,Giorgian de Arrascaeta,42,FALSE,FALSE
 2022-03-24,Vietnam,Oman,Oman,Khalid Al-Hajri,65,FALSE,FALSE
 2022-03-24,Wales,Austria,Wales,Gareth Bale,25,FALSE,FALSE
@@ -42479,9 +42479,9 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2022-06-02,Bulgaria,North Macedonia,North Macedonia,Milan Ristovski,50,FALSE,FALSE
 2022-06-02,Cyprus,Kosovo,Kosovo,Valon Berisha,65,FALSE,FALSE
 2022-06-02,Cyprus,Kosovo,Kosovo,Edon Zhegrova,78,FALSE,FALSE
-2022-06-02,Czech Republic,Switzerland,Czech Republic,Jan Kuchta,11,FALSE,FALSE
-2022-06-02,Czech Republic,Switzerland,Switzerland,Noah Okafor,44,FALSE,FALSE
-2022-06-02,Czech Republic,Switzerland,Czech Republic,Djibril Sow,58,TRUE,FALSE
+2022-06-02,Czechia,Switzerland,Czechia,Jan Kuchta,11,FALSE,FALSE
+2022-06-02,Czechia,Switzerland,Switzerland,Noah Okafor,44,FALSE,FALSE
+2022-06-02,Czechia,Switzerland,Czechia,Djibril Sow,58,TRUE,FALSE
 2022-06-02,Estonia,San Marino,Estonia,Robert Kirss,24,FALSE,FALSE
 2022-06-02,Estonia,San Marino,Estonia,Joonas Tamm,32,FALSE,FALSE
 2022-06-02,Georgia,Gibraltar,Georgia,Khvicha Kvaratskhelia,12,FALSE,FALSE
@@ -42538,10 +42538,10 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2022-06-05,Bulgaria,Georgia,Georgia,Khvicha Kvaratskhelia,58,FALSE,TRUE
 2022-06-05,Bulgaria,Georgia,Georgia,Valeri Qazaishvili,69,FALSE,FALSE
 2022-06-05,Bulgaria,Georgia,Bulgaria,Iliyan Stefanov,83,FALSE,FALSE
-2022-06-05,Czech Republic,Spain,Czech Republic,Jakub Pešek,4,FALSE,FALSE
-2022-06-05,Czech Republic,Spain,Spain,Gavi,45,FALSE,FALSE
-2022-06-05,Czech Republic,Spain,Czech Republic,Jan Kuchta,66,FALSE,FALSE
-2022-06-05,Czech Republic,Spain,Spain,Iñigo Martínez,90,FALSE,FALSE
+2022-06-05,Czechia,Spain,Czechia,Jakub Pešek,4,FALSE,FALSE
+2022-06-05,Czechia,Spain,Spain,Gavi,45,FALSE,FALSE
+2022-06-05,Czechia,Spain,Czechia,Jan Kuchta,66,FALSE,FALSE
+2022-06-05,Czechia,Spain,Spain,Iñigo Martínez,90,FALSE,FALSE
 2022-06-05,Gibraltar,North Macedonia,North Macedonia,Enis Bardhi,21,FALSE,FALSE
 2022-06-05,Gibraltar,North Macedonia,North Macedonia,Boban Nikolov,84,FALSE,FALSE
 2022-06-05,Kosovo,Greece,Greece,Tasos Bakasetas,36,FALSE,FALSE
@@ -42616,8 +42616,8 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2022-06-09,North Macedonia,Georgia,Georgia,Budu Zivzivadze,52,FALSE,FALSE
 2022-06-09,North Macedonia,Georgia,Georgia,Khvicha Kvaratskhelia,62,FALSE,FALSE
 2022-06-09,North Macedonia,Georgia,Georgia,Otar Kiteishvili,84,FALSE,FALSE
-2022-06-09,Portugal,Czech Republic,Portugal,João Cancelo,33,FALSE,FALSE
-2022-06-09,Portugal,Czech Republic,Portugal,Gonçalo Guedes,38,FALSE,FALSE
+2022-06-09,Portugal,Czechia,Portugal,João Cancelo,33,FALSE,FALSE
+2022-06-09,Portugal,Czechia,Portugal,Gonçalo Guedes,38,FALSE,FALSE
 2022-06-09,Sweden,Serbia,Serbia,Luka Jović,45,FALSE,FALSE
 2022-06-09,Switzerland,Spain,Spain,Pablo Sarabia,13,FALSE,FALSE
 2022-06-10,Albania,Israel,Albania,Armando Broja,45,FALSE,TRUE
@@ -42680,8 +42680,8 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2022-06-12,Slovenia,Serbia,Serbia,Aleksandar Mitrović,35,FALSE,FALSE
 2022-06-12,Slovenia,Serbia,Slovenia,Adam Gnezda Čerin,48,FALSE,FALSE
 2022-06-12,Slovenia,Serbia,Slovenia,Benjamin Šeško,53,FALSE,FALSE
-2022-06-12,Spain,Czech Republic,Spain,Carlos Soler,24,FALSE,FALSE
-2022-06-12,Spain,Czech Republic,Spain,Pablo Sarabia,75,FALSE,FALSE
+2022-06-12,Spain,Czechia,Spain,Carlos Soler,24,FALSE,FALSE
+2022-06-12,Spain,Czechia,Spain,Pablo Sarabia,75,FALSE,FALSE
 2022-06-12,Switzerland,Portugal,Switzerland,Haris Seferovic,1,FALSE,FALSE
 2022-06-13,Azerbaijan,Belarus,Azerbaijan,Mahir Emreli,76,FALSE,FALSE
 2022-06-13,Azerbaijan,Belarus,Azerbaijan,Ramil Sheydayev,90,FALSE,FALSE
@@ -42793,10 +42793,10 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2022-09-24,Armenia,Ukraine,Ukraine,Danylo Ihnatenko,81,FALSE,FALSE
 2022-09-24,Armenia,Ukraine,Ukraine,Artem Dovbyk,84,FALSE,FALSE
 2022-09-24,Cyprus,Greece,Cyprus,Marinos Tzionis,18,FALSE,FALSE
-2022-09-24,Czech Republic,Portugal,Portugal,Diogo Dalot,33,FALSE,FALSE
-2022-09-24,Czech Republic,Portugal,Portugal,Bruno Fernandes,45,FALSE,FALSE
-2022-09-24,Czech Republic,Portugal,Portugal,Diogo Dalot,52,FALSE,FALSE
-2022-09-24,Czech Republic,Portugal,Portugal,Diogo Jota,82,FALSE,FALSE
+2022-09-24,Czechia,Portugal,Portugal,Diogo Dalot,33,FALSE,FALSE
+2022-09-24,Czechia,Portugal,Portugal,Bruno Fernandes,45,FALSE,FALSE
+2022-09-24,Czechia,Portugal,Portugal,Diogo Dalot,52,FALSE,FALSE
+2022-09-24,Czechia,Portugal,Portugal,Diogo Jota,82,FALSE,FALSE
 2022-09-24,Israel,Albania,Israel,Shon Weissman,46,FALSE,FALSE
 2022-09-24,Israel,Albania,Albania,Myrto Uzuni,88,FALSE,FALSE
 2022-09-24,Israel,Albania,Israel,Tai Baribo,90,FALSE,FALSE
@@ -42883,9 +42883,9 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2022-09-27,Republic of Ireland,Armenia,Republic of Ireland,Robbie Brady,90,FALSE,TRUE
 2022-09-27,Sweden,Slovenia,Slovenia,Benjamin Šeško,28,FALSE,FALSE
 2022-09-27,Sweden,Slovenia,Sweden,Emil Forsberg,42,FALSE,FALSE
-2022-09-27,Switzerland,Czech Republic,Switzerland,Remo Freuler,29,FALSE,FALSE
-2022-09-27,Switzerland,Czech Republic,Switzerland,Breel Embolo,30,FALSE,FALSE
-2022-09-27,Switzerland,Czech Republic,Czech Republic,Patrik Schick,45,FALSE,FALSE
+2022-09-27,Switzerland,Czechia,Switzerland,Remo Freuler,29,FALSE,FALSE
+2022-09-27,Switzerland,Czechia,Switzerland,Breel Embolo,30,FALSE,FALSE
+2022-09-27,Switzerland,Czechia,Czechia,Patrik Schick,45,FALSE,FALSE
 2022-11-16,Latvia,Estonia,Estonia,Sergei Zenjov,2,FALSE,FALSE
 2022-11-16,Latvia,Estonia,Latvia,Raimonds Krollis,45,FALSE,FALSE
 2022-11-19,Estonia,Lithuania,Estonia,Sergei Zenjov,65,FALSE,FALSE
@@ -43092,10 +43092,10 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2023-03-24,Austria,Azerbaijan,Azerbaijan,Emin Mahmudov,64,FALSE,FALSE
 2023-03-24,Austria,Azerbaijan,Austria,Christoph Baumgartner,69,FALSE,FALSE
 2023-03-24,Bulgaria,Montenegro,Montenegro,Nikola Krstović,70,FALSE,FALSE
-2023-03-24,Czech Republic,Poland,Czech Republic,Ladislav Krejčí,1,FALSE,FALSE
-2023-03-24,Czech Republic,Poland,Czech Republic,Tomáš Čvančara,3,FALSE,FALSE
-2023-03-24,Czech Republic,Poland,Czech Republic,Jan Kuchta,64,FALSE,FALSE
-2023-03-24,Czech Republic,Poland,Poland,Damian Szymański,87,FALSE,FALSE
+2023-03-24,Czechia,Poland,Czechia,Ladislav Krejčí,1,FALSE,FALSE
+2023-03-24,Czechia,Poland,Czechia,Tomáš Čvančara,3,FALSE,FALSE
+2023-03-24,Czechia,Poland,Czechia,Jan Kuchta,64,FALSE,FALSE
+2023-03-24,Czechia,Poland,Poland,Damian Szymański,87,FALSE,FALSE
 2023-03-24,France,Netherlands,France,Antoine Griezmann,2,FALSE,FALSE
 2023-03-24,France,Netherlands,France,Dayot Upamecano,8,FALSE,FALSE
 2023-03-24,France,Netherlands,France,Kylian Mbappé,21,FALSE,FALSE
@@ -43255,9 +43255,9 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2023-06-17,Cyprus,Georgia,Georgia,Georges Mikautadze,31,FALSE,FALSE
 2023-06-17,Cyprus,Georgia,Cyprus,Ioannis Pittas,39,FALSE,TRUE
 2023-06-17,Cyprus,Georgia,Georgia,Zuriko Davitashvili,84,FALSE,FALSE
-2023-06-17,Faroe Islands,Czech Republic,Czech Republic,Ladislav Krejčí,15,FALSE,FALSE
-2023-06-17,Faroe Islands,Czech Republic,Czech Republic,Václav Černý,44,FALSE,FALSE
-2023-06-17,Faroe Islands,Czech Republic,Czech Republic,Václav Černý,75,FALSE,FALSE
+2023-06-17,Faroe Islands,Czechia,Czechia,Ladislav Krejčí,15,FALSE,FALSE
+2023-06-17,Faroe Islands,Czechia,Czechia,Václav Černý,44,FALSE,FALSE
+2023-06-17,Faroe Islands,Czechia,Czechia,Václav Černý,75,FALSE,FALSE
 2023-06-17,Iceland,Slovakia,Slovakia,Juraj Kucka,27,FALSE,FALSE
 2023-06-17,Iceland,Slovakia,Iceland,Alfreð Finnbogason,41,FALSE,TRUE
 2023-06-17,Iceland,Slovakia,Slovakia,Tomáš Suslov,69,FALSE,FALSE
@@ -43450,8 +43450,8 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2023-07-12,United States,Panama,Panama,Iván Anderson,99,FALSE,FALSE
 2023-07-12,United States,Panama,United States,Jesús Ferreira,105,FALSE,FALSE
 2023-07-16,Mexico,Panama,Mexico,Santiago Giménez,88,FALSE,FALSE
-2023-09-07,Czech Republic,Albania,Czech Republic,Václav Černý,56,FALSE,FALSE
-2023-09-07,Czech Republic,Albania,Albania,Nedim Bajrami,66,FALSE,FALSE
+2023-09-07,Czechia,Albania,Czechia,Václav Černý,56,FALSE,FALSE
+2023-09-07,Czechia,Albania,Albania,Nedim Bajrami,66,FALSE,FALSE
 2023-09-07,Denmark,San Marino,Denmark,Pierre-Emile Højbjerg,26,FALSE,FALSE
 2023-09-07,Denmark,San Marino,Denmark,Joakim Mæhle,28,FALSE,FALSE
 2023-09-07,Denmark,San Marino,Denmark,Jonas Wind,40,FALSE,FALSE
@@ -43588,9 +43588,9 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2023-09-12,Switzerland,Andorra,Switzerland,Cedric Itten,49,FALSE,FALSE
 2023-09-12,Switzerland,Andorra,Switzerland,Granit Xhaka,84,FALSE,FALSE
 2023-09-12,Switzerland,Andorra,Switzerland,Xherdan Shaqiri,90,FALSE,TRUE
-2023-10-12,Albania,Czech Republic,Albania,Jasir Asani,9,FALSE,FALSE
-2023-10-12,Albania,Czech Republic,Albania,Taulant Seferi,51,FALSE,FALSE
-2023-10-12,Albania,Czech Republic,Albania,Taulant Seferi,73,FALSE,FALSE
+2023-10-12,Albania,Czechia,Albania,Jasir Asani,9,FALSE,FALSE
+2023-10-12,Albania,Czechia,Albania,Taulant Seferi,51,FALSE,FALSE
+2023-10-12,Albania,Czechia,Albania,Taulant Seferi,73,FALSE,FALSE
 2023-10-12,Andorra,Kosovo,Kosovo,Milot Rashica,26,FALSE,FALSE
 2023-10-12,Andorra,Kosovo,Kosovo,Milot Rashica,71,FALSE,FALSE
 2023-10-12,Andorra,Kosovo,Kosovo,Altin Zeqiri,83,FALSE,FALSE
@@ -43647,7 +43647,7 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2023-10-14,Slovenia,Finland,Slovenia,Erik Janža,90,FALSE,FALSE
 2023-10-14,Ukraine,North Macedonia,Ukraine,Heorhiy Sudakov,30,FALSE,FALSE
 2023-10-14,Ukraine,North Macedonia,Ukraine,Oleksandr Karavayev,90,FALSE,FALSE
-2023-10-15,Czech Republic,Faroe Islands,Czech Republic,Tomáš Souček,76,FALSE,TRUE
+2023-10-15,Czechia,Faroe Islands,Czechia,Tomáš Souček,76,FALSE,TRUE
 2023-10-15,Georgia,Cyprus,Georgia,Otar Kiteishvili,46,FALSE,FALSE
 2023-10-15,Georgia,Cyprus,Georgia,Khvicha Kvaratskhelia,58,FALSE,FALSE
 2023-10-15,Georgia,Cyprus,Georgia,Levan Shengelia,82,FALSE,FALSE
@@ -43770,8 +43770,8 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2023-11-17,Kazakhstan,San Marino,Kazakhstan,Abat Aymbetov,90,FALSE,TRUE
 2023-11-17,Moldova,Albania,Albania,Sokol Çikalleshi,25,FALSE,TRUE
 2023-11-17,Moldova,Albania,Moldova,Vladislav Baboglo,87,FALSE,FALSE
-2023-11-17,Poland,Czech Republic,Poland,Jakub Piotrowski,38,FALSE,FALSE
-2023-11-17,Poland,Czech Republic,Czech Republic,Tomáš Souček,49,FALSE,FALSE
+2023-11-17,Poland,Czechia,Poland,Jakub Piotrowski,38,FALSE,FALSE
+2023-11-17,Poland,Czechia,Czechia,Tomáš Souček,49,FALSE,FALSE
 2023-11-18,Armenia,Wales,Armenia,Lucas Zelarayán,5,FALSE,FALSE
 2023-11-18,Armenia,Wales,Wales,Nair Tiknizyan,45,TRUE,FALSE
 2023-11-18,Belarus,Andorra,Belarus,Denis Laptev,83,FALSE,FALSE
@@ -43828,9 +43828,9 @@ date,home_team,away_team,team,scorer,minute,own_goal,penalty
 2023-11-19,Spain,Georgia,Spain,Luka Lochoshvili,72,TRUE,FALSE
 2023-11-19,Sweden,Estonia,Sweden,Viktor Claesson,22,FALSE,FALSE
 2023-11-19,Sweden,Estonia,Sweden,Emil Forsberg,55,FALSE,FALSE
-2023-11-20,Czech Republic,Moldova,Czech Republic,David Douděra,14,FALSE,FALSE
-2023-11-20,Czech Republic,Moldova,Czech Republic,Tomáš Chorý,72,FALSE,FALSE
-2023-11-20,Czech Republic,Moldova,Czech Republic,Tomáš Souček,90,FALSE,FALSE
+2023-11-20,Czechia,Moldova,Czechia,David Douděra,14,FALSE,FALSE
+2023-11-20,Czechia,Moldova,Czechia,Tomáš Chorý,72,FALSE,FALSE
+2023-11-20,Czechia,Moldova,Czechia,Tomáš Souček,90,FALSE,FALSE
 2023-11-20,North Macedonia,England,North Macedonia,Enis Bardhi,41,FALSE,FALSE
 2023-11-20,North Macedonia,England,England,Jani Atanasov,59,TRUE,FALSE
 2023-11-20,Northern Ireland,Denmark,Northern Ireland,Isaac Price,60,FALSE,FALSE

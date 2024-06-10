@@ -2,23 +2,47 @@ import pandas as pd
 import numpy as np
 from tqdm import tqdm
 import logging
+from scripts.data_transform import transform_data
 
 logger = logging.getLogger(__name__)
 
 def load_match_schedule(file_path):
     return pd.read_csv(file_path)
 
-def calculate_goal_probability(win_percentage):
-    goals_per_game = 2.5  # Average goals per game assumption
+def load_win_percentages(file_path):
+    win_percentage_df = pd.read_csv(file_path)
+    return dict(zip(win_percentage_df['team'].str.strip().str.upper(), win_percentage_df['win_percentage']))
+
+def calculate_goal_probability(win_percentage, avg_goals_scored, avg_goals_conceded):
+    base_goals_per_game = 2.5
+    goals_per_game = (avg_goals_scored + avg_goals_conceded) / 2
     goal_probability_per_minute = (win_percentage / 100) * (goals_per_game / 90)
     return goal_probability_per_minute
 
-def simulate_match_minute_by_minute(team1, team2, team1_win_percentage, team2_win_percentage, home_advantage, home_team):
+def simulate_match_minute_by_minute(team1, team2, team1_win_percentage, team2_win_percentage, home_advantage, home_team, averages):
     team1_goals = 0
     team2_goals = 0
 
-    team1_goal_prob = calculate_goal_probability(team1_win_percentage + (home_advantage if team1 == home_team else 0))
-    team2_goal_prob = calculate_goal_probability(team2_win_percentage + (home_advantage if team2 == home_team else 0))
+    logger.debug(f"Averages is: {averages}")
+    
+    if team1 not in averages.index:
+        logger.error(f"Team {team1} not found in averages")
+    if team2 not in averages.index:
+        logger.error(f"Team {team2} not found in averages")
+
+    team1_avg_goals_scored = averages.at[team1, 'average_goals_scored']
+    team1_avg_goals_conceded = averages.at[team1, 'average_goals_conceded']
+    team2_avg_goals_scored = averages.at[team2, 'average_goals_scored']
+    team2_avg_goals_conceded = averages.at[team2, 'average_goals_conceded']
+
+    team1_goal_prob = calculate_goal_probability(
+        team1_win_percentage + (home_advantage if team1 == home_team else 0),
+        team1_avg_goals_scored, team2_avg_goals_conceded
+    )
+    team2_goal_prob = calculate_goal_probability(
+        team2_win_percentage + (home_advantage if team2 == home_team else 0),
+        team2_avg_goals_scored, team1_avg_goals_conceded
+    )
 
     for minute in range(90):
         if np.random.rand() < team1_goal_prob:
@@ -28,11 +52,11 @@ def simulate_match_minute_by_minute(team1, team2, team1_win_percentage, team2_wi
 
     return team1_goals, team2_goals
 
-def simulate_group_stage_matches(matches, win_percentages, home_advantage, home_team):
+def simulate_group_stage_matches(matches, win_percentages, home_advantage, home_team, averages):
     results = []
     for index, match in tqdm(matches.iterrows(), total=matches.shape[0], desc="Simulating Matches"):
-        team1 = match['team1']
-        team2 = match['team2']
+        team1 = match['team1'].strip().upper()
+        team2 = match['team2'].strip().upper()
         venue = match['venue']
         date = match['date']
         time = match['time']
@@ -42,8 +66,15 @@ def simulate_group_stage_matches(matches, win_percentages, home_advantage, home_
         team1_win_percentage = win_percentages.get(team1, 50)
         team2_win_percentage = win_percentages.get(team2, 50)
 
+        if team1 not in averages.index:
+            logger.error(f"Team {team1} not found in averages")
+            continue
+        if team2 not in averages.index:
+            logger.error(f"Team {team2} not found in averages")
+            continue
+
         team1_score, team2_score = simulate_match_minute_by_minute(
-            team1, team2, team1_win_percentage, team2_win_percentage, home_advantage, home_team
+            team1, team2, team1_win_percentage, team2_win_percentage, home_advantage, home_team, averages
         )
 
         logger.info(f"{date} {time} - {venue}: {team1} vs {team2} -> {team1_score}-{team2_score}")
@@ -73,18 +104,25 @@ def main():
     from scripts.config import load_config
     config = load_config(config_path)
 
-    # Load match schedule
+    # Load match schedule and win percentages
     matches = load_match_schedule(match_schedule_path)
-
-    # Load win percentages
-    win_percentages_df = pd.read_csv(win_percentages_path)
-    win_percentages = dict(zip(win_percentages_df['team'], win_percentages_df['win_percentage']))
+    win_percentages = load_win_percentages(win_percentages_path)
 
     home_advantage = config.get('home_advantage', 0)
-    home_team = config.get('home_team', '')
+    home_team = config.get('home_team', '').strip().upper()
+
+    # Calculate averages from historical data
+    historical_data_path = 'data/raw/results.csv'
+    historical_data = pd.read_csv(historical_data_path)
+    teams = [team.upper() for group in config['teams'].values() for team in group]
+    look_back_months = config['look_back_months']
+    _, averages = transform_data(historical_data, teams, look_back_months)
+
+    # Check contents of averages
+    logger.debug(f"Averages DataFrame: \n{averages}")
 
     # Simulate matches
-    results = simulate_group_stage_matches(matches, win_percentages, home_advantage, home_team)
+    results = simulate_group_stage_matches(matches, win_percentages, home_advantage, home_team, averages)
 
     # Save results
     results.to_csv(output_path, index=False)

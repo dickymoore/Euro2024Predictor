@@ -28,6 +28,7 @@ def read_cache_timestamp(cache_timestamp_path):
     return None
 
 def store_data(data, cache_path, cache_timestamp_path):
+    os.makedirs(os.path.dirname(cache_path), exist_ok=True)
     data.to_pickle(cache_path)
     with open(cache_timestamp_path, 'w') as file:
         current_time = datetime.now()
