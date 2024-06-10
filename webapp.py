@@ -64,7 +64,7 @@ def compute_standings(data):
     standings_df = pd.DataFrame(standings_df)
     standings_df = standings_df.sort_values(by=['group', 'points', 'gd', 'gf'], ascending=[True, False, False, False])
 
-    # Identify the best third-placed teams
+    
     third_place_teams = standings_df.groupby('group').nth(2)
     third_place_teams = third_place_teams.sort_values(by=['points', 'gd', 'gf'], ascending=[False, False, False]).head(4)
 
@@ -111,7 +111,7 @@ def organize_matches_by_group(data):
         if row['stage'] == 'Group Stage':
             match_results[row['group']].append(match)
         else:
-            # Determine winner and loser for knockout matches with penalty shootouts
+            
             if team1_score == team2_score and team1_pen_score is not None and team2_pen_score is not None:
                 if team1_pen_score > team2_pen_score:
                     match['team1_class'] = 'winner'

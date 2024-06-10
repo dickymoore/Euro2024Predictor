@@ -121,5 +121,5 @@ def getWeightedScores():
     weightedScoresAllCountries.to_csv("weightedScoring.csv", sep=',', index=False, encoding='utf-8')
 
 getWeightedScores()
-    
+
     

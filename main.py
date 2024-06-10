@@ -8,6 +8,7 @@ from argparse import ArgumentParser
 from scripts.data_transform import transform_data
 from scripts.data_store import store_data
 from scripts.config import load_config
+from weighted_win_percentage import calculate_weighted_win_percentage  # Import the function
 
 # Configure logging
 logger = logging.getLogger(__name__)
@@ -74,6 +75,11 @@ look_back_months={look_back_months}
         logger.debug(f'{num_transformed_rows} lines of transformed data.')
         assert num_transformed_rows < num_raw_rows, f"Error: Transformed data ({num_transformed_rows} lines) is not less than raw data ({num_raw_rows} lines)."
         store_data(transformed_data, cache_path, cache_timestamp_path)
+        
+        # Call calculate_weighted_win_percentage and save the resulting DataFrame
+        weighted_win_data = calculate_weighted_win_percentage(transformed_data)
+        weighted_win_data.to_csv('data/weighted_win_percentage.csv', index=False)
+        logger.info("Weighted win percentage data saved to data/weighted_win_percentage.csv")
     else:
         logger.debug("Loading data from cache...")
         data = pd.read_pickle(cache_path)

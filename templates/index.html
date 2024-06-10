@@ -96,7 +96,7 @@
         <h2>KNOCKOUT STAGE</h2>
         <div class="knockout-stage">
             <div class="knockout-stage-grid">
-                <!-- Round of 16 - Left -->
+                
                 <div class="round-of-16-left">
                     {% for match in knockout_matches[:4] %}
                         {% if match.stage == 'Round of 16' %}
@@ -123,7 +123,7 @@
                         {% endif %}
                     {% endfor %}
                 </div>
-                <!-- Quarter-finals - Left -->
+                
                 <div class="quarter-finals-left">
                     {% for match in knockout_matches[8:10] %}
                         {% if match.stage == 'Quarter-final' %}
@@ -150,7 +150,7 @@
                         {% endif %}
                     {% endfor %}
                 </div>
-                <!-- Semi-finals - Left -->
+                
                 <div class="semi-finals-left">
                     {% for match in knockout_matches[12:13] %}
                         {% if match.stage == 'Semi-final' %}
@@ -177,7 +177,7 @@
                         {% endif %}
                     {% endfor %}
                 </div>
-                <!-- Final -->
+                
                 <div class="final">
                     {% for match in knockout_matches %}
                         {% if match.stage == 'Final' %}
@@ -202,7 +202,7 @@
                         {% endif %}
                     {% endfor %}
                 </div>
-                <!-- Semi-finals - Right -->
+                
                 <div class="semi-finals-right">
                     {% for match in knockout_matches[13:14] %}
                         {% if match.stage == 'Semi-final' %}
@@ -229,7 +229,7 @@
                         {% endif %}
                     {% endfor %}
                 </div>
-                <!-- Quarter-finals - Right -->
+                
                 <div class="quarter-finals-right">
                     {% for match in knockout_matches[10:12] %}
                         {% if match.stage == 'Quarter-final' %}
@@ -256,7 +256,7 @@
                         {% endif %}
                     {% endfor %}
                 </div>
-                <!-- Round of 16 - Right -->
+                
                 <div class="round-of-16-right">
                     {% for match in knockout_matches[4:8] %}
                         {% if match.stage == 'Round of 16' %}
