@@ -8,7 +8,7 @@ from argparse import ArgumentParser
 from scripts.data_transform import transform_data
 from scripts.data_store import store_data
 from scripts.config import load_config
-from weighted_win_percentage import calculate_weighted_win_percentage  # Import the function
+from scripts.weighted_win_percentage import calculate_weighted_win_percentage
 
 # Configure logging
 logger = logging.getLogger(__name__)
@@ -55,37 +55,36 @@ teams={teams}
 look_back_months={look_back_months}
 """)
 
-    csv_path = 'data/raw/results.csv'
+    input_path = 'data/raw/results.csv'
     cache_path = 'data/cache/data.pkl'
     cache_timestamp_path = 'data/cache/data_timestamp.txt'
 
-    raw_data_mod_time = get_file_modification_time(csv_path)
+    raw_data_mod_time = get_file_modification_time(input_path)
     cache_data_mod_time = read_cache_timestamp(cache_timestamp_path)
     logger.debug("Checking data freshness...")
     logger.debug(f"Raw results data last updated: {raw_data_mod_time}")
     logger.debug(f"Cached results data updated: {cache_data_mod_time}")
     
     if cache_data_mod_time is None or raw_data_mod_time > cache_data_mod_time:
-        logger.debug(f"Loading data from {csv_path}")
-        raw_data = pd.read_csv(csv_path)
+        logger.debug(f"Loading data from {input_path}")
+        raw_data = pd.read_csv(input_path)
         num_raw_rows = raw_data.shape[0]
-        logger.debug(f'{num_raw_rows} lines of raw_data have been loaded from {csv_path}.')
+        logger.debug(f'{num_raw_rows} lines of raw_data have been loaded from {input_path}.')
         transformed_data = transform_data(raw_data, teams, look_back_months)
         num_transformed_rows = transformed_data.shape[0]
         logger.debug(f'{num_transformed_rows} lines of transformed data.')
         assert num_transformed_rows < num_raw_rows, f"Error: Transformed data ({num_transformed_rows} lines) is not less than raw data ({num_raw_rows} lines)."
         store_data(transformed_data, cache_path, cache_timestamp_path)
-        
-        # Call calculate_weighted_win_percentage and save the resulting DataFrame
-        weighted_win_data = calculate_weighted_win_percentage(transformed_data)
-        weighted_win_data.to_csv('data/weighted_win_percentage.csv', index=False)
-        logger.info("Weighted win percentage data saved to data/weighted_win_percentage.csv")
     else:
         logger.debug("Loading data from cache...")
         data = pd.read_pickle(cache_path)
         num_cached_rows = data.shape[0]
         logger.debug(f'{num_cached_rows} lines of raw_data have been loaded from cache.')
 
+    weighted_win_data = calculate_weighted_win_percentage(transformed_data)
+    weighted_win_data.to_csv('data/tmp/weighted_win_percentage.csv', index=False)
+    logger.info("Weighted win percentage data saved to data/tmp/weighted_win_percentage.csv")
+    
 if __name__ == "__main__":
     parser = ArgumentParser()
     parser.add_argument('--debug', action='store_true', help='Enable debug output')
