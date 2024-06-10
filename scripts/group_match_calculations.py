@@ -87,15 +87,10 @@ def simulate_group_stage_matches(matches, win_percentages, home_advantage, home_
         })
     return pd.DataFrame(results)
 
-def main():
-    config_path = 'config/config.yaml'
+def main(config, teams):
     match_schedule_path = 'data/raw/group_match_schedule.csv'
     win_percentages_path = 'data/tmp/euro_teams_win_percentage.csv'
     output_path = 'data/results/group_stage_results.csv'
-
-    # Load configuration
-    from scripts.config import load_config
-    config = load_config(config_path)
 
     # Load match schedule and win percentages
     matches = load_match_schedule(match_schedule_path)
@@ -108,7 +103,6 @@ def main():
     # Calculate averages from historical data
     historical_data_path = 'data/raw/results.csv'
     historical_data = pd.read_csv(historical_data_path)
-    teams = [team.upper() for group in config['teams'].values() for team in group]
     look_back_months = config['look_back_months']
     _, averages = transform_data(historical_data, teams, look_back_months)
 
@@ -123,4 +117,6 @@ def main():
     logger.info(f"Results saved to {output_path}")
 
 if __name__ == "__main__":
-    main()
+    config = load_config()
+    teams = [team for group in config['teams'].values() for team in group]
+    main(config, teams)

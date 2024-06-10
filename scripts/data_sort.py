@@ -19,23 +19,23 @@ def sortAwayData(team, data):
 
 def getWinPercentage(teams, data):
     data = data[data.away_team.isin(teams) | data.home_team.isin(teams)]
-    winPercentageEuroCountries = pd.DataFrame(columns=('country',"win_percentage","no_games"))
+    winPercentageEuroCountries = pd.DataFrame(columns=('country', "win_percentage", "no_games"))
     for team in teams:
         numberOfGames = data[data.away_team.isin([team]) | data.home_team.isin([team])].shape[0]
         winCount = 0
         winCount += sortAwayData(team, data)
         winCount += sortHomeData(team, data)
-        new_row = {"country" : team, "win_percentage" : round((winCount / numberOfGames) * 100, 2), "no_games" : numberOfGames}
+        new_row = {"country": team, "win_percentage": round((winCount / numberOfGames) * 100, 2), "no_games": numberOfGames}
         winPercentageEuroCountries.loc[len(winPercentageEuroCountries)] = new_row
     print(winPercentageEuroCountries)
 
 if __name__ == "__main__":
     config = load_config()
+    teams = [team for group in config['teams'].values() for team in group]
     startDate = pd.to_datetime('2021-03-05')
-    euroTeams = [team for group in config['teams'].values() for team in group]
     data = pd.read_csv('data/raw/results.csv')
     data['date'] = pd.to_datetime(data['date'])
     data = data[data.date > startDate]
-    data = data[data.away_team.isin(euroTeams) | data.home_team.isin(euroTeams)]
+    data = data[data.away_team.isin(teams) | data.home_team.isin(teams)]
 
-    getWinPercentage(euroTeams, data)
+    getWinPercentage(teams, data)

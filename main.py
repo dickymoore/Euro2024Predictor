@@ -1,6 +1,5 @@
 import logging
 from argparse import ArgumentParser
-
 from scripts.config import load_config
 from scripts.calculations import perform_calculations
 
@@ -14,13 +13,14 @@ def main(debug=False):
         logging.basicConfig(level=logging.INFO)
 
     config = load_config()
+    teams = [team for group in config['teams'].values() for team in group]
     logger.info('Running Predictor')
     
-    perform_calculations(config)
+    perform_calculations(config, teams)
     
     # Simulate matches
     from scripts.group_match_calculations import main as simulate_matches
-    simulate_matches()
+    simulate_matches(config, teams)
 
 if __name__ == "__main__":
     parser = ArgumentParser()

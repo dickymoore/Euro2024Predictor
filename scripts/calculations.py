@@ -1,7 +1,6 @@
 import pandas as pd
 import logging
 import os
-
 from scripts.data_transform import transform_data
 from scripts.win_percentages import compute_win_percentages
 from scripts.weighted_win_percentage import calculate_weighted_win_percentage
@@ -9,8 +8,7 @@ from scripts.cache import get_file_modification_time, read_cache_timestamp, stor
 
 logger = logging.getLogger(__name__)
 
-def perform_calculations(config):
-    teams = [team for group in config['teams'].values() for team in group]
+def perform_calculations(config, teams):
     look_back_months = config['look_back_months']
     
     input_path = 'data/raw/results.csv'
