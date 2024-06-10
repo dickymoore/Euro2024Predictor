@@ -32,3 +32,4 @@ teams:
 look_back_months: 36
 home_advantage: 0.1
 home_team: Germany
+weighted_win_percentage_weight: 1
