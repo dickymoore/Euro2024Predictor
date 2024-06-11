@@ -7,6 +7,44 @@ from scripts.standings_calculations import compute_standings
 
 logger = logging.getLogger(__name__)
 
+# Define scenarios for third-placed teams
+THIRD_PLACE_SCENARIOS = {
+    'ABCD': ['3A', '3B', '3C', '3D'],
+    'ABCE': ['3A', '3B', '3C', '3E'],
+    'ABCF': ['3A', '3B', '3C', '3F'],
+    'ABDE': ['3A', '3B', '3D', '3E'],
+    'ABDF': ['3A', '3B', '3D', '3F'],
+    'ABEF': ['3A', '3B', '3E', '3F'],
+    'ACDE': ['3A', '3C', '3D', '3E'],
+    'ACDF': ['3A', '3C', '3D', '3F'],
+    'ACEF': ['3A', '3C', '3E', '3F'],
+    'ADEF': ['3A', '3D', '3E', '3F'],
+    'BCDE': ['3B', '3C', '3D', '3E'],
+    'BCDF': ['3B', '3C', '3D', '3F'],
+    'BCEF': ['3B', '3C', '3E', '3F']
+}
+
+# Define match assignments for each scenario
+THIRD_PLACE_MATCH_ASSIGNMENTS = {
+    'ABCD': ['1B', '1C', '1D', '1E'],
+    'ABCE': ['1B', '1C', '1D', '1F'],
+    'ABCF': ['1B', '1C', '1E', '1D'],
+    'ABDE': ['1B', '1C', '1F', '1D'],
+    'ABDF': ['1B', '1C', '1F', '1E'],
+    'ABEF': ['1B', '1D', '1F', '1E'],
+    'ACDE': ['1B', '1D', '1F', '1C'],
+    'ACDF': ['1B', '1D', '1E', '1C'],
+    'ACEF': ['1B', '1E', '1F', '1C'],
+    'ADEF': ['1C', '1D', '1F', '1B'],
+    'BCDE': ['1C', '1D', '1F', '1A'],
+    'BCDF': ['1C', '1E', '1F', '1A'],
+    'BCEF': ['1D', '1E', '1F', '1A']
+}
+
+def get_third_place_scenario(third_place_groups):
+    key = ''.join(sorted(third_place_groups))
+    return THIRD_PLACE_SCENARIOS.get(key)
+
 def simulate_knockout_stage(fixtures, config, teams, win_percentages, averages, home_advantage, home_team, weighted_win_percentage_weight, stage):
     results = []
     for match in fixtures:
@@ -97,7 +135,6 @@ def simulate_penalty_shootout():
     return int(team1_pen_score), int(team2_pen_score)
 
 def infer_next_round_fixtures(results, next_stage):
-    # Determine the winners from the current round results
     winners = []
     for _, match in results.iterrows():
         if match['team1_score'] > match['team2_score']:
@@ -105,16 +142,13 @@ def infer_next_round_fixtures(results, next_stage):
         elif match['team1_score'] < match['team2_score']:
             winners.append(match['team2'])
         else:
-            # Assuming penalties decide the winner in case of a draw
             if match['team1_pso_score'] > match['team2_pso_score']:
                 winners.append(match['team1'])
             else:
                 winners.append(match['team2'])
     
-    # Add detailed logging for winners
     logger.debug(f"Winners advancing to {next_stage}: {winners}")
     
-    # Pair up the winners for the next round fixtures
     next_round_fixtures = []
     for i in range(0, len(winners), 2):
         if i + 1 < len(winners):
@@ -122,12 +156,11 @@ def infer_next_round_fixtures(results, next_stage):
                 'team1': winners[i],
                 'team2': winners[i + 1],
                 'stage': next_stage,
-                'date': None,  # Dates can be filled in if available
-                'time': None,  # Times can be filled in if available
-                'venue': None  # Venues can be filled in if available
+                'date': None,
+                'time': None,
+                'venue': None
             })
     
-    # Add detailed logging for next round fixtures
     logger.debug(f"{next_stage} Fixtures: {next_round_fixtures}")
     return next_round_fixtures
 
@@ -173,7 +206,7 @@ def main():
     round_of_16_results = simulate_knockout_stage(round_of_16_fixtures, config, teams, **config_vars, stage="Round of 16")
     all_knockout_results = pd.concat([all_knockout_results, round_of_16_results])
     quarter_final_fixtures = infer_next_round_fixtures(round_of_16_results, "Quarter-final")
-    
+
     # Simulate Quarter Finals
     quarter_final_results = simulate_knockout_stage(quarter_final_fixtures, config, teams, **config_vars, stage="Quarter-final")
     all_knockout_results = pd.concat([all_knockout_results, quarter_final_results])

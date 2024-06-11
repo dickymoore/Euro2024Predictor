@@ -157,8 +157,32 @@ def get_knockout_stage_config_vars(config, teams):
         'weighted_win_percentage_weight': weighted_win_percentage_weight
     }
 
+def concatenate_results(group_stage_path, knockout_stage_path, output_path):
+    # Load group stage results
+    group_stage_results = pd.read_csv(group_stage_path)
+    
+    # Load knockout stage results
+    knockout_stage_results = pd.read_csv(knockout_stage_path)
+    
+    # Concatenate the results
+    all_results = pd.concat([group_stage_results, knockout_stage_results], ignore_index=True)
+    
+    # Save the concatenated results to a new CSV file
+    all_results.to_csv(output_path, index=False)
+    print(f"Concatenated results saved to {output_path}")
+
+# Define file paths
+group_stage_path = 'data/results/group_stage_results.csv'
+knockout_stage_path = 'data/results/knockout_stage_results.csv'
+output_path = 'data/results/all_stage_results.csv'
+
+# Concatenate the results
+concatenate_results(group_stage_path, knockout_stage_path, output_path)
+
 if __name__ == "__main__":
     parser = ArgumentParser()
     parser.add_argument('--debug', action='store_true', help='Enable debug output')
     args = parser.parse_args()
     main(debug=args.debug)
+
+
