@@ -13,6 +13,8 @@ def simulate_knockout_stage(fixtures, config, teams, win_percentages, averages, 
         team1 = match['team1']
         team2 = match['team2']
         
+        logger.info(f"Simulating match: {team1} vs {team2}")
+        
         team1_win_percentage = win_percentages.get(team1, 50)
         team2_win_percentage = win_percentages.get(team2, 50)
 
@@ -94,7 +96,7 @@ def simulate_penalty_shootout():
 
     return team1_pen_score, team2_pen_score
 
-def infer_next_round_fixtures(results):
+def infer_next_round_fixtures(results, next_stage):
     # Determine the winners from the current round results
     winners = []
     for _, match in results.iterrows():
@@ -113,9 +115,44 @@ def infer_next_round_fixtures(results):
     next_round_fixtures = []
     for i in range(0, len(winners), 2):
         if i + 1 < len(winners):
-            next_round_fixtures.append({'team1': winners[i], 'team2': winners[i + 1]})
+            next_round_fixtures.append({
+                'team1': winners[i],
+                'team2': winners[i + 1],
+                'stage': next_stage,
+                'date': None,  # Dates can be filled in if available
+                'time': None,  # Times can be filled in if available
+                'venue': None  # Venues can be filled in if available
+            })
     
     return next_round_fixtures
+
+def get_actual_teams(standings):
+    actual_teams = {}
+    
+    # Determine the top 2 teams from each group
+    for group in standings['group'].unique():
+        group_standings = standings[standings['group'] == group].sort_values(by=['points', 'gd', 'gf'], ascending=[False, False, False])
+        top_two = group_standings.head(2)
+        if not top_two.empty:
+            actual_teams[f'1{group}'] = top_two.iloc[0]['team']
+            actual_teams[f'2{group}'] = top_two.iloc[1]['team']
+            print(f"Group {group}: 1st {actual_teams[f'1{group}']}, 2nd {actual_teams[f'2{group}']}")
+        else:
+            print(f"Group {group} standings data is empty or not found.")
+    
+    # Determine the best third-placed teams
+    third_place_teams = standings.groupby('group').nth(2)
+    best_third_teams = third_place_teams.sort_values(by=['points', 'gd', 'gf'], ascending=[False, False, False]).head(4)
+
+    third_place_keys = ['3A', '3B', '3C', '3D']  # Adjust the keys according to your knockout schedule placeholders
+
+    # Assign the best third-placed teams to their respective placeholders
+    for key, value in zip(third_place_keys, best_third_teams['team']):
+        actual_teams[key] = value
+        print(f"Best third-placed team {key}: {value}")
+
+    print("Actual Teams:\n", actual_teams)
+    return actual_teams
 
 def main():
     config = load_config()
@@ -130,17 +167,17 @@ def main():
     # Simulate Round of 16
     round_of_16_results = simulate_knockout_stage(round_of_16_fixtures, config, teams, **config_vars, stage="Round of 16")
     all_knockout_results = pd.concat([all_knockout_results, round_of_16_results])
-    quarter_final_fixtures = infer_next_round_fixtures(round_of_16_results)
+    quarter_final_fixtures = infer_next_round_fixtures(round_of_16_results, "Quarter-final")
     
     # Simulate Quarter Finals
     quarter_final_results = simulate_knockout_stage(quarter_final_fixtures, config, teams, **config_vars, stage="Quarter-final")
     all_knockout_results = pd.concat([all_knockout_results, quarter_final_results])
-    semi_final_fixtures = infer_next_round_fixtures(quarter_final_results)
+    semi_final_fixtures = infer_next_round_fixtures(quarter_final_results, "Semi-final")
     
     # Simulate Semi Finals
     semi_final_results = simulate_knockout_stage(semi_final_fixtures, config, teams, **config_vars, stage="Semi-final")
     all_knockout_results = pd.concat([all_knockout_results, semi_final_results])
-    final_fixtures = infer_next_round_fixtures(semi_final_results)
+    final_fixtures = infer_next_round_fixtures(semi_final_results, "Final")
     
     # Simulate Final
     final_results = simulate_knockout_stage(final_fixtures, config, teams, **config_vars, stage="Final")

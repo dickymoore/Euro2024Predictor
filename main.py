@@ -4,9 +4,9 @@ from argparse import ArgumentParser
 from scripts.config import load_config
 from scripts.calculations import perform_calculations
 from scripts.group_match_calculations import simulate_group_stage_matches
-from scripts.knockout_stage_calculations import simulate_knockout_stage, infer_next_round_fixtures
-from scripts.standings_calculations import compute_standings  # Ensure compute_standings is imported
-from scripts.data_transform import transform_data  # Import transform_data function
+from scripts.knockout_stage_calculations import simulate_knockout_stage, infer_next_round_fixtures, get_actual_teams
+from scripts.standings_calculations import compute_standings
+from scripts.data_transform import transform_data
 
 # Configure logging
 logger = logging.getLogger(__name__)
@@ -35,7 +35,9 @@ def simulate_group_stage(config, teams):
     
 def knockout_stage(config, teams):
     standings = compute_standings_from_results()
+    print("Standings:\n", standings)
     round_of_16_fixtures = calculate_last_16_fixtures(standings)
+    print("Round of 16 Fixtures:\n", round_of_16_fixtures)
     config_vars = get_knockout_stage_config_vars(config, teams)
     
     all_knockout_results = pd.DataFrame()
@@ -43,17 +45,17 @@ def knockout_stage(config, teams):
     # Simulate Round of 16
     round_of_16_results = simulate_knockout_stage(round_of_16_fixtures, **config_vars, stage="Round of 16")
     all_knockout_results = pd.concat([all_knockout_results, round_of_16_results])
-    quarter_final_fixtures = infer_next_round_fixtures(round_of_16_results)
+    quarter_final_fixtures = infer_next_round_fixtures(round_of_16_results, "Quarter-final")
     
     # Simulate Quarter Finals
     quarter_final_results = simulate_knockout_stage(quarter_final_fixtures, **config_vars, stage="Quarter-final")
     all_knockout_results = pd.concat([all_knockout_results, quarter_final_results])
-    semi_final_fixtures = infer_next_round_fixtures(quarter_final_results)
+    semi_final_fixtures = infer_next_round_fixtures(quarter_final_results, "Semi-final")
     
     # Simulate Semi Finals
     semi_final_results = simulate_knockout_stage(semi_final_fixtures, **config_vars, stage="Semi-final")
     all_knockout_results = pd.concat([all_knockout_results, semi_final_results])
-    final_fixtures = infer_next_round_fixtures(semi_final_results)
+    final_fixtures = infer_next_round_fixtures(semi_final_results, "Final")
     
     # Simulate Final
     final_results = simulate_knockout_stage(final_fixtures, **config_vars, stage="Final")
@@ -68,32 +70,33 @@ def compute_standings_from_results():
     standings = compute_standings(data)
     return standings
 
+def str_converter(value):
+    return str(value)
+
+
 def calculate_last_16_fixtures(standings):
     fixtures = []
-    
-    # Assume top 2 teams from each group qualify
-    qualified_teams = standings[standings['qualified'] == 'qualified'].sort_values(by=['group', 'points', 'gd', 'gf'])
-    
-    # Best 4 third-placed teams
-    best_third_teams = standings[standings['qualified'] == 'best-third'].sort_values(by=['points', 'gd', 'gf']).head(4)
-    
-    # Combine top teams and best third-placed teams
-    all_qualified_teams = pd.concat([qualified_teams, best_third_teams])
-    
-    # Create fixtures (this is a simplified version and can be adjusted as per the actual tournament structure)
-    groups = all_qualified_teams['group'].unique()
-    for i in range(0, len(groups), 2):
-        if i + 1 < len(groups):
-            group1_teams = all_qualified_teams[all_qualified_teams['group'] == groups[i]]
-            group2_teams = all_qualified_teams[all_qualified_teams['group'] == groups[i + 1]]
-            
-            fixtures.append({'team1': group1_teams.iloc[0]['team'], 'team2': group2_teams.iloc[1]['team']})
-            fixtures.append({'team1': group2_teams.iloc[0]['team'], 'team2': group1_teams.iloc[1]['team']})
-            if len(group1_teams) > 2:
-                fixtures.append({'team1': group1_teams.iloc[2]['team'], 'team2': best_third_teams.iloc[i % 4]['team']})
-            if len(group2_teams) > 2:
-                fixtures.append({'team1': group2_teams.iloc[2]['team'], 'team2': best_third_teams.iloc[(i + 1) % 4]['team']})
-    
+    dtype = {'team1': str, 'team2': str}
+    column_names = ['stage', 'date', 'time', 'venue', 'team1', 'team1_score', 'team2', 'team2_score', 'team1_pso_score', 'team2_pso_score']
+    # Read the CSV file with specified column names, forcing all columns to be read as strings
+    knockout_schedule = pd.read_csv('data/raw/knockout_match_schedule.csv', names=column_names, skiprows=1, dtype=str)
+    print("Knockout_schedule:\n", knockout_schedule)
+    actual_teams = get_actual_teams(standings)
+    print("Actual Teams After Mapping:\n", actual_teams)
+
+    for _, match in knockout_schedule.iterrows():
+        original_team1 = match['team1']
+        original_team2 = match['team2']
+        team1 = actual_teams.get(original_team1, original_team1)
+        team2 = actual_teams.get(original_team2, original_team2)
+        
+        # Add debugging information
+        print(f"Original Team1: {original_team1}, Mapped Team1: {team1}")
+        print(f"Original Team2: {original_team2}, Mapped Team2: {team2}")
+        
+        fixtures.append({'team1': team1, 'team2': team2, 'stage': match['stage'], 'date': match['date'], 'time': match['time'], 'venue': match['venue']})
+
+    print("Fixtures for Round of 16:\n", fixtures)
     return fixtures
 
 def get_knockout_stage_config_vars(config, teams):

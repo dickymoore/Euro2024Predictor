@@ -1,19 +1,8 @@
 stage,team1,team1_score,team2,team2_score,team1_pso_score,team2_pso_score
-Round of 16,HUNGARY,2,ITALY,1,,
-Round of 16,SPAIN,1,GERMANY,0,,
-Round of 16,SWITZERLAND,1,SWITZERLAND,2,,
-Round of 16,SLOVENIA,0,FRANCE,0,0.0,4.0
-Round of 16,POLAND,0,ENGLAND,3,,
-Round of 16,SERBIA,1,SERBIA,0,,
-Round of 16,ROMANIA,1,PORTUGAL,2,,
-Round of 16,GEORGIA,1,UKRAINE,1,3.0,2.0
-Round of 16,BELGIUM,0,SWITZERLAND,1,,
-Round of 16,TURKEY,1,BELGIUM,3,,
-Quarter-final,HUNGARY,0,SPAIN,1,,
-Quarter-final,SWITZERLAND,2,FRANCE,1,,
-Quarter-final,ENGLAND,0,SERBIA,0,4.0,2.0
-Quarter-final,PORTUGAL,2,GEORGIA,1,,
-Quarter-final,SWITZERLAND,1,BELGIUM,1,5.0,4.0
-Semi-final,SPAIN,0,SWITZERLAND,2,,
-Semi-final,ENGLAND,2,PORTUGAL,1,,
-Final,SWITZERLAND,0,ENGLAND,0,3.0,2.0
+Round of 16,SCOTLAND,0,SERBIA,1,,
+Round of 16,GERMANY,1,CROATIA,0,,
+Round of 16,PORTUGAL,2,POLAND,1,,
+Round of 16,SERBIA,0,CZECHIA,0,2.0,3.0
+Quarter-final,SERBIA,2,GERMANY,0,,
+Quarter-final,PORTUGAL,1,CZECHIA,0,,
+Semi-final,SERBIA,1,PORTUGAL,1,4.0,3.0
