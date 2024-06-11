@@ -38,11 +38,11 @@ def simulate_knockout_stage(fixtures, config, teams, win_percentages, averages, 
         results.append({
             'stage': stage,
             'team1': team1,
-            'team1_score': team1_score,
+            'team1_score': int(team1_score),
             'team2': team2,
-            'team2_score': team2_score,
-            'team1_pso_score': team1_pen_score,
-            'team2_pso_score': team2_pen_score
+            'team2_score': int(team2_score),
+            'team1_pso_score': int(team1_pen_score) if team1_pen_score is not None else '',
+            'team2_pso_score': int(team2_pen_score) if team2_pen_score is not None else ''
         })
     
     return pd.DataFrame(results)
@@ -94,7 +94,7 @@ def simulate_penalty_shootout():
         if np.random.rand() > 0.5:
             team2_pen_score += 1
 
-    return team1_pen_score, team2_pen_score
+    return int(team1_pen_score), int(team2_pen_score)
 
 def infer_next_round_fixtures(results, next_stage):
     # Determine the winners from the current round results
@@ -111,6 +111,9 @@ def infer_next_round_fixtures(results, next_stage):
             else:
                 winners.append(match['team2'])
     
+    # Add detailed logging for winners
+    logger.debug(f"Winners advancing to {next_stage}: {winners}")
+    
     # Pair up the winners for the next round fixtures
     next_round_fixtures = []
     for i in range(0, len(winners), 2):
@@ -124,6 +127,8 @@ def infer_next_round_fixtures(results, next_stage):
                 'venue': None  # Venues can be filled in if available
             })
     
+    # Add detailed logging for next round fixtures
+    logger.debug(f"{next_stage} Fixtures: {next_round_fixtures}")
     return next_round_fixtures
 
 def get_actual_teams(standings):

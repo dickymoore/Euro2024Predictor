@@ -87,17 +87,31 @@ def calculate_last_16_fixtures(standings):
     for _, match in knockout_schedule.iterrows():
         original_team1 = match['team1']
         original_team2 = match['team2']
+        
         team1 = actual_teams.get(original_team1, original_team1)
         team2 = actual_teams.get(original_team2, original_team2)
         
         # Add debugging information
         print(f"Original Team1: {original_team1}, Mapped Team1: {team1}")
         print(f"Original Team2: {original_team2}, Mapped Team2: {team2}")
+
+        # Handling placeholders dynamically
+        if '/' in team1:
+            team1 = resolve_placeholder(team1, actual_teams)
+        if '/' in team2:
+            team2 = resolve_placeholder(team2, actual_teams)
         
         fixtures.append({'team1': team1, 'team2': team2, 'stage': match['stage'], 'date': match['date'], 'time': match['time'], 'venue': match['venue']})
 
     print("Fixtures for Round of 16:\n", fixtures)
     return fixtures
+
+def resolve_placeholder(placeholder, actual_teams):
+    options = placeholder.split('/')
+    for option in options:
+        if option in actual_teams:
+            return actual_teams[option]
+    return placeholder  # Default to placeholder if no match is found
 
 def get_knockout_stage_config_vars(config, teams):
     match_schedule_path = 'data/raw/group_match_schedule.csv'

@@ -1,9 +1,13 @@
 from flask import Flask, render_template
+from flask_socketio import SocketIO, emit
 import pandas as pd
 from collections import defaultdict
-from scripts.standings_calculations import compute_standings  # Ensure compute_standings is imported
+from scripts.standings_calculations import compute_standings
+import threading
+import time
 
 app = Flask(__name__)
+socketio = SocketIO(app)
 
 def load_data(csv_path):
     return pd.read_csv(csv_path, na_values=[''])
@@ -48,13 +52,33 @@ def organize_matches_by_group(data):
 
 @app.route("/")
 def index():
-    csv_path = "data/dummy-results.csv"
-    data = load_data(csv_path)
+    return render_template("index.html")
 
-    standings = compute_standings(data)
-    match_results, knockout_matches = organize_matches_by_group(data)
-    
-    return render_template("index.html", standings=standings, match_results=match_results, knockout_matches=knockout_matches)
+def simulate_group_stage():
+    # Simulate group stage matches and update
+    # You should replace this with actual simulation logic
+    matches = [
+        {'team1': 'Team A', 'team2': 'Team B', 'team1_score': 1, 'team2_score': 0},
+        {'team1': 'Team C', 'team2': 'Team D', 'team1_score': 2, 'team2_score': 2},
+        # Add more matches as needed
+    ]
+    for match in matches:
+        socketio.emit('match_update', match)
+        time.sleep(1)  # Simulate some processing time
+
+    # Example group standings (you should calculate this based on match results)
+    standings = [
+        {'team': 'Team A', 'points': 6},
+        {'team': 'Team B', 'points': 3},
+        {'team': 'Team C', 'points': 3},
+        {'team': 'Team D', 'points': 0},
+        # Add more standings as needed
+    ]
+    socketio.emit('group_stage_complete', {'standings': standings})
+
+@socketio.on('start_simulation')
+def handle_start_simulation():
+    threading.Thread(target=simulate_group_stage).start()
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    socketio.run(app, debug=True)
