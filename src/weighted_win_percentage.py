@@ -69,20 +69,20 @@ def weightedScoring(country_ranking, away_score, home_score, away_country, home_
     if away_score > home_score:
         winner_country = away_country
 
-        away_country_weighted_score = (0.5 + (0.25*(float(home_country_win_percentage.iloc[0])/100)) + 0.25*country_ranking.get(home_country))
-        home_country_weighted_score = (0.5*(float(away_country_win_percentage.iloc[0])/100) + 0.5*country_ranking.get(away_country))
+        # ranking: if you win -> 0.25 + 0.25*your ranking + 
+        away_country_weighted_score =  (1.1*country_ranking.get(away_country)) + 0.1*country_ranking.get(home_country)
+        home_country_weighted_score = (0.95*country_ranking.get(home_country)) - 0.05*country_ranking.get(away_country)
 
         country_ranking[home_country] = home_country_weighted_score
-        country_ranking[away_country] = away_country_weighted_score   
+        country_ranking[away_country] = away_country_weighted_score 
         
     elif home_score > away_score:
         winner_country = home_country
-        home_country_weighted_score = (0.5 + 0.25*(float(away_country_win_percentage.iloc[0])/100) + 0.25*country_ranking.get(away_country))
-        away_country_weighted_score = (0.5*float(home_country_win_percentage.iloc[0])/100 + 0.5*country_ranking.get(home_country))
-
+        away_country_weighted_score =  (0.95*country_ranking.get(away_country)) - 0.05*country_ranking.get(home_country)
+        home_country_weighted_score = (1.1*country_ranking.get(home_country)) + 0.1*country_ranking.get(away_country)
 
         country_ranking[home_country] = home_country_weighted_score
-        country_ranking[away_country] = away_country_weighted_score    
+        country_ranking[away_country] = away_country_weighted_score 
     
    
     else:
@@ -90,8 +90,7 @@ def weightedScoring(country_ranking, away_score, home_score, away_country, home_
         away_country_weighted_score = ((0.95*country_ranking.get(away_country)) + (0.05*country_ranking.get(home_country)))
         
         country_ranking[home_country] = home_country_weighted_score
-        country_ranking[away_country] = away_country_weighted_score    
-
+        country_ranking[away_country] = away_country_weighted_score
 
      
     return {
@@ -124,8 +123,10 @@ def sort_data(all_teams, data_all, euroCountriesGames):
 
         weightedScoringTable.loc[len(weightedScoringTable)] = new_row
 
-    print(country_ranking)
-    
+    country_ranking = dict(sorted(country_ranking.items(), key=lambda item: item[1]))
+    for country in country_ranking:
+        print(country, country_ranking.get(country))
+       
 
     with open("mycsvfile.csv", "w", newline="") as f:
         w = csv.DictWriter(f, country_ranking.keys())
