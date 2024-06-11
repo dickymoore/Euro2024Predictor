@@ -1,12 +1,17 @@
 import logging
 import pandas as pd
 from argparse import ArgumentParser
+from flask import Flask
+from flask_socketio import SocketIO, emit
 from scripts.config import load_config
 from scripts.calculations import perform_calculations
 from scripts.group_match_calculations import simulate_group_stage_matches
 from scripts.knockout_stage_calculations import simulate_knockout_stage, infer_next_round_fixtures, get_actual_teams
 from scripts.standings_calculations import compute_standings
 from scripts.data_transform import transform_data
+
+app = Flask(__name__)
+socketio = SocketIO(app)
 
 # Configure logging
 logger = logging.getLogger(__name__)
@@ -31,13 +36,18 @@ def main(debug=False):
 
 def simulate_group_stage(config, teams):
     from scripts.group_match_calculations import main as simulate_matches
-    simulate_matches(config, teams)
+    results = simulate_matches(config, teams)
+    socketio.emit('group_stage_results', {'results': results.to_dict(orient='records')})
     
 def knockout_stage(config, teams):
     standings = compute_standings_from_results()
-    print("Standings:\n", standings)
+    socketio.emit('group_stage_complete', {'standings': standings.to_dict(orient='records')})
+    logger.info("Standings:\n%s", standings)
+    
     round_of_16_fixtures = calculate_last_16_fixtures(standings)
-    print("Round of 16 Fixtures:\n", round_of_16_fixtures)
+    socketio.emit('knockout_stage_start', {'fixtures': round_of_16_fixtures})
+    logger.info("Round of 16 Fixtures:\n%s", round_of_16_fixtures)
+    
     config_vars = get_knockout_stage_config_vars(config, teams)
     
     all_knockout_results = pd.DataFrame()
@@ -45,25 +55,32 @@ def knockout_stage(config, teams):
     # Simulate Round of 16
     round_of_16_results = simulate_knockout_stage(round_of_16_fixtures, **config_vars, stage="Round of 16")
     all_knockout_results = pd.concat([all_knockout_results, round_of_16_results])
+    socketio.emit('match_update', {'results': round_of_16_results.to_dict(orient='records')})
+    
     quarter_final_fixtures = infer_next_round_fixtures(round_of_16_results, "Quarter-final")
     
     # Simulate Quarter Finals
     quarter_final_results = simulate_knockout_stage(quarter_final_fixtures, **config_vars, stage="Quarter-final")
     all_knockout_results = pd.concat([all_knockout_results, quarter_final_results])
+    socketio.emit('match_update', {'results': quarter_final_results.to_dict(orient='records')})
+    
     semi_final_fixtures = infer_next_round_fixtures(quarter_final_results, "Semi-final")
     
     # Simulate Semi Finals
     semi_final_results = simulate_knockout_stage(semi_final_fixtures, **config_vars, stage="Semi-final")
     all_knockout_results = pd.concat([all_knockout_results, semi_final_results])
+    socketio.emit('match_update', {'results': semi_final_results.to_dict(orient='records')})
+    
     final_fixtures = infer_next_round_fixtures(semi_final_results, "Final")
     
     # Simulate Final
     final_results = simulate_knockout_stage(final_fixtures, **config_vars, stage="Final")
     all_knockout_results = pd.concat([all_knockout_results, final_results])
+    socketio.emit('match_update', {'results': final_results.to_dict(orient='records')})
 
     # Save all knockout results to CSV
     all_knockout_results.to_csv('data/results/knockout_stage_results.csv', index=False)
-    logger.info(f"All knockout stage results saved to data/results/knockout_stage_results.csv")
+    logger.info("All knockout stage results saved to data/results/knockout_stage_results.csv")
 
 def compute_standings_from_results():
     data = pd.read_csv('data/results/group_stage_results.csv')
@@ -73,16 +90,15 @@ def compute_standings_from_results():
 def str_converter(value):
     return str(value)
 
-
 def calculate_last_16_fixtures(standings):
     fixtures = []
     dtype = {'team1': str, 'team2': str}
     column_names = ['stage', 'date', 'time', 'venue', 'team1', 'team1_score', 'team2', 'team2_score', 'team1_pso_score', 'team2_pso_score']
     # Read the CSV file with specified column names, forcing all columns to be read as strings
     knockout_schedule = pd.read_csv('data/raw/knockout_match_schedule.csv', names=column_names, skiprows=1, dtype=str)
-    print("Knockout_schedule:\n", knockout_schedule)
+    logger.info("Knockout_schedule:\n%s", knockout_schedule)
     actual_teams = get_actual_teams(standings)
-    print("Actual Teams After Mapping:\n", actual_teams)
+    logger.info("Actual Teams After Mapping:\n%s", actual_teams)
 
     for _, match in knockout_schedule.iterrows():
         original_team1 = match['team1']
@@ -92,8 +108,8 @@ def calculate_last_16_fixtures(standings):
         team2 = actual_teams.get(original_team2, original_team2)
         
         # Add debugging information
-        print(f"Original Team1: {original_team1}, Mapped Team1: {team1}")
-        print(f"Original Team2: {original_team2}, Mapped Team2: {team2}")
+        logger.info(f"Original Team1: {original_team1}, Mapped Team1: {team1}")
+        logger.info(f"Original Team2: {original_team2}, Mapped Team2: {team2}")
 
         # Handling placeholders dynamically
         if '/' in team1:
@@ -103,7 +119,7 @@ def calculate_last_16_fixtures(standings):
         
         fixtures.append({'team1': team1, 'team2': team2, 'stage': match['stage'], 'date': match['date'], 'time': match['time'], 'venue': match['venue']})
 
-    print("Fixtures for Round of 16:\n", fixtures)
+    logger.info("Fixtures for Round of 16:\n%s", fixtures)
     return fixtures
 
 def resolve_placeholder(placeholder, actual_teams):

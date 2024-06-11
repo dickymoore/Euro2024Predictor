@@ -116,7 +116,10 @@ def main(config, teams):
     results.to_csv(output_path, index=False)
     logger.info(f"Results saved to {output_path}")
 
+    return results
+
 if __name__ == "__main__":
+    from scripts.config import load_config
     config = load_config()
     teams = [team for group in config['teams'].values() for team in group]
     main(config, teams)
