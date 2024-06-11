@@ -1,16 +1,16 @@
 stage,team1,team1_score,team2,team2_score,team1_pso_score,team2_pso_score
-Round of 16,SCOTLAND,1,DENMARK,0,,
-Round of 16,GERMANY,2,CROATIA,0,,
-Round of 16,SPAIN,2,ROMANIA,0,,
-Round of 16,ENGLAND,0,POLAND,0,3,4
-Round of 16,BELGIUM,0,ROMANIA,0,4,2
-Round of 16,PORTUGAL,1,FRANCE,3,,
-Round of 16,DENMARK,1,CZECHIA,2,,
-Round of 16,NETHERLANDS,0,ALBANIA,0,4,2
-Quarter-final,SCOTLAND,0,GERMANY,1,,
-Quarter-final,SPAIN,0,POLAND,1,,
-Quarter-final,BELGIUM,0,FRANCE,0,4,3
-Quarter-final,CZECHIA,1,NETHERLANDS,0,,
-Semi-final,GERMANY,0,POLAND,0,1,4
-Semi-final,BELGIUM,4,CZECHIA,1,,
-Final,POLAND,2,BELGIUM,0,,
+Round of 16,HUNGARY,0,ENGLAND,2,,
+Round of 16,GERMANY,2,ITALY,2,3,2
+Round of 16,SPAIN,2,ALBANIA,0,,
+Round of 16,SERBIA,0,TURKEY,1,,
+Round of 16,ROMANIA,0,ALBANIA,1,,
+Round of 16,PORTUGAL,1,FRANCE,0,,
+Round of 16,ENGLAND,0,CZECHIA,0,2,3
+Round of 16,NETHERLANDS,0,AUSTRIA,0,3,1
+Quarter-final,ENGLAND,1,GERMANY,1,1,2
+Quarter-final,SPAIN,1,TURKEY,0,,
+Quarter-final,ALBANIA,0,PORTUGAL,1,,
+Quarter-final,CZECHIA,0,NETHERLANDS,0,4,1
+Semi-final,GERMANY,0,SPAIN,0,3,2
+Semi-final,PORTUGAL,0,CZECHIA,0,2,3
+Final,GERMANY,1,CZECHIA,1,3,4

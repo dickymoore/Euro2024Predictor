@@ -1,12 +1,14 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, jsonify
 import pandas as pd
+import subprocess
+import os
 from collections import defaultdict
+import yaml
 
 app = Flask(__name__)
 
 def load_data(csv_path):
     return pd.read_csv(csv_path, na_values=[''])
-
 
 def compute_standings(data):
     standings = defaultdict(lambda: defaultdict(lambda: defaultdict(int)))
@@ -64,7 +66,6 @@ def compute_standings(data):
     standings_df = pd.DataFrame(standings_df)
     standings_df = standings_df.sort_values(by=['group', 'points', 'gd', 'gf'], ascending=[True, False, False, False])
 
-    
     third_place_teams = standings_df.groupby('group').nth(2)
     third_place_teams = third_place_teams.sort_values(by=['points', 'gd', 'gf'], ascending=[False, False, False]).head(4)
 
@@ -72,21 +73,6 @@ def compute_standings(data):
     standings_df.loc[third_place_teams.index, 'qualified'] = 'best-third'
 
     return standings_df
-
-def parse_score(score):
-    score_str = str(score)
-    if "pen" in score_str:
-        print(f"pen: in {score_str}!")
-        main_score = score_str.split(' ')[0]
-        pen_part = score_str.split('(')[-1].strip(') ')
-        print(f"main_score: {main_score}, pen_part: {pen_part}")
-        if '-' in pen_part:
-            team1_pen_score, team2_pen_score = pen_part.split('-')
-            print(f"team1_pen_score: {team1_pen_score}, team2_pen_score: {team2_pen_score}")
-            return int(main_score), team1_pen_score, team2_pen_score
-        else:
-            return int(main_score), None, None
-    return int(score_str), None, None
 
 def organize_matches_by_group(data):
     match_results = defaultdict(list)
@@ -111,7 +97,6 @@ def organize_matches_by_group(data):
         if row['stage'] == 'Group Stage':
             match_results[row['group']].append(match)
         else:
-            
             if team1_score == team2_score and team1_pen_score is not None and team2_pen_score is not None:
                 if team1_pen_score > team2_pen_score:
                     match['team1_class'] = 'winner'
@@ -122,7 +107,7 @@ def organize_matches_by_group(data):
             else:
                 match['team1_class'] = 'winner' if team1_score > team2_score else 'loser'
                 match['team2_class'] = 'winner' if team2_score > team1_score else 'loser'
-            
+
             knockout_matches.append(match)
 
     return match_results, knockout_matches
@@ -134,8 +119,56 @@ def index():
 
     standings = compute_standings(data)
     match_results, knockout_matches = organize_matches_by_group(data)
-    
-    return render_template("index.html", standings=standings, match_results=match_results, knockout_matches=knockout_matches)
+
+    config_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'config', 'config.yaml')
+
+    # Load the configuration values
+    with open(config_path, 'r') as file:
+        config = yaml.safe_load(file)
+
+    weighted_win_percentage_weight = config.get('weighted_win_percentage_weight', 1)
+    home_advantage = config.get('home_advantage', 0.1)
+    look_back_months = config.get('look_back_months', 36)
+
+    return render_template(
+        "index.html",
+        standings=standings,
+        match_results=match_results,
+        knockout_matches=knockout_matches,
+        weighted_win_percentage_weight=weighted_win_percentage_weight,
+        home_advantage=home_advantage,
+        look_back_months=look_back_months
+    )
+
+@app.route("/run_predictor", methods=["POST"])
+def run_predictor():
+    try:
+        data = request.get_json()
+        weighted_win_percentage_weight = data.get('weighted_win_percentage_weight', 1)
+        home_advantage = data.get('home_advantage', 0.1)
+        look_back_months = data.get('look_back_months', 36)
+
+        config_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'config', 'config.yaml')
+
+        # Update the config.yaml file with the new values
+        with open(config_path, 'r') as file:
+            config = yaml.safe_load(file)
+
+        config['weighted_win_percentage_weight'] = float(weighted_win_percentage_weight)
+        config['home_advantage'] = float(home_advantage)
+        config['look_back_months'] = int(look_back_months)
+
+        with open(config_path, 'w') as file:
+            yaml.safe_dump(config, file)
+
+        python_interpreter = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'venv', 'Scripts', 'python.exe')
+        subprocess.run([python_interpreter, "main.py"], check=True)
+
+        return jsonify({"status": "success"})
+    except subprocess.CalledProcessError as e:
+        return jsonify({"status": "error", "message": str(e)})
+    except Exception as e:
+        return jsonify({"status": "error", "message": str(e)})
 
 if __name__ == "__main__":
     app.run(debug=True)

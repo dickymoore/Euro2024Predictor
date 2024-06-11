@@ -5,10 +5,83 @@
     <title>UEFA Euro 2024 Predictions</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+        function updateSliderValue(sliderId, displayId) {
+            const slider = document.getElementById(sliderId);
+            const display = document.getElementById(displayId);
+            slider.oninput = function() {
+                display.textContent = this.value;
+            }
+        }
+
+        function runPredictor() {
+            const overlay = document.getElementById('loading-overlay');
+            if (overlay) {
+                overlay.style.display = 'flex';
+            }
+
+            const weightedWinPercentageWeight = document.getElementById('weighted_win_percentage_weight').value;
+            const homeAdvantage = document.getElementById('home_advantage').value;
+            const lookBackMonths = document.getElementById('look_back_months').value;
+
+            fetch('/run_predictor', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    weighted_win_percentage_weight: weightedWinPercentageWeight,
+                    home_advantage: homeAdvantage,
+                    look_back_months: lookBackMonths
+                })
+            }).then(response => response.json())
+              .then(data => {
+                  if (data.status === "success") {
+                      window.location.reload();
+                  } else {
+                      alert("Error: " + data.message);
+                      if (overlay) {
+                          overlay.style.display = 'none';
+                      }
+                  }
+              }).catch(error => {
+                  alert("Error: " + error.message);
+                  if (overlay) {
+                      overlay.style.display = 'none';
+                  }
+              });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            updateSliderValue('weighted_win_percentage_weight', 'weighted_win_percentage_weight_value');
+            updateSliderValue('home_advantage', 'home_advantage_value');
+            updateSliderValue('look_back_months', 'look_back_months_value');
+        });
+    </script>
 </head>
 <body>
-    <div class="wall-chart">
-        <h1>UEFA Euro 2024 Predictions</h1>
+    <div id="loading-overlay">Loading...</div>
+        <div class="wall-chart">
+            <h1>UEFA Euro 2024 Predictions</h1>
+            <div class="slider-container-horizontal">
+                <button onclick="runPredictor()">Run Predictor</button>
+                <div class="slider-item">
+                    <label for="weighted_win_percentage_weight">Weighted Win Percentage Weight</label>
+                    <input type="range" id="weighted_win_percentage_weight" name="weighted_win_percentage_weight" min="0" max="2" step="0.1" value="{{ weighted_win_percentage_weight }}">
+                    <span id="weighted_win_percentage_weight_value">{{ weighted_win_percentage_weight }}</span>
+                </div>
+                <div class="slider-item">
+                    <label for="home_advantage">Home Advantage</label>
+                    <input type="range" id="home_advantage" name="home_advantage" min="0" max="1" step="0.1" value="{{ home_advantage }}">
+                    <span id="home_advantage_value">{{ home_advantage }}</span>
+                </div>
+                <div class="slider-item">
+                    <label for="look_back_months">Look Back Months</label>
+                    <input type="range" id="look_back_months" name="look_back_months" min="1" max="60" step="1" value="{{ look_back_months }}">
+                    <span id="look_back_months_value">{{ look_back_months }}</span>
+                </div>
+            </div>            
+            <hr>
         <hr>
         <h2>GROUP STAGE</h2>
         <div class="content-wrapper">
@@ -256,7 +329,6 @@
                         {% endif %}
                     {% endfor %}
                 </div>
-                
                 <div class="round-of-16-right">
                     {% for match in knockout_matches[4:8] %}
                         {% if match.stage == 'Round of 16' %}

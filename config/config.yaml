@@ -1,35 +1,35 @@
+home_advantage: 1.0
+home_team: Germany
+look_back_months: 36
 teams:
   Group A:
-    - Germany
-    - Scotland
-    - Hungary
-    - Switzerland
+  - Germany
+  - Scotland
+  - Hungary
+  - Switzerland
   Group B:
-    - Spain
-    - Croatia
-    - Italy
-    - Albania
+  - Spain
+  - Croatia
+  - Italy
+  - Albania
   Group C:
-    - Slovenia
-    - Denmark
-    - Serbia
-    - England
+  - Slovenia
+  - Denmark
+  - Serbia
+  - England
   Group D:
-    - Poland
-    - Netherlands
-    - Austria
-    - France
+  - Poland
+  - Netherlands
+  - Austria
+  - France
   Group E:
-    - Belgium
-    - Slovakia
-    - Romania
-    - Ukraine
+  - Belgium
+  - Slovakia
+  - Romania
+  - Ukraine
   Group F:
-    - Turkey
-    - Georgia
-    - Portugal
-    - Czechia
-look_back_months: 36
-home_advantage: 0.1
-home_team: Germany
-weighted_win_percentage_weight: 1
+  - Turkey
+  - Georgia
+  - Portugal
+  - Czechia
+weighted_win_percentage_weight: 0.7
