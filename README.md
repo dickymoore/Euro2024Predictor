@@ -58,7 +58,6 @@ Euro2024Predictor/
 - Python 3.7+
 - pip (Python package installer)
 
-
 ### Installation
 1. Clone the repository:
    
@@ -68,22 +67,26 @@ Euro2024Predictor/
 2. Create a virtual environment and activate it:
    
    python -m venv venv
-   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+   source venv/bin/activate  # On Windows use `venv\Scripts\Activate`
 
 3. Install the dependencies:
    
    pip install -r requirements.txt
 
 ### Usage
+You can run the predictor as a command-line tool or as a web application.
+
+#### Running as a Command-Line Tool
 1. Run the predictor:
    
    python main.py
 
-2. Start the Flask web application:
+#### Running as a Web Application
+1. Start the Flask web application:
    
    python webapp.py
 
-3. Open your web browser and go to `http://127.0.0.1:5000` to view the results.
+2. Open your web browser and go to `http://127.0.0.1:5000` to view the results.
 
 ### Running Tests
 To run the tests, use the following command:
@@ -95,9 +98,9 @@ The `config.yaml` file contains the configuration for the teams and other parame
 
 ## Contributing
 1. Fork the repository
-2. Create a new branch (\`git checkout -b feature-branch\`)
-3. Commit your changes (\`git commit -m 'Add new feature'\`)
-4. Push to the branch (\`git push origin feature-branch\`)
+2. Create a new branch (`git checkout -b feature-branch`)
+3. Commit your changes (`git commit -m 'Add new feature'`)
+4. Push to the branch (`git push origin feature-branch`)
 5. Create a new Pull Request
 
 ## License
