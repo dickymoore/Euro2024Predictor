@@ -73,17 +73,22 @@ def perform_calculations(config, teams):
         columns={'away_team': 'team', 'away_country_win_percentage': 'win_percentage'}
     )
     
-    win_percentage_summary = pd.concat([home_win_percentages, away_win_percentages])
+
+    win_percentage_summary = pd.concat([home_win_percentages, away_win_percentages])    
     
     # Group by team and calculate the mean win percentage
     win_percentage_summary = win_percentage_summary.groupby('team').mean().reset_index()
+
+    uppercase_teams = [team.upper() for team in teams]
     
     # Filter for Euro 2024 teams only
-    win_percentage_summary = win_percentage_summary[win_percentage_summary['team'].isin(teams)]
+    win_percentage_summary = win_percentage_summary[win_percentage_summary['team'].isin(uppercase_teams)]
+
     
     # Sort by win percentage in descending order
     win_percentage_summary = win_percentage_summary.sort_values(by='win_percentage', ascending=False)
     
+
     # Save to CSV
     win_percentage_summary.to_csv('data/tmp/euro_teams_win_percentage.csv', index=False)
     logger.info("Euro teams win percentage data saved to data/tmp/euro_teams_win_percentage.csv")
