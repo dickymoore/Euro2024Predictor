@@ -12,7 +12,7 @@ Euro2024Predictor is a Python-based project that simulates the outcomes of UEFA 
 - **Web Interface**: Displays the simulation results in an interactive web application.
 
 ## Project Structure
-
+```
 Euro2024Predictor/
 │
 ├── config/
@@ -51,7 +51,7 @@ Euro2024Predictor/
 ├── main.py                      # Main script to run the predictor
 ├── procfile                     # Procfile for deploying to Heroku
 └── webapp.py                    # Flask web application
-
+```
 ## Getting Started
 
 ### Prerequisites
