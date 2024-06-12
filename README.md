@@ -14,42 +14,79 @@ Euro2024Predictor is a Python-based project that simulates the outcomes of UEFA 
 ## Project Structure
 
 Euro2024Predictor/
+
 │
+
 ├── config/
+
 │   └── config.yaml              # Configuration file for teams and parameters
+
 │
+
 ├── data/
+
 │   ├── raw/                     # Raw data files
+
 │   └── results/                 # Simulated results files
+
 │
+
 ├── scripts/
+
 │   ├── __init__.py
+
 │   ├── cache.py                 # Cache handling functions
+
 │   ├── calculations.py          # Main calculations and data handling
+
 │   ├── config.py                # Configuration loading
+
 │   ├── data_sort.py             # Data sorting functions
+
 │   ├── data_store.py            # Data storing functions
+
 │   ├── data_transform.py        # Data transformation functions
+
 │   ├── group_match_calculations.py # Group stage match simulations
+
 │   ├── knockout_stage_calculations.py # Knockout stage match simulations
+
 │   ├── standings_calculations.py # Standings calculations
+
 │   ├── weighted_win_percentage.py # Win percentage calculations
+
 │   └── win_percentages.py       # Win percentages computations
+
 │
+
 ├── static/
+
 │   └── style.css                # CSS for the web application
+
 │
+
 ├── templates/
+
 │   └── index.html               # HTML template for the web application
+
 │
+
 ├── tests/                       # Test cases for the project
+
 │   └── __init__.py
+
 │
+
 ├── .gitignore                   # Git ignore file
+
 ├── README.md                    # Project documentation
+
 ├── requirements.txt             # Python dependencies
+
 ├── main.py                      # Main script to run the predictor
+
 ├── procfile                     # Procfile for deploying to Heroku
+
 └── webapp.py                    # Flask web application
 
 ## Getting Started
