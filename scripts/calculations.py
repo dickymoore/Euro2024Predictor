@@ -2,6 +2,7 @@ import pandas as pd
 import logging
 import os
 from scripts.data_transform import transform_data
+from scripts.rank import output
 from scripts.win_percentages import compute_win_percentages
 from scripts.weighted_win_percentage import calculate_weighted_win_percentage
 from scripts.cache import get_file_modification_time, read_cache_timestamp, store_data
@@ -57,8 +58,19 @@ def perform_calculations(config, teams):
 
     transformed_data = compute_win_percentages(transformed_data, teams)
     logger.debug(f"Columns in transformed_data: {transformed_data.columns.tolist()}")
+
+    ranks = output()
+
+    transformed_data['home_country_weighted_score'] = 0
+    transformed_data['away_country_weighted_score'] = 0
+
     
-    weighted_win_data = calculate_weighted_win_percentage(transformed_data)
+    for team in teams:
+
+        transformed_data.home_country_weighted_score.loc[transformed_data.home_team == team.upper()] = ranks[team]
+        transformed_data.away_country_weighted_score.loc[transformed_data.away_team == team.upper()] = ranks[team]
+        weighted_win_data = transformed_data
+    
     weighted_win_data.to_csv('data/tmp/weighted_win_percentage_wide.csv', index=False)
     logger.info("Weighted win percentage data saved to data/tmp/weighted_win_percentage_wide.csv")
 
@@ -79,14 +91,15 @@ def perform_calculations(config, teams):
     # Group by team and calculate the mean win percentage
     win_percentage_summary = win_percentage_summary.groupby('team').mean().reset_index()
 
-    uppercase_teams = [team.upper() for team in teams]
-    
     # Filter for Euro 2024 teams only
+    uppercase_teams = [team.upper() for team in teams]
     win_percentage_summary = win_percentage_summary[win_percentage_summary['team'].isin(uppercase_teams)]
 
     
     # Sort by win percentage in descending order
     win_percentage_summary = win_percentage_summary.sort_values(by='win_percentage', ascending=False)
+
+    
     
 
     # Save to CSV
