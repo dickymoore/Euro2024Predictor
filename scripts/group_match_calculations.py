@@ -16,14 +16,14 @@ def load_win_percentages(file_path):
     win_percentage_df = pd.read_csv(file_path)
     return dict(zip(win_percentage_df['team'].str.strip().str.upper(), win_percentage_df['win_percentage']))
 
-def calculate_goal_probability(win_percentage, avg_goals_scored, avg_goals_conceded, weighted_win_percentage_weight, rank):
+def calculate_goal_probability(win_percentage, avg_goals_scored, avg_goals_conceded, weighted_win_percentage_weight, team, rank):
     base_goals_per_game = 2.5
 
     goals_per_game = (avg_goals_scored + avg_goals_conceded) / 2
     
     
-    goal_probability_per_minute = ((win_percentage / 100) * (goals_per_game / 90) + weighted_win_percentage_weight/100 * rank/10)
-    print("goal prob per min", goal_probability_per_minute)
+    goal_probability_per_minute = ((win_percentage / 100) * (goals_per_game / 90) + weighted_win_percentage_weight/100 * 2*rank/10)
+    print("goal prob per min for "  + team + " = ", goal_probability_per_minute)
     return goal_probability_per_minute
 
 def simulate_match_minute_by_minute(team1, team2, team1_rank, team2_rank, team1_win_percentage, team2_win_percentage, home_advantage, home_team, averages, weighted_win_percentage_weight):
@@ -37,11 +37,11 @@ def simulate_match_minute_by_minute(team1, team2, team1_rank, team2_rank, team1_
 
     team1_goal_prob = calculate_goal_probability(
         team1_win_percentage + (home_advantage if team1 == home_team else 0),
-        team1_avg_goals_scored, team2_avg_goals_conceded, weighted_win_percentage_weight, team1_rank
+        team1_avg_goals_scored, team2_avg_goals_conceded, weighted_win_percentage_weight, team1, team1_rank
     )
     team2_goal_prob = calculate_goal_probability(
         team2_win_percentage + (home_advantage if team2 == home_team else 0),
-        team2_avg_goals_scored, team1_avg_goals_conceded, weighted_win_percentage_weight, team2_rank
+        team2_avg_goals_scored, team1_avg_goals_conceded, weighted_win_percentage_weight, team2, team2_rank
     )
 
     for minute in range(90):

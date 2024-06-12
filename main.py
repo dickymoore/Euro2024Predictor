@@ -49,9 +49,11 @@ def knockout_stage(config, teams):
     logger.info("Round of 16 Fixtures:\n%s", round_of_16_fixtures)
 
     config_vars = get_knockout_stage_config_vars(config, teams)
+    
 
     all_knockout_results = pd.DataFrame()
 
+    
     # Simulate Round of 16
     round_of_16_results = simulate_knockout_stage(round_of_16_fixtures, **config_vars, stage="Round of 16")
     all_knockout_results = pd.concat([all_knockout_results, round_of_16_results])

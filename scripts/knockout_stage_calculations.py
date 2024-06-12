@@ -45,11 +45,25 @@ def get_third_place_scenario(third_place_groups):
     key = ''.join(sorted(third_place_groups))
     return THIRD_PLACE_SCENARIOS.get(key)
 
+def load_ranks(file_path):
+    return pd.read_csv(file_path)
+
 def simulate_knockout_stage(fixtures, config, teams, win_percentages, averages, home_advantage, home_team, weighted_win_percentage_weight, stage):
+    team_ranks = load_ranks('mycsvfile.csv')
     results = []
+
+    print("FIXTURES: ", fixtures)
     for match in fixtures:
+        if(match['team1'] == 'Winner RO16 1'):
+            break
+
         team1 = match['team1']
         team2 = match['team2']
+
+        
+        
+        team1_rank = float(team_ranks[team1.capitalize()].iloc[0])
+        team2_rank = float(team_ranks[team2.capitalize()].iloc[0])
         
         logger.info(f"Simulating match: {team1} vs {team2}")
         
@@ -64,7 +78,7 @@ def simulate_knockout_stage(fixtures, config, teams, win_percentages, averages, 
             continue
 
         team1_score, team2_score = simulate_match_minute_by_minute(
-            team1, team2, team1_win_percentage, team2_win_percentage, home_advantage, home_team, averages, weighted_win_percentage_weight
+            team1, team2, team1_rank, team2_rank, team1_win_percentage, team2_win_percentage, home_advantage, home_team, averages, weighted_win_percentage_weight
         )
 
         team1_pen_score, team2_pen_score = None, None
@@ -85,13 +99,15 @@ def simulate_knockout_stage(fixtures, config, teams, win_percentages, averages, 
     
     return pd.DataFrame(results)
 
-def calculate_goal_probability(win_percentage, avg_goals_scored, avg_goals_conceded, weighted_win_percentage_weight):
+def calculate_goal_probability(win_percentage, avg_goals_scored, avg_goals_conceded, weighted_win_percentage_weight, team, rank):
     base_goals_per_game = 2.5
     goals_per_game = (avg_goals_scored + avg_goals_conceded) / 2
-    goal_probability_per_minute = (win_percentage / 100) * (goals_per_game / 90) * weighted_win_percentage_weight
+    goal_probability_per_minute = ((win_percentage / 100) * (goals_per_game / 90) + weighted_win_percentage_weight/100 * rank/3)
+    print("goal prob per min for "  + team + " = ", goal_probability_per_minute)
     return goal_probability_per_minute
 
-def simulate_match_minute_by_minute(team1, team2, team1_win_percentage, team2_win_percentage, home_advantage, home_team, averages, weighted_win_percentage_weight):
+
+def simulate_match_minute_by_minute(team1, team2, team1_rank, team2_rank, team1_win_percentage, team2_win_percentage, home_advantage, home_team, averages, weighted_win_percentage_weight):
     team1_goals = 0
     team2_goals = 0
 
@@ -102,11 +118,11 @@ def simulate_match_minute_by_minute(team1, team2, team1_win_percentage, team2_wi
 
     team1_goal_prob = calculate_goal_probability(
         team1_win_percentage + (home_advantage if team1 == home_team else 0),
-        team1_avg_goals_scored, team2_avg_goals_conceded, weighted_win_percentage_weight
+        team1_avg_goals_scored, team2_avg_goals_conceded, weighted_win_percentage_weight, team1, team1_rank
     )
     team2_goal_prob = calculate_goal_probability(
         team2_win_percentage + (home_advantage if team2 == home_team else 0),
-        team2_avg_goals_scored, team1_avg_goals_conceded, weighted_win_percentage_weight
+        team2_avg_goals_scored, team1_avg_goals_conceded, weighted_win_percentage_weight, team2, team2_rank
     )
 
     for minute in range(90):
