@@ -60,39 +60,39 @@ Euro2024Predictor/
 
 ### Installation
 1. Clone the repository:
-   
+```   
    git clone https://github.com/yourusername/Euro2024Predictor.git
    cd Euro2024Predictor
-
+```
 2. Create a virtual environment and activate it:
-   
+```   
    python -m venv venv
    source venv/bin/activate  # On Windows use `venv\Scripts\Activate`
-
+```
 3. Install the dependencies:
-   
+```   
    pip install -r requirements.txt
-
+```
 ### Usage
 You can run the predictor as a command-line tool or as a web application.
 
 #### Running as a Command-Line Tool
 1. Run the predictor:
-   
+```   
    python main.py
-
+```
 #### Running as a Web Application
 1. Start the Flask web application:
-   
+```   
    python webapp.py
-
+```
 2. Open your web browser and go to `http://127.0.0.1:5000` to view the results.
 
 ### Running Tests
 To run the tests, use the following command:
-
+```
 pytest
-
+```
 ## Configuration
 The `config.yaml` file contains the configuration for the teams and other parameters used in the simulations. Update this file to change the teams or simulation settings.
 
