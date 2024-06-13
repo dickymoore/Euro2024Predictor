@@ -13,7 +13,7 @@ from scripts.data_transform import transform_data
 # Configure logging
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
-log_handler = logging.FileHandler('predictor.log')
+log_handler = logging.FileHandler('data/tmp/predictor.log')
 formatter = logging.Formatter('%(asctime)s - %(message)s')
 log_handler.setFormatter(formatter)
 logger.addHandler(log_handler)

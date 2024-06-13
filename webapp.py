@@ -7,22 +7,30 @@ from collections import defaultdict
 import yaml
 from flask_socketio import SocketIO, emit
 import time
+import threading
 
 app = Flask(__name__)
 socketio = SocketIO(app, cors_allowed_origins="*")
 
 # Configure logging
-logging.basicConfig(level=logging.DEBUG)
+class SocketIOHandler(logging.Handler):
+    def emit(self, record):
+        log_entry = self.format(record)
+        socketio.emit('log_message', {'log': log_entry})
+
+socketio_handler = SocketIOHandler()
+formatter = logging.Formatter('%(asctime)s - %(message)s')
+socketio_handler.setFormatter(formatter)
 logger = logging.getLogger(__name__)
+logger.addHandler(socketio_handler)
+logger.setLevel(logging.DEBUG)
 
 def load_data(csv_path):
     if not os.path.exists(csv_path) or os.path.getsize(csv_path) == 0:
         raise FileNotFoundError(f"File {csv_path} not found within the timeout period.")
     else:
         logger.debug(f"Reading CSV: {csv_path}")
-        data = pd.read_csv(csv_path, na_values=[''])
-        logger.debug(f"Data columns: {data.columns.tolist()}")
-        return data
+        return pd.read_csv(csv_path, na_values=[''])
 
 def compute_standings(data):
     logger.debug("Computing standings")
@@ -130,28 +138,12 @@ def organize_matches_by_group(data):
     logger.debug(f"Match results organized: {match_results}")
     return match_results, knockout_matches
 
-def wait_for_calculations(log_path, timeout=300, poll_interval=100):
-    """
-    Waits for the calculations to complete by monitoring the log file.
-
-    :param log_path: Path to the log file.
-    :param timeout: Maximum time to wait in seconds.
-    :param poll_interval: Time interval between polling in milliseconds.
-    :return: None
-    """
-    start_time = time.time()
-    poll_interval_seconds = poll_interval / 1000.0  # Convert milliseconds to seconds
-    while time.time() - start_time < timeout:
-        with open(log_path, 'r') as log_file:
-            logs = log_file.read()
-            if 'Calculations complete' in logs:
-                return
-        time.sleep(poll_interval_seconds)
-    raise TimeoutError("Timed out waiting for calculations to complete.")
+def run_main_script():
+    python_interpreter = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'venv', 'Scripts', 'python.exe')
+    subprocess.run([python_interpreter, "main.py"], check=True)
 
 @app.route("/")
 def index():
-    # Set default values with structure
     match_results = {
         'A': [
             {'team1': 'Team 1A', 'team1_score': 0, 'team2': 'Team 2A', 'team2_score': 0},
@@ -203,7 +195,6 @@ def run_predictor():
 
         config_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'config', 'config.yaml')
 
-        # Update the config.yaml file with the new values
         with open(config_path, 'r') as file:
             config = yaml.safe_load(file)
 
@@ -214,17 +205,9 @@ def run_predictor():
         with open(config_path, 'w') as file:
             yaml.safe_dump(config, file)
 
-        # Trigger main.py to run in a separate process
-        python_interpreter = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'venv', 'Scripts', 'python.exe')
-        subprocess.Popen([python_interpreter, "main.py"])
-
-        # Wait for calculations to complete
-        wait_for_calculations('data/tmp/predictor.log', poll_interval=100)  # Polling interval in milliseconds
+        threading.Thread(target=run_main_script).start()
 
         return jsonify({"status": "success"})
-    except TimeoutError as te:
-        logger.error(f"Timeout in run_predictor: {te}")
-        return jsonify({"status": "error", "message": str(te)})
     except Exception as e:
         logger.error(f"Error in run_predictor: {e}")
         return jsonify({"status": "error", "message": str(e)})
