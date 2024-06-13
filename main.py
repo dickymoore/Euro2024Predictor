@@ -1,4 +1,6 @@
+
 from flask import Flask
+import csv
 import logging
 import pandas as pd
 from argparse import ArgumentParser
@@ -26,13 +28,32 @@ def run_predictor(debug=False):
     teams = [team for group in config['teams'].values() for team in group]
     logger.info('Running Predictor')
 
+    track_winners = {}
+
+
     perform_calculations(config, teams)
 
-    # Simulate group stage matches
-    simulate_group_stage(config, teams)
+    for i in range(1000):
 
-    # Process knockout stages
-    knockout_stage(config, teams)
+        # Simulate group stage matches
+        simulate_group_stage(config, teams)
+
+        # Process knockout stages
+        winner = knockout_stage(config, teams)
+
+        if winner in track_winners.keys():
+            track_winners[winner] = track_winners[winner] + 1
+            track_winners.update({winner: track_winners[winner] + 1})
+        else:
+            track_winners[winner] = 1
+
+    with open('winners.csv', 'w') as csv_file:  
+        csv_file = csv.writer(csv_file)
+        for key, value in track_winners.items():
+            csv_file.writerow([key, value])
+    print(track_winners)
+    
+
 
 def simulate_group_stage(config, teams):
     from scripts.group_match_calculations import main as simulate_matches
@@ -77,12 +98,23 @@ def knockout_stage(config, teams):
 
     # Simulate Final
     final_results = simulate_knockout_stage(final_fixtures, **config_vars, stage="Final")
+
+    if((final_results.iloc[0]['team1_score'] > final_results.iloc[0]['team2_score']) or (final_results.iloc[0]['team1_pso_score'] > final_results.iloc[0]['team2_pso_score'])):
+        
+        winner = final_results.iloc[0]['team1']
+    elif((final_results.iloc[0]['team1_score'] < final_results.iloc[0]['team2_score']) or (final_results.iloc[0]['team1_pso_score'] < final_results.iloc[0]['team2_pso_score'])):
+        
+        winner = final_results.iloc[0]['team2']
+
+
     all_knockout_results = pd.concat([all_knockout_results, final_results])
     socketio.emit('match_update', {'results': final_results.to_dict(orient='records')})
 
     # Save all knockout results to CSV
     all_knockout_results.to_csv('data/results/knockout_stage_results.csv', index=False)
     logger.info("All knockout stage results saved to data/results/knockout_stage_results.csv")
+
+    return  winner
 
 def compute_standings_from_results():
     data = pd.read_csv('data/results/group_stage_results.csv')
@@ -119,6 +151,7 @@ def calculate_last_16_fixtures(standings):
         fixtures.append({'team1': team1, 'team2': team2, 'stage': match['stage'], 'date': match['date'], 'time': match['time'], 'venue': match['venue']})
 
     logger.debug("Fixtures for Round of 16:\n%s", fixtures)
+
     return fixtures
 
 def resolve_placeholder(placeholder, actual_teams):

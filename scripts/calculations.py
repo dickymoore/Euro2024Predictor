@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 import logging
 import os
 from scripts.data_transform import transform_data
@@ -61,14 +62,14 @@ def perform_calculations(config, teams):
 
     ranks = output()
 
-    transformed_data['home_country_weighted_score'] = 0
-    transformed_data['away_country_weighted_score'] = 0
+    transformed_data['home_country_weighted_score'] = np.float64(0)
+    transformed_data['away_country_weighted_score'] = np.float64(0)
 
     
     for team in teams:
 
-        transformed_data.home_country_weighted_score.loc[transformed_data.home_team == team.upper()] = ranks[team]
-        transformed_data.away_country_weighted_score.loc[transformed_data.away_team == team.upper()] = ranks[team]
+        transformed_data.loc[transformed_data.home_team == team.upper(), 'home_country_weighted_score'] = ranks[team]
+        transformed_data.loc[transformed_data.away_team == team.upper(), 'away_country_weighted_score'] = ranks[team]
         weighted_win_data = transformed_data
     
     weighted_win_data.to_csv('data/tmp/weighted_win_percentage_wide.csv', index=False)

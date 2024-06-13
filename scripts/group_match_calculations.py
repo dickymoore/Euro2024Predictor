@@ -23,7 +23,7 @@ def calculate_goal_probability(win_percentage, avg_goals_scored, avg_goals_conce
     
     
     goal_probability_per_minute = ((win_percentage / 100) * (goals_per_game / 90) + weighted_win_percentage_weight/100 * 2*rank/10)
-    print("goal prob per min for "  + team + " = ", goal_probability_per_minute)
+    #print("goal prob per min for "  + team + " = ", goal_probability_per_minute)
     return goal_probability_per_minute
 
 def simulate_match_minute_by_minute(team1, team2, team1_rank, team2_rank, team1_win_percentage, team2_win_percentage, home_advantage, home_team, averages, weighted_win_percentage_weight):

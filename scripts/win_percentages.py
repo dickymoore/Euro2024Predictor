@@ -1,7 +1,11 @@
 import pandas as pd
+import numpy as np
 
 def compute_win_percentages(data, teams):
     win_percentage = {team: {'win_percentage': 0, 'no_games': 0} for team in teams}
+
+    data['home_country_win_percentage'] = np.float64(0)
+    data['away_country_win_percentage'] = np.float64(0)
 
     for team in teams:
 

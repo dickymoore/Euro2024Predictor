@@ -3,7 +3,9 @@ import numpy as np
 import logging
 from scripts.data_transform import transform_data
 from scripts.config import load_config
-from scripts.standings_calculations import compute_standings
+# from scripts.standings_calculations import compute_standings
+# from main import calculate_last_16_fixtures
+# from main import get_knockout_stage_config_vars
 
 logger = logging.getLogger(__name__)
 
@@ -52,7 +54,6 @@ def simulate_knockout_stage(fixtures, config, teams, win_percentages, averages, 
     team_ranks = load_ranks('mycsvfile.csv')
     results = []
 
-    print("FIXTURES: ", fixtures)
     for match in fixtures:
         if(match['team1'] == 'Winner RO16 1'):
             break
@@ -102,8 +103,8 @@ def simulate_knockout_stage(fixtures, config, teams, win_percentages, averages, 
 def calculate_goal_probability(win_percentage, avg_goals_scored, avg_goals_conceded, weighted_win_percentage_weight, team, rank):
     base_goals_per_game = 2.5
     goals_per_game = (avg_goals_scored + avg_goals_conceded) / 2
-    goal_probability_per_minute = ((win_percentage / 100) * (goals_per_game / 90) + weighted_win_percentage_weight/100 * rank/3)
-    print("goal prob per min for "  + team + " = ", goal_probability_per_minute)
+    goal_probability_per_minute = ((win_percentage / 100) * (goals_per_game / 90) + weighted_win_percentage_weight/100 * rank/10)
+    #print("goal prob per min for "  + team + " = ", goal_probability_per_minute)
     return goal_probability_per_minute
 
 
@@ -212,7 +213,7 @@ def main():
     config = load_config()
     teams = [team for group in config['teams'].values() for team in group]
     
-    standings = compute_standings_from_results()
+    standings = compute_standings()
     round_of_16_fixtures = calculate_last_16_fixtures(standings)
     config_vars = get_knockout_stage_config_vars(config, teams)
 
