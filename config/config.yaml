@@ -1,6 +1,6 @@
-home_advantage: 0.5
+home_advantage: 0.1
 home_team: Germany
-look_back_months: 31
+look_back_months: 36
 teams:
   Group A:
   - Germany

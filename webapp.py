@@ -6,6 +6,7 @@ import logging
 from collections import defaultdict
 import yaml
 from flask_socketio import SocketIO, emit
+import time
 
 app = Flask(__name__)
 socketio = SocketIO(app, cors_allowed_origins="*")
@@ -19,8 +20,9 @@ def load_data(csv_path):
         raise FileNotFoundError(f"File {csv_path} not found within the timeout period.")
     else:
         logger.debug(f"Reading CSV: {csv_path}")
-        return pd.read_csv(csv_path, na_values=[''])
-    
+        data = pd.read_csv(csv_path, na_values=[''])
+        logger.debug(f"Data columns: {data.columns.tolist()}")
+        return data
 
 def compute_standings(data):
     logger.debug("Computing standings")
@@ -128,6 +130,25 @@ def organize_matches_by_group(data):
     logger.debug(f"Match results organized: {match_results}")
     return match_results, knockout_matches
 
+def wait_for_calculations(log_path, timeout=300, poll_interval=100):
+    """
+    Waits for the calculations to complete by monitoring the log file.
+
+    :param log_path: Path to the log file.
+    :param timeout: Maximum time to wait in seconds.
+    :param poll_interval: Time interval between polling in milliseconds.
+    :return: None
+    """
+    start_time = time.time()
+    poll_interval_seconds = poll_interval / 1000.0  # Convert milliseconds to seconds
+    while time.time() - start_time < timeout:
+        with open(log_path, 'r') as log_file:
+            logs = log_file.read()
+            if 'Calculations complete' in logs:
+                return
+        time.sleep(poll_interval_seconds)
+    raise TimeoutError("Timed out waiting for calculations to complete.")
+
 @app.route("/")
 def index():
     # Set default values with structure
@@ -141,8 +162,6 @@ def index():
             {'team1': 'Team 3B', 'team1_score': 0, 'team2': 'Team 4B', 'team2_score': 0}
         ]
     }
-    
-    import pandas as pd
 
     standings = pd.DataFrame({
         'group': ['A', 'A', 'A', 'A', 'B', 'B', 'B', 'B'],
@@ -172,7 +191,7 @@ def index():
         standings=standings, 
         knockout_matches=knockout_matches
     )
-    
+
 @app.route("/run_predictor", methods=["POST"])
 def run_predictor():
     logger.debug("Running predictor")
@@ -199,7 +218,13 @@ def run_predictor():
         python_interpreter = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'venv', 'Scripts', 'python.exe')
         subprocess.Popen([python_interpreter, "main.py"])
 
+        # Wait for calculations to complete
+        wait_for_calculations('data/tmp/predictor.log', poll_interval=100)  # Polling interval in milliseconds
+
         return jsonify({"status": "success"})
+    except TimeoutError as te:
+        logger.error(f"Timeout in run_predictor: {te}")
+        return jsonify({"status": "error", "message": str(te)})
     except Exception as e:
         logger.error(f"Error in run_predictor: {e}")
         return jsonify({"status": "error", "message": str(e)})

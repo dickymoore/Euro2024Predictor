@@ -2,7 +2,6 @@ import argparse
 import logging
 import os
 import pandas as pd
-from flask import Flask
 from flask_socketio import SocketIO
 from scripts.config import load_config
 from scripts.calculations import perform_calculations
@@ -11,12 +10,9 @@ from scripts.knockout_stage_calculations import simulate_knockout_stage, infer_n
 from scripts.standings_calculations import compute_standings
 from scripts.data_transform import transform_data
 
-# Flask app and SocketIO initialization
-app = Flask(__name__)
-socketio = SocketIO(app, cors_allowed_origins="*")
-
 # Configure logging
 logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
 log_handler = logging.FileHandler('predictor.log')
 formatter = logging.Formatter('%(asctime)s - %(message)s')
 log_handler.setFormatter(formatter)
@@ -46,16 +42,13 @@ def run_predictor(debug=False):
 def simulate_group_stage(config, teams):
     from scripts.group_match_calculations import main as simulate_matches
     results = simulate_matches(config, teams)
-    socketio.emit('group_stage_results', {'results': results.to_dict(orient='records')})
     logger.info('Simulated group stage matches')
 
 def knockout_stage(config, teams):
     standings = compute_standings_from_results()
-    socketio.emit('group_stage_complete', {'standings': standings.to_dict(orient='records')})
     logger.info("Standings:\n%s", standings)
 
     round_of_16_fixtures = calculate_last_16_fixtures(standings)
-    socketio.emit('knockout_stage_start', {'fixtures': round_of_16_fixtures})
     logger.info("Round of 16 Fixtures:\n%s", round_of_16_fixtures)
 
     config_vars = get_knockout_stage_config_vars(config, teams)
@@ -65,7 +58,6 @@ def knockout_stage(config, teams):
     # Simulate Round of 16
     round_of_16_results = simulate_knockout_stage(round_of_16_fixtures, **config_vars, stage="Round of 16")
     all_knockout_results = pd.concat([all_knockout_results, round_of_16_results])
-    socketio.emit('match_update', {'results': round_of_16_results.to_dict(orient='records')})
     logger.info('Simulated Round of 16')
 
     quarter_final_fixtures = infer_next_round_fixtures(round_of_16_results, "Quarter-final")
@@ -73,7 +65,6 @@ def knockout_stage(config, teams):
     # Simulate Quarter Finals
     quarter_final_results = simulate_knockout_stage(quarter_final_fixtures, **config_vars, stage="Quarter-final")
     all_knockout_results = pd.concat([all_knockout_results, quarter_final_results])
-    socketio.emit('match_update', {'results': quarter_final_results.to_dict(orient='records')})
     logger.info('Simulated Quarter-finals')
 
     semi_final_fixtures = infer_next_round_fixtures(quarter_final_results, "Semi-final")
@@ -81,7 +72,6 @@ def knockout_stage(config, teams):
     # Simulate Semi Finals
     semi_final_results = simulate_knockout_stage(semi_final_fixtures, **config_vars, stage="Semi-final")
     all_knockout_results = pd.concat([all_knockout_results, semi_final_results])
-    socketio.emit('match_update', {'results': semi_final_results.to_dict(orient='records')})
     logger.info('Simulated Semi-finals')
 
     final_fixtures = infer_next_round_fixtures(semi_final_results, "Final")
@@ -89,7 +79,6 @@ def knockout_stage(config, teams):
     # Simulate Final
     final_results = simulate_knockout_stage(final_fixtures, **config_vars, stage="Final")
     all_knockout_results = pd.concat([all_knockout_results, final_results])
-    socketio.emit('match_update', {'results': final_results.to_dict(orient='records')})
     logger.info('Simulated Final')
 
     # Save all knockout results to CSV
@@ -178,6 +167,8 @@ def concatenate_results(group_stage_path, knockout_stage_path, output_path):
     all_results = pd.concat([group_stage_results, knockout_stage_results])
     all_results.to_csv(output_path, index=False)
     print(f"Concatenated results saved to {output_path}")
+    logger.info('Calculations complete')
+
 
 def main():
     parser = argparse.ArgumentParser(description='Euro 2024 Predictor')
