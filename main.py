@@ -1,8 +1,9 @@
-from flask import Flask
+import argparse
 import logging
+import os
 import pandas as pd
-from argparse import ArgumentParser
-from flask_socketio import SocketIO, emit
+from flask import Flask
+from flask_socketio import SocketIO
 from scripts.config import load_config
 from scripts.calculations import perform_calculations
 from scripts.group_match_calculations import simulate_group_stage_matches
@@ -10,11 +11,16 @@ from scripts.knockout_stage_calculations import simulate_knockout_stage, infer_n
 from scripts.standings_calculations import compute_standings
 from scripts.data_transform import transform_data
 
+# Flask app and SocketIO initialization
 app = Flask(__name__)
-socketio = SocketIO(app)
+socketio = SocketIO(app, cors_allowed_origins="*")
 
 # Configure logging
 logger = logging.getLogger(__name__)
+log_handler = logging.FileHandler('predictor.log')
+formatter = logging.Formatter('%(asctime)s - %(message)s')
+log_handler.setFormatter(formatter)
+logger.addHandler(log_handler)
 
 def run_predictor(debug=False):
     if debug:
@@ -27,17 +33,21 @@ def run_predictor(debug=False):
     logger.info('Running Predictor')
 
     perform_calculations(config, teams)
+    logger.info('Completed perform_calculations')
 
     # Simulate group stage matches
     simulate_group_stage(config, teams)
+    logger.info('Completed simulate_group_stage')
 
     # Process knockout stages
     knockout_stage(config, teams)
+    logger.info('Completed knockout_stage')
 
 def simulate_group_stage(config, teams):
     from scripts.group_match_calculations import main as simulate_matches
     results = simulate_matches(config, teams)
     socketio.emit('group_stage_results', {'results': results.to_dict(orient='records')})
+    logger.info('Simulated group stage matches')
 
 def knockout_stage(config, teams):
     standings = compute_standings_from_results()
@@ -56,6 +66,7 @@ def knockout_stage(config, teams):
     round_of_16_results = simulate_knockout_stage(round_of_16_fixtures, **config_vars, stage="Round of 16")
     all_knockout_results = pd.concat([all_knockout_results, round_of_16_results])
     socketio.emit('match_update', {'results': round_of_16_results.to_dict(orient='records')})
+    logger.info('Simulated Round of 16')
 
     quarter_final_fixtures = infer_next_round_fixtures(round_of_16_results, "Quarter-final")
 
@@ -63,6 +74,7 @@ def knockout_stage(config, teams):
     quarter_final_results = simulate_knockout_stage(quarter_final_fixtures, **config_vars, stage="Quarter-final")
     all_knockout_results = pd.concat([all_knockout_results, quarter_final_results])
     socketio.emit('match_update', {'results': quarter_final_results.to_dict(orient='records')})
+    logger.info('Simulated Quarter-finals')
 
     semi_final_fixtures = infer_next_round_fixtures(quarter_final_results, "Semi-final")
 
@@ -70,6 +82,7 @@ def knockout_stage(config, teams):
     semi_final_results = simulate_knockout_stage(semi_final_fixtures, **config_vars, stage="Semi-final")
     all_knockout_results = pd.concat([all_knockout_results, semi_final_results])
     socketio.emit('match_update', {'results': semi_final_results.to_dict(orient='records')})
+    logger.info('Simulated Semi-finals')
 
     final_fixtures = infer_next_round_fixtures(semi_final_results, "Final")
 
@@ -77,6 +90,7 @@ def knockout_stage(config, teams):
     final_results = simulate_knockout_stage(final_fixtures, **config_vars, stage="Final")
     all_knockout_results = pd.concat([all_knockout_results, final_results])
     socketio.emit('match_update', {'results': final_results.to_dict(orient='records')})
+    logger.info('Simulated Final')
 
     # Save all knockout results to CSV
     all_knockout_results.to_csv('data/results/knockout_stage_results.csv', index=False)
@@ -91,7 +105,6 @@ def calculate_last_16_fixtures(standings):
     fixtures = []
     dtype = {'team1': str, 'team2': str}
     column_names = ['stage', 'date', 'time', 'venue', 'team1', 'team1_score', 'team2', 'team2_score', 'team1_pso_score', 'team2_pso_score']
-    # Read the CSV file with specified column names, forcing all columns to be read as strings
     knockout_schedule = pd.read_csv('data/raw/knockout_match_schedule.csv', names=column_names, skiprows=1, dtype=str)
     logger.debug("Knockout_schedule:\n%s", knockout_schedule)
     actual_teams = get_actual_teams(standings)
@@ -104,11 +117,6 @@ def calculate_last_16_fixtures(standings):
         team1 = actual_teams.get(original_team1, original_team1)
         team2 = actual_teams.get(original_team2, original_team2)
         
-        # Add debugging information
-        logger.debug(f"Original Team1: {original_team1}, Mapped Team1: {team1}")
-        logger.debug(f"Original Team2: {original_team2}, Mapped Team2: {team2}")
-
-        # Handling placeholders dynamically
         if '/' in team1:
             team1 = resolve_placeholder(team1, actual_teams)
         if '/' in team2:
@@ -124,21 +132,19 @@ def resolve_placeholder(placeholder, actual_teams):
     for option in options:
         if option in actual_teams:
             return actual_teams[option]
-    return placeholder  # Default to placeholder if no match is found
+    return placeholder
 
 def get_knockout_stage_config_vars(config, teams):
     match_schedule_path = 'data/raw/group_match_schedule.csv'
     win_percentages_path = 'data/tmp/euro_teams_win_percentage.csv'
 
-    # Load win percentages
     win_percentages = pd.read_csv(win_percentages_path)
     win_percentages_dict = dict(zip(win_percentages['team'].str.strip().str.upper(), win_percentages['win_percentage']))
 
     home_advantage = config.get('home_advantage', 0)
     home_team = config.get('home_team', '').strip().upper()
-    weighted_win_percentage_weight = config.get('weighted_win_percentage_weight', 1.0)  # Default to 1.0 if not specified
+    weighted_win_percentage_weight = config.get('weighted_win_percentage_weight', 1.0)
 
-    # Calculate averages from historical data
     historical_data_path = 'data/raw/results.csv'
     historical_data = pd.read_csv(historical_data_path)
     look_back_months = config['look_back_months']
@@ -155,29 +161,31 @@ def get_knockout_stage_config_vars(config, teams):
     }
 
 def concatenate_results(group_stage_path, knockout_stage_path, output_path):
-    # Load group stage results
-    group_stage_results = pd.read_csv(group_stage_path)
-    
-    # Load knockout stage results
-    knockout_stage_results = pd.read_csv(knockout_stage_path)
-    
-    # Concatenate the results
-    all_results = pd.concat([group_stage_results, knockout_stage_results], ignore_index=True)
-    
-    # Save the concatenated results to a new CSV file
+    if os.path.exists(group_stage_path) and os.path.getsize(group_stage_path) > 0:
+        group_stage_results = pd.read_csv(group_stage_path)
+    else:
+        group_stage_columns = ['stage', 'group', 'date', 'time', 'venue', 'team1', 'team1_score', 'team2', 'team2_score', 'team1_pso_score', 'team2_pso_score']
+        group_stage_results = pd.DataFrame(columns=group_stage_columns)
+        print(f"{group_stage_path} not found. Creating placeholder data.")
+
+    if os.path.exists(knockout_stage_path) and os.path.getsize(knockout_stage_path) > 0:
+        knockout_stage_results = pd.read_csv(knockout_stage_path)
+    else:
+        knockout_stage_columns = ['stage', 'team1', 'team1_score', 'team2', 'team2_score', 'team1_pso_score', 'team2_pso_score']
+        knockout_stage_results = pd.DataFrame(columns=knockout_stage_columns)
+        print(f"{knockout_stage_path} not found. Creating placeholder data.")
+
+    all_results = pd.concat([group_stage_results, knockout_stage_results])
     all_results.to_csv(output_path, index=False)
     print(f"Concatenated results saved to {output_path}")
 
-# Define file paths
-group_stage_path = 'data/results/group_stage_results.csv'
-knockout_stage_path = 'data/results/knockout_stage_results.csv'
-output_path = 'data/results/all_stage_results.csv'
-
-# Concatenate the results
-concatenate_results(group_stage_path, knockout_stage_path, output_path)
-
-if __name__ == "__main__":
-    parser = ArgumentParser()
-    parser.add_argument('--debug', action='store_true', help='Enable debug output')
+def main():
+    parser = argparse.ArgumentParser(description='Euro 2024 Predictor')
+    parser.add_argument('--debug', action='store_true', help='Enable debug mode')
     args = parser.parse_args()
+    concatenate_results('data/results/group_stage_results.csv', 'data/results/knockout_stage_results.csv', 'data/results/all_stage_results.csv')
     run_predictor(debug=args.debug)
+
+# Run the predictor in standalone mode
+if __name__ == "__main__":
+    main()

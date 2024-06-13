@@ -2,15 +2,28 @@ from flask import Flask, render_template, request, jsonify
 import pandas as pd
 import subprocess
 import os
+import logging
 from collections import defaultdict
 import yaml
+from flask_socketio import SocketIO, emit
 
 app = Flask(__name__)
+socketio = SocketIO(app, cors_allowed_origins="*")
+
+# Configure logging
+logging.basicConfig(level=logging.DEBUG)
+logger = logging.getLogger(__name__)
 
 def load_data(csv_path):
-    return pd.read_csv(csv_path, na_values=[''])
+    if not os.path.exists(csv_path) or os.path.getsize(csv_path) == 0:
+        raise FileNotFoundError(f"File {csv_path} not found within the timeout period.")
+    else:
+        logger.debug(f"Reading CSV: {csv_path}")
+        return pd.read_csv(csv_path, na_values=[''])
+    
 
 def compute_standings(data):
+    logger.debug("Computing standings")
     standings = defaultdict(lambda: defaultdict(lambda: defaultdict(int)))
     for _, row in data.iterrows():
         if row['stage'] != 'Group Stage':
@@ -72,9 +85,11 @@ def compute_standings(data):
     standings_df.loc[standings_df.groupby('group').head(2).index, 'qualified'] = 'qualified'
     standings_df.loc[third_place_teams.index, 'qualified'] = 'best-third'
 
+    logger.debug(f"Standings computed: {standings_df}")
     return standings_df
 
 def organize_matches_by_group(data):
+    logger.debug("Organizing matches by group")
     match_results = defaultdict(list)
     knockout_matches = []
 
@@ -107,41 +122,60 @@ def organize_matches_by_group(data):
             else:
                 match['team1_class'] = 'winner' if team1_score > team2_score else 'loser'
                 match['team2_class'] = 'winner' if team2_score > team1_score else 'loser'
-
+            
             knockout_matches.append(match)
 
+    logger.debug(f"Match results organized: {match_results}")
     return match_results, knockout_matches
 
 @app.route("/")
 def index():
-    csv_path = "data/results/all_stage_results.csv"
-    data = load_data(csv_path)
+    # Set default values with structure
+    match_results = {
+        'A': [
+            {'team1': 'Team 1A', 'team1_score': 0, 'team2': 'Team 2A', 'team2_score': 0},
+            {'team1': 'Team 3A', 'team1_score': 0, 'team2': 'Team 4A', 'team2_score': 0}
+        ],
+        'B': [
+            {'team1': 'Team 1B', 'team1_score': 0, 'team2': 'Team 2B', 'team2_score': 0},
+            {'team1': 'Team 3B', 'team1_score': 0, 'team2': 'Team 4B', 'team2_score': 0}
+        ]
+    }
+    
+    import pandas as pd
 
-    standings = compute_standings(data)
-    match_results, knockout_matches = organize_matches_by_group(data)
+    standings = pd.DataFrame({
+        'group': ['A', 'A', 'A', 'A', 'B', 'B', 'B', 'B'],
+        'team': ['Team 1A', 'Team 2A', 'Team 3A', 'Team 4A', 'Team 1B', 'Team 2B', 'Team 3B', 'Team 4B'],
+        'gp': [0, 0, 0, 0, 0, 0, 0, 0],
+        'w': [0, 0, 0, 0, 0, 0, 0, 0],
+        'd': [0, 0, 0, 0, 0, 0, 0, 0],
+        'l': [0, 0, 0, 0, 0, 0, 0, 0],
+        'gf': [0, 0, 0, 0, 0, 0, 0, 0],
+        'ga': [0, 0, 0, 0, 0, 0, 0, 0],
+        'gd': [0, 0, 0, 0, 0, 0, 0, 0],
+        'points': [0, 0, 0, 0, 0, 0, 0, 0],
+        'qualified': ['', '', '', '', '', '', '', '']
+    })
 
-    config_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'config', 'config.yaml')
+    knockout_matches = [
+        {'stage': 'Round of 16', 'team1': 'Team 1A', 'team1_score': 0, 'team2': 'Team 2B', 'team2_score': 0, 'team1_pen_score': None, 'team2_pen_score': None, 'team1_class': '', 'team2_class': ''},
+        {'stage': 'Quarter-final', 'team1': 'Team 1C', 'team1_score': 0, 'team2': 'Team 2D', 'team2_score': 0, 'team1_pen_score': None, 'team2_pen_score': None, 'team1_class': '', 'team2_class': ''},
+        {'stage': 'Semi-final', 'team1': 'Team 1E', 'team1_score': 0, 'team2': 'Team 2F', 'team2_score': 0, 'team1_pen_score': None, 'team2_pen_score': None, 'team1_class': '', 'team2_class': ''},
+        {'stage': 'Final', 'team1': 'Team 1G', 'team1_score': 0, 'team2': 'Team 2H', 'team2_score': 0, 'team1_pen_score': None, 'team2_pen_score': None, 'team1_class': '', 'team2_class': ''}
+    ]
 
-    # Load the configuration values
-    with open(config_path, 'r') as file:
-        config = yaml.safe_load(file)
-
-    weighted_win_percentage_weight = config.get('weighted_win_percentage_weight', 1)
-    home_advantage = config.get('home_advantage', 0.1)
-    look_back_months = config.get('look_back_months', 36)
-
+    logger.debug("Rendering index page with default values")
     return render_template(
-        "index.html",
-        standings=standings,
-        match_results=match_results,
-        knockout_matches=knockout_matches,
-        weighted_win_percentage_weight=weighted_win_percentage_weight,
-        home_advantage=home_advantage,
-        look_back_months=look_back_months
+        "index.html", 
+        match_results=match_results, 
+        standings=standings, 
+        knockout_matches=knockout_matches
     )
-
+    
 @app.route("/run_predictor", methods=["POST"])
 def run_predictor():
+    logger.debug("Running predictor")
     try:
         data = request.get_json()
         weighted_win_percentage_weight = data.get('weighted_win_percentage_weight', 1)
@@ -161,14 +195,33 @@ def run_predictor():
         with open(config_path, 'w') as file:
             yaml.safe_dump(config, file)
 
+        # Trigger main.py to run in a separate process
         python_interpreter = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'venv', 'Scripts', 'python.exe')
-        subprocess.run([python_interpreter, "main.py"], check=True)
+        subprocess.Popen([python_interpreter, "main.py"])
 
         return jsonify({"status": "success"})
-    except subprocess.CalledProcessError as e:
-        return jsonify({"status": "error", "message": str(e)})
     except Exception as e:
+        logger.error(f"Error in run_predictor: {e}")
         return jsonify({"status": "error", "message": str(e)})
 
+@socketio.on('load_results')
+def handle_load_results():
+    logger.debug("Loading results")
+    try:
+        csv_path = "data/results/all_stage_results.csv"
+        data = load_data(csv_path)
+        logger.debug(f"Data loaded: {data}")
+        standings = compute_standings(data)
+        match_results, knockout_matches = organize_matches_by_group(data)
+
+        emit('results_loaded', {
+            'standings': standings.to_dict(orient='records'),
+            'match_results': match_results,
+            'knockout_matches': knockout_matches
+        })
+    except Exception as e:
+        logger.error(f"Error loading results: {e}")
+        emit('error', {'message': str(e)})
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    socketio.run(app, debug=True)
