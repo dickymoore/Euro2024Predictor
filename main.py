@@ -2,7 +2,6 @@ import argparse
 import logging
 import os
 import pandas as pd
-from flask_socketio import SocketIO
 from scripts.config import load_config
 from scripts.calculations import perform_calculations
 from scripts.group_match_calculations import simulate_group_stage_matches
@@ -169,13 +168,14 @@ def concatenate_results(group_stage_path, knockout_stage_path, output_path):
     print(f"Concatenated results saved to {output_path}")
     logger.info('Calculations complete')
 
-
 def main():
     parser = argparse.ArgumentParser(description='Euro 2024 Predictor')
     parser.add_argument('--debug', action='store_true', help='Enable debug mode')
     args = parser.parse_args()
     run_predictor(debug=args.debug)
     concatenate_results('data/results/group_stage_results.csv', 'data/results/knockout_stage_results.csv', 'data/results/all_stage_results.csv')
+    logger.info('End of main')
+    print("End of main")
 
 # Run the predictor in standalone mode
 if __name__ == "__main__":

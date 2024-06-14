@@ -1,41 +1,19 @@
 from flask import Flask, render_template, request, jsonify
-from flask_socketio import SocketIO, emit
 import pandas as pd
 import threading
-import time
 import yaml
 import logging
 import os
+import subprocess
+from collections import defaultdict
+import time
 
 app = Flask(__name__)
-socketio = SocketIO(app, cors_allowed_origins="*")
 
 # Configure logging
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
-
-class SocketIOHandler(logging.Handler):
-    def emit(self, record):
-        log_entry = self.format(record)
-        socketio.emit('log_message', {'log': log_entry})
-
-socketio_handler = SocketIOHandler()
-socketio_handler.setLevel(logging.DEBUG)
-socketio_handler.setFormatter(logging.Formatter('%(asctime)s - %(message)s'))
-logger.addHandler(socketio_handler)
-
-def run_main_script():
-    # Ensure that `main.py` is run and monitored for "Calculations complete"
-    process = subprocess.Popen(["python", "main.py"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    while True:
-        output = process.stdout.readline()
-        if output:
-            logger.info(output.strip().decode())
-        if "Calculations complete" in output.strip().decode():
-            break
-        if process.poll() is not None:
-            break
-    process.wait()
+calculations_complete_event = threading.Event()
 
 def load_data(csv_path):
     return pd.read_csv(csv_path, na_values=[''])
@@ -142,6 +120,12 @@ def organize_matches_by_group(data):
 
     return match_results, knockout_matches
 
+@app.route("/status", methods=["GET"])
+def check_status():
+    # Implement logic to check if the process is complete
+    is_complete = check_if_process_is_complete()
+    return jsonify({"status": "complete" if is_complete else "running"})
+
 @app.route("/")
 def index():
     match_results = {
@@ -211,22 +195,63 @@ def run_predictor():
         logger.error(f"Error in run_predictor: {e}")
         return jsonify({"status": "error", "message": str(e)})
 
-@socketio.on('load_results')
-def handle_load_results():
+def run_main_script():
     try:
-        csv_path = "data/results/all_stage_results.csv"
-        data = load_data(csv_path)
-        standings = compute_standings(data)
-        match_results, knockout_matches = organize_matches_by_group(data)
+        logger.debug("Starting main.py subprocess")
 
-        emit('results_loaded', {
-            'standings': standings.to_dict(orient='records'),
-            'match_results': match_results,
-            'knockout_matches': knockout_matches
-        })
+        # Determine the correctf path to the Python interpreter in the virtual environment
+        virtual_env = os.getenv('VIRTUAL_ENV')
+        if virtual_env:
+            if os.name == 'nt':  # Windows
+                python_executable = os.path.join(virtual_env, 'Scripts', 'python.exe')
+            else:  # Unix or Mac
+                python_executable = os.path.join(virtual_env, 'bin', 'python')
+        else:
+            python_executable = 'python'
+
+        script_path = os.path.abspath("main.py")
+
+        logger.debug(f"Using Python executable: {python_executable}")
+        logger.debug(f"Running script at: {script_path}")
+
+        process = subprocess.Popen(
+            [python_executable, script_path], 
+            stdout=subprocess.PIPE, 
+            stderr=subprocess.PIPE, 
+            text=True,
+            bufsize=1
+        )
+        logger.debug("Subprocess start attempt made")
+
+        while True:
+            logger.debug("In loop")
+            exit()
+            stdout_line = process.stdout.readline()
+            # if not stdout_line and process.poll() is not None:
+            #     break
+            
+            logger.debug("looping")
+            exit() # this isn't being hit.
+            
+            if stdout_line:
+                logger.info(stdout_line.strip())
+                if "Calculations complete" in stdout_line:
+                    logger.debug("Detected 'Calculations complete' in the subprocess output")
+                    calculations_complete_event.set()  # Signal that calculations are complete
+                    # break
+
+        process.stdout.close()
+        process.wait()
+        logger.debug(f"Subprocess exited with return code: {process.returncode}")
+
+        if process.returncode != 0:
+            stderr_output = process.stderr.read()
+            logger.error(f"Subprocess exited with errors: {stderr_output}")
+        process.stderr.close()
+
     except Exception as e:
-        logger.error(f"Error loading results: {e}")
-        emit('error', {'message': str(e)})
+        logger.error(f"Exception occurred while running the main script: {e}")
+
 
 if __name__ == "__main__":
-    socketio.run(app, debug=True)
+        app.run(debug=True)

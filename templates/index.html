@@ -5,7 +5,6 @@
     <title>UEFA Euro 2024 Predictions</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
         #loading {
@@ -35,7 +34,6 @@
     </style>
     <script>
         $(document).ready(function() {
-            var socket = io();
 
             $('#predictor-form').on('submit', function(event) {
                 event.preventDefault();
@@ -56,7 +54,7 @@
                     data: JSON.stringify(formData),
                     success: function(response) {
                         if (response.status === "success") {
-                            socket.emit('load_results');
+                            checkLogs();
                         } else {
                             alert("Error: " + response.message);
                             $('#loading').hide();
@@ -69,23 +67,38 @@
                 });
             });
 
-            socket.on('log_message', function(data) {
-                $('#logs').append('<p>' + data.log + '</p>');
-                $('#logs').scrollTop($('#logs')[0].scrollHeight);
-                if (data.log.includes('Calculations complete')) {
-                    $('#loading').hide();
-                }
-            });
+            function checkLogs() {
+                $.ajax({
+                    url: "/status",
+                    type: "GET",
+                    success: function(response) {
+                        if (response.status === "complete") {
+                            loadResults();
+                        } else {
+                            setTimeout(checkLogs, 2000);
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        alert("An error occurred while checking status: " + error);
+                        $('#loading').hide();
+                    }
+                });
+            }
 
-            socket.on('results_loaded', function(data) {
-                $('#loading').hide();
-                $('#results').append('<pre>' + JSON.stringify(data, null, 2) + '</pre>');
-            });
-
-            socket.on('error', function(data) {
-                alert("Error: " + data.message);
-                $('#loading').hide();
-            });
+            function loadResults() {
+                $.ajax({
+                    url: "/results",
+                    type: "GET",
+                    success: function(data) {
+                        $('#loading').hide();
+                        $('#results').append('<pre>' + JSON.stringify(data, null, 2) + '</pre>');
+                    },
+                    error: function(xhr, status, error) {
+                        alert("An error occurred while loading results: " + error);
+                        $('#loading').hide();
+                    }
+                });
+            }
         });
     </script>
 </head>
