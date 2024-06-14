@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, jsonify, Response, stream_with_context
 import threading
+from datetime import datetime
 import time
 import os
 import subprocess
@@ -219,6 +220,7 @@ def run_main_script():
 def wallchart():
     csv_path = "data/results/all_stage_results.csv"
     data = load_data(csv_path)
+    os.rename('data/results/all_stage_results.csv', f"data/results/all_stage_results_{datetime.now().strftime('%Y%m%d')}.csv")
 
     standings = compute_standings(data)
     match_results, knockout_matches = organize_matches_by_group(data)
