@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UEFA Euro 2024 Logs</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div id="logs-container">
+        <div id="logs">
+            <h1>Predictor Logs</h1>
+            <pre id="log-content"></pre>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            var logSource = new EventSource("/logs/stream");
+            var logContent = $('#log-content');
+            logSource.onmessage = function(event) {
+                logContent.append(event.data + "\n");
+                logContent.scrollTop(logContent.prop("scrollHeight"));
+            };
+        });
+    </script>
+</body>
+</html>

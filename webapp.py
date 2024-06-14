@@ -138,6 +138,7 @@ def index():
         "index.html"
     )
 
+
 @app.route("/logs")
 def stream_logs():
     log_path = 'data/tmp/predictor.log'
@@ -146,6 +147,78 @@ def stream_logs():
     if not os.path.exists(log_path):
         with open(log_path, 'w') as f:
             f.write('')  # Create the file and write an empty string
+
+    return Response(generate_html_template(), mimetype='text/html')
+
+def generate_html_template():
+    return f"""
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>UEFA Euro 2024 Logs</title>
+        <style>
+            body {{
+                font-family: 'Montserrat', sans-serif;
+                background-color: #f0f0f0;
+                margin: 0;
+                padding: 0;
+            }}
+            #logs-container {{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                max-height: 100%;
+            }}
+            #logs {{
+                width: 80%;
+                max-height: 100%;
+                overflow-y: scroll;
+                background-color: #f0f0f0;
+                padding: 10px;
+                margin: 10px 0;
+                border: 1px solid #ccc;
+                box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            }}
+            h1 {{
+                text-align: center;
+            }}
+            pre {{
+                white-space: pre-wrap;
+                word-wrap: break-word;
+            }}
+        </style>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function() {{
+                var logSource = new EventSource("/logs/stream");
+                var logContent = $('#log-content');
+                logSource.onmessage = function(event) {{
+                    logContent.append(event.data + "\\n");
+                    logContent.scrollTop(logContent.prop("scrollHeight"));
+                }};
+            }});
+        </script>
+    </head>
+    <body>
+        <div id="logs-container">
+            <div id="logs">
+                <h1>Predictor Logs</h1>
+                <pre id="log-content"></pre>
+            </div>
+        </div>
+    </body>
+    </html>
+    """
+
+@app.route("/logs/stream")
+def stream_logs_stream():
+    log_path = 'data/tmp/predictor.log'
+
+    if not os.path.exists(log_path):
+        with open(log_path, 'w') as f:
+            f.write('')
 
     def generate():
         read_count = 0  # Counter for the number of times the log file is read
@@ -159,13 +232,13 @@ def stream_logs():
                     yield f"data: {line}\n\n"  # Format for Server-Sent Events
                 else:
                     time.sleep(0.01)  # Prevent high CPU usage when the log file is not being written to
+                    print(f"line: {line}")  # Print the read count to the console
 
                 if "End of main" in line:
                     calculations_complete_event.set()
                     break  # Exit the loop after detecting "End of main"
 
     return Response(stream_with_context(generate()), mimetype='text/event-stream')
-
 
 @app.route("/run_predictor", methods=["POST"])
 def run_predictor():
