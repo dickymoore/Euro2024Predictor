@@ -1,7 +1,7 @@
 import pandas as pd
 from datetime import datetime, timedelta
 import logging
-logger = logging.getLogger(__name__)
+from scripts.logger_config import logger  # Import centralized logger
 
 def transform_data(data, teams, look_back_months):
     current_date = datetime.now()

@@ -1,6 +1,5 @@
 import argparse
 import sys
-import logging
 import os
 import pandas as pd
 from scripts.config import load_config
@@ -9,16 +8,16 @@ from scripts.group_match_calculations import main as simulate_group_stage_matche
 from scripts.knockout_stage_calculations import simulate_knockout_stage, infer_next_round_fixtures, get_actual_teams
 from scripts.standings_calculations import compute_standings
 from scripts.data_transform import transform_data
+import logging
+from scripts.logger_config import logger  # Import centralized logger
 
 sys.path.append(os.path.join(os.path.dirname(__file__), 'scripts'))
 
 # Configure logging
-logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 log_handler = logging.FileHandler('data/tmp/predictor.log')
 formatter = logging.Formatter('%(asctime)s - %(message)s')
 log_handler.setFormatter(formatter)
-logger.addHandler(log_handler)
 # Clear the predictor.log file
 predictor_log_path = os.path.abspath("predictor.log")
 with open(predictor_log_path, 'w'):

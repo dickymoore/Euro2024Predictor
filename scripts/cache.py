@@ -1,8 +1,7 @@
 import os
 import logging
+from scripts.logger_config import logger  # Import centralized logger
 from datetime import datetime
-
-logger = logging.getLogger(__name__)
 
 def get_file_modification_time(file_path):
     return datetime.fromtimestamp(os.path.getmtime(file_path))

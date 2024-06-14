@@ -1,4 +1,3 @@
-# logger_config.py
 import logging
 import os
 
@@ -18,4 +17,4 @@ logger.setLevel(logging.DEBUG)
 logger.addHandler(log_handler)
 
 # Avoid duplicate logs in the console
-logger.propagate = False
+logger.propagate = True

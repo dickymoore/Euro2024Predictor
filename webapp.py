@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, jsonify, Response
 import pandas as pd
 import threading
 import yaml
-import logging
+from logger_config import logger
 import os
 import subprocess
 from collections import defaultdict
