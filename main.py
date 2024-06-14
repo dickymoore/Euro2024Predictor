@@ -174,8 +174,8 @@ def main():
     parser = argparse.ArgumentParser(description='Euro 2024 Predictor')
     parser.add_argument('--debug', action='store_true', help='Enable debug mode')
     args = parser.parse_args()
-    concatenate_results('data/results/group_stage_results.csv', 'data/results/knockout_stage_results.csv', 'data/results/all_stage_results.csv')
     run_predictor(debug=args.debug)
+    concatenate_results('data/results/group_stage_results.csv', 'data/results/knockout_stage_results.csv', 'data/results/all_stage_results.csv')
 
 # Run the predictor in standalone mode
 if __name__ == "__main__":

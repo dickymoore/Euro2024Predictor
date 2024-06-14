@@ -1,39 +1,46 @@
 from flask import Flask, render_template, request, jsonify
-import pandas as pd
-import subprocess
-import os
-import logging
-from collections import defaultdict
-import yaml
 from flask_socketio import SocketIO, emit
-import time
+import pandas as pd
 import threading
+import time
+import yaml
+import logging
+import os
 
 app = Flask(__name__)
 socketio = SocketIO(app, cors_allowed_origins="*")
 
 # Configure logging
+logging.basicConfig(level=logging.DEBUG)
+logger = logging.getLogger(__name__)
+
 class SocketIOHandler(logging.Handler):
     def emit(self, record):
         log_entry = self.format(record)
         socketio.emit('log_message', {'log': log_entry})
 
 socketio_handler = SocketIOHandler()
-formatter = logging.Formatter('%(asctime)s - %(message)s')
-socketio_handler.setFormatter(formatter)
-logger = logging.getLogger(__name__)
+socketio_handler.setLevel(logging.DEBUG)
+socketio_handler.setFormatter(logging.Formatter('%(asctime)s - %(message)s'))
 logger.addHandler(socketio_handler)
-logger.setLevel(logging.DEBUG)
+
+def run_main_script():
+    # Ensure that `main.py` is run and monitored for "Calculations complete"
+    process = subprocess.Popen(["python", "main.py"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    while True:
+        output = process.stdout.readline()
+        if output:
+            logger.info(output.strip().decode())
+        if "Calculations complete" in output.strip().decode():
+            break
+        if process.poll() is not None:
+            break
+    process.wait()
 
 def load_data(csv_path):
-    if not os.path.exists(csv_path) or os.path.getsize(csv_path) == 0:
-        raise FileNotFoundError(f"File {csv_path} not found within the timeout period.")
-    else:
-        logger.debug(f"Reading CSV: {csv_path}")
-        return pd.read_csv(csv_path, na_values=[''])
+    return pd.read_csv(csv_path, na_values=[''])
 
 def compute_standings(data):
-    logger.debug("Computing standings")
     standings = defaultdict(lambda: defaultdict(lambda: defaultdict(int)))
     for _, row in data.iterrows():
         if row['stage'] != 'Group Stage':
@@ -95,11 +102,9 @@ def compute_standings(data):
     standings_df.loc[standings_df.groupby('group').head(2).index, 'qualified'] = 'qualified'
     standings_df.loc[third_place_teams.index, 'qualified'] = 'best-third'
 
-    logger.debug(f"Standings computed: {standings_df}")
     return standings_df
 
 def organize_matches_by_group(data):
-    logger.debug("Organizing matches by group")
     match_results = defaultdict(list)
     knockout_matches = []
 
@@ -135,12 +140,7 @@ def organize_matches_by_group(data):
             
             knockout_matches.append(match)
 
-    logger.debug(f"Match results organized: {match_results}")
     return match_results, knockout_matches
-
-def run_main_script():
-    python_interpreter = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'venv', 'Scripts', 'python.exe')
-    subprocess.run([python_interpreter, "main.py"], check=True)
 
 @app.route("/")
 def index():
@@ -176,7 +176,6 @@ def index():
         {'stage': 'Final', 'team1': 'Team 1G', 'team1_score': 0, 'team2': 'Team 2H', 'team2_score': 0, 'team1_pen_score': None, 'team2_pen_score': None, 'team1_class': '', 'team2_class': ''}
     ]
 
-    logger.debug("Rendering index page with default values")
     return render_template(
         "index.html", 
         match_results=match_results, 
@@ -186,7 +185,6 @@ def index():
 
 @app.route("/run_predictor", methods=["POST"])
 def run_predictor():
-    logger.debug("Running predictor")
     try:
         data = request.get_json()
         weighted_win_percentage_weight = data.get('weighted_win_percentage_weight', 1)
@@ -205,6 +203,7 @@ def run_predictor():
         with open(config_path, 'w') as file:
             yaml.safe_dump(config, file)
 
+        # Start the script in a new thread
         threading.Thread(target=run_main_script).start()
 
         return jsonify({"status": "success"})
@@ -214,11 +213,9 @@ def run_predictor():
 
 @socketio.on('load_results')
 def handle_load_results():
-    logger.debug("Loading results")
     try:
         csv_path = "data/results/all_stage_results.csv"
         data = load_data(csv_path)
-        logger.debug(f"Data loaded: {data}")
         standings = compute_standings(data)
         match_results, knockout_matches = organize_matches_by_group(data)
 

@@ -24,6 +24,14 @@
             padding-top: 20%;
             font-size: 2em;
         }
+        #logs {
+            max-height: 200px;
+            overflow-y: scroll;
+            background-color: #f0f0f0;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+        }
     </style>
     <script>
         $(document).ready(function() {
@@ -32,8 +40,8 @@
             $('#predictor-form').on('submit', function(event) {
                 event.preventDefault();
                 $('#loading').show();
-                $('#results').empty();  // Clear previous results
-                $('#log').empty();  // Clear previous logs
+                $('#logs').empty();
+                $('#results').empty();
 
                 var formData = {
                     weighted_win_percentage_weight: $('#weighted_win_percentage_weight').val(),
@@ -61,21 +69,22 @@
                 });
             });
 
+            socket.on('log_message', function(data) {
+                $('#logs').append('<p>' + data.log + '</p>');
+                $('#logs').scrollTop($('#logs')[0].scrollHeight);
+                if (data.log.includes('Calculations complete')) {
+                    $('#loading').hide();
+                }
+            });
+
             socket.on('results_loaded', function(data) {
                 $('#loading').hide();
-                $('#results').empty();
                 $('#results').append('<pre>' + JSON.stringify(data, null, 2) + '</pre>');
-                // You can replace the above line with code to dynamically render the results as needed
             });
 
             socket.on('error', function(data) {
                 alert("Error: " + data.message);
                 $('#loading').hide();
-            });
-
-            socket.on('log_message', function(data) {
-                $('#log').append('<p>' + data.log + '</p>');
-                $('#log').scrollTop($('#log')[0].scrollHeight);
             });
         });
     </script>
@@ -102,7 +111,7 @@
             </div>
         </div>
     </form>
-    <div id="log" style="height: 300px; overflow-y: scroll; border: 1px solid #ddd; margin-top: 20px; padding: 10px; background-color: #f9f9f9;"></div>
+    <div id="logs"></div>
     <div class="wall-chart" style="display: none;">
         <h1>UEFA Euro 2024 Predictions</h1>
         <hr>
