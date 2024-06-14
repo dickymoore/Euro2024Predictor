@@ -21,6 +21,11 @@ body {
     margin-bottom: 20px;
 }
 
+.title h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
 .content-wrapper {
     display: flex;
     justify-content: space-between;

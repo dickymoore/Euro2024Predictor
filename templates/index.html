@@ -116,9 +116,6 @@
                 var standings = data.standings;
                 var knockout_matches = data.knockout_matches;
 
-                // Render results and standings as needed
-                // This part depends on your specific implementation and data structure
-                // You will likely need to iterate through the results and standings to append them to the appropriate divs
             }
 
             function autoScroll() {
@@ -153,156 +150,306 @@
     </script>
 </head>
 <body>
-        <div id="loading">Loading...</div>
-        <form id="predictor-form">
-            <div class="slider-container-horizontal">
-                <button type="submit">Run Predictor</button>
-                <div class="slider-item">
-                    <label for="weighted_win_percentage_weight">Weighted Win Percentage Weight</label>
-                    <input type="range" id="weighted_win_percentage_weight" name="weighted_win_percentage_weight" min="0" max="2" step="0.1" value="1">
-                    <span id="weighted_win_percentage_weight_value">1</span>
-                </div>
-                <div class="slider-item">
-                    <label for="home_advantage">Home Advantage</label>
-                    <input type="range" id="home_advantage" name="home_advantage" min="0" max="1" step="0.1" value="0.1">
-                    <span id="home_advantage_value">0.1</span>
-                </div>
-                <div class="slider-item">
-                    <label for="look_back_months">Look Back Months</label>
-                    <input type="range" id="look_back_months" name="look_back_months" min="1" max="60" step="1" value="36">
-                    <span id="look_back_months_value">36</span>
-                </div>
-            </div>
-        </form>
-        <div id="logs-container">
-            <div id="logs">
-
-            </div>
-        </div>
-        <div class="wall-chart" style="display: none;">
+    <div id="loading">Loading...</div>
+    <form id="predictor-form">
+        <div class="title">
             <h1>UEFA Euro 2024 Predictions</h1>
-            <hr>
-            <h2>Results</h2>
-            <div id="results"></div>
-            <hr>
-            <h2>GROUP STAGE</h2>
-            <div class="content-wrapper">
-                <div class="match-results-left">
-                    {% for group, matches in match_results.items() %}
-                        {% if group in ['A', 'C', 'E'] %}
-                            <div class="group-results" id="results-{{ group }}">
-                                <h2>Group {{ group }} Matches</h2>
-                                <table>
-                                    {% for match in matches %}
-                                        <tr>
-                                            <td>{{ match.team1 }}</td>
-                                            <td>{{ match.team1_score }}</td>
-                                            <td>{{ match.team2 }}</td>
-                                            <td>{{ match.team2_score }}</td>
-                                        </tr>
-                                    {% endfor %}
-                                </table>
-                            </div>
-                        {% endif %}
-                    {% endfor %}
-                </div>
-                <div class="match-results-right">
-                    {% for group, matches in match_results.items() %}
-                        {% if group in ['B', 'D', 'F'] %}
-                            <div class="group-results" id="results-{{ group }}">
-                                <h2>Group {{ group }} Matches</h2>
-                                <table>
-                                    {% for match in matches %}
-                                        <tr>
-                                            <td>{{ match.team1 }}</td>
-                                            <td>{{ match.team1_score }}</td>
-                                            <td>{{ match.team2 }}</td>
-                                            <td>{{ match.team2_score }}</td>
-                                        </tr>
-                                    {% endfor %}
-                                </table>
-                            </div>
-                        {% endif %}
+        </div>
+        <div class="slider-container-horizontal">
+            <button type="submit">Run Predictor</button>
+            <div class="slider-item">
+                <label for="weighted_win_percentage_weight">Weighted Win Percentage Weight</label>
+                <input type="range" id="weighted_win_percentage_weight" name="weighted_win_percentage_weight" min="0" max="2" step="0.1" value="1">
+                <span id="weighted_win_percentage_weight_value">1</span>
+            </div>
+            <div class="slider-item">
+                <label for="home_advantage">Home Advantage</label>
+                <input type="range" id="home_advantage" name="home_advantage" min="0" max="1" step="0.1" value="0.1">
+                <span id="home_advantage_value">0.1</span>
+            </div>
+            <div class="slider-item">
+                <label for="look_back_months">Look Back Months</label>
+                <input type="range" id="look_back_months" name="look_back_months" min="1" max="60" step="1" value="36">
+                <span id="look_back_months_value">36</span>
+            </div>
+        </div>
+    </form>
+    <div id="logs-container">
+        <div id="logs"></div>
+    </div>
+    <div class="wall-chart" style="display:none">
+        <h2>GROUP STAGE</h2>
+        <div class="content-wrapper">
+            <div class="match-results-left">
+                {% for group, matches in match_results.items() %}
+                    {% if group in ['A', 'C', 'E'] %}
+                        <div class="group-results" id="results-{{ group }}">
+                            <h2>Group {{ group }} Matches</h2>
+                            <table>
+                                {% for match in matches %}
+                                    <tr>
+                                        <td>{{ match.team1 }}</td>
+                                        <td>{{ match.team1_score }}</td>
+                                        <td>{{ match.team2 }}</td>
+                                        <td>{{ match.team2_score }}</td>
+                                    </tr>
+                                {% endfor %}
+                            </table>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="divider"></div>
+            <div class="group-standings-center">
+                <div class="group-standings">
+                    {% for group, group_teams in standings.groupby('group') %}
+                        <div class="group" id="group-{{ group }}">
+                            <h2>Group {{ group }}</h2>
+                            <table>
+                                <tr>
+                                    <th>Team</th>
+                                    <th>GP</th>
+                                    <th>W</th>
+                                    <th>D</th>
+                                    <th>L</th>
+                                    <th>GF</th>
+                                    <th>GA</th>
+                                    <th>GD</th>
+                                    <th>Points</th>
+                                </tr>
+                                {% for _, team in group_teams.iterrows() %}
+                                    <tr class="{{ team.qualified }}">
+                                        <td>{{ team.team }}</td>
+                                        <td>{{ team.gp }}</td>
+                                        <td>{{ team.w }}</td>
+                                        <td>{{ team.d }}</td>
+                                        <td>{{ team.l }}</td>
+                                        <td>{{ team.gf }}</td>
+                                        <td>{{ team.ga }}</td>
+                                        <td>{{ team.gd }}</td>
+                                        <td>{{ team.points }}</td>
+                                    </tr>
+                                {% endfor %}
+                            </table>
+                        </div>
                     {% endfor %}
                 </div>
             </div>
-            <div class="content-wrapper">
-                <div class="standings-left">
-                    {% for group, standings in standings.groupby('group') %}
-                        {% if group in ['A', 'C', 'E'] %}
-                            <div class="group-standings" id="standings-{{ group }}">
-                                <h2>Group {{ group }} Standings</h2>
-                                <table>
+
+            <div class="divider"></div>
+
+            <div class="match-results-right">
+                {% for group, matches in match_results.items() %}
+                    {% if group in ['B', 'D', 'F'] %}
+                    <div class="group-results" id="results-{{ group }}">
+                            <h2>Group {{ group }} Matches</h2>
+                            <table>
+                                {% for match in matches %}
                                     <tr>
-                                        <th>Team</th>
-                                        <th>GP</th>
-                                        <th>W</th>
-                                        <th>D</th>
-                                        <th>L</th>
-                                        <th>GF</th>
-                                        <th>GA</th>
-                                        <th>GD</th>
-                                        <th>Points</th>
-                                        <th>Qualified</th>
+                                        <td>{{ match.team1 }}</td>
+                                        <td>{{ match.team1_score }}</td>
+                                        <td>{{ match.team2_score }}</td>
+                                        <td>{{ match.team2 }}</td>
                                     </tr>
-                                    {% for _, row in standings.iterrows() %}
-                                        <tr>
-                                            <td>{{ row['team'] }}</td>
-                                            <td>{{ row['gp'] }}</td>
-                                            <td>{{ row['w'] }}</td>
-                                            <td>{{ row['d'] }}</td>
-                                            <td>{{ row['l'] }}</td>
-                                            <td>{{ row['gf'] }}</td>
-                                            <td>{{ row['ga'] }}</td>
-                                            <td>{{ row['gd'] }}</td>
-                                            <td>{{ row['points'] }}</td>
-                                            <td>{{ row['qualified'] }}</td>
-                                        </tr>
-                                    {% endfor %}
-                                </table>
+                                {% endfor %}
+                            </table>
+                        </div>
+                        {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        <hr>
+        <h2>KNOCKOUT STAGE</h2>
+        <div class="knockout-stage">
+            <div class="knockout-stage-grid">
+                
+                <div class="round-of-16-left">
+                    {% for match in knockout_matches[:4] %}
+                        {% if match.stage == 'Round of 16' %}
+                            <div class="match">
+                                <div class="team">
+                                    <span class="team {{ match.team1_class }}">{{ match.team1 }}</span>
+                                    <span class="score {{ match.team1_class }}">
+                                        {{ match.team1_score }}
+                                    </span>
+                                    {% if match.team1_pen_score and match.team2_pen_score %}
+                                        <span class="penalty {{ match.team1_class }}"> ({{ match.team1_pen_score|int }})</span>
+                                    {% endif %}
+                                </div>
+                                <div class="team">
+                                    <span class="team {{ match.team2_class }}">{{ match.team2 }}</span>
+                                    <span class="score {{ match.team2_class }}">
+                                        {{ match.team2_score }}
+                                    </span>
+                                    {% if match.team1_pen_score and match.team2_pen_score %}
+                                        <span class="penalty {{ match.team2_class }}"> ({{ match.team2_pen_score|int }})</span>
+                                    {% endif %}
+                                </div>
                             </div>
                         {% endif %}
                     {% endfor %}
                 </div>
-                <div class="standings-right">
-                    {% for group, standings in standings.groupby('group') %}
-                        {% if group in ['B', 'D', 'F'] %}
-                            <div class="group-standings" id="standings-{{ group }}">
-                                <h2>Group {{ group }} Standings</h2>
-                                <table>
-                                    <tr>
-                                        <th>Team</th>
-                                        <th>GP</th>
-                                        <th>W</th>
-                                        <th>D</th>
-                                        <th>L</th>
-                                        <th>GF</th>
-                                        <th>GA</th>
-                                        <th>GD</th>
-                                        <th>Points</th>
-                                        <th>Qualified</th>
-                                    </tr>
-                                    {% for _, row in standings.iterrows() %}
-                                        <tr>
-                                            <td>{{ row['team'] }}</td>
-                                            <td>{{ row['gp'] }}</td>
-                                            <td>{{ row['w'] }}</td>
-                                            <td>{{ row['d'] }}</td>
-                                            <td>{{ row['l'] }}</td>
-                                            <td>{{ row['gf'] }}</td>
-                                            <td>{{ row['ga'] }}</td>
-                                            <td>{{ row['gd'] }}</td>
-                                            <td>{{ row['points'] }}</td>
-                                            <td>{{ row['qualified'] }}</td>
-                                        </tr>
-                                    {% endfor %}
-                                </table>
+                
+                <div class="quarter-finals-left">
+                    {% for match in knockout_matches[8:10] %}
+                        {% if match.stage == 'Quarter-final' %}
+                            <div class="match">
+                                <div class="team">
+                                    <span class="team {{ match.team1_class }}">{{ match.team1 }}</span>
+                                    <span class="score {{ match.team1_class }}">
+                                        {{ match.team1_score }}
+                                    </span>
+                                    {% if match.team1_pen_score and match.team2_pen_score %}
+                                        <span class="penalty {{ match.team1_class }}"> ({{ match.team1_pen_score|int }})</span>
+                                    {% endif %}
+                                </div>
+                                <div class="team">
+                                    <span class="team {{ match.team2_class }}">{{ match.team2 }}</span>
+                                    <span class="score {{ match.team2_class }}">
+                                        {{ match.team2_score }}
+                                    </span>
+                                    {% if match.team1_pen_score and match.team2_pen_score %}
+                                        <span class="penalty {{ match.team2_class }}"> ({{ match.team2_pen_score|int }})</span>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                
+                <div class="semi-finals-left">
+                    {% for match in knockout_matches[12:13] %}
+                        {% if match.stage == 'Semi-final' %}
+                            <div class="match">
+                                <div class="team">
+                                    <span class="team {{ match.team1_class }}">{{ match.team1 }}</span>
+                                    <span class="score {{ match.team1_class }}">
+                                        {{ match.team1_score }}
+                                    </span>
+                                    {% if match.team1_pen_score and match.team2_pen_score %}
+                                        <span class="penalty {{ match.team1_class }}"> ({{ match.team1_pen_score|int }})</span>
+                                    {% endif %}
+                                </div>
+                                <div class="team">
+                                    <span class="team {{ match.team2_class }}">{{ match.team2 }}</span>
+                                    <span class="score {{ match.team2_class }}">
+                                        {{ match.team2_score }}
+                                    </span>
+                                    {% if match.team1_pen_score and match.team2_pen_score %}
+                                        <span class="penalty {{ match.team2_class }}"> ({{ match.team2_pen_score|int }})</span>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                
+                <div class="final">
+                    {% for match in knockout_matches %}
+                        {% if match.stage == 'Final' %}
+                            <div class="match">
+                                <div class="team">
+                                    <span class="team {{ match.team1_class }}">{{ match.team1 }}</span>
+                                    <span class="score {{ match.team1_class }}">
+                                        {{ match.team1_score }}
+                                    </span>
+                                    {% if match.team1_pen_score and match.team2_pen_score %}
+                                        <span class="penalty {{ match.team1_class }}"> ({{ match.team1_pen_score|int }})</span>
+                                    {% endif %}
+                                    <span class="score {{ match.team2_class }}">
+                                        {{ match.team2_score }}
+                                    </span>
+                                    {% if match.team1_pen_score and match.team2_pen_score %}
+                                        <span class="penalty {{ match.team2_class }}"> ({{ match.team2_pen_score|int }})</span>
+                                    {% endif %}
+                                    <span class="team {{ match.team2_class }}">{{ match.team2 }}</span>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                
+                <div class="semi-finals-right">
+                    {% for match in knockout_matches[13:14] %}
+                        {% if match.stage == 'Semi-final' %}
+                            <div class="match">
+                                <div class="team">
+                                    <span class="team {{ match.team1_class }}">{{ match.team1 }}</span>
+                                    <span class="score {{ match.team1_class }}">
+                                        {{ match.team1_score }}
+                                    </span>
+                                    {% if match.team1_pen_score and match.team2_pen_score %}
+                                        <span class="penalty {{ match.team1_class }}"> ({{ match.team1_pen_score|int }})</span>
+                                    {% endif %}
+                                </div>
+                                <div class="team">
+                                    <span class="team {{ match.team2_class }}">{{ match.team2 }}</span>
+                                    <span class="score {{ match.team2_class }}">
+                                        {{ match.team2_score }}
+                                    </span>
+                                    {% if match.team1_pen_score and match.team2_pen_score %}
+                                        <span class="penalty {{ match.team2_class }}"> ({{ match.team2_pen_score|int }})</span>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                
+                <div class="quarter-finals-right">
+                    {% for match in knockout_matches[10:12] %}
+                        {% if match.stage == 'Quarter-final' %}
+                            <div class="match">
+                                <div class="team">
+                                    <span class="team {{ match.team1_class }}">{{ match.team1 }}</span>
+                                    <span class="score {{ match.team1_class }}">
+                                        {{ match.team1_score }}
+                                    </span>
+                                    {% if match.team1_pen_score and match.team2_pen_score %}
+                                        <span class="penalty {{ match.team1_class }}"> ({{ match.team1_pen_score|int }})</span>
+                                    {% endif %}
+                                </div>
+                                <div class="team">
+                                    <span class="team {{ match.team2_class }}">{{ match.team2 }}</span>
+                                    <span class="score {{ match.team2_class }}">
+                                        {{ match.team2_score }}
+                                    </span>
+                                    {% if match.team1_pen_score and match.team2_pen_score %}
+                                        <span class="penalty {{ match.team2_class }}"> ({{ match.team2_pen_score|int }})</span>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="round-of-16-right">
+                    {% for match in knockout_matches[4:8] %}
+                        {% if match.stage == 'Round of 16' %}
+                            <div class="match">
+                                <div class="team">
+                                    <span class="team {{ match.team1_class }}">{{ match.team1 }}</span>
+                                    <span class="score {{ match.team1_class }}">
+                                        {{ match.team1_score }}
+                                    </span>
+                                    {% if match.team1_pen_score and match.team2_pen_score %}
+                                        <span class="penalty {{ match.team1_class }}"> ({{ match.team1_pen_score|int }})</span>
+                                    {% endif %}
+                                </div>
+                                <div class="team">
+                                    <span class="team {{ match.team2_class }}">{{ match.team2 }}</span>
+                                    <span class="score {{ match.team2_class }}">
+                                        {{ match.team2_score }}
+                                    </span>
+                                    {% if match.team1_pen_score and match.team2_pen_score %}
+                                        <span class="penalty {{ match.team2_class }}"> ({{ match.team2_pen_score|int }})</span>
+                                    {% endif %}
+                                </div>
                             </div>
                         {% endif %}
                     {% endfor %}
                 </div>
             </div>
         </div>
-    </body>
-    </html>
-    
+    </div>
+</body>
+</html>
