@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, Response
 import pandas as pd
 import threading
 import yaml
@@ -121,10 +121,11 @@ def organize_matches_by_group(data):
     return match_results, knockout_matches
 
 @app.route("/status", methods=["GET"])
-def check_status():
-    # Implement logic to check if the process is complete
-    is_complete = check_if_process_is_complete()
-    return jsonify({"status": "complete" if is_complete else "running"})
+def status():
+    if calculations_complete_event.is_set():
+        return jsonify({"status": "complete"})
+    return jsonify({"status": "running"})
+
 
 @app.route("/")
 def index():
@@ -199,7 +200,6 @@ def run_main_script():
     try:
         logger.debug("Starting main.py subprocess")
 
-        # Determine the correctf path to the Python interpreter in the virtual environment
         virtual_env = os.getenv('VIRTUAL_ENV')
         if virtual_env:
             if os.name == 'nt':  # Windows
@@ -215,30 +215,17 @@ def run_main_script():
         logger.debug(f"Running script at: {script_path}")
 
         process = subprocess.Popen(
-            [python_executable, script_path], 
-            stdout=subprocess.PIPE, 
-            stderr=subprocess.PIPE, 
-            text=True,
-            bufsize=1
+            [python_executable, script_path]
         )
+
         logger.debug("Subprocess start attempt made")
 
-        while True:
-            logger.debug("In loop")
-            exit()
-            stdout_line = process.stdout.readline()
-            # if not stdout_line and process.poll() is not None:
-            #     break
-            
-            logger.debug("looping")
-            exit() # this isn't being hit.
-            
+        for stdout_line in iter(process.stdout.readline, ""):
             if stdout_line:
                 logger.info(stdout_line.strip())
                 if "Calculations complete" in stdout_line:
                     logger.debug("Detected 'Calculations complete' in the subprocess output")
-                    calculations_complete_event.set()  # Signal that calculations are complete
-                    # break
+                    calculations_complete_event.set()
 
         process.stdout.close()
         process.wait()
@@ -252,6 +239,24 @@ def run_main_script():
     except Exception as e:
         logger.error(f"Exception occurred while running the main script: {e}")
 
+@app.route("/results", methods=["GET"])
+def results():
+    # Implement the logic to load results from CSV and prepare them for rendering
+    group_stage_path = 'data/results/group_stage_results.csv'
+    knockout_stage_path = 'data/results/knockout_stage_results.csv'
+
+    group_stage_data = load_data(group_stage_path)
+    knockout_stage_data = load_data(knockout_stage_path)
+
+    match_results, knockout_matches = organize_matches_by_group(group_stage_data)
+
+    standings = compute_standings(group_stage_data)
+
+    return jsonify({
+        'match_results': match_results,
+        'standings': standings.to_dict(orient='records'),
+        'knockout_matches': knockout_matches
+    })
 
 if __name__ == "__main__":
-        app.run(debug=True)
+    app.run(debug=True)
