@@ -23,8 +23,15 @@
             padding-top: 20%;
             font-size: 2em;
         }
+        #logs-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-height: 100%;
+        }
         #logs {
-            width: 80%;
+            width: 40%;
             max-height: 100%;
             overflow-y: scroll;
             background-color: #f0f0f0;
@@ -41,6 +48,7 @@
                 $('#logs').empty();
                 $('#results').empty();
                 $('.wall-chart').hide();
+                $('#logs').show();
 
                 var formData = {
                     weighted_win_percentage_weight: $('#weighted_win_percentage_weight').val(),
@@ -108,6 +116,9 @@
                 var standings = data.standings;
                 var knockout_matches = data.knockout_matches;
 
+                // Render results and standings as needed
+                // This part depends on your specific implementation and data structure
+                // You will likely need to iterate through the results and standings to append them to the appropriate divs
             }
 
             function autoScroll() {
@@ -117,193 +128,181 @@
 
             function streamLogs() {
                 var logContainer = $('#logs');
+                var logBuffer = [];
                 var logSource = new EventSource("/logs");
+
                 logSource.onmessage = function(event) {
-                    logContainer.append(event.data + "<br>");
-                    logContainer.scrollTop(logContainer.prop("scrollHeight"));
+                    logBuffer.push(event.data);
                     if (event.data.includes("End of main")) {
                         logSource.close();
                         $('#logs').hide();
                         loadResults();
                     }
+                    requestAnimationFrame(updateLogs);
                 };
+
+                function updateLogs() {
+                    if (logBuffer.length > 0) {
+                        logContainer.append(logBuffer.join("<br>"));
+                        logBuffer = [];
+                        autoScroll();  // Auto-scroll to the bottom whenever new logs are added
+                    }
+                }
             }
         });
     </script>
 </head>
 <body>
-    <div id="loading">Loading...</div>
-    <form id="predictor-form">
-        <div class="slider-container-horizontal">
-            <button type="submit">Run Predictor</button>
-            <div class="slider-item">
-                <label for="weighted_win_percentage_weight">Weighted Win Percentage Weight</label>
-                <input type="range" id="weighted_win_percentage_weight" name="weighted_win_percentage_weight" min="0" max="2" step="0.1" value="1">
-                <span id="weighted_win_percentage_weight_value">1</span>
+        <div id="loading">Loading...</div>
+        <form id="predictor-form">
+            <div class="slider-container-horizontal">
+                <button type="submit">Run Predictor</button>
+                <div class="slider-item">
+                    <label for="weighted_win_percentage_weight">Weighted Win Percentage Weight</label>
+                    <input type="range" id="weighted_win_percentage_weight" name="weighted_win_percentage_weight" min="0" max="2" step="0.1" value="1">
+                    <span id="weighted_win_percentage_weight_value">1</span>
+                </div>
+                <div class="slider-item">
+                    <label for="home_advantage">Home Advantage</label>
+                    <input type="range" id="home_advantage" name="home_advantage" min="0" max="1" step="0.1" value="0.1">
+                    <span id="home_advantage_value">0.1</span>
+                </div>
+                <div class="slider-item">
+                    <label for="look_back_months">Look Back Months</label>
+                    <input type="range" id="look_back_months" name="look_back_months" min="1" max="60" step="1" value="36">
+                    <span id="look_back_months_value">36</span>
+                </div>
             </div>
-            <div class="slider-item">
-                <label for="home_advantage">Home Advantage</label>
-                <input type="range" id="home_advantage" name="home_advantage" min="0" max="1" step="0.1" value="0.1">
-                <span id="home_advantage_value">0.1</span>
-            </div>
-            <div class="slider-item">
-                <label for="look_back_months">Look Back Months</label>
-                <input type="range" id="look_back_months" name="look_back_months" min="1" max="60" step="1" value="36">
-                <span id="look_back_months_value">36</span>
-            </div>
-        </div>
-    </form>
-    <div id="logs"></div>
-    <div class="wall-chart" style="display: none;">
-        <h1>UEFA Euro 2024 Predictions</h1>
-        <hr>
-        <h2>Results</h2>
-        <div id="results"></div>
-        <hr>
-        <h2>GROUP STAGE</h2>
-        <div class="content-wrapper">
-            <div class="match-results-left">
-                {% for group, matches in match_results.items() %}
-                    {% if group in ['A', 'C', 'E'] %}
-                        <div class="group-results" id="results-{{ group }}">
-                            <h2>Group {{ group }} Matches</h2>
-                            <table>
-                                {% for match in matches %}
-                                    <tr>
-                                        <td>{{ match.team1 }}</td>
-                                        <td>{{ match.team1_score }}</td>
-                                        <td>{{ match.team2 }}</td>
-                                        <td>{{ match.team2_score }}</td>
-                                    </tr>
-                                {% endfor %}
-                            </table>
-                        </div>
-                    {% endif %}
-                {% endfor %}
-            </div>
-            <div class="match-results-right">
-                {% for group, matches in match_results.items() %}
-                    {% if group in ['B', 'D', 'F'] %}
-                        <div class="group-results" id="results-{{ group }}">
-                            <h2>Group {{ group }} Matches</h2>
-                            <table>
-                                {% for match in matches %}
-                                    <tr>
-                                        <td>{{ match.team1 }}</td>
-                                        <td>{{ match.team1_score }}</td>
-                                        <td>{{ match.team2 }}</td>
-                                        <td>{{ match.team2_score }}</td>
-                                    </tr>
-                                {% endfor %}
-                            </table>
-                        </div>
-                    {% endif %}
-                {% endfor %}
+        </form>
+        <div id="logs-container">
+            <div id="logs">
+
             </div>
         </div>
-        <div class="content-wrapper">
-            <div class="standings-left">
-                {% for group, standings in standings.groupby('group') %}
-                    {% if group in ['A', 'C', 'E'] %}
-                        <div class="group-standings" id="standings-{{ group }}">
-                            <h2>Group {{ group }} Standings</h2>
-                            <table>
-                                <tr>
-                                    <th>Team</th>
-                                    <th>GP</th>
-                                    <th>W</th>
-                                    <th>D</th>
-                                    <th>L</th>
-                                    <th>GF</th>
-                                    <th>GA</th>
-                                    <th>GD</th>
-                                    <th>Points</th>
-                                    <th>Qualified</th>
-                                </tr>
-                                {% for _, row in standings.iterrows() %}
-                                    <tr>
-                                        <td>{{ row['team'] }}</td>
-                                        <td>{{ row['gp'] }}</td>
-                                        <td>{{ row['w'] }}</td>
-                                        <td>{{ row['d'] }}</td>
-                                        <td>{{ row['l'] }}</td>
-                                        <td>{{ row['gf'] }}</td>
-                                        <td>{{ row['ga'] }}</td>
-                                        <td>{{ row['gd'] }}</td>
-                                        <td>{{ row['points'] }}</td>
-                                        <td>{{ row['qualified'] }}</td>
-                                    </tr>
-                                {% endfor %}
-                            </table>
-                        </div>
-                    {% endif %}
-                {% endfor %}
-            </div>
-            <div class="standings-right">
-                {% for group, standings in standings.groupby('group') %}
-                    {% if group in ['B', 'D', 'F'] %}
-                        <div class="group-standings" id="standings-{{ group }}">
-                            <h2>Group {{ group }} Standings</h2>
-                            <table>
-                                <tr>
-                                    <th>Team</th>
-                                    <th>GP</th>
-                                    <th>W</th>
-                                    <th>D</th>
-                                    <th>L</th>
-                                    <th>GF</th>
-                                    <th>GA</th>
-                                    <th>GD</td>
-                                    <th>Points</th>
-                                    <th>Qualified</th>
-                                </tr>
-                                {% for _, row in standings.iterrows() %}
-                                    <tr>
-                                        <td>{{ row['team'] }}</td>
-                                        <td>{{ row['gp'] }}</td>
-                                        <td>{{ row['w'] }}</td>
-                                        <td>{{ row['d'] }}</td>
-                                        <td>{{ row['l'] }}</td>
-                                        <td>{{ row['gf'] }}</td>
-                                        <td>{{ row['ga'] }}</td>
-                                        <td>{{ row['gd'] }}</td>
-                                        <td>{{ row['points'] }}</td>
-                                        <td>{{ row['qualified'] }}</td>
-                                    </tr>
-                                {% endfor %}
-                            </table>
-                        </div>
-                    {% endif %}
-                {% endfor %}
-            </div>
-        </div>
-        <hr>
-        <h2>KNOCKOUT STAGE</h2>
-        <div class="content-wrapper">
-            <div class="knockout-stage">
-                <h2>Knockout Stage Matches</h2>
-                <table>
-                    <tr>
-                        <th>Stage</th>
-                        <th>Team 1</th>
-                        <th>Score</th>
-                        <th>Team 2</th>
-                        <th>Score</th>
-                        <th>Penalties</th>
-                    </tr>
-                    {% for match in knockout_matches %}
-                        <tr class="{{ match.team1_class }}">
-                            <td>{{ match.stage }}</td>
-                            <td>{{ match.team1 }}</td>
-                            <td>{{ match.team1_score }}</td>
-                            <td>{{ match.team2 }}</td>
-                            <td>{{ match.team2_score }}</td>
-                            <td>{{ match.team1_pen_score }} - {{ match.team2_pen_score }}</td>
-                        </tr>
+        <div class="wall-chart" style="display: none;">
+            <h1>UEFA Euro 2024 Predictions</h1>
+            <hr>
+            <h2>Results</h2>
+            <div id="results"></div>
+            <hr>
+            <h2>GROUP STAGE</h2>
+            <div class="content-wrapper">
+                <div class="match-results-left">
+                    {% for group, matches in match_results.items() %}
+                        {% if group in ['A', 'C', 'E'] %}
+                            <div class="group-results" id="results-{{ group }}">
+                                <h2>Group {{ group }} Matches</h2>
+                                <table>
+                                    {% for match in matches %}
+                                        <tr>
+                                            <td>{{ match.team1 }}</td>
+                                            <td>{{ match.team1_score }}</td>
+                                            <td>{{ match.team2 }}</td>
+                                            <td>{{ match.team2_score }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                </table>
+                            </div>
+                        {% endif %}
                     {% endfor %}
-                </table>
+                </div>
+                <div class="match-results-right">
+                    {% for group, matches in match_results.items() %}
+                        {% if group in ['B', 'D', 'F'] %}
+                            <div class="group-results" id="results-{{ group }}">
+                                <h2>Group {{ group }} Matches</h2>
+                                <table>
+                                    {% for match in matches %}
+                                        <tr>
+                                            <td>{{ match.team1 }}</td>
+                                            <td>{{ match.team1_score }}</td>
+                                            <td>{{ match.team2 }}</td>
+                                            <td>{{ match.team2_score }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                </table>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="content-wrapper">
+                <div class="standings-left">
+                    {% for group, standings in standings.groupby('group') %}
+                        {% if group in ['A', 'C', 'E'] %}
+                            <div class="group-standings" id="standings-{{ group }}">
+                                <h2>Group {{ group }} Standings</h2>
+                                <table>
+                                    <tr>
+                                        <th>Team</th>
+                                        <th>GP</th>
+                                        <th>W</th>
+                                        <th>D</th>
+                                        <th>L</th>
+                                        <th>GF</th>
+                                        <th>GA</th>
+                                        <th>GD</th>
+                                        <th>Points</th>
+                                        <th>Qualified</th>
+                                    </tr>
+                                    {% for _, row in standings.iterrows() %}
+                                        <tr>
+                                            <td>{{ row['team'] }}</td>
+                                            <td>{{ row['gp'] }}</td>
+                                            <td>{{ row['w'] }}</td>
+                                            <td>{{ row['d'] }}</td>
+                                            <td>{{ row['l'] }}</td>
+                                            <td>{{ row['gf'] }}</td>
+                                            <td>{{ row['ga'] }}</td>
+                                            <td>{{ row['gd'] }}</td>
+                                            <td>{{ row['points'] }}</td>
+                                            <td>{{ row['qualified'] }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                </table>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="standings-right">
+                    {% for group, standings in standings.groupby('group') %}
+                        {% if group in ['B', 'D', 'F'] %}
+                            <div class="group-standings" id="standings-{{ group }}">
+                                <h2>Group {{ group }} Standings</h2>
+                                <table>
+                                    <tr>
+                                        <th>Team</th>
+                                        <th>GP</th>
+                                        <th>W</th>
+                                        <th>D</th>
+                                        <th>L</th>
+                                        <th>GF</th>
+                                        <th>GA</th>
+                                        <th>GD</th>
+                                        <th>Points</th>
+                                        <th>Qualified</th>
+                                    </tr>
+                                    {% for _, row in standings.iterrows() %}
+                                        <tr>
+                                            <td>{{ row['team'] }}</td>
+                                            <td>{{ row['gp'] }}</td>
+                                            <td>{{ row['w'] }}</td>
+                                            <td>{{ row['d'] }}</td>
+                                            <td>{{ row['l'] }}</td>
+                                            <td>{{ row['gf'] }}</td>
+                                            <td>{{ row['ga'] }}</td>
+                                            <td>{{ row['gd'] }}</td>
+                                            <td>{{ row['points'] }}</td>
+                                            <td>{{ row['qualified'] }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                </table>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
             </div>
         </div>
-    </div>
-</body>
-</html>
+    </body>
+    </html>
+    

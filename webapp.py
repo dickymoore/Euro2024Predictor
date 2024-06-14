@@ -179,17 +179,24 @@ def stream_logs():
             f.write('')  # Create the file and write an empty string
 
     def generate():
+        read_count = 0  # Counter for the number of times the log file is read
         with open(log_path) as f:
             while True:
                 line = f.readline()
+                read_count += 1
+                print(f"Read count: {read_count}")  # Print the read count to the console
+
                 if line:
                     yield f"data: {line}\n\n"  # Format for Server-Sent Events
                 else:
-                    time.sleep(0.1)  # Prevent high CPU usage when the log file is not being written to
+                    time.sleep(0.01)  # Prevent high CPU usage when the log file is not being written to
+
                 if "End of main" in line:
                     calculations_complete_event.set()
+                    break  # Exit the loop after detecting "End of main"
 
     return Response(stream_with_context(generate()), mimetype='text/event-stream')
+
 
 @app.route("/run_predictor", methods=["POST"])
 def run_predictor():
