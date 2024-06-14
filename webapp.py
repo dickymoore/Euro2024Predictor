@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, jsonify, Response, stream_with_context
 import threading
-from datetime import datetime
+import datetime
 import time
 import os
 import subprocess
@@ -125,7 +125,11 @@ def organize_matches_by_group(data):
 @app.route("/status", methods=["GET"])
 def status():
     if calculations_complete_event.is_set():
-        return jsonify({"status": "complete"})
+        # Check if the file exists before confirming completion
+        if os.path.exists('data/results/all_stage_results.csv'):
+            return jsonify({"status": "complete"})
+        else:
+            return jsonify({"status": "file_missing"})
     return jsonify({"status": "running"})
 
 @app.route("/")
@@ -220,19 +224,20 @@ def run_main_script():
 def wallchart():
     csv_path = "data/results/all_stage_results.csv"
     data = load_data(csv_path)
-    os.rename('data/results/all_stage_results.csv', f"data/results/all_stage_results_{datetime.now().strftime('%Y%m%d')}.csv")
-
+    
     standings = compute_standings(data)
     match_results, knockout_matches = organize_matches_by_group(data)
 
     standings = compute_standings(data)
 
+    os.rename('data/results/all_stage_results.csv', f"data/results/all_stage_results_{datetime.datetime.now().strftime('%Y%m%d_%H%M%S')}.csv")
     return render_template(
         "wallchart.html", 
         match_results=match_results, 
         standings=standings, 
         knockout_matches=knockout_matches
     )
+    
 
 if __name__ == "__main__":
     app.run(debug=True)

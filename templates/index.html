@@ -6,6 +6,96 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function showLogs() {
+            document.getElementById('content-frame').src = "/logs";
+        }
+
+        function showWallchart() {
+            document.getElementById('content-frame').src = "/wallchart";
+        }
+
+        $(document).ready(function() {
+            $('#predictor-form').on('submit', function(event) {
+                event.preventDefault();
+                $('#loading').show();
+                $('#logs').empty();
+
+                var formData = {
+                    weighted_win_percentage_weight: $('#weighted_win_percentage_weight').val(),
+                    home_advantage: $('#home_advantage').val(),
+                    look_back_months: $('#look_back_months').val()
+                };
+
+                $.ajax({
+                    url: "/run_predictor",
+                    type: "POST",
+                    contentType: "application/json",
+                    data: JSON.stringify(formData),
+                    success: function(response) {
+                        if (response.status === "success") {
+                            showLogs(); // Load the logs page in the iframe
+                            checkLogs();
+                            streamLogs();
+                        } else {
+                            alert("Error: " + response.message);
+                            $('#loading').hide();
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        alert("An error occurred: " + error);
+                        $('#loading').hide();
+                    }
+                });
+            });
+
+            function checkLogs() {
+                $.ajax({
+                    url: "/status",
+                    type: "GET",
+                    success: function(response) {
+                        if (response.status === "complete") {
+                            showWallchart(); // Load the wallchart page in the iframe
+                        } else {
+                            setTimeout(checkLogs, 2000);
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        alert("An error occurred while checking status: " + error);
+                        $('#loading').hide();
+                    }
+                });
+            }
+
+            function streamLogs() {
+                var logContainer = $('#logs');
+                var logBuffer = [];
+                var logSource = new EventSource("/logs");
+
+                logSource.onmessage = function(event) {
+                    logBuffer.push(event.data);
+                    if (event.data.includes("End of main")) {
+                        logSource.close();
+                        checkLogs();
+                    }
+                    requestAnimationFrame(updateLogs);
+                };
+
+                function updateLogs() {
+                    if (logBuffer.length > 0) {
+                        logContainer.append(logBuffer.join("<br>"));
+                        logBuffer = [];
+                        autoScroll();  // Auto-scroll to the bottom whenever new logs are added
+                    }
+                }
+            }
+
+            function autoScroll() {
+                var logContainer = $('#logs');
+                logContainer.scrollTop(logContainer.prop("scrollHeight"));
+            }
+        });
+    </script>
     <style>
         #loading {
             display: none;
@@ -49,88 +139,6 @@
             color: red;
         }
     </style>
-    <script>
-        $(document).ready(function() {
-            $('#predictor-form').on('submit', function(event) {
-                event.preventDefault();
-                $('#loading').show();
-                $('#logs').empty();
-    
-                var formData = {
-                    weighted_win_percentage_weight: $('#weighted_win_percentage_weight').val(),
-                    home_advantage: $('#home_advantage').val(),
-                    look_back_months: $('#look_back_months').val()
-                };
-    
-                $.ajax({
-                    url: "/run_predictor",
-                    type: "POST",
-                    contentType: "application/json",
-                    data: JSON.stringify(formData),
-                    success: function(response) {
-                        if (response.status === "success") {
-                            checkLogs();
-                            streamLogs();
-                        } else {
-                            alert("Error: " + response.message);
-                            $('#loading').hide();
-                        }
-                    },
-                    error: function(xhr, status, error) {
-                        alert("An error occurred: " + error);
-                        $('#loading').hide();
-                    }
-                });
-            });
-    
-            function checkLogs() {
-                $.ajax({
-                    url: "/status",
-                    type: "GET",
-                    success: function(response) {
-                        if (response.status === "complete") {
-                            window.location.href = "/wallchart";
-                        } else {
-                            setTimeout(checkLogs, 2000);
-                        }
-                    },
-                    error: function(xhr, status, error) {
-                        alert("An error occurred while checking status: " + error);
-                        $('#loading').hide();
-                    }
-                });
-            }
-    
-            function streamLogs() {
-                var logContainer = $('#logs');
-                var logBuffer = [];
-                var logSource = new EventSource("/logs");
-    
-                logSource.onmessage = function(event) {
-                    logBuffer.push(event.data);
-                    if (event.data.includes("End of main")) {
-                        logSource.close();
-                        $('#logs').hide();
-                        checkLogs();
-                    }
-                    requestAnimationFrame(updateLogs);
-                };
-    
-                function updateLogs() {
-                    if (logBuffer.length > 0) {
-                        logContainer.append(logBuffer.join("<br>"));
-                        logBuffer = [];
-                        autoScroll();  // Auto-scroll to the bottom whenever new logs are added
-                    }
-                }
-            }
-    
-            function autoScroll() {
-                var logContainer = $('#logs');
-                logContainer.scrollTop(logContainer.prop("scrollHeight"));
-            }
-        });
-    </script>    
 </head>
 <body>
     <div id="loading">Loading...</div>
@@ -157,8 +165,6 @@
             </div>
         </div>
     </form>
-    <div id="logs-container">
-        <div id="logs"></div>
-    </div>
-    </body>
+    <iframe id="content-frame" style="width: 100%; height: 1000px; border: none;" src=""></iframe>
+</body>
 </html>
