@@ -24,8 +24,8 @@
             font-size: 2em;
         }
         #logs {
-            max-height: 200px;
-            overflow-y: scroll;
+            max-height: 100%;
+            overflow-y: auto;  /* Use auto for automatic scrollbars */
             background-color: #f0f0f0;
             padding: 10px;
             margin: 10px 0;
@@ -40,6 +40,7 @@
                 $('#logs').empty();
                 $('#results').empty();
                 $('.wall-chart').hide();
+                $('#logs').show();
 
                 var formData = {
                     weighted_win_percentage_weight: $('#weighted_win_percentage_weight').val(),
@@ -112,12 +113,17 @@
                 // You will likely need to iterate through the results and standings to append them to the appropriate divs
             }
 
+            function autoScroll() {
+                var logContainer = $('#logs');
+                logContainer.scrollTop(logContainer.prop("scrollHeight"));
+            }
+
             function streamLogs() {
                 var logContainer = $('#logs');
                 var logSource = new EventSource("/logs");
                 logSource.onmessage = function(event) {
                     logContainer.append(event.data + "<br>");
-                    logContainer.scrollTop(logContainer.prop("scrollHeight"));
+                    autoScroll();  // Auto-scroll to the bottom whenever new logs are added
                     if (event.data.includes("End of main")) {
                         logSource.close();
                         $('#logs').hide();
@@ -250,7 +256,7 @@
                                     <th>L</th>
                                     <th>GF</th>
                                     <th>GA</th>
-                                    <th>GD</td>
+                                    <th>GD</th>
                                     <th>Points</th>
                                     <th>Qualified</th>
                                 </tr>
@@ -277,28 +283,15 @@
         <hr>
         <h2>KNOCKOUT STAGE</h2>
         <div class="content-wrapper">
-            <div class="knockout-stage">
-                <h2>Knockout Stage Matches</h2>
-                <table>
-                    <tr>
-                        <th>Stage</th>
-                        <th>Team 1</th>
-                        <th>Score</th>
-                        <th>Team 2</th>
-                        <th>Score</th>
-                        <th>Penalties</th>
-                    </tr>
-                    {% for match in knockout_matches %}
-                        <tr class="{{ match.team1_class }}">
-                            <td>{{ match.stage }}</td>
-                            <td>{{ match.team1 }}</td>
-                            <td>{{ match.team1_score }}</td>
-                            <td>{{ match.team2 }}</td>
-                            <td>{{ match.team2_score }}</td>
-                            <td>{{ match.team1_pen_score }} - {{ match.team2_pen_score }}</td>
-                        </tr>
-                    {% endfor %}
-                </table>
+            <div class="knockout-matches">
+                {% for match in knockout_matches %}
+                    <div class="match">
+                        <span class="team">{{ match.team1 }}</span>
+                        <span class="score">{{ match.team1_score }}</span>
+                        <span class="team">{{ match.team2 }}</span>
+                        <span class="score">{{ match.team2_score }}</span>
+                    </div>
+                {% endfor %}
             </div>
         </div>
     </div>

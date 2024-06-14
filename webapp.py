@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify, Response
+from flask import Flask, render_template, request, jsonify, Response, stream_with_context
 import threading
 import time
 import os
@@ -184,10 +184,12 @@ def stream_logs():
                 line = f.readline()
                 if line:
                     yield f"data: {line}\n\n"  # Format for Server-Sent Events
+                else:
+                    time.sleep(0.1)  # Prevent high CPU usage when the log file is not being written to
                 if "End of main" in line:
                     calculations_complete_event.set()
 
-    return Response(generate(), mimetype='text/event-stream')
+    return Response(stream_with_context(generate()), mimetype='text/event-stream')
 
 @app.route("/run_predictor", methods=["POST"])
 def run_predictor():

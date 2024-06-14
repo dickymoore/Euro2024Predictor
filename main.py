@@ -18,12 +18,6 @@ logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %
 log_handler = logging.FileHandler('data/tmp/predictor.log')
 formatter = logging.Formatter('%(asctime)s - %(message)s')
 log_handler.setFormatter(formatter)
-# Clear the predictor.log file
-predictor_log_path = os.path.abspath("predictor.log")
-with open(predictor_log_path, 'w'):
-    pass
-logger.debug("Cleared predictor.log file")
-
 
 def run_predictor(debug=False):
     logger.debug('Running run_predictor')
@@ -187,6 +181,12 @@ def concatenate_results(group_stage_path, knockout_stage_path, output_path):
     logger.debug('Calculations complete')
 
 def main():
+    
+    # Clear the predictor.log file
+    predictor_log_path = os.path.abspath("predictor.log")
+    with open(predictor_log_path, 'w'):
+        pass
+    logger.debug("Cleared predictor.log file")
     logger.debug('Running main')
     parser = argparse.ArgumentParser(description='Euro 2024 Predictor')
     parser.add_argument('--debug', action='store_true', help='Enable debug mode')
