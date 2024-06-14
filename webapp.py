@@ -129,45 +129,9 @@ def status():
 
 @app.route("/")
 def index():
-    match_results = {
-        'A': [
-            {'team1': 'Team 1A', 'team1_score': 0, 'team2': 'Team 2A', 'team2_score': 0},
-            {'team1': 'Team 3A', 'team1_score': 0, 'team2': 'Team 4A', 'team2_score': 0}
-        ],
-        'B': [
-            {'team1': 'Team 1B', 'team1_score': 0, 'team2': 'Team 2B', 'team2_score': 0},
-            {'team1': 'Team 3B', 'team1_score': 0, 'team2': 'Team 4B', 'team2_score': 0}
-        ]
-    }
-
-    standings = pd.DataFrame({
-        'group': ['A', 'A', 'A', 'A', 'B', 'B', 'B', 'B'],
-        'team': ['Team 1A', 'Team 2A', 'Team 3A', 'Team 4A', 'Team 1B', 'Team 2B', 'Team 3B', 'Team 4B'],
-        'gp': [0, 0, 0, 0, 0, 0, 0, 0],
-        'w': [0, 0, 0, 0, 0, 0, 0, 0],
-        'd': [0, 0, 0, 0, 0, 0, 0, 0],
-        'l': [0, 0, 0, 0, 0, 0, 0, 0],
-        'gf': [0, 0, 0, 0, 0, 0, 0, 0],
-        'ga': [0, 0, 0, 0, 0, 0, 0, 0],
-        'gd': [0, 0, 0, 0, 0, 0, 0, 0],
-        'points': [0, 0, 0, 0, 0, 0, 0, 0],
-        'qualified': ['', '', '', '', '', '', '', '']
-    })
-
-    knockout_matches = [
-        {'stage': 'Round of 16', 'team1': 'Team 1A', 'team1_score': 0, 'team2': 'Team 2B', 'team2_score': 0, 'team1_pen_score': None, 'team2_pen_score': None, 'team1_class': '', 'team2_class': ''},
-        {'stage': 'Quarter-final', 'team1': 'Team 1C', 'team1_score': 0, 'team2': 'Team 2D', 'team2_score': 0, 'team1_pen_score': None, 'team2_pen_score': None, 'team1_class': '', 'team2_class': ''},
-        {'stage': 'Semi-final', 'team1': 'Team 1E', 'team1_score': 0, 'team2': 'Team 2F', 'team2_score': 0, 'team1_pen_score': None, 'team2_pen_score': None, 'team1_class': '', 'team2_class': ''},
-        {'stage': 'Final', 'team1': 'Team 1G', 'team1_score': 0, 'team2': 'Team 2H', 'team2_score': 0, 'team1_pen_score': None, 'team2_pen_score': None, 'team1_class': '', 'team2_class': ''}
-    ]
-
     return render_template(
-        "index.html", 
-        match_results=match_results, 
-        standings=standings, 
-        knockout_matches=knockout_matches
+        "index.html"
     )
-    return render_template("index.html")
 
 @app.route("/logs")
 def stream_logs():
@@ -251,24 +215,22 @@ def run_main_script():
     except Exception as e:
         logger.error(f"Exception occurred while running the main script: {e}")
 
-@app.route("/results", methods=["GET"])
-def results():
-    # Implement the logic to load results from CSV and prepare them for rendering
-    group_stage_path = 'data/results/group_stage_results.csv'
-    knockout_stage_path = 'data/results/knockout_stage_results.csv'
+@app.route("/wallchart")
+def wallchart():
+    csv_path = "data/results/all_stage_results.csv"
+    data = load_data(csv_path)
 
-    group_stage_data = load_data(group_stage_path)
-    knockout_stage_data = load_data(knockout_stage_path)
+    standings = compute_standings(data)
+    match_results, knockout_matches = organize_matches_by_group(data)
 
-    match_results, knockout_matches = organize_matches_by_group(group_stage_data)
+    standings = compute_standings(data)
 
-    standings = compute_standings(group_stage_data)
-
-    return jsonify({
-        'match_results': match_results,
-        'standings': standings.to_dict(orient='records'),
-        'knockout_matches': knockout_matches
-    })
+    return render_template(
+        "wallchart.html", 
+        match_results=match_results, 
+        standings=standings, 
+        knockout_matches=knockout_matches
+    )
 
 if __name__ == "__main__":
     app.run(debug=True)
