@@ -55,6 +55,7 @@
                     success: function(response) {
                         if (response.status === "success") {
                             checkLogs();
+                            streamLogs();
                         } else {
                             alert("Error: " + response.message);
                             $('#loading').hide();
@@ -73,6 +74,7 @@
                     type: "GET",
                     success: function(response) {
                         if (response.status === "complete") {
+                            $('#loading').hide();
                             loadResults();
                         } else {
                             setTimeout(checkLogs, 2000);
@@ -90,7 +92,6 @@
                     url: "/results",
                     type: "GET",
                     success: function(data) {
-                        $('#loading').hide();
                         renderResults(data);
                         $('.wall-chart').show();
                     },
@@ -109,6 +110,20 @@
                 // Render results and standings as needed
                 // This part depends on your specific implementation and data structure
                 // You will likely need to iterate through the results and standings to append them to the appropriate divs
+            }
+
+            function streamLogs() {
+                var logContainer = $('#logs');
+                var logSource = new EventSource("/logs");
+                logSource.onmessage = function(event) {
+                    logContainer.append(event.data + "<br>");
+                    logContainer.scrollTop(logContainer.prop("scrollHeight"));
+                    if (event.data.includes("End of main")) {
+                        logSource.close();
+                        $('#logs').hide();
+                        loadResults();
+                    }
+                };
             }
         });
     </script>
@@ -235,7 +250,7 @@
                                     <th>L</th>
                                     <th>GF</th>
                                     <th>GA</th>
-                                    <th>GD</th>
+                                    <th>GD</td>
                                     <th>Points</th>
                                     <th>Qualified</th>
                                 </tr>

@@ -1,12 +1,13 @@
 from flask import Flask, render_template, request, jsonify, Response
-import pandas as pd
 import threading
-import yaml
-from logger_config import logger
+import time
 import os
 import subprocess
 from collections import defaultdict
-import time
+import pandas as pd
+import yaml
+from scripts.logger_config import logger  # Import centralized logger
+import logging
 
 app = Flask(__name__)
 
@@ -126,7 +127,6 @@ def status():
         return jsonify({"status": "complete"})
     return jsonify({"status": "running"})
 
-
 @app.route("/")
 def index():
     match_results = {
@@ -167,6 +167,27 @@ def index():
         standings=standings, 
         knockout_matches=knockout_matches
     )
+    return render_template("index.html")
+
+@app.route("/logs")
+def stream_logs():
+    log_path = 'data/tmp/predictor.log'
+
+    # Ensure the log file exists
+    if not os.path.exists(log_path):
+        with open(log_path, 'w') as f:
+            f.write('')  # Create the file and write an empty string
+
+    def generate():
+        with open(log_path) as f:
+            while True:
+                line = f.readline()
+                if line:
+                    yield f"data: {line}\n\n"  # Format for Server-Sent Events
+                if "End of main" in line:
+                    calculations_complete_event.set()
+
+    return Response(generate(), mimetype='text/event-stream')
 
 @app.route("/run_predictor", methods=["POST"])
 def run_predictor():
@@ -195,7 +216,7 @@ def run_predictor():
     except Exception as e:
         logger.error(f"Error in run_predictor: {e}")
         return jsonify({"status": "error", "message": str(e)})
-
+    
 def run_main_script():
     try:
         logger.debug("Starting main.py subprocess")
@@ -214,27 +235,9 @@ def run_main_script():
         logger.debug(f"Using Python executable: {python_executable}")
         logger.debug(f"Running script at: {script_path}")
 
-        process = subprocess.Popen(
+        subprocess.Popen(
             [python_executable, script_path]
         )
-
-        logger.debug("Subprocess start attempt made")
-
-        for stdout_line in iter(process.stdout.readline, ""):
-            if stdout_line:
-                logger.info(stdout_line.strip())
-                if "Calculations complete" in stdout_line:
-                    logger.debug("Detected 'Calculations complete' in the subprocess output")
-                    calculations_complete_event.set()
-
-        process.stdout.close()
-        process.wait()
-        logger.debug(f"Subprocess exited with return code: {process.returncode}")
-
-        if process.returncode != 0:
-            stderr_output = process.stderr.read()
-            logger.error(f"Subprocess exited with errors: {stderr_output}")
-        process.stderr.close()
 
     except Exception as e:
         logger.error(f"Exception occurred while running the main script: {e}")
