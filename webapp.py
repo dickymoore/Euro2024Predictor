@@ -1,11 +1,21 @@
-from flask import Flask, render_template, request, jsonify
-import pandas as pd
-import subprocess
+from flask import Flask, render_template, request, jsonify, Response, stream_with_context
+import threading
+import datetime
+import time
 import os
+import subprocess
 from collections import defaultdict
+import pandas as pd
 import yaml
+from scripts.logger_config import logger  # Import centralized logger
+import logging
 
 app = Flask(__name__)
+
+# Configure logging
+logging.basicConfig(level=logging.DEBUG)
+logger = logging.getLogger(__name__)
+calculations_complete_event = threading.Event()
 
 def load_data(csv_path):
     return pd.read_csv(csv_path, na_values=[''])
@@ -107,38 +117,55 @@ def organize_matches_by_group(data):
             else:
                 match['team1_class'] = 'winner' if team1_score > team2_score else 'loser'
                 match['team2_class'] = 'winner' if team2_score > team1_score else 'loser'
-
+            
             knockout_matches.append(match)
 
     return match_results, knockout_matches
 
+@app.route("/status", methods=["GET"])
+def status():
+    if calculations_complete_event.is_set():
+        # Check if the file exists before confirming completion
+        if os.path.exists('data/results/all_stage_results.csv'):
+            return jsonify({"status": "complete"})
+        else:
+            return jsonify({"status": "file_missing"})
+    return jsonify({"status": "running"})
+
 @app.route("/")
 def index():
-    csv_path = "data/results/all_stage_results.csv"
-    data = load_data(csv_path)
-
-    standings = compute_standings(data)
-    match_results, knockout_matches = organize_matches_by_group(data)
-
-    config_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'config', 'config.yaml')
-
-    # Load the configuration values
-    with open(config_path, 'r') as file:
-        config = yaml.safe_load(file)
-
-    weighted_win_percentage_weight = config.get('weighted_win_percentage_weight', 1)
-    home_advantage = config.get('home_advantage', 0.1)
-    look_back_months = config.get('look_back_months', 36)
-
     return render_template(
-        "index.html",
-        standings=standings,
-        match_results=match_results,
-        knockout_matches=knockout_matches,
-        weighted_win_percentage_weight=weighted_win_percentage_weight,
-        home_advantage=home_advantage,
-        look_back_months=look_back_months
+        "index.html"
     )
+
+@app.route("/logs")
+def stream_logs():
+    log_path = 'data/tmp/predictor.log'
+
+    # Ensure the log file exists
+    if not os.path.exists(log_path):
+        with open(log_path, 'w') as f:
+            f.write('')  # Create the file and write an empty string
+
+    def generate():
+        read_count = 0  # Counter for the number of times the log file is read
+        with open(log_path) as f:
+            while True:
+                line = f.readline()
+                read_count += 1
+                print(f"Read count: {read_count}")  # Print the read count to the console
+
+                if line:
+                    yield f"data: {line}\n\n"  # Format for Server-Sent Events
+                else:
+                    time.sleep(0.01)  # Prevent high CPU usage when the log file is not being written to
+
+                if "End of main" in line:
+                    calculations_complete_event.set()
+                    break  # Exit the loop after detecting "End of main"
+
+    return Response(stream_with_context(generate()), mimetype='text/event-stream')
+
 
 @app.route("/run_predictor", methods=["POST"])
 def run_predictor():
@@ -150,7 +177,6 @@ def run_predictor():
 
         config_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'config', 'config.yaml')
 
-        # Update the config.yaml file with the new values
         with open(config_path, 'r') as file:
             config = yaml.safe_load(file)
 
@@ -161,14 +187,57 @@ def run_predictor():
         with open(config_path, 'w') as file:
             yaml.safe_dump(config, file)
 
-        python_interpreter = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'venv', 'Scripts', 'python.exe')
-        subprocess.run([python_interpreter, "main.py"], check=True)
+        # Start the script in a new thread
+        threading.Thread(target=run_main_script).start()
 
         return jsonify({"status": "success"})
-    except subprocess.CalledProcessError as e:
-        return jsonify({"status": "error", "message": str(e)})
     except Exception as e:
+        logger.error(f"Error in run_predictor: {e}")
         return jsonify({"status": "error", "message": str(e)})
+    
+def run_main_script():
+    try:
+        logger.debug("Starting main.py subprocess")
+
+        virtual_env = os.getenv('VIRTUAL_ENV')
+        if virtual_env:
+            if os.name == 'nt':  # Windows
+                python_executable = os.path.join(virtual_env, 'Scripts', 'python.exe')
+            else:  # Unix or Mac
+                python_executable = os.path.join(virtual_env, 'bin', 'python')
+        else:
+            python_executable = 'python'
+
+        script_path = os.path.abspath("main.py")
+
+        logger.debug(f"Using Python executable: {python_executable}")
+        logger.debug(f"Running script at: {script_path}")
+
+        subprocess.Popen(
+            [python_executable, script_path]
+        )
+
+    except Exception as e:
+        logger.error(f"Exception occurred while running the main script: {e}")
+
+@app.route("/wallchart")
+def wallchart():
+    csv_path = "data/results/all_stage_results.csv"
+    data = load_data(csv_path)
+    
+    standings = compute_standings(data)
+    match_results, knockout_matches = organize_matches_by_group(data)
+
+    standings = compute_standings(data)
+
+    os.rename('data/results/all_stage_results.csv', f"data/results/all_stage_results_{datetime.datetime.now().strftime('%Y%m%d_%H%M%S')}.csv")
+    return render_template(
+        "wallchart.html", 
+        match_results=match_results, 
+        standings=standings, 
+        knockout_matches=knockout_matches
+    )
+    
 
 if __name__ == "__main__":
     app.run(debug=True)

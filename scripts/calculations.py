@@ -1,12 +1,11 @@
 import pandas as pd
 import logging
+from scripts.logger_config import logger  # Import centralized logger
 import os
 from scripts.data_transform import transform_data
 from scripts.win_percentages import compute_win_percentages
 from scripts.weighted_win_percentage import calculate_weighted_win_percentage
 from scripts.cache import get_file_modification_time, read_cache_timestamp, store_data
-
-logger = logging.getLogger(__name__)
 
 def perform_calculations(config, teams):
     look_back_months = config['look_back_months']

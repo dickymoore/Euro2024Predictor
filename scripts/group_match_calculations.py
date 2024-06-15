@@ -3,8 +3,8 @@ import numpy as np
 from tqdm import tqdm
 import logging
 from scripts.data_transform import transform_data
-
-logger = logging.getLogger(__name__)
+import logging
+from scripts.logger_config import logger  # Import centralized logger
 
 def load_match_schedule(file_path):
     return pd.read_csv(file_path)
@@ -20,6 +20,9 @@ def calculate_goal_probability(win_percentage, avg_goals_scored, avg_goals_conce
     return goal_probability_per_minute
 
 def simulate_match_minute_by_minute(team1, team2, team1_win_percentage, team2_win_percentage, home_advantage, home_team, averages, weighted_win_percentage_weight):
+    logger.debug(f"Simulating match between {team1} and {team2}")
+    logger.debug(f"Initial win percentages - {team1}: {team1_win_percentage}%, {team2}: {team2_win_percentage}%")
+    
     team1_goals = 0
     team2_goals = 0
 
@@ -27,6 +30,9 @@ def simulate_match_minute_by_minute(team1, team2, team1_win_percentage, team2_wi
     team1_avg_goals_conceded = averages.at[team1, 'average_goals_conceded']
     team2_avg_goals_scored = averages.at[team2, 'average_goals_scored']
     team2_avg_goals_conceded = averages.at[team2, 'average_goals_conceded']
+
+    logger.debug(f"{team1} - Avg Goals Scored: {team1_avg_goals_scored}, Avg Goals Conceded: {team1_avg_goals_conceded}")
+    logger.debug(f"{team2} - Avg Goals Scored: {team2_avg_goals_scored}, Avg Goals Conceded: {team2_avg_goals_conceded}")
 
     team1_goal_prob = calculate_goal_probability(
         team1_win_percentage + (home_advantage if team1 == home_team else 0),
@@ -37,12 +43,23 @@ def simulate_match_minute_by_minute(team1, team2, team1_win_percentage, team2_wi
         team2_avg_goals_scored, team1_avg_goals_conceded, weighted_win_percentage_weight
     )
 
+    logger.debug(f"{team1} goal probability per minute: {team1_goal_prob}")
+    logger.debug(f"{team2} goal probability per minute: {team2_goal_prob}")
+
+    logger.debug(f"Minute 00: Kick off! Current score - {team1}: {team1_goals}, {team2}: {team2_goals}")
+
     for minute in range(90):
         if np.random.rand() < team1_goal_prob:
             team1_goals += 1
-        if np.random.rand() < team2_goal_prob:
+            logger.debug(f"Minute {minute}: {team1} scores! Current score - {team1}: {team1_goals}, {team2}: {team2_goals}")
+        elif np.random.rand() < team2_goal_prob:
             team2_goals += 1
+            logger.debug(f"Minute {minute}: {team2} scores! Current score - {team1}: {team1_goals}, {team2}: {team2_goals}")
+        elif minute % 5 == 0:
+            # Log a dot for each minute without a goal
+            logger.debug(f"Minute {minute}")
 
+    logger.debug(f"Final score for match {team1} vs {team2}: {team1_goals} - {team2_goals}")
     return team1_goals, team2_goals
 
 def simulate_group_stage_matches(matches, win_percentages, home_advantage, home_team, averages, weighted_win_percentage_weight):

@@ -5,358 +5,171 @@
     <title>UEFA Euro 2024 Predictions</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        function updateSliderValue(sliderId, displayId) {
-            const slider = document.getElementById(sliderId);
-            const display = document.getElementById(displayId);
-            slider.oninput = function() {
-                display.textContent = this.value;
-            }
+        function showLogs() {
+            document.getElementById('content-frame').src = "/logs";
         }
 
-        function runPredictor() {
-            const overlay = document.getElementById('loading-overlay');
-            if (overlay) {
-                overlay.style.display = 'flex';
-            }
-
-            const weightedWinPercentageWeight = document.getElementById('weighted_win_percentage_weight').value;
-            const homeAdvantage = document.getElementById('home_advantage').value;
-            const lookBackMonths = document.getElementById('look_back_months').value;
-
-            fetch('/run_predictor', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    weighted_win_percentage_weight: weightedWinPercentageWeight,
-                    home_advantage: homeAdvantage,
-                    look_back_months: lookBackMonths
-                })
-            }).then(response => response.json())
-              .then(data => {
-                  if (data.status === "success") {
-                      window.location.reload();
-                  } else {
-                      alert("Error: " + data.message);
-                      if (overlay) {
-                          overlay.style.display = 'none';
-                      }
-                  }
-              }).catch(error => {
-                  alert("Error: " + error.message);
-                  if (overlay) {
-                      overlay.style.display = 'none';
-                  }
-              });
+        function showWallchart() {
+            document.getElementById('content-frame').src = "/wallchart";
         }
 
-        document.addEventListener('DOMContentLoaded', function() {
-            updateSliderValue('weighted_win_percentage_weight', 'weighted_win_percentage_weight_value');
-            updateSliderValue('home_advantage', 'home_advantage_value');
-            updateSliderValue('look_back_months', 'look_back_months_value');
+        function hideLoading() {
+            console.log("Hiding loading overlay");
+            $('#loading').hide();
+        }
+
+        $(document).ready(function() {
+            $('#predictor-form').on('submit', function(event) {
+                event.preventDefault();
+                $('#loading').show();
+                $('#logs').empty();
+
+                var formData = {
+                    weighted_win_percentage_weight: $('#weighted_win_percentage_weight').val(),
+                    home_advantage: $('#home_advantage').val(),
+                    look_back_months: $('#look_back_months').val()
+                };
+
+                $.ajax({
+                    url: "/run_predictor",
+                    type: "POST",
+                    contentType: "application/json",
+                    data: JSON.stringify(formData),
+                    success: function(response) {
+                        if (response.status === "success") {
+                            showLogs(); // Load the logs page in the iframe
+                            checkLogs();
+                            streamLogs();
+                        } else {
+                            alert("Error: " + response.message);
+                            $('#loading').hide();
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        alert("An error occurred: " + error);
+                        $('#loading').hide();
+                    }
+                });
+            });
+
+            function checkLogs() {
+                $.ajax({
+                    url: "/status",
+                    type: "GET",
+                    success: function(response) {
+                        if (response.status === "complete") {
+                            showWallchart(); // Load the wallchart page in the iframe
+                        } else {
+                            setTimeout(checkLogs, 2000);
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        alert("An error occurred while checking status: " + error);
+                        $('#loading').hide();
+                    }
+                });
+            }
+
+            function streamLogs() {
+                var logContainer = $('#logs');
+                var logBuffer = [];
+                var logSource = new EventSource("/logs");
+
+                logSource.onmessage = function(event) {
+                    logBuffer.push(event.data);
+                    if (event.data.includes("End of main")) {
+                        logSource.close();
+                        checkLogs();
+                    }
+                    requestAnimationFrame(updateLogs);
+                };
+
+                function updateLogs() {
+                    if (logBuffer.length > 0) {
+                        logContainer.append(logBuffer.join("<br>"));
+                        logBuffer = [];
+                        autoScroll();  // Auto-scroll to the bottom whenever new logs are added
+                    }
+                }
+            }
+
+            function autoScroll() {
+                var logContainer = $('#logs');
+                logContainer.scrollTop(logContainer.prop("scrollHeight"));
+            }
         });
     </script>
+    <style>
+        #loading {
+            display: none;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 2;
+            text-align: center;
+            color: white;
+            padding-top: 20%;
+            font-size: 2em;
+        }
+        #logs-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-height: 100%;
+        }
+        #logs {
+            width: 40%;
+            max-height: 100%;
+            overflow-y: scroll;
+            background-color: #f0f0f0;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+        }
+        .qualified {
+            color: green;
+        }
+        .best-third {
+            color: blue;
+        }
+        .unqualified {
+            color: red;
+        }
+    </style>
 </head>
 <body>
-    <div id="loading-overlay">Loading...</div>
-        <div class="wall-chart">
+    <div id="loading">Loading...</div>
+    <form id="predictor-form">
+        <div class="title">
             <h1>UEFA Euro 2024 Predictions</h1>
-            <div class="slider-container-horizontal">
-                <button onclick="runPredictor()">Run Predictor</button>
-                <div class="slider-item">
-                    <label for="weighted_win_percentage_weight">Weighted Win Percentage Weight</label>
-                    <input type="range" id="weighted_win_percentage_weight" name="weighted_win_percentage_weight" min="0" max="2" step="0.1" value="{{ weighted_win_percentage_weight }}">
-                    <span id="weighted_win_percentage_weight_value">{{ weighted_win_percentage_weight }}</span>
-                </div>
-                <div class="slider-item">
-                    <label for="home_advantage">Home Advantage</label>
-                    <input type="range" id="home_advantage" name="home_advantage" min="0" max="1" step="0.1" value="{{ home_advantage }}">
-                    <span id="home_advantage_value">{{ home_advantage }}</span>
-                </div>
-                <div class="slider-item">
-                    <label for="look_back_months">Look Back Months</label>
-                    <input type="range" id="look_back_months" name="look_back_months" min="1" max="60" step="1" value="{{ look_back_months }}">
-                    <span id="look_back_months_value">{{ look_back_months }}</span>
-                </div>
-            </div>            
-            <hr>
-        <hr>
-        <h2>GROUP STAGE</h2>
-        <div class="content-wrapper">
-            <div class="match-results-left">
-                {% for group, matches in match_results.items() %}
-                    {% if group in ['A', 'C', 'E'] %}
-                        <div class="group-results" id="results-{{ group }}">
-                            <h2>Group {{ group }} Matches</h2>
-                            <table>
-                                {% for match in matches %}
-                                    <tr>
-                                        <td>{{ match.team1 }}</td>
-                                        <td>{{ match.team1_score }}</td>
-                                        <td>{{ match.team2 }}</td>
-                                        <td>{{ match.team2_score }}</td>
-                                    </tr>
-                                {% endfor %}
-                            </table>
-                        </div>
-                    {% endif %}
-                {% endfor %}
+        </div>
+        <div class="slider-container-horizontal">
+            <button type="submit">Run Predictor</button>
+            <div class="slider-item">
+                <label for="weighted_win_percentage_weight">Weighted Win Percentage Weight</label>
+                <input type="range" id="weighted_win_percentage_weight" name="weighted_win_percentage_weight" min="0" max="2" step="0.1" value="1">
+                <span id="weighted_win_percentage_weight_value">1</span>
             </div>
-
-            <div class="divider"></div>
-
-            <div class="group-standings-center">
-                <div class="group-standings">
-                    {% for group, group_teams in standings.groupby('group') %}
-                        <div class="group" id="group-{{ group }}">
-                            <h2>Group {{ group }}</h2>
-                            <table>
-                                <tr>
-                                    <th>Team</th>
-                                    <th>GP</th>
-                                    <th>W</th>
-                                    <th>D</th>
-                                    <th>L</th>
-                                    <th>GF</th>
-                                    <th>GA</th>
-                                    <th>GD</th>
-                                    <th>Points</th>
-                                </tr>
-                                {% for _, team in group_teams.iterrows() %}
-                                    <tr class="{{ team.qualified }}">
-                                        <td>{{ team.team }}</td>
-                                        <td>{{ team.gp }}</td>
-                                        <td>{{ team.w }}</td>
-                                        <td>{{ team.d }}</td>
-                                        <td>{{ team.l }}</td>
-                                        <td>{{ team.gf }}</td>
-                                        <td>{{ team.ga }}</td>
-                                        <td>{{ team.gd }}</td>
-                                        <td>{{ team.points }}</td>
-                                    </tr>
-                                {% endfor %}
-                            </table>
-                        </div>
-                    {% endfor %}
-                </div>
+            <div class="slider-item">
+                <label for="home_advantage">Home Advantage</label>
+                <input type="range" id="home_advantage" name="home_advantage" min="0" max="1" step="0.1" value="0.1">
+                <span id="home_advantage_value">0.1</span>
             </div>
-
-            <div class="divider"></div>
-
-            <div class="match-results-right">
-                {% for group, matches in match_results.items() %}
-                    {% if group in ['B', 'D', 'F'] %}
-                    <div class="group-results" id="results-{{ group }}">
-                            <h2>Group {{ group }} Matches</h2>
-                            <table>
-                                {% for match in matches %}
-                                    <tr>
-                                        <td>{{ match.team1 }}</td>
-                                        <td>{{ match.team1_score }}</td>
-                                        <td>{{ match.team2_score }}</td>
-                                        <td>{{ match.team2 }}</td>
-                                    </tr>
-                                {% endfor %}
-                            </table>
-                        </div>
-                        {% endif %}
-                {% endfor %}
+            <div class="slider-item">
+                <label for="look_back_months">Look Back Months</label>
+                <input type="range" id="look_back_months" name="look_back_months" min="1" max="60" step="1" value="36">
+                <span id="look_back_months_value">36</span>
             </div>
         </div>
-        <hr>
-        <h2>KNOCKOUT STAGE</h2>
-        <div class="knockout-stage">
-            <div class="knockout-stage-grid">
-                
-                <div class="round-of-16-left">
-                    {% for match in knockout_matches[:4] %}
-                        {% if match.stage == 'Round of 16' %}
-                            <div class="match">
-                                <div class="team">
-                                    <span class="team {{ match.team1_class }}">{{ match.team1 }}</span>
-                                    <span class="score {{ match.team1_class }}">
-                                        {{ match.team1_score }}
-                                    </span>
-                                    {% if match.team1_pen_score and match.team2_pen_score %}
-                                        <span class="penalty {{ match.team1_class }}"> ({{ match.team1_pen_score|int }})</span>
-                                    {% endif %}
-                                </div>
-                                <div class="team">
-                                    <span class="team {{ match.team2_class }}">{{ match.team2 }}</span>
-                                    <span class="score {{ match.team2_class }}">
-                                        {{ match.team2_score }}
-                                    </span>
-                                    {% if match.team1_pen_score and match.team2_pen_score %}
-                                        <span class="penalty {{ match.team2_class }}"> ({{ match.team2_pen_score|int }})</span>
-                                    {% endif %}
-                                </div>
-                            </div>
-                        {% endif %}
-                    {% endfor %}
-                </div>
-                
-                <div class="quarter-finals-left">
-                    {% for match in knockout_matches[8:10] %}
-                        {% if match.stage == 'Quarter-final' %}
-                            <div class="match">
-                                <div class="team">
-                                    <span class="team {{ match.team1_class }}">{{ match.team1 }}</span>
-                                    <span class="score {{ match.team1_class }}">
-                                        {{ match.team1_score }}
-                                    </span>
-                                    {% if match.team1_pen_score and match.team2_pen_score %}
-                                        <span class="penalty {{ match.team1_class }}"> ({{ match.team1_pen_score|int }})</span>
-                                    {% endif %}
-                                </div>
-                                <div class="team">
-                                    <span class="team {{ match.team2_class }}">{{ match.team2 }}</span>
-                                    <span class="score {{ match.team2_class }}">
-                                        {{ match.team2_score }}
-                                    </span>
-                                    {% if match.team1_pen_score and match.team2_pen_score %}
-                                        <span class="penalty {{ match.team2_class }}"> ({{ match.team2_pen_score|int }})</span>
-                                    {% endif %}
-                                </div>
-                            </div>
-                        {% endif %}
-                    {% endfor %}
-                </div>
-                
-                <div class="semi-finals-left">
-                    {% for match in knockout_matches[12:13] %}
-                        {% if match.stage == 'Semi-final' %}
-                            <div class="match">
-                                <div class="team">
-                                    <span class="team {{ match.team1_class }}">{{ match.team1 }}</span>
-                                    <span class="score {{ match.team1_class }}">
-                                        {{ match.team1_score }}
-                                    </span>
-                                    {% if match.team1_pen_score and match.team2_pen_score %}
-                                        <span class="penalty {{ match.team1_class }}"> ({{ match.team1_pen_score|int }})</span>
-                                    {% endif %}
-                                </div>
-                                <div class="team">
-                                    <span class="team {{ match.team2_class }}">{{ match.team2 }}</span>
-                                    <span class="score {{ match.team2_class }}">
-                                        {{ match.team2_score }}
-                                    </span>
-                                    {% if match.team1_pen_score and match.team2_pen_score %}
-                                        <span class="penalty {{ match.team2_class }}"> ({{ match.team2_pen_score|int }})</span>
-                                    {% endif %}
-                                </div>
-                            </div>
-                        {% endif %}
-                    {% endfor %}
-                </div>
-                
-                <div class="final">
-                    {% for match in knockout_matches %}
-                        {% if match.stage == 'Final' %}
-                            <div class="match">
-                                <div class="team">
-                                    <span class="team {{ match.team1_class }}">{{ match.team1 }}</span>
-                                    <span class="score {{ match.team1_class }}">
-                                        {{ match.team1_score }}
-                                    </span>
-                                    {% if match.team1_pen_score and match.team2_pen_score %}
-                                        <span class="penalty {{ match.team1_class }}"> ({{ match.team1_pen_score|int }})</span>
-                                    {% endif %}
-                                    <span class="score {{ match.team2_class }}">
-                                        {{ match.team2_score }}
-                                    </span>
-                                    {% if match.team1_pen_score and match.team2_pen_score %}
-                                        <span class="penalty {{ match.team2_class }}"> ({{ match.team2_pen_score|int }})</span>
-                                    {% endif %}
-                                    <span class="team {{ match.team2_class }}">{{ match.team2 }}</span>
-                                </div>
-                            </div>
-                        {% endif %}
-                    {% endfor %}
-                </div>
-                
-                <div class="semi-finals-right">
-                    {% for match in knockout_matches[13:14] %}
-                        {% if match.stage == 'Semi-final' %}
-                            <div class="match">
-                                <div class="team">
-                                    <span class="team {{ match.team1_class }}">{{ match.team1 }}</span>
-                                    <span class="score {{ match.team1_class }}">
-                                        {{ match.team1_score }}
-                                    </span>
-                                    {% if match.team1_pen_score and match.team2_pen_score %}
-                                        <span class="penalty {{ match.team1_class }}"> ({{ match.team1_pen_score|int }})</span>
-                                    {% endif %}
-                                </div>
-                                <div class="team">
-                                    <span class="team {{ match.team2_class }}">{{ match.team2 }}</span>
-                                    <span class="score {{ match.team2_class }}">
-                                        {{ match.team2_score }}
-                                    </span>
-                                    {% if match.team1_pen_score and match.team2_pen_score %}
-                                        <span class="penalty {{ match.team2_class }}"> ({{ match.team2_pen_score|int }})</span>
-                                    {% endif %}
-                                </div>
-                            </div>
-                        {% endif %}
-                    {% endfor %}
-                </div>
-                
-                <div class="quarter-finals-right">
-                    {% for match in knockout_matches[10:12] %}
-                        {% if match.stage == 'Quarter-final' %}
-                            <div class="match">
-                                <div class="team">
-                                    <span class="team {{ match.team1_class }}">{{ match.team1 }}</span>
-                                    <span class="score {{ match.team1_class }}">
-                                        {{ match.team1_score }}
-                                    </span>
-                                    {% if match.team1_pen_score and match.team2_pen_score %}
-                                        <span class="penalty {{ match.team1_class }}"> ({{ match.team1_pen_score|int }})</span>
-                                    {% endif %}
-                                </div>
-                                <div class="team">
-                                    <span class="team {{ match.team2_class }}">{{ match.team2 }}</span>
-                                    <span class="score {{ match.team2_class }}">
-                                        {{ match.team2_score }}
-                                    </span>
-                                    {% if match.team1_pen_score and match.team2_pen_score %}
-                                        <span class="penalty {{ match.team2_class }}"> ({{ match.team2_pen_score|int }})</span>
-                                    {% endif %}
-                                </div>
-                            </div>
-                        {% endif %}
-                    {% endfor %}
-                </div>
-                <div class="round-of-16-right">
-                    {% for match in knockout_matches[4:8] %}
-                        {% if match.stage == 'Round of 16' %}
-                            <div class="match">
-                                <div class="team">
-                                    <span class="team {{ match.team1_class }}">{{ match.team1 }}</span>
-                                    <span class="score {{ match.team1_class }}">
-                                        {{ match.team1_score }}
-                                    </span>
-                                    {% if match.team1_pen_score and match.team2_pen_score %}
-                                        <span class="penalty {{ match.team1_class }}"> ({{ match.team1_pen_score|int }})</span>
-                                    {% endif %}
-                                </div>
-                                <div class="team">
-                                    <span class="team {{ match.team2_class }}">{{ match.team2 }}</span>
-                                    <span class="score {{ match.team2_class }}">
-                                        {{ match.team2_score }}
-                                    </span>
-                                    {% if match.team1_pen_score and match.team2_pen_score %}
-                                        <span class="penalty {{ match.team2_class }}"> ({{ match.team2_pen_score|int }})</span>
-                                    {% endif %}
-                                </div>
-                            </div>
-                        {% endif %}
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-    </div>
+    </form>
+    <iframe id="content-frame" style="width: 100%; height: 1000px; border: none;" src="" onload="hideLoading()"></iframe>
 </body>
 </html>

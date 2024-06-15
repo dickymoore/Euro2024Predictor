@@ -6,3 +6,4 @@ env/
 __pycache__/
 data/cache/*
 data/results/*
+data/tmp/*

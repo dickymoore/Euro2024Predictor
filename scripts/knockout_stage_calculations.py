@@ -1,11 +1,10 @@
 import pandas as pd
 import numpy as np
 import logging
+from scripts.logger_config import logger  # Import centralized logger
 from scripts.data_transform import transform_data
 from scripts.config import load_config
 from scripts.standings_calculations import compute_standings
-
-logger = logging.getLogger(__name__)
 
 # Define scenarios for third-placed teams
 THIRD_PLACE_SCENARIOS = {
@@ -43,7 +42,9 @@ THIRD_PLACE_MATCH_ASSIGNMENTS = {
 
 def get_third_place_scenario(third_place_groups):
     key = ''.join(sorted(third_place_groups))
-    return THIRD_PLACE_SCENARIOS.get(key)
+    scenario = THIRD_PLACE_SCENARIOS.get(key)
+    logger.debug(f"Third place scenario for groups {third_place_groups}: {scenario}")
+    return scenario
 
 def simulate_knockout_stage(fixtures, config, teams, win_percentages, averages, home_advantage, home_team, weighted_win_percentage_weight, stage):
     results = []
@@ -51,7 +52,7 @@ def simulate_knockout_stage(fixtures, config, teams, win_percentages, averages, 
         team1 = match['team1']
         team2 = match['team2']
         
-        logger.info(f"Simulating match: {team1} vs {team2}")
+        logger.debug(f"Simulating match: {team1} vs {team2}")
         
         team1_win_percentage = win_percentages.get(team1, 50)
         team2_win_percentage = win_percentages.get(team2, 50)
@@ -69,9 +70,9 @@ def simulate_knockout_stage(fixtures, config, teams, win_percentages, averages, 
 
         team1_pen_score, team2_pen_score = None, None
         if team1_score == team2_score:
-            team1_pen_score, team2_pen_score = simulate_penalty_shootout()
+            team1_pen_score, team2_pen_score = simulate_penalty_shootout(team1,team2)
 
-        logger.info(f"{team1} vs {team2} -> {team1_score}-{team2_score}")
+        logger.debug(f"{team1} vs {team2} -> {team1_score}-{team2_score}")
 
         results.append({
             'stage': stage,
@@ -83,12 +84,13 @@ def simulate_knockout_stage(fixtures, config, teams, win_percentages, averages, 
             'team2_pso_score': int(team2_pen_score) if team2_pen_score is not None else ''
         })
     
+    logger.debug(f"Knockout stage results for {stage}: {results}")
     return pd.DataFrame(results)
 
 def calculate_goal_probability(win_percentage, avg_goals_scored, avg_goals_conceded, weighted_win_percentage_weight):
-    base_goals_per_game = 2.5
     goals_per_game = (avg_goals_scored + avg_goals_conceded) / 2
     goal_probability_per_minute = (win_percentage / 100) * (goals_per_game / 90) * weighted_win_percentage_weight
+    logger.debug(f"Calculated goal probability per minute: {goal_probability_per_minute}")
     return goal_probability_per_minute
 
 def simulate_match_minute_by_minute(team1, team2, team1_win_percentage, team2_win_percentage, home_advantage, home_team, averages, weighted_win_percentage_weight):
@@ -112,26 +114,52 @@ def simulate_match_minute_by_minute(team1, team2, team1_win_percentage, team2_wi
     for minute in range(90):
         if np.random.rand() < team1_goal_prob:
             team1_goals += 1
-        if np.random.rand() < team2_goal_prob:
+            logger.debug(f"Minute {minute}: {team1} scores! Current score - {team1}: {team1_goals}, {team2}: {team2_goals}")
+        elif np.random.rand() < team2_goal_prob:
             team2_goals += 1
+            logger.debug(f"Minute {minute}: {team2} scores! Current score - {team1}: {team1_goals}, {team2}: {team2_goals}")
+        elif minute % 5 == 0:
+            # Log a dot for each minute without a goal
+            logger.debug(f"Minute {minute}")
 
+    logger.debug(f"Final score for match {team1} vs {team2}: {team1_goals} - {team2_goals}")
     return team1_goals, team2_goals
 
-def simulate_penalty_shootout():
+def simulate_penalty_shootout(team1_name, team2_name):
     team1_pen_score = 0
     team2_pen_score = 0
-    for _ in range(5):
+    logger.debug(f"Starting penalty shootout between {team1_name} and {team2_name}...")
+    
+    for i in range(1, 6):
         if np.random.rand() > 0.5:
             team1_pen_score += 1
+            logger.debug(f"Round {i}: {team1_name} scores! ({team1_name}: {team1_pen_score} - {team2_name}: {team2_pen_score})")
+        else:
+            logger.debug(f"Round {i}: {team1_name} misses. ({team1_name}: {team1_pen_score} - {team2_name}: {team2_pen_score})")
+        
         if np.random.rand() > 0.5:
             team2_pen_score += 1
+            logger.debug(f"Round {i}: {team2_name} scores! ({team1_name}: {team1_pen_score} - {team2_name}: {team2_pen_score})")
+        else:
+            logger.debug(f"Round {i}: {team2_name} misses. ({team1_name}: {team1_pen_score} - {team2_name}: {team2_pen_score})")
     
+    round_counter = 6
     while team1_pen_score == team2_pen_score:
         if np.random.rand() > 0.5:
             team1_pen_score += 1
+            logger.debug(f"Sudden Death Round {round_counter}: {team1_name} scores! ({team1_name}: {team1_pen_score} - {team2_name}: {team2_pen_score})")
+        else:
+            logger.debug(f"Sudden Death Round {round_counter}: {team1_name} misses. ({team1_name}: {team1_pen_score} - {team2_name}: {team2_pen_score})")
+        
         if np.random.rand() > 0.5:
             team2_pen_score += 1
+            logger.debug(f"Sudden Death Round {round_counter}: {team2_name} scores! ({team1_name}: {team1_pen_score} - {team2_name}: {team2_pen_score})")
+        else:
+            logger.debug(f"Sudden Death Round {round_counter}: {team2_name} misses. ({team1_name}: {team1_pen_score} - {team2_name}: {team2_pen_score})")
+        
+        round_counter += 1
 
+    logger.debug(f"Penalty shootout result: {team1_name} {team1_pen_score} - {team2_pen_score} {team2_name}")
     return int(team1_pen_score), int(team2_pen_score)
 
 def infer_next_round_fixtures(results, next_stage):
@@ -174,9 +202,9 @@ def get_actual_teams(standings):
         if not top_two.empty:
             actual_teams[f'1{group}'] = top_two.iloc[0]['team']
             actual_teams[f'2{group}'] = top_two.iloc[1]['team']
-            print(f"Group {group}: 1st {actual_teams[f'1{group}']}, 2nd {actual_teams[f'2{group}']}")
+            logger.debug(f"Group {group}: 1st {actual_teams[f'1{group}']}, 2nd {actual_teams[f'2{group}']}")
         else:
-            print(f"Group {group} standings data is empty or not found.")
+            logger.warning(f"Group {group} standings data is empty or not found.")
     
     # Determine the best third-placed teams
     third_place_teams = standings.groupby('group').nth(2)
@@ -187,12 +215,13 @@ def get_actual_teams(standings):
     # Assign the best third-placed teams to their respective placeholders
     for key, value in zip(third_place_keys, best_third_teams['team']):
         actual_teams[key] = value
-        print(f"Best third-placed team {key}: {value}")
+        logger.debug(f"Best third-placed team {key}: {value}")
 
-    print("Actual Teams:\n", actual_teams)
+    logger.debug(f"Actual Teams:\n{actual_teams}")
     return actual_teams
 
 def main():
+    logger.debug('Starting main function')
     config = load_config()
     teams = [team for group in config['teams'].values() for team in group]
     
@@ -223,7 +252,7 @@ def main():
 
     # Save all knockout results to CSV
     all_knockout_results.to_csv('data/results/knockout_stage_results.csv', index=False)
-    logger.info(f"All knockout stage results saved to data/results/knockout_stage_results.csv")
+    logger.debug(f"All knockout stage results saved to data/results/knockout_stage_results.csv")
 
 if __name__ == "__main__":
     main()

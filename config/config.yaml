@@ -1,4 +1,4 @@
-home_advantage: 1.0
+home_advantage: 0.1
 home_team: Germany
 look_back_months: 36
 teams:
@@ -32,4 +32,4 @@ teams:
   - Georgia
   - Portugal
   - Czechia
-weighted_win_percentage_weight: 0.7
+weighted_win_percentage_weight: 1.0
