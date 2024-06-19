@@ -1,0 +1,7 @@
+.\venv\Scripts\activate
+pip install -r requirements.txt
+python .\main.py
+python .\main.py --debug
+python .\webapp.py --debug
+
+jupyter notebook notebooks
